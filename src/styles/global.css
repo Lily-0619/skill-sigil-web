@@ -1238,6 +1238,22 @@ img {
   color: var(--pink);
   margin-left: auto;
 }
+.pchip.cat-equip {
+  border-color: var(--pink);
+  background: var(--pink);
+  color: #1a0e14;
+  font-weight: 600;
+}
+.pchip.cat-equip:hover:not(:disabled) {
+  background: var(--pink-bright);
+  border-color: var(--pink-bright);
+}
+.pchip.cat-equip:disabled {
+  background: rgba(7, 9, 15, 0.5);
+  border-color: var(--line-navy);
+  color: var(--muted);
+  cursor: not-allowed;
+}
 .tray-item .icon-frame {
   width: 40px;
   height: 40px;

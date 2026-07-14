@@ -64,6 +64,9 @@ const collapseValues = (vals: string[]): string => {
     .join(" / ");
 };
 
+/** 等級の良い順 (混沌 > 太古 > 深淵)。デフォルト等級・並び順に使う。 */
+const RARITY_ORDER: Rarity[] = ["chaos", "primal", "abyssal"];
+
 /** Freeモードのカタログ選択 (効果 + 等級 + 2値効果の下位/上位) */
 interface CatalogSel {
   effectId: string;
@@ -209,6 +212,11 @@ export default function BuildEdit({
       const q = fText.trim();
       list = list.filter((e) => e.name_ja.includes(q));
     }
+    // 枠を先行選択している場合は、その枠タイプの効果だけに絞る
+    // (スロット選択 → そのタイプの効果だけ選べる、という操作にする)
+    if (selectedSlotType) {
+      list = list.filter((e) => e.sigil_type_id === selectedSlotType);
+    }
     // 装着可能なタイプを上へ (v0.2 #9: 枠選択中はその枠タイプを優先、未選択ならスキル全体)
     const slotTypes = selectedSlotType
       ? new Set([selectedSlotType])
@@ -224,25 +232,83 @@ export default function BuildEdit({
       );
   }, [isFree, fType, fRarity, fText, selectedSkill, selectedSlotType]);
 
-  // v0.2 #11: 秘伝効果一覧 (リファレンス)。秘伝タイプごと・sort_order順に並べる。
-  const effectCatalog = useMemo(
-    () =>
-      master.sigil_types
-        .map((t) => ({
-          type: t,
-          effects: master.effects
-            .filter((e) => e.enabled && e.sigil_type_id === t.id)
-            .slice()
-            .sort((a, b) => a.sort_order - b.sort_order),
-        }))
-        .filter((g) => g.effects.length > 0),
-    []
-  );
+  // v0.2 #11 (改訂): 秘伝効果一覧。この編成に「今つけている」秘伝だけを、
+  // 秘伝タイプごと → 効果ごと → 等級ごと(混沌>太古>深淵)にまとめて表示。
+  // 同じ効果+等級で数値が重複する場合は「値 ×N個」に集約。
+  const equippedCatalog = useMemo(() => {
+    const buildId = build?.build_id;
+    if (!buildId) return [];
+    // 装着済みを {typeId, effectId, name, rarity, value} の配列に正規化
+    type Row = {
+      typeId: string;
+      effectId: string;
+      name: string;
+      rarity: Rarity;
+      value: string;
+    };
+    const rows: Row[] = isFree
+      ? data.freeEquips
+          .filter((e) => e.build_id === buildId)
+          .map((e) => {
+            const eff = effectOf(master, e.effect_id);
+            return {
+              typeId: eff?.sigil_type_id ?? "",
+              effectId: e.effect_id,
+              name: eff?.name_ja ?? e.effect_id,
+              rarity: e.rarity as Rarity,
+              value: e.value_text,
+            };
+          })
+      : data.equips
+          .filter((e) => e.build_id === buildId)
+          .map((e) => {
+            const inv = data.inventory.find((i) => i.inventory_id === e.inventory_id);
+            if (!inv) return null;
+            const eff = effectOf(master, inv.effect_id);
+            return {
+              typeId: inv.sigil_type_id,
+              effectId: inv.effect_id,
+              name: eff?.name_ja ?? inv.effect_id,
+              rarity: inv.rarity as Rarity,
+              value: inv.value_text,
+            };
+          })
+          .filter((r): r is NonNullable<typeof r> => r !== null);
+
+    // タイプ → 効果 → 等級 → 数値配列 に集計
+    return master.sigil_types
+      .map((type) => {
+        const typeRows = rows.filter((r) => r.typeId === type.id);
+        const effIds = Array.from(new Set(typeRows.map((r) => r.effectId))).sort(
+          (a, b) =>
+            (effectOf(master, a)?.sort_order ?? 0) -
+            (effectOf(master, b)?.sort_order ?? 0)
+        );
+        const effects = effIds.map((effectId) => {
+          const name = typeRows.find((r) => r.effectId === effectId)!.name;
+          const rarities = RARITY_ORDER.filter((rid) =>
+            typeRows.some((r) => r.effectId === effectId && r.rarity === rid)
+          ).map((rid) => ({
+            rarity: master.rarities.find((x) => x.id === rid)!,
+            valuesText: collapseValues(
+              typeRows
+                .filter((r) => r.effectId === effectId && r.rarity === rid)
+                .map((r) => r.value)
+                .filter((v) => v && v.length > 0)
+            ),
+          }));
+          return { effectId, name, rarities };
+        });
+        return { type, effects };
+      })
+      .filter((g) => g.effects.length > 0);
+  }, [build?.build_id, isFree, data.equips, data.freeEquips, data.inventory]);
 
   if (!build) return null;
 
+  // 良い等級を既定に (混沌 > 太古 > 深淵)
   const defaultRarityFor = (eff: EffectDef): Rarity =>
-    (master.rarities.find((r) => r.id in eff.values)?.id ?? "abyssal") as Rarity;
+    (RARITY_ORDER.find((r) => r in eff.values) ?? "chaos") as Rarity;
 
   // ---- 装着処理 (My) ----
   const tryEquip = (skill: SkillDef, slotNo: number, item: InventoryItem) => {
@@ -671,49 +737,50 @@ export default function BuildEdit({
             </div>
           )}
 
-          {/* v0.2 #11: 秘伝効果一覧 (スキル説明の下・常時表示のリファレンス)。
-              秘伝タイプごとに並べ、数値は等級別に表示。重複する数値は「値 ×N個」に集約。 */}
+          {/* v0.2 #11 (改訂): 秘伝効果一覧 = この編成に今つけている秘伝だけ。
+              秘伝タイプごと → 効果 → 等級(混沌>太古>深淵)。重複数値は「値 ×N個」に集約。 */}
           <div className="panel effect-catalog rv rv-fade in">
             <div className="skill-desc-panel-head">
-              <span className="overline">Sigil Effects</span>
-              <span className="t">秘伝効果一覧</span>
+              <span className="overline">Equipped Sigils</span>
+              <span className="t">つけている秘伝一覧</span>
             </div>
-            <div className="ec-groups">
-              {effectCatalog.map((g) => (
-                <div className="ec-group" key={g.type.id}>
-                  <div className="ec-type-head">
-                    <span className="dot" style={{ background: g.type.color }} />
-                    {g.type.name}
-                  </div>
-                  <div className="ec-effects">
-                    {g.effects.map((e) => {
-                      const rows = master.rarities.filter(
-                        (r) => (e.values[r.id]?.length ?? 0) > 0
-                      );
-                      return (
-                        <div className="ec-effect" key={e.effect_id}>
-                          <span className="ec-ename">{e.name_ja}</span>
+            {equippedCatalog.length === 0 ? (
+              <p className="ec-noval" style={{ marginTop: 4 }}>
+                この編成にはまだ秘伝がついていません。
+              </p>
+            ) : (
+              <div className="ec-groups">
+                {equippedCatalog.map((g) => (
+                  <div className="ec-group" key={g.type.id}>
+                    <div className="ec-type-head">
+                      <span className="dot" style={{ background: g.type.color }} />
+                      {g.type.name}
+                    </div>
+                    <div className="ec-effects">
+                      {g.effects.map((e) => (
+                        <div className="ec-effect" key={e.effectId}>
+                          <span className="ec-ename">{e.name}</span>
                           <span className="ec-rarities">
-                            {e.valueless || rows.length === 0 ? (
+                            {e.rarities.length === 0 ? (
                               <span className="ec-noval">数値なし</span>
                             ) : (
-                              rows.map((r) => (
-                                <span className="ec-rarity" key={r.id}>
-                                  <RarityChip master={master} rarity={r.id} />
-                                  <span className="ec-rvals">
-                                    {collapseValues(e.values[r.id]!)}
-                                  </span>
+                              e.rarities.map((r) => (
+                                <span className="ec-rarity" key={r.rarity.id}>
+                                  <RarityChip master={master} rarity={r.rarity.id} />
+                                  {r.valuesText && (
+                                    <span className="ec-rvals">{r.valuesText}</span>
+                                  )}
                                 </span>
                               ))
                             )}
                           </span>
                         </div>
-                      );
-                    })}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {!selectedSkill && (
@@ -886,16 +953,10 @@ export default function BuildEdit({
                       lit ? "lit" : ""
                     } ${dim ? "dim" : ""}`}
                     onClick={() => {
-                      // #5: 枠が先行選択されていれば、一致効果のクリックで即装着
-                      if (selectedSlot && selectedSkill && lit) {
-                        tryEquipFree(selectedSkill, selectedSlot.slotNo, {
-                          effectId: eff.effect_id,
-                          rarity,
-                          pick,
-                        });
-                        return;
-                      }
-                      setSelectedSlot(null);
+                      // 効果をクリックしたら選択のみ (即装着しない)。
+                      // 等級・数値を選んでから「装着」ボタン or 枠クリックで確定する。
+                      // 枠の先行選択(selectedSlot)は保持したまま。
+                      setSelectedItemId(null);
                       setSelectedCatalog(
                         selected
                           ? null
@@ -926,9 +987,9 @@ export default function BuildEdit({
                     {selected && (
                       <span className="cat-picker" onClick={(e) => e.stopPropagation()}>
                         <span className="plabel">等級</span>
-                        {master.rarities
-                          .filter((r) => r.id in eff.values)
-                          .map((r) => (
+                        {RARITY_ORDER.filter((rid) => rid in eff.values).map((rid) => {
+                          const r = master.rarities.find((x) => x.id === rid)!;
+                          return (
                             <button
                               key={r.id}
                               className={`pchip ${selectedCatalog!.rarity === r.id ? "on" : ""}`}
@@ -940,7 +1001,8 @@ export default function BuildEdit({
                             >
                               {r.name}
                             </button>
-                          ))}
+                          );
+                        })}
                         {twoVal && (
                           <>
                             <span className="plabel">値</span>
@@ -963,6 +1025,21 @@ export default function BuildEdit({
                           </>
                         )}
                         <span className="cat-value">{preview}</span>
+                        <button
+                          className="pchip cat-equip"
+                          disabled={!selectedSlot}
+                          onClick={() => {
+                            if (selectedSlot && selectedSkill && selectedCatalog) {
+                              tryEquipFree(
+                                selectedSkill,
+                                selectedSlot.slotNo,
+                                selectedCatalog
+                              );
+                            }
+                          }}
+                        >
+                          {selectedSlot ? `枠${selectedSlot.slotNo}に装着` : "先に枠を選択"}
+                        </button>
                       </span>
                     )}
                   </div>
