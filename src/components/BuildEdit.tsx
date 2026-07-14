@@ -48,6 +48,22 @@ const SkillIcon = ({ urls, noImageLabel }: { urls: string[]; noImageLabel: strin
   );
 };
 
+/**
+ * 秘伝効果一覧の数値表示 (v0.2 #11): 同じ数値が重複する場合は「値 ×N個」にまとめ、
+ * 出現順を保って " / " 区切りで返す。重複が無ければ数値をそのまま並べる。
+ */
+const collapseValues = (vals: string[]): string => {
+  const order: string[] = [];
+  const counts = new Map<string, number>();
+  for (const v of vals) {
+    if (!counts.has(v)) order.push(v);
+    counts.set(v, (counts.get(v) ?? 0) + 1);
+  }
+  return order
+    .map((v) => (counts.get(v)! > 1 ? `${v} ×${counts.get(v)}個` : v))
+    .join(" / ");
+};
+
 /** Freeモードのカタログ選択 (効果 + 等級 + 2値効果の下位/上位) */
 interface CatalogSel {
   effectId: string;
@@ -207,6 +223,21 @@ export default function BuildEdit({
           a.sort_order - b.sort_order
       );
   }, [isFree, fType, fRarity, fText, selectedSkill, selectedSlotType]);
+
+  // v0.2 #11: 秘伝効果一覧 (リファレンス)。秘伝タイプごと・sort_order順に並べる。
+  const effectCatalog = useMemo(
+    () =>
+      master.sigil_types
+        .map((t) => ({
+          type: t,
+          effects: master.effects
+            .filter((e) => e.enabled && e.sigil_type_id === t.id)
+            .slice()
+            .sort((a, b) => a.sort_order - b.sort_order),
+        }))
+        .filter((g) => g.effects.length > 0),
+    []
+  );
 
   if (!build) return null;
 
@@ -416,6 +447,36 @@ export default function BuildEdit({
 
       <div className="build-layout">
         <div>
+          {/* v0.2 #2 (docs/14): パッシブ説明。編成ツールバーと特別スキルの間へ移動し常時表示。
+              スキル未選択のときは案内、選択中は武器種タブつきで表示 (中身は準備中)。 */}
+          <div className="panel skill-desc-panel rv rv-fade in">
+            <div className="skill-desc-panel-head">
+              <span className="overline">Passive</span>
+              <span className="t">パッシブ</span>
+              {selectedSkill && (
+                <div className="weapon-tabs">
+                  <button
+                    type="button"
+                    className={`weapon-tab ${passiveWeaponTab === "a" ? "on" : ""}`}
+                    onClick={() => setPassiveWeaponTab("a")}
+                  >
+                    武器種A
+                  </button>
+                  <button
+                    type="button"
+                    className={`weapon-tab ${passiveWeaponTab === "b" ? "on" : ""}`}
+                    onClick={() => setPassiveWeaponTab("b")}
+                  >
+                    武器種B
+                  </button>
+                </div>
+              )}
+            </div>
+            <p className="skill-desc-panel-body">
+              {selectedSkill ? "準備中" : "スキルを選択するとパッシブが表示されます"}
+            </p>
+          </div>
+
           {/* 特別スキル */}
           <div className="skill-section-label">
             <span className="t">特別スキル</span>
@@ -610,32 +671,50 @@ export default function BuildEdit({
             </div>
           )}
 
-          {/* v0.2 #2 (docs/14): パッシブ説明スペース。武器種タブは仮実装(データ未整備のためA/B)。 */}
-          {selectedSkill && (
-            <div className="panel skill-desc-panel rv rv-fade in">
-              <div className="skill-desc-panel-head">
-                <span className="overline">Passive</span>
-                <span className="t">パッシブ</span>
-                <div className="weapon-tabs">
-                  <button
-                    type="button"
-                    className={`weapon-tab ${passiveWeaponTab === "a" ? "on" : ""}`}
-                    onClick={() => setPassiveWeaponTab("a")}
-                  >
-                    武器種A
-                  </button>
-                  <button
-                    type="button"
-                    className={`weapon-tab ${passiveWeaponTab === "b" ? "on" : ""}`}
-                    onClick={() => setPassiveWeaponTab("b")}
-                  >
-                    武器種B
-                  </button>
-                </div>
-              </div>
-              <p className="skill-desc-panel-body">準備中</p>
+          {/* v0.2 #11: 秘伝効果一覧 (スキル説明の下・常時表示のリファレンス)。
+              秘伝タイプごとに並べ、数値は等級別に表示。重複する数値は「値 ×N個」に集約。 */}
+          <div className="panel effect-catalog rv rv-fade in">
+            <div className="skill-desc-panel-head">
+              <span className="overline">Sigil Effects</span>
+              <span className="t">秘伝効果一覧</span>
             </div>
-          )}
+            <div className="ec-groups">
+              {effectCatalog.map((g) => (
+                <div className="ec-group" key={g.type.id}>
+                  <div className="ec-type-head">
+                    <span className="dot" style={{ background: g.type.color }} />
+                    {g.type.name}
+                  </div>
+                  <div className="ec-effects">
+                    {g.effects.map((e) => {
+                      const rows = master.rarities.filter(
+                        (r) => (e.values[r.id]?.length ?? 0) > 0
+                      );
+                      return (
+                        <div className="ec-effect" key={e.effect_id}>
+                          <span className="ec-ename">{e.name_ja}</span>
+                          <span className="ec-rarities">
+                            {e.valueless || rows.length === 0 ? (
+                              <span className="ec-noval">数値なし</span>
+                            ) : (
+                              rows.map((r) => (
+                                <span className="ec-rarity" key={r.id}>
+                                  <RarityChip master={master} rarity={r.id} />
+                                  <span className="ec-rvals">
+                                    {collapseValues(e.values[r.id]!)}
+                                  </span>
+                                </span>
+                              ))
+                            )}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {!selectedSkill && (
             <div className="empty-state" style={{ marginTop: 24 }}>
