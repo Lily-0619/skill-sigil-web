@@ -1,0 +1,10 @@
+node_modules/
+dist/
+font/
+material/
+outputs/
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store

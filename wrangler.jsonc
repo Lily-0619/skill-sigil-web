@@ -1,0 +1,12 @@
+// Cloudflare Workers Static Assets 設定 (docs/12_公開方式・技術構成_Workers版.md 準拠)
+// 参照: https://developers.cloudflare.com/workers/static-assets/
+//
+// name / compatibility_date は正式公開時に確定させる (現状は仮値)。
+{
+  "name": "skill-sigil-web",
+  "compatibility_date": "2026-07-14",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}

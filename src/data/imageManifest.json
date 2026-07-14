@@ -1,0 +1,3736 @@
+{
+ "generated_at": "2026-07-14T06:32:41.555Z",
+ "classButtons": {
+  "AC": "画像/class_button/AC.svg",
+  "BD": "画像/class_button/BD.svg",
+  "CO": "画像/class_button/CO.svg",
+  "DE": "画像/class_button/DE.svg",
+  "DK": "画像/class_button/DK.svg",
+  "DR": "画像/class_button/DR.svg",
+  "DS": "画像/class_button/DS.svg",
+  "GA": "画像/class_button/GA.svg",
+  "GD": "画像/class_button/GD.svg",
+  "HS": "画像/class_button/HS.svg",
+  "KN": "画像/class_button/KN.svg",
+  "KT": "画像/class_button/KT.svg",
+  "LN": "画像/class_button/LN.svg",
+  "LS": "画像/class_button/LS.svg",
+  "MG": "画像/class_button/MG.svg",
+  "MT": "画像/class_button/MT.svg",
+  "NJ": "画像/class_button/NJ.svg",
+  "NV": "画像/class_button/NV.svg",
+  "RG": "画像/class_button/RG.svg",
+  "SC": "画像/class_button/SC.svg",
+  "SG": "画像/class_button/SG.svg",
+  "SH": "画像/class_button/SH.svg",
+  "SP": "画像/class_button/SP.svg",
+  "SR": "画像/class_button/SR.svg",
+  "TB": "画像/class_button/TB.svg",
+  "VK": "画像/class_button/VK.svg",
+  "WR": "画像/class_button/WR.svg",
+  "WS": "画像/class_button/WS.svg",
+  "WT": "画像/class_button/WT.svg",
+  "WZ": "画像/class_button/WZ.svg"
+ },
+ "skills": {
+  "TB": [
+   {
+    "no": 1,
+    "name": "落花刃",
+    "special": true,
+    "path": "画像/スキル画像/TB/TB_01_落花刃__.png"
+   },
+   {
+    "no": 1,
+    "name": "虚空翔斬",
+    "special": false,
+    "path": "画像/スキル画像/TB/TB_01_虚空翔斬.png"
+   },
+   {
+    "no": 2,
+    "name": "凍りついた月",
+    "special": true,
+    "path": "画像/スキル画像/TB/TB_02_凍りついた月__.png"
+   },
+   {
+    "no": 2,
+    "name": "雹嵐",
+    "special": false,
+    "path": "画像/スキル画像/TB/TB_02_雹嵐.png"
+   },
+   {
+    "no": 3,
+    "name": "紅月",
+    "special": false,
+    "path": "画像/スキル画像/TB/TB_03_紅月.png"
+   },
+   {
+    "no": 3,
+    "name": "蒼旋刃",
+    "special": true,
+    "path": "画像/スキル画像/TB/TB_03_蒼旋刃__.png"
+   },
+   {
+    "no": 4,
+    "name": "満月斬",
+    "special": false,
+    "path": "画像/スキル画像/TB/TB_04_満月斬.png"
+   },
+   {
+    "no": 4,
+    "name": "霙風巻",
+    "special": true,
+    "path": "画像/スキル画像/TB/TB_04_霙風巻__.png"
+   },
+   {
+    "no": 5,
+    "name": "刃風",
+    "special": false,
+    "path": "画像/スキル画像/TB/TB_05_刃風.png"
+   },
+   {
+    "no": 6,
+    "name": "雪華",
+    "special": false,
+    "path": "画像/スキル画像/TB/TB_06_雪華.png"
+   },
+   {
+    "no": 7,
+    "name": "月影斬",
+    "special": false,
+    "path": "画像/スキル画像/TB/TB_07_月影斬.png"
+   },
+   {
+    "no": 8,
+    "name": "冰柱霜華",
+    "special": false,
+    "path": "画像/スキル画像/TB/TB_08_冰柱霜華.png"
+   },
+   {
+    "no": 9,
+    "name": "雪花万里香",
+    "special": false,
+    "path": "画像/スキル画像/TB/TB_09_雪花万里香.png"
+   },
+   {
+    "no": 10,
+    "name": "満月冰境",
+    "special": false,
+    "path": "画像/スキル画像/TB/TB_10_満月冰境.png"
+   },
+   {
+    "no": 11,
+    "name": "後飛斬",
+    "special": false,
+    "path": "画像/スキル画像/TB/TB_11_後飛斬.png"
+   },
+   {
+    "no": 12,
+    "name": "蒼霜",
+    "special": false,
+    "path": "画像/スキル画像/TB/TB_12_蒼霜.png"
+   },
+   {
+    "no": 13,
+    "name": "氷花",
+    "special": false,
+    "path": "画像/スキル画像/TB/TB_13_氷花.png"
+   }
+  ],
+  "VK": [
+   {
+    "no": 1,
+    "name": "シールドスロー",
+    "special": false,
+    "path": "画像/スキル画像/VK/VK_01_シールドスロー.png"
+   },
+   {
+    "no": 1,
+    "name": "栄光の剣",
+    "special": true,
+    "path": "画像/スキル画像/VK/VK_01_栄光の剣__.png"
+   },
+   {
+    "no": 2,
+    "name": "ガーディアンシールド",
+    "special": false,
+    "path": "画像/スキル画像/VK/VK_02_ガーディアンシールド.png"
+   },
+   {
+    "no": 2,
+    "name": "光の波動",
+    "special": true,
+    "path": "画像/スキル画像/VK/VK_02_光の波動__.png"
+   },
+   {
+    "no": 3,
+    "name": "ジャスティスカウンター",
+    "special": true,
+    "path": "画像/スキル画像/VK/VK_03_ジャスティスカウンター__.png"
+   },
+   {
+    "no": 3,
+    "name": "天罰",
+    "special": false,
+    "path": "画像/スキル画像/VK/VK_03_天罰.png"
+   },
+   {
+    "no": 4,
+    "name": "ライトニングスラスト",
+    "special": false,
+    "path": "画像/スキル画像/VK/VK_04_ライトニングスラスト.png"
+   },
+   {
+    "no": 4,
+    "name": "神聖突撃",
+    "special": true,
+    "path": "画像/スキル画像/VK/VK_04_神聖突撃__.png"
+   },
+   {
+    "no": 5,
+    "name": "ブリリアントダッシュ",
+    "special": false,
+    "path": "画像/スキル画像/VK/VK_05_ブリリアントダッシュ.png"
+   },
+   {
+    "no": 6,
+    "name": "勅裁",
+    "special": false,
+    "path": "画像/スキル画像/VK/VK_06_勅裁.png"
+   },
+   {
+    "no": 7,
+    "name": "パニッシュメント",
+    "special": false,
+    "path": "画像/スキル画像/VK/VK_07_パニッシュメント.png"
+   },
+   {
+    "no": 8,
+    "name": "デスペレーションラッシュ",
+    "special": false,
+    "path": "画像/スキル画像/VK/VK_08_デスペレーションラッシュ.png"
+   },
+   {
+    "no": 9,
+    "name": "シールドチェイス",
+    "special": false,
+    "path": "画像/スキル画像/VK/VK_09_シールドチェイス.png"
+   },
+   {
+    "no": 10,
+    "name": "ジャッジメントランス",
+    "special": false,
+    "path": "画像/スキル画像/VK/VK_10_ジャッジメントランス.png"
+   },
+   {
+    "no": 11,
+    "name": "断罪の剣",
+    "special": false,
+    "path": "画像/スキル画像/VK/VK_11_断罪の剣.png"
+   },
+   {
+    "no": 12,
+    "name": "セイクリッドエンスラー",
+    "special": false,
+    "path": "画像/スキル画像/VK/VK_12_セイクリッドエンスラー.png"
+   },
+   {
+    "no": 13,
+    "name": "エリアンの息吹",
+    "special": false,
+    "path": "画像/スキル画像/VK/VK_13_エリアンの息吹.png"
+   }
+  ],
+  "WR": [
+   {
+    "no": 1,
+    "name": "反転斬り",
+    "special": true,
+    "path": "画像/スキル画像/WR/WR_01_反転斬り__.png"
+   },
+   {
+    "no": 1,
+    "name": "回転斬り",
+    "special": false,
+    "path": "画像/スキル画像/WR/WR_01_回転斬り.png"
+   },
+   {
+    "no": 2,
+    "name": "エクスプロード",
+    "special": false,
+    "path": "画像/スキル画像/WR/WR_02_エクスプロード.png"
+   },
+   {
+    "no": 2,
+    "name": "マッドネススマッシュ",
+    "special": true,
+    "path": "画像/スキル画像/WR/WR_02_マッドネススマッシュ__.png"
+   },
+   {
+    "no": 3,
+    "name": "グラウンドスライス",
+    "special": true,
+    "path": "画像/スキル画像/WR/WR_03_グラウンドスライス__.png"
+   },
+   {
+    "no": 3,
+    "name": "剣気飛ばし",
+    "special": false,
+    "path": "画像/スキル画像/WR/WR_03_剣気飛ばし.png"
+   },
+   {
+    "no": 4,
+    "name": "ショルダーアタック",
+    "special": false,
+    "path": "画像/スキル画像/WR/WR_04_ショルダーアタック.png"
+   },
+   {
+    "no": 4,
+    "name": "デッドスマッシュ",
+    "special": true,
+    "path": "画像/スキル画像/WR/WR_04_デッドスマッシュ__.png"
+   },
+   {
+    "no": 5,
+    "name": "グラウンドスマッシュ",
+    "special": false,
+    "path": "画像/スキル画像/WR/WR_05_グラウンドスマッシュ.png"
+   },
+   {
+    "no": 6,
+    "name": "デッドリーインパクト",
+    "special": false,
+    "path": "画像/スキル画像/WR/WR_06_デッドリーインパクト.png"
+   },
+   {
+    "no": 7,
+    "name": "ボイドシールド",
+    "special": false,
+    "path": "画像/スキル画像/WR/WR_07_ボイドシールド.png"
+   },
+   {
+    "no": 8,
+    "name": "ヘルムブレイク",
+    "special": false,
+    "path": "画像/スキル画像/WR/WR_08_ヘルムブレイク.png"
+   },
+   {
+    "no": 9,
+    "name": "キャッチ&スロー",
+    "special": false,
+    "path": "画像/スキル画像/WR/WR_09_キャッチ&スロー.png"
+   },
+   {
+    "no": 10,
+    "name": "ハートレスブロウ",
+    "special": false,
+    "path": "画像/スキル画像/WR/WR_10_ハートレスブロウ.png"
+   },
+   {
+    "no": 11,
+    "name": "スラストバトルスピア",
+    "special": false,
+    "path": "画像/スキル画像/WR/WR_11_スラストバトルスピア.png"
+   },
+   {
+    "no": 12,
+    "name": "狂気の突進",
+    "special": false,
+    "path": "画像/スキル画像/WR/WR_12_狂気の突進.png"
+   },
+   {
+    "no": 13,
+    "name": "怒りの咆哮",
+    "special": false,
+    "path": "画像/スキル画像/WR/WR_13_怒りの咆哮.png"
+   }
+  ],
+  "WS": [
+   {
+    "no": 1,
+    "name": "蝶烈風",
+    "special": false,
+    "path": "画像/スキル画像/WS/WS_01_蝶烈風.png"
+   },
+   {
+    "no": 1,
+    "name": "静かなる襲撃",
+    "special": true,
+    "path": "画像/スキル画像/WS/WS_01_静かなる襲撃__.png"
+   },
+   {
+    "no": 2,
+    "name": "散種",
+    "special": false,
+    "path": "画像/スキル画像/WS/WS_02_散種.png"
+   },
+   {
+    "no": 2,
+    "name": "疾走する影",
+    "special": true,
+    "path": "画像/スキル画像/WS/WS_02_疾走する影__.png"
+   },
+   {
+    "no": 3,
+    "name": "村雨",
+    "special": false,
+    "path": "画像/スキル画像/WS/WS_03_村雨.png"
+   },
+   {
+    "no": 3,
+    "name": "黒南風",
+    "special": true,
+    "path": "画像/スキル画像/WS/WS_03_黒南風__.png"
+   },
+   {
+    "no": 4,
+    "name": "巨冥花",
+    "special": true,
+    "path": "画像/スキル画像/WS/WS_04_巨冥花__.png"
+   },
+   {
+    "no": 4,
+    "name": "星月散花",
+    "special": false,
+    "path": "画像/スキル画像/WS/WS_04_星月散花.png"
+   },
+   {
+    "no": 5,
+    "name": "蛇蝶",
+    "special": false,
+    "path": "画像/スキル画像/WS/WS_05_蛇蝶.png"
+   },
+   {
+    "no": 6,
+    "name": "月の吟詠",
+    "special": false,
+    "path": "画像/スキル画像/WS/WS_06_月の吟詠.png"
+   },
+   {
+    "no": 7,
+    "name": "四君子：梅",
+    "special": false,
+    "path": "画像/スキル画像/WS/WS_07_四君子：梅.png"
+   },
+   {
+    "no": 8,
+    "name": "花の誘い",
+    "special": false,
+    "path": "画像/スキル画像/WS/WS_08_花の誘い.png"
+   },
+   {
+    "no": 9,
+    "name": "心身の壁",
+    "special": false,
+    "path": "画像/スキル画像/WS/WS_09_心身の壁.png"
+   },
+   {
+    "no": 10,
+    "name": "真：蝶颯雲",
+    "special": false,
+    "path": "画像/スキル画像/WS/WS_10_真：蝶颯雲.png"
+   },
+   {
+    "no": 11,
+    "name": "四君子：竹",
+    "special": false,
+    "path": "画像/スキル画像/WS/WS_11_四君子：竹.png"
+   },
+   {
+    "no": 12,
+    "name": "華遊花",
+    "special": false,
+    "path": "画像/スキル画像/WS/WS_12_華遊花.png"
+   },
+   {
+    "no": 13,
+    "name": "蝶の夢",
+    "special": false,
+    "path": "画像/スキル画像/WS/WS_13_蝶の夢.png"
+   }
+  ],
+  "WT": [
+   {
+    "no": 1,
+    "name": "アイスストーム",
+    "special": false,
+    "path": "画像/スキル画像/WT/WT_01_アイスストーム.png"
+   },
+   {
+    "no": 1,
+    "name": "フレイムバースト",
+    "special": true,
+    "path": "画像/スキル画像/WT/WT_01_フレイムバースト__.png"
+   },
+   {
+    "no": 2,
+    "name": "アースバラージ",
+    "special": true,
+    "path": "画像/スキル画像/WT/WT_02_アースバラージ__.png"
+   },
+   {
+    "no": 2,
+    "name": "クエイクバースト",
+    "special": false,
+    "path": "画像/スキル画像/WT/WT_02_クエイクバースト.png"
+   },
+   {
+    "no": 3,
+    "name": "ファイアボール",
+    "special": false,
+    "path": "画像/スキル画像/WT/WT_03_ファイアボール.png"
+   },
+   {
+    "no": 3,
+    "name": "氷の棘",
+    "special": true,
+    "path": "画像/スキル画像/WT/WT_03_氷の棘__.png"
+   },
+   {
+    "no": 4,
+    "name": "クラックウェーブ",
+    "special": false,
+    "path": "画像/スキル画像/WT/WT_04_クラックウェーブ.png"
+   },
+   {
+    "no": 4,
+    "name": "稲妻の洗礼",
+    "special": true,
+    "path": "画像/スキル画像/WT/WT_04_稲妻の洗礼__.png"
+   },
+   {
+    "no": 5,
+    "name": "霜柱",
+    "special": false,
+    "path": "画像/スキル画像/WT/WT_05_霜柱.png"
+   },
+   {
+    "no": 6,
+    "name": "エレクトリックウェーブ",
+    "special": false,
+    "path": "画像/スキル画像/WT/WT_06_エレクトリックウェーブ.png"
+   },
+   {
+    "no": 7,
+    "name": "フロストストーム",
+    "special": false,
+    "path": "画像/スキル画像/WT/WT_07_フロストストーム.png"
+   },
+   {
+    "no": 8,
+    "name": "エレクトロニックライト",
+    "special": false,
+    "path": "画像/スキル画像/WT/WT_08_エレクトロニックライト.png"
+   },
+   {
+    "no": 9,
+    "name": "マジカルスパイク",
+    "special": false,
+    "path": "画像/スキル画像/WT/WT_09_マジカルスパイク.png"
+   },
+   {
+    "no": 10,
+    "name": "ライデンストーム",
+    "special": false,
+    "path": "画像/スキル画像/WT/WT_10_ライデンストーム.png"
+   },
+   {
+    "no": 11,
+    "name": "メテオストライク",
+    "special": false,
+    "path": "画像/スキル画像/WT/WT_11_メテオストライク.png"
+   },
+   {
+    "no": 12,
+    "name": "サンダーボルト",
+    "special": false,
+    "path": "画像/スキル画像/WT/WT_12_サンダーボルト.png"
+   },
+   {
+    "no": 13,
+    "name": "ヒーリングオーラ",
+    "special": false,
+    "path": "画像/スキル画像/WT/WT_13_ヒーリングオーラ.png"
+   }
+  ],
+  "WZ": [
+   {
+    "no": 1,
+    "name": "マナアブゾーブ",
+    "special": true,
+    "path": "画像/スキル画像/WZ/WZ_01_マナアブゾーブ__.png"
+   },
+   {
+    "no": 1,
+    "name": "ワイズマンズタイム",
+    "special": false,
+    "path": "画像/スキル画像/WZ/WZ_01_ワイズマンズタイム.png"
+   },
+   {
+    "no": 2,
+    "name": "ウォーターエクスプロージョン",
+    "special": false,
+    "path": "画像/スキル画像/WZ/WZ_02_ウォーターエクスプロージョン.png"
+   },
+   {
+    "no": 2,
+    "name": "水の守護",
+    "special": true,
+    "path": "画像/スキル画像/WZ/WZ_02_水の守護__.png"
+   },
+   {
+    "no": 3,
+    "name": "ライトニングプラズマ",
+    "special": false,
+    "path": "画像/スキル画像/WZ/WZ_03_ライトニングプラズマ.png"
+   },
+   {
+    "no": 3,
+    "name": "雷放出",
+    "special": true,
+    "path": "画像/スキル画像/WZ/WZ_03_雷放出__.png"
+   },
+   {
+    "no": 4,
+    "name": "ヘルブレイズ",
+    "special": false,
+    "path": "画像/スキル画像/WZ/WZ_04_ヘルブレイズ.png"
+   },
+   {
+    "no": 4,
+    "name": "火炎の呼び声",
+    "special": true,
+    "path": "画像/スキル画像/WZ/WZ_04_火炎の呼び声__.png"
+   },
+   {
+    "no": 5,
+    "name": "エレクトリックウェーブ",
+    "special": false,
+    "path": "画像/スキル画像/WZ/WZ_05_エレクトリックウェーブ.png"
+   },
+   {
+    "no": 6,
+    "name": "ブレイジングディザスター",
+    "special": false,
+    "path": "画像/スキル画像/WZ/WZ_06_ブレイジングディザスター.png"
+   },
+   {
+    "no": 7,
+    "name": "トランジション",
+    "special": false,
+    "path": "画像/スキル画像/WZ/WZ_07_トランジション.png"
+   },
+   {
+    "no": 8,
+    "name": "元素衝突",
+    "special": false,
+    "path": "画像/スキル画像/WZ/WZ_08_元素衝突.png"
+   },
+   {
+    "no": 9,
+    "name": "アースクエイク",
+    "special": false,
+    "path": "画像/スキル画像/WZ/WZ_09_アースクエイク.png"
+   },
+   {
+    "no": 10,
+    "name": "デストラクションフレイム",
+    "special": false,
+    "path": "画像/スキル画像/WZ/WZ_10_デストラクションフレイム.png"
+   },
+   {
+    "no": 11,
+    "name": "雷電の槍",
+    "special": false,
+    "path": "画像/スキル画像/WZ/WZ_11_雷電の槍.png"
+   },
+   {
+    "no": 12,
+    "name": "ヘルファイア",
+    "special": false,
+    "path": "画像/スキル画像/WZ/WZ_12_ヘルファイア.png"
+   },
+   {
+    "no": 13,
+    "name": "元素の宮殿",
+    "special": false,
+    "path": "画像/スキル画像/WZ/WZ_13_元素の宮殿.png"
+   }
+  ],
+  "SP": [
+   {
+    "no": 1,
+    "name": "スピリットスラッシュ1",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_01_スピリットスラッシュ1.png"
+   },
+   {
+    "no": 1,
+    "name": "スピリットスラッシュ2",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_01_スピリットスラッシュ2.png"
+   },
+   {
+    "no": 1,
+    "name": "ホライズンスラッシュ1",
+    "special": true,
+    "path": "画像/スキル画像/SP/SP_01_ホライズンスラッシュ1__.png"
+   },
+   {
+    "no": 1,
+    "name": "ホライズンスラッシュ2",
+    "special": true,
+    "path": "画像/スキル画像/SP/SP_01_ホライズンスラッシュ2__.png"
+   },
+   {
+    "no": 2,
+    "name": "ヘブンスライス1",
+    "special": true,
+    "path": "画像/スキル画像/SP/SP_02_ヘブンスライス1__.png"
+   },
+   {
+    "no": 2,
+    "name": "ヘブンスライス2",
+    "special": true,
+    "path": "画像/スキル画像/SP/SP_02_ヘブンスライス2__.png"
+   },
+   {
+    "no": 2,
+    "name": "神罰跳躍1",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_02_神罰跳躍1.png"
+   },
+   {
+    "no": 2,
+    "name": "神罰跳躍2",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_02_神罰跳躍2.png"
+   },
+   {
+    "no": 3,
+    "name": "斬上1",
+    "special": true,
+    "path": "画像/スキル画像/SP/SP_03_斬上1__.png"
+   },
+   {
+    "no": 3,
+    "name": "斬上2",
+    "special": true,
+    "path": "画像/スキル画像/SP/SP_03_斬上2__.png"
+   },
+   {
+    "no": 3,
+    "name": "突進突き1",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_03_突進突き1.png"
+   },
+   {
+    "no": 3,
+    "name": "突進突き2",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_03_突進突き2.png"
+   },
+   {
+    "no": 4,
+    "name": "ホーリーストライク1",
+    "special": true,
+    "path": "画像/スキル画像/SP/SP_04_ホーリーストライク1__.png"
+   },
+   {
+    "no": 4,
+    "name": "ホーリーストライク2",
+    "special": true,
+    "path": "画像/スキル画像/SP/SP_04_ホーリーストライク2__.png"
+   },
+   {
+    "no": 4,
+    "name": "刻印斬1",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_04_刻印斬1.png"
+   },
+   {
+    "no": 4,
+    "name": "刻印斬2",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_04_刻印斬2.png"
+   },
+   {
+    "no": 5,
+    "name": "スラントスラッシュ1",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_05_スラントスラッシュ1.png"
+   },
+   {
+    "no": 5,
+    "name": "スラントスラッシュ2",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_05_スラントスラッシュ2.png"
+   },
+   {
+    "no": 6,
+    "name": "ファントムスラッシュ1",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_06_ファントムスラッシュ1.png"
+   },
+   {
+    "no": 6,
+    "name": "ファントムスラッシュ2",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_06_ファントムスラッシュ2.png"
+   },
+   {
+    "no": 7,
+    "name": "斬撃1",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_07_斬撃1.png"
+   },
+   {
+    "no": 7,
+    "name": "斬撃2",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_07_斬撃2.png"
+   },
+   {
+    "no": 8,
+    "name": "クロススラッシュ1",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_08_クロススラッシュ1.png"
+   },
+   {
+    "no": 8,
+    "name": "クロススラッシュ2",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_08_クロススラッシュ2.png"
+   },
+   {
+    "no": 9,
+    "name": "フロントランナー1",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_09_フロントランナー1.png"
+   },
+   {
+    "no": 9,
+    "name": "フロントランナー2",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_09_フロントランナー2.png"
+   },
+   {
+    "no": 10,
+    "name": "湧き上がる正義1",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_10_湧き上がる正義1.png"
+   },
+   {
+    "no": 10,
+    "name": "湧き上がる正義2",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_10_湧き上がる正義2.png"
+   },
+   {
+    "no": 11,
+    "name": "ヘブンスラッシュ1",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_11_ヘブンスラッシュ1.png"
+   },
+   {
+    "no": 11,
+    "name": "ヘブンスラッシュ2",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_11_ヘブンスラッシュ2.png"
+   },
+   {
+    "no": 12,
+    "name": "不意打ち1",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_12_不意打ち1.png"
+   },
+   {
+    "no": 12,
+    "name": "不意打ち2",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_12_不意打ち2.png"
+   },
+   {
+    "no": 13,
+    "name": "剣士の魂1",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_13_剣士の魂1.png"
+   },
+   {
+    "no": 13,
+    "name": "剣士の魂2",
+    "special": false,
+    "path": "画像/スキル画像/SP/SP_13_剣士の魂2.png"
+   }
+  ],
+  "SR": [
+   {
+    "no": 1,
+    "name": "ダークウェーブ",
+    "special": false,
+    "path": "画像/スキル画像/SR/SR_01_ダークウェーブ.png"
+   },
+   {
+    "no": 1,
+    "name": "滅亡の足跡",
+    "special": true,
+    "path": "画像/スキル画像/SR/SR_01_滅亡の足跡__.png"
+   },
+   {
+    "no": 2,
+    "name": "ブラッディゲイル",
+    "special": false,
+    "path": "画像/スキル画像/SR/SR_02_ブラッディゲイル.png"
+   },
+   {
+    "no": 2,
+    "name": "死神の羽ばたき",
+    "special": true,
+    "path": "画像/スキル画像/SR/SR_02_死神の羽ばたき__.png"
+   },
+   {
+    "no": 3,
+    "name": "レイブンフレア",
+    "special": false,
+    "path": "画像/スキル画像/SR/SR_03_レイブンフレア.png"
+   },
+   {
+    "no": 3,
+    "name": "滅亡の夜",
+    "special": true,
+    "path": "画像/スキル画像/SR/SR_03_滅亡の夜__.png"
+   },
+   {
+    "no": 4,
+    "name": "デスジャッジメント",
+    "special": false,
+    "path": "画像/スキル画像/SR/SR_04_デスジャッジメント.png"
+   },
+   {
+    "no": 4,
+    "name": "迫りくる夜",
+    "special": true,
+    "path": "画像/スキル画像/SR/SR_04_迫りくる夜__.png"
+   },
+   {
+    "no": 5,
+    "name": "血のオーラ",
+    "special": false,
+    "path": "画像/スキル画像/SR/SR_05_血のオーラ.png"
+   },
+   {
+    "no": 6,
+    "name": "ダークリープ",
+    "special": false,
+    "path": "画像/スキル画像/SR/SR_06_ダークリープ.png"
+   },
+   {
+    "no": 7,
+    "name": "ドリームデストラクション",
+    "special": false,
+    "path": "画像/スキル画像/SR/SR_07_ドリームデストラクション.png"
+   },
+   {
+    "no": 8,
+    "name": "夢魘の前奏曲",
+    "special": false,
+    "path": "画像/スキル画像/SR/SR_08_夢魘の前奏曲.png"
+   },
+   {
+    "no": 9,
+    "name": "ダークシャドウ",
+    "special": false,
+    "path": "画像/スキル画像/SR/SR_09_ダークシャドウ.png"
+   },
+   {
+    "no": 10,
+    "name": "カルティアンの怒り",
+    "special": false,
+    "path": "画像/スキル画像/SR/SR_10_カルティアンの怒り.png"
+   },
+   {
+    "no": 11,
+    "name": "レイブン",
+    "special": false,
+    "path": "画像/スキル画像/SR/SR_11_レイブン.png"
+   },
+   {
+    "no": 12,
+    "name": "ナイトメア",
+    "special": false,
+    "path": "画像/スキル画像/SR/SR_12_ナイトメア.png"
+   },
+   {
+    "no": 13,
+    "name": "闇の吸収",
+    "special": false,
+    "path": "画像/スキル画像/SR/SR_13_闇の吸収.png"
+   }
+  ],
+  "NV": [
+   {
+    "no": 1,
+    "name": "命令：湧き起こる氷の棘",
+    "special": false,
+    "path": "画像/スキル画像/NV/NV_01_命令：湧き起こる氷の棘.png"
+   },
+   {
+    "no": 1,
+    "name": "襲い掛かる環",
+    "special": true,
+    "path": "画像/スキル画像/NV/NV_01_襲い掛かる環__.png"
+   },
+   {
+    "no": 2,
+    "name": "王室剣術：返",
+    "special": true,
+    "path": "画像/スキル画像/NV/NV_02_王室剣術：返__.png"
+   },
+   {
+    "no": 2,
+    "name": "王室剣術：速",
+    "special": false,
+    "path": "画像/スキル画像/NV/NV_02_王室剣術：速.png"
+   },
+   {
+    "no": 3,
+    "name": "死者たちの王",
+    "special": true,
+    "path": "画像/スキル画像/NV/NV_03_死者たちの王__.png"
+   },
+   {
+    "no": 3,
+    "name": "酷寒の戒め",
+    "special": false,
+    "path": "画像/スキル画像/NV/NV_03_酷寒の戒め.png"
+   },
+   {
+    "no": 4,
+    "name": "星の環",
+    "special": true,
+    "path": "画像/スキル画像/NV/NV_04_星の環__.png"
+   },
+   {
+    "no": 4,
+    "name": "王室剣術：連",
+    "special": false,
+    "path": "画像/スキル画像/NV/NV_04_王室剣術：連.png"
+   },
+   {
+    "no": 5,
+    "name": "命令：激突する騎兵",
+    "special": false,
+    "path": "画像/スキル画像/NV/NV_05_命令：激突する騎兵.png"
+   },
+   {
+    "no": 6,
+    "name": "すれ違う軌道",
+    "special": false,
+    "path": "画像/スキル画像/NV/NV_06_すれ違う軌道.png"
+   },
+   {
+    "no": 7,
+    "name": "クラトゥムの突撃",
+    "special": false,
+    "path": "画像/スキル画像/NV/NV_07_クラトゥムの突撃.png"
+   },
+   {
+    "no": 8,
+    "name": "軌道進入",
+    "special": false,
+    "path": "画像/スキル画像/NV/NV_08_軌道進入.png"
+   },
+   {
+    "no": 9,
+    "name": "命令：酷寒の進軍",
+    "special": false,
+    "path": "画像/スキル画像/NV/NV_09_命令：酷寒の進軍.png"
+   },
+   {
+    "no": 10,
+    "name": "王室剣術：決",
+    "special": false,
+    "path": "画像/スキル画像/NV/NV_10_王室剣術：決.png"
+   },
+   {
+    "no": 11,
+    "name": "戒めの投げ縄",
+    "special": false,
+    "path": "画像/スキル画像/NV/NV_11_戒めの投げ縄.png"
+   },
+   {
+    "no": 12,
+    "name": "王室剣術：斬",
+    "special": false,
+    "path": "画像/スキル画像/NV/NV_12_王室剣術：斬.png"
+   },
+   {
+    "no": 13,
+    "name": "クラトゥムの守護",
+    "special": false,
+    "path": "画像/スキル画像/NV/NV_13_クラトゥムの守護.png"
+   }
+  ],
+  "RG": [
+   {
+    "no": 1,
+    "name": "ブルームショット",
+    "special": false,
+    "path": "画像/スキル画像/RG/RG_01_ブルームショット.png"
+   },
+   {
+    "no": 1,
+    "name": "風の通り道",
+    "special": true,
+    "path": "画像/スキル画像/RG/RG_01_風の通り道__.png"
+   },
+   {
+    "no": 2,
+    "name": "精霊の銀河",
+    "special": true,
+    "path": "画像/スキル画像/RG/RG_02_精霊の銀河__.png"
+   },
+   {
+    "no": 2,
+    "name": "風の便り",
+    "special": false,
+    "path": "画像/スキル画像/RG/RG_02_風の便り.png"
+   },
+   {
+    "no": 3,
+    "name": "カーマスリブの雨",
+    "special": true,
+    "path": "画像/スキル画像/RG/RG_03_カーマスリブの雨__.png"
+   },
+   {
+    "no": 3,
+    "name": "死神の疾風",
+    "special": false,
+    "path": "画像/スキル画像/RG/RG_03_死神の疾風.png"
+   },
+   {
+    "no": 4,
+    "name": "大自然の摂理",
+    "special": false,
+    "path": "画像/スキル画像/RG/RG_04_大自然の摂理.png"
+   },
+   {
+    "no": 4,
+    "name": "精霊の風",
+    "special": true,
+    "path": "画像/スキル画像/RG/RG_04_精霊の風__.png"
+   },
+   {
+    "no": 5,
+    "name": "パワーブレイドスイング",
+    "special": false,
+    "path": "画像/スキル画像/RG/RG_05_パワーブレイドスイング.png"
+   },
+   {
+    "no": 6,
+    "name": "エアスラッシュ",
+    "special": false,
+    "path": "画像/スキル画像/RG/RG_06_エアスラッシュ.png"
+   },
+   {
+    "no": 7,
+    "name": "マルチアロー",
+    "special": false,
+    "path": "画像/スキル画像/RG/RG_07_マルチアロー.png"
+   },
+   {
+    "no": 8,
+    "name": "精霊の怒り",
+    "special": false,
+    "path": "画像/スキル画像/RG/RG_08_精霊の怒り.png"
+   },
+   {
+    "no": 9,
+    "name": "回避ブラストショット",
+    "special": false,
+    "path": "画像/スキル画像/RG/RG_09_回避ブラストショット.png"
+   },
+   {
+    "no": 10,
+    "name": "風錐",
+    "special": false,
+    "path": "画像/スキル画像/RG/RG_10_風錐.png"
+   },
+   {
+    "no": 11,
+    "name": "風に乗る羽根",
+    "special": false,
+    "path": "画像/スキル画像/RG/RG_11_風に乗る羽根.png"
+   },
+   {
+    "no": 12,
+    "name": "精霊の縛め",
+    "special": false,
+    "path": "画像/スキル画像/RG/RG_12_精霊の縛め.png"
+   },
+   {
+    "no": 13,
+    "name": "大地の使命",
+    "special": false,
+    "path": "画像/スキル画像/RG/RG_13_大地の使命.png"
+   }
+  ],
+  "SC": [
+   {
+    "no": 1,
+    "name": "グラビティプレス",
+    "special": false,
+    "path": "画像/スキル画像/SC/SC_01_グラビティプレス.png"
+   },
+   {
+    "no": 1,
+    "name": "ヘルムブレイク",
+    "special": true,
+    "path": "画像/スキル画像/SC/SC_01_ヘルムブレイク__.png"
+   },
+   {
+    "no": 2,
+    "name": "エールアット",
+    "special": true,
+    "path": "画像/スキル画像/SC/SC_02_エールアット__.png"
+   },
+   {
+    "no": 3,
+    "name": "ハンマーステップ",
+    "special": false,
+    "path": "画像/スキル画像/SC/SC_03_ハンマーステップ.png"
+   },
+   {
+    "no": 3,
+    "name": "パーシャルブラックホール",
+    "special": true,
+    "path": "画像/スキル画像/SC/SC_03_パーシャルブラックホール__.png"
+   },
+   {
+    "no": 4,
+    "name": "スウィープアウェイ",
+    "special": true,
+    "path": "画像/スキル画像/SC/SC_04_スウィープアウェイ__.png"
+   },
+   {
+    "no": 4,
+    "name": "戦慄の錬成陣",
+    "special": false,
+    "path": "画像/スキル画像/SC/SC_04_戦慄の錬成陣.png"
+   },
+   {
+    "no": 5,
+    "name": "グラビティコア設置",
+    "special": false,
+    "path": "画像/スキル画像/SC/SC_05_グラビティコア設置.png"
+   },
+   {
+    "no": 6,
+    "name": "融合するグラビティコア",
+    "special": false,
+    "path": "画像/スキル画像/SC/SC_06_融合するグラビティコア.png"
+   },
+   {
+    "no": 7,
+    "name": "リコイル",
+    "special": false,
+    "path": "画像/スキル画像/SC/SC_07_リコイル.png"
+   },
+   {
+    "no": 8,
+    "name": "抑えきれない力",
+    "special": false,
+    "path": "画像/スキル画像/SC/SC_08_抑えきれない力.png"
+   },
+   {
+    "no": 9,
+    "name": "ホームラン",
+    "special": false,
+    "path": "画像/スキル画像/SC/SC_09_ホームラン.png"
+   },
+   {
+    "no": 10,
+    "name": "加速突進",
+    "special": false,
+    "path": "画像/スキル画像/SC/SC_10_加速突進.png"
+   },
+   {
+    "no": 11,
+    "name": "グラビティフィールド",
+    "special": false,
+    "path": "画像/スキル画像/SC/SC_11_グラビティフィールド.png"
+   },
+   {
+    "no": 12,
+    "name": "限界突破",
+    "special": false,
+    "path": "画像/スキル画像/SC/SC_12_限界突破.png"
+   },
+   {
+    "no": 13,
+    "name": "粒子加速",
+    "special": false,
+    "path": "画像/スキル画像/SC/SC_13_粒子加速.png"
+   }
+  ],
+  "SG": [
+   {
+    "no": 1,
+    "name": "アトマギア",
+    "special": true,
+    "path": "画像/スキル画像/SG/SG_01_アトマギア__.png"
+   },
+   {
+    "no": 1,
+    "name": "空間破砕",
+    "special": false,
+    "path": "画像/スキル画像/SG/SG_01_空間破砕.png"
+   },
+   {
+    "no": 2,
+    "name": "疾走する稲妻",
+    "special": true,
+    "path": "画像/スキル画像/SG/SG_02_疾走する稲妻__.png"
+   },
+   {
+    "no": 2,
+    "name": "絶滅の雷槍",
+    "special": false,
+    "path": "画像/スキル画像/SG/SG_02_絶滅の雷槍.png"
+   },
+   {
+    "no": 3,
+    "name": "アトルの審判",
+    "special": false,
+    "path": "画像/スキル画像/SG/SG_03_アトルの審判.png"
+   },
+   {
+    "no": 3,
+    "name": "次元圧縮",
+    "special": true,
+    "path": "画像/スキル画像/SG/SG_03_次元圧縮__.png"
+   },
+   {
+    "no": 4,
+    "name": "アトルの懐剣",
+    "special": true,
+    "path": "画像/スキル画像/SG/SG_04_アトルの懐剣__.png"
+   },
+   {
+    "no": 4,
+    "name": "迅雷魔槍",
+    "special": false,
+    "path": "画像/スキル画像/SG/SG_04_迅雷魔槍.png"
+   },
+   {
+    "no": 5,
+    "name": "形象駛走",
+    "special": false,
+    "path": "画像/スキル画像/SG/SG_05_形象駛走.png"
+   },
+   {
+    "no": 6,
+    "name": "雷光追跡",
+    "special": false,
+    "path": "画像/スキル画像/SG/SG_06_雷光追跡.png"
+   },
+   {
+    "no": 7,
+    "name": "空間崩壊",
+    "special": false,
+    "path": "画像/スキル画像/SG/SG_07_空間崩壊.png"
+   },
+   {
+    "no": 8,
+    "name": "大罪審判",
+    "special": false,
+    "path": "画像/スキル画像/SG/SG_08_大罪審判.png"
+   },
+   {
+    "no": 9,
+    "name": "亀裂の環",
+    "special": false,
+    "path": "画像/スキル画像/SG/SG_09_亀裂の環.png"
+   },
+   {
+    "no": 10,
+    "name": "万雷",
+    "special": false,
+    "path": "画像/スキル画像/SG/SG_10_万雷.png"
+   },
+   {
+    "no": 11,
+    "name": "大崩壊",
+    "special": false,
+    "path": "画像/スキル画像/SG/SG_11_大崩壊.png"
+   },
+   {
+    "no": 12,
+    "name": "神罰の代人",
+    "special": false,
+    "path": "画像/スキル画像/SG/SG_12_神罰の代人.png"
+   },
+   {
+    "no": 13,
+    "name": "イアナロスの光",
+    "special": false,
+    "path": "画像/スキル画像/SG/SG_13_イアナロスの光.png"
+   }
+  ],
+  "SH": [
+   {
+    "no": 1,
+    "name": "あっちいって！",
+    "special": false,
+    "path": "画像/スキル画像/SH/SH_01_あっちいって！.png"
+   },
+   {
+    "no": 1,
+    "name": "カン！カン！カン！",
+    "special": true,
+    "path": "画像/スキル画像/SH/SH_01_カン！カン！カン！__.png"
+   },
+   {
+    "no": 2,
+    "name": "すくすく育て、えいっ！",
+    "special": false,
+    "path": "画像/スキル画像/SH/SH_02_すくすく育て、えいっ！.png"
+   },
+   {
+    "no": 2,
+    "name": "太陽の怒り",
+    "special": true,
+    "path": "画像/スキル画像/SH/SH_02_太陽の怒り__.png"
+   },
+   {
+    "no": 3,
+    "name": "せーのっ！",
+    "special": false,
+    "path": "画像/スキル画像/SH/SH_03_せーのっ！.png"
+   },
+   {
+    "no": 3,
+    "name": "空からプレゼントが！",
+    "special": true,
+    "path": "画像/スキル画像/SH/SH_03_空からプレゼントが！__.png"
+   },
+   {
+    "no": 4,
+    "name": "ここに集まれ！",
+    "special": true,
+    "path": "画像/スキル画像/SH/SH_04_ここに集まれ！__.png"
+   },
+   {
+    "no": 4,
+    "name": "ドッカン！",
+    "special": false,
+    "path": "画像/スキル画像/SH/SH_04_ドッカン！.png"
+   },
+   {
+    "no": 5,
+    "name": "ぴょんと",
+    "special": false,
+    "path": "画像/スキル画像/SH/SH_05_ぴょんと.png"
+   },
+   {
+    "no": 6,
+    "name": "土のエコー",
+    "special": false,
+    "path": "画像/スキル画像/SH/SH_06_土のエコー.png"
+   },
+   {
+    "no": 7,
+    "name": "ごろん",
+    "special": false,
+    "path": "画像/スキル画像/SH/SH_07_ごろん.png"
+   },
+   {
+    "no": 8,
+    "name": "ピョロロン",
+    "special": false,
+    "path": "画像/スキル画像/SH/SH_08_ピョロロン.png"
+   },
+   {
+    "no": 9,
+    "name": "ポイッ！",
+    "special": false,
+    "path": "画像/スキル画像/SH/SH_09_ポイッ！.png"
+   },
+   {
+    "no": 10,
+    "name": "サマーレイン",
+    "special": false,
+    "path": "画像/スキル画像/SH/SH_10_サマーレイン.png"
+   },
+   {
+    "no": 11,
+    "name": "ぱぱっと",
+    "special": false,
+    "path": "画像/スキル画像/SH/SH_11_ぱぱっと.png"
+   },
+   {
+    "no": 12,
+    "name": "大地の脈動",
+    "special": false,
+    "path": "画像/スキル画像/SH/SH_12_大地の脈動.png"
+   },
+   {
+    "no": 13,
+    "name": "あつまれ！",
+    "special": false,
+    "path": "画像/スキル画像/SH/SH_13_あつまれ！.png"
+   }
+  ],
+  "LS": [
+   {
+    "no": 1,
+    "name": "サンダースコーチ",
+    "special": true,
+    "path": "画像/スキル画像/LS/LS_01_サンダースコーチ__.png"
+   },
+   {
+    "no": 1,
+    "name": "サンダーブロック",
+    "special": false,
+    "path": "画像/スキル画像/LS/LS_01_サンダーブロック.png"
+   },
+   {
+    "no": 2,
+    "name": "四聖神舞：白虎",
+    "special": false,
+    "path": "画像/スキル画像/LS/LS_02_四聖神舞：白虎.png"
+   },
+   {
+    "no": 2,
+    "name": "満月",
+    "special": true,
+    "path": "画像/スキル画像/LS/LS_02_満月__.png"
+   },
+   {
+    "no": 3,
+    "name": "グラウンドストライク",
+    "special": false,
+    "path": "画像/スキル画像/LS/LS_03_グラウンドストライク.png"
+   },
+   {
+    "no": 3,
+    "name": "黒鎖",
+    "special": true,
+    "path": "画像/スキル画像/LS/LS_03_黒鎖__.png"
+   },
+   {
+    "no": 4,
+    "name": "四聖神舞：玄武",
+    "special": false,
+    "path": "画像/スキル画像/LS/LS_04_四聖神舞：玄武.png"
+   },
+   {
+    "no": 4,
+    "name": "空鳴衝",
+    "special": true,
+    "path": "画像/スキル画像/LS/LS_04_空鳴衝__.png"
+   },
+   {
+    "no": 5,
+    "name": "ビーストステップ",
+    "special": false,
+    "path": "画像/スキル画像/LS/LS_05_ビーストステップ.png"
+   },
+   {
+    "no": 6,
+    "name": "四聖神舞：朱雀",
+    "special": false,
+    "path": "画像/スキル画像/LS/LS_06_四聖神舞：朱雀.png"
+   },
+   {
+    "no": 7,
+    "name": "獅子吼",
+    "special": false,
+    "path": "画像/スキル画像/LS/LS_07_獅子吼.png"
+   },
+   {
+    "no": 8,
+    "name": "四聖神舞：青竜",
+    "special": false,
+    "path": "画像/スキル画像/LS/LS_08_四聖神舞：青竜.png"
+   },
+   {
+    "no": 9,
+    "name": "押し寄せる波",
+    "special": false,
+    "path": "画像/スキル画像/LS/LS_09_押し寄せる波.png"
+   },
+   {
+    "no": 10,
+    "name": "八卦連環衛",
+    "special": false,
+    "path": "画像/スキル画像/LS/LS_10_八卦連環衛.png"
+   },
+   {
+    "no": 11,
+    "name": "爪攻撃",
+    "special": false,
+    "path": "画像/スキル画像/LS/LS_11_爪攻撃.png"
+   },
+   {
+    "no": 12,
+    "name": "天雲",
+    "special": false,
+    "path": "画像/スキル画像/LS/LS_12_天雲.png"
+   },
+   {
+    "no": 13,
+    "name": "神獣の加護",
+    "special": false,
+    "path": "画像/スキル画像/LS/LS_13_神獣の加護.png"
+   }
+  ],
+  "MG": [
+   {
+    "no": 1,
+    "name": "霊符：兌",
+    "special": true,
+    "path": "画像/スキル画像/MG/MG_01_霊符：兌__.png"
+   },
+   {
+    "no": 1,
+    "name": "霊符：離",
+    "special": false,
+    "path": "画像/スキル画像/MG/MG_01_霊符：離.png"
+   },
+   {
+    "no": 2,
+    "name": "人中突き",
+    "special": false,
+    "path": "画像/スキル画像/MG/MG_02_人中突き.png"
+   },
+   {
+    "no": 2,
+    "name": "裏風の舞",
+    "special": true,
+    "path": "画像/スキル画像/MG/MG_02_裏風の舞__.png"
+   },
+   {
+    "no": 3,
+    "name": "呪術：妖花蘭",
+    "special": false,
+    "path": "画像/スキル画像/MG/MG_03_呪術：妖花蘭.png"
+   },
+   {
+    "no": 3,
+    "name": "霊符：報仇",
+    "special": true,
+    "path": "画像/スキル画像/MG/MG_03_霊符：報仇__.png"
+   },
+   {
+    "no": 4,
+    "name": "周舞",
+    "special": false,
+    "path": "画像/スキル画像/MG/MG_04_周舞.png"
+   },
+   {
+    "no": 4,
+    "name": "爆翻の舞",
+    "special": true,
+    "path": "画像/スキル画像/MG/MG_04_爆翻の舞__.png"
+   },
+   {
+    "no": 5,
+    "name": "霊符：坤",
+    "special": false,
+    "path": "画像/スキル画像/MG/MG_05_霊符：坤.png"
+   },
+   {
+    "no": 6,
+    "name": "掬い斬り",
+    "special": false,
+    "path": "画像/スキル画像/MG/MG_06_掬い斬り.png"
+   },
+   {
+    "no": 7,
+    "name": "霊符：乾",
+    "special": false,
+    "path": "画像/スキル画像/MG/MG_07_霊符：乾.png"
+   },
+   {
+    "no": 8,
+    "name": "狐駆け",
+    "special": false,
+    "path": "画像/スキル画像/MG/MG_08_狐駆け.png"
+   },
+   {
+    "no": 9,
+    "name": "霊符：出",
+    "special": false,
+    "path": "画像/スキル画像/MG/MG_09_霊符：出.png"
+   },
+   {
+    "no": 10,
+    "name": "火熾",
+    "special": false,
+    "path": "画像/スキル画像/MG/MG_10_火熾.png"
+   },
+   {
+    "no": 11,
+    "name": "呪術：狐炎蒼波",
+    "special": false,
+    "path": "画像/スキル画像/MG/MG_11_呪術：狐炎蒼波.png"
+   },
+   {
+    "no": 12,
+    "name": "唐棹軟風",
+    "special": false,
+    "path": "画像/スキル画像/MG/MG_12_唐棹軟風.png"
+   },
+   {
+    "no": 13,
+    "name": "呪力強化",
+    "special": false,
+    "path": "画像/スキル画像/MG/MG_13_呪力強化.png"
+   }
+  ],
+  "MT": [
+   {
+    "no": 1,
+    "name": "疾風雷",
+    "special": true,
+    "path": "画像/スキル画像/MT/MT_01_疾風雷__.png"
+   },
+   {
+    "no": 1,
+    "name": "白牙",
+    "special": false,
+    "path": "画像/スキル画像/MT/MT_01_白牙.png"
+   },
+   {
+    "no": 2,
+    "name": "凌駕",
+    "special": false,
+    "path": "画像/スキル画像/MT/MT_02_凌駕.png"
+   },
+   {
+    "no": 2,
+    "name": "蒼龍の竜巻",
+    "special": true,
+    "path": "画像/スキル画像/MT/MT_02_蒼龍の竜巻__.png"
+   },
+   {
+    "no": 3,
+    "name": "ひざまずけ",
+    "special": true,
+    "path": "画像/スキル画像/MT/MT_03_ひざまずけ__.png"
+   },
+   {
+    "no": 3,
+    "name": "双極拳",
+    "special": false,
+    "path": "画像/スキル画像/MT/MT_03_双極拳.png"
+   },
+   {
+    "no": 4,
+    "name": "登龍脚",
+    "special": false,
+    "path": "画像/スキル画像/MT/MT_04_登龍脚.png"
+   },
+   {
+    "no": 4,
+    "name": "蒼龍爆発",
+    "special": true,
+    "path": "画像/スキル画像/MT/MT_04_蒼龍爆発__.png"
+   },
+   {
+    "no": 5,
+    "name": "天上拳",
+    "special": false,
+    "path": "画像/スキル画像/MT/MT_05_天上拳.png"
+   },
+   {
+    "no": 6,
+    "name": "弾丸暴脚",
+    "special": false,
+    "path": "画像/スキル画像/MT/MT_06_弾丸暴脚.png"
+   },
+   {
+    "no": 7,
+    "name": "狼牙瞬閃",
+    "special": false,
+    "path": "画像/スキル画像/MT/MT_07_狼牙瞬閃.png"
+   },
+   {
+    "no": 8,
+    "name": "龍沼波",
+    "special": false,
+    "path": "画像/スキル画像/MT/MT_08_龍沼波.png"
+   },
+   {
+    "no": 9,
+    "name": "強：膝縛",
+    "special": false,
+    "path": "画像/スキル画像/MT/MT_09_強：膝縛.png"
+   },
+   {
+    "no": 10,
+    "name": "蒼龍槍",
+    "special": false,
+    "path": "画像/スキル画像/MT/MT_10_蒼龍槍.png"
+   },
+   {
+    "no": 11,
+    "name": "狂嵐蹴",
+    "special": false,
+    "path": "画像/スキル画像/MT/MT_11_狂嵐蹴.png"
+   },
+   {
+    "no": 12,
+    "name": "廻輪脚",
+    "special": false,
+    "path": "画像/スキル画像/MT/MT_12_廻輪脚.png"
+   },
+   {
+    "no": 13,
+    "name": "闘魂増幅",
+    "special": false,
+    "path": "画像/スキル画像/MT/MT_13_闘魂増幅.png"
+   }
+  ],
+  "NJ": [
+   {
+    "no": 1,
+    "name": "心衝",
+    "special": false,
+    "path": "画像/スキル画像/NJ/NJ_01_心衝.png"
+   },
+   {
+    "no": 1,
+    "name": "監視態勢",
+    "special": true,
+    "path": "画像/スキル画像/NJ/NJ_01_監視態勢__.png"
+   },
+   {
+    "no": 2,
+    "name": "修羅一剣",
+    "special": true,
+    "path": "画像/スキル画像/NJ/NJ_02_修羅一剣__.png"
+   },
+   {
+    "no": 2,
+    "name": "殺意の一閃",
+    "special": false,
+    "path": "画像/スキル画像/NJ/NJ_02_殺意の一閃.png"
+   },
+   {
+    "no": 3,
+    "name": "強：乱舞",
+    "special": true,
+    "path": "画像/スキル画像/NJ/NJ_03_強：乱舞__.png"
+   },
+   {
+    "no": 3,
+    "name": "忍術：廻転念破",
+    "special": false,
+    "path": "画像/スキル画像/NJ/NJ_03_忍術：廻転念破.png"
+   },
+   {
+    "no": 4,
+    "name": "影の斬撃",
+    "special": false,
+    "path": "画像/スキル画像/NJ/NJ_04_影の斬撃.png"
+   },
+   {
+    "no": 4,
+    "name": "閃光が弄う境界",
+    "special": true,
+    "path": "画像/スキル画像/NJ/NJ_04_閃光が弄う境界__.png"
+   },
+   {
+    "no": 5,
+    "name": "幻影蓮角の如し",
+    "special": false,
+    "path": "画像/スキル画像/NJ/NJ_05_幻影蓮角の如し.png"
+   },
+   {
+    "no": 6,
+    "name": "狭霧隠れ",
+    "special": false,
+    "path": "画像/スキル画像/NJ/NJ_06_狭霧隠れ.png"
+   },
+   {
+    "no": 7,
+    "name": "忍術：黒い片時雨",
+    "special": false,
+    "path": "画像/スキル画像/NJ/NJ_07_忍術：黒い片時雨.png"
+   },
+   {
+    "no": 8,
+    "name": "騰空白刃閃",
+    "special": false,
+    "path": "画像/スキル画像/NJ/NJ_08_騰空白刃閃.png"
+   },
+   {
+    "no": 9,
+    "name": "廻天降下蹴り",
+    "special": false,
+    "path": "画像/スキル画像/NJ/NJ_09_廻天降下蹴り.png"
+   },
+   {
+    "no": 10,
+    "name": "一刀両断",
+    "special": false,
+    "path": "画像/スキル画像/NJ/NJ_10_一刀両断.png"
+   },
+   {
+    "no": 11,
+    "name": "必衰の理",
+    "special": false,
+    "path": "画像/スキル画像/NJ/NJ_11_必衰の理.png"
+   },
+   {
+    "no": 12,
+    "name": "閃光捕縛",
+    "special": false,
+    "path": "画像/スキル画像/NJ/NJ_12_閃光捕縛.png"
+   },
+   {
+    "no": 13,
+    "name": "悪毒の奇襲",
+    "special": false,
+    "path": "画像/スキル画像/NJ/NJ_13_悪毒の奇襲.png"
+   }
+  ],
+  "GA": [
+   {
+    "no": 1,
+    "name": "ブラストライトニング",
+    "special": false,
+    "path": "画像/スキル画像/GA/GA_01_ブラストライトニング.png"
+   },
+   {
+    "no": 1,
+    "name": "飽満のプレデター",
+    "special": true,
+    "path": "画像/スキル画像/GA/GA_01_飽満のプレデター__.png"
+   },
+   {
+    "no": 2,
+    "name": "乱打",
+    "special": false,
+    "path": "画像/スキル画像/GA/GA_02_乱打.png"
+   },
+   {
+    "no": 2,
+    "name": "拡散砲火",
+    "special": true,
+    "path": "画像/スキル画像/GA/GA_02_拡散砲火__.png"
+   },
+   {
+    "no": 3,
+    "name": "残酷な風斬",
+    "special": false,
+    "path": "画像/スキル画像/GA/GA_03_残酷な風斬.png"
+   },
+   {
+    "no": 3,
+    "name": "飢餓の野獣",
+    "special": true,
+    "path": "画像/スキル画像/GA/GA_03_飢餓の野獣__.png"
+   },
+   {
+    "no": 4,
+    "name": "卓袱台返し",
+    "special": false,
+    "path": "画像/スキル画像/GA/GA_04_卓袱台返し.png"
+   },
+   {
+    "no": 4,
+    "name": "大地鳴動",
+    "special": true,
+    "path": "画像/スキル画像/GA/GA_04_大地鳴動__.png"
+   },
+   {
+    "no": 5,
+    "name": "フォーリングボルダー",
+    "special": false,
+    "path": "画像/スキル画像/GA/GA_05_フォーリングボルダー.png"
+   },
+   {
+    "no": 6,
+    "name": "起動砲撃",
+    "special": false,
+    "path": "画像/スキル画像/GA/GA_06_起動砲撃.png"
+   },
+   {
+    "no": 7,
+    "name": "キャッチ&スラム",
+    "special": false,
+    "path": "画像/スキル画像/GA/GA_07_キャッチ&スラム.png"
+   },
+   {
+    "no": 8,
+    "name": "爆裂",
+    "special": false,
+    "path": "画像/スキル画像/GA/GA_08_爆裂.png"
+   },
+   {
+    "no": 9,
+    "name": "溶岩貫通",
+    "special": false,
+    "path": "画像/スキル画像/GA/GA_09_溶岩貫通.png"
+   },
+   {
+    "no": 10,
+    "name": "バーストフレア",
+    "special": false,
+    "path": "画像/スキル画像/GA/GA_10_バーストフレア.png"
+   },
+   {
+    "no": 11,
+    "name": "テラーロード",
+    "special": false,
+    "path": "画像/スキル画像/GA/GA_11_テラーロード.png"
+   },
+   {
+    "no": 12,
+    "name": "瞬間砲撃",
+    "special": false,
+    "path": "画像/スキル画像/GA/GA_12_瞬間砲撃.png"
+   },
+   {
+    "no": 13,
+    "name": "ジャイアントシャウト",
+    "special": false,
+    "path": "画像/スキル画像/GA/GA_13_ジャイアントシャウト.png"
+   }
+  ],
+  "GD": [
+   {
+    "no": 1,
+    "name": "ビーストハント",
+    "special": true,
+    "path": "画像/スキル画像/GD/GD_01_ビーストハント__.png"
+   },
+   {
+    "no": 1,
+    "name": "大地の波動",
+    "special": false,
+    "path": "画像/スキル画像/GD/GD_01_大地の波動.png"
+   },
+   {
+    "no": 2,
+    "name": "浄化の炎",
+    "special": false,
+    "path": "画像/スキル画像/GD/GD_02_浄化の炎.png"
+   },
+   {
+    "no": 2,
+    "name": "絶叫する光",
+    "special": true,
+    "path": "画像/スキル画像/GD/GD_02_絶叫する光__.png"
+   },
+   {
+    "no": 3,
+    "name": "剥かれる牙",
+    "special": false,
+    "path": "画像/スキル画像/GD/GD_03_剥かれる牙.png"
+   },
+   {
+    "no": 3,
+    "name": "泰山鳴り",
+    "special": true,
+    "path": "画像/スキル画像/GD/GD_03_泰山鳴り__.png"
+   },
+   {
+    "no": 4,
+    "name": "ラーヴァライズ",
+    "special": false,
+    "path": "画像/スキル画像/GD/GD_04_ラーヴァライズ.png"
+   },
+   {
+    "no": 4,
+    "name": "雪風",
+    "special": true,
+    "path": "画像/スキル画像/GD/GD_04_雪風__.png"
+   },
+   {
+    "no": 5,
+    "name": "雪崩斬り",
+    "special": false,
+    "path": "画像/スキル画像/GD/GD_05_雪崩斬り.png"
+   },
+   {
+    "no": 6,
+    "name": "竜の顎",
+    "special": false,
+    "path": "画像/スキル画像/GD/GD_06_竜の顎.png"
+   },
+   {
+    "no": 7,
+    "name": "進撃",
+    "special": false,
+    "path": "画像/スキル画像/GD/GD_07_進撃.png"
+   },
+   {
+    "no": 8,
+    "name": "滅神の怒り",
+    "special": false,
+    "path": "画像/スキル画像/GD/GD_08_滅神の怒り.png"
+   },
+   {
+    "no": 9,
+    "name": "組み打ち",
+    "special": false,
+    "path": "画像/スキル画像/GD/GD_09_組み打ち.png"
+   },
+   {
+    "no": 10,
+    "name": "化身の飛躍",
+    "special": false,
+    "path": "画像/スキル画像/GD/GD_10_化身の飛躍.png"
+   },
+   {
+    "no": 11,
+    "name": "黒き血の領域",
+    "special": false,
+    "path": "画像/スキル画像/GD/GD_11_黒き血の領域.png"
+   },
+   {
+    "no": 12,
+    "name": "化身降臨",
+    "special": false,
+    "path": "画像/スキル画像/GD/GD_12_化身降臨.png"
+   },
+   {
+    "no": 13,
+    "name": "オムアのオーラ",
+    "special": false,
+    "path": "画像/スキル画像/GD/GD_13_オムアのオーラ.png"
+   }
+  ],
+  "HS": [
+   {
+    "no": 1,
+    "name": "影削斬",
+    "special": true,
+    "path": "画像/スキル画像/HS/HS_01_影削斬__.png"
+   },
+   {
+    "no": 1,
+    "name": "熱砂爆風",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_01_熱砂爆風.png"
+   },
+   {
+    "no": 2,
+    "name": "教化",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_02_教化.png"
+   },
+   {
+    "no": 2,
+    "name": "無言の隙",
+    "special": true,
+    "path": "画像/スキル画像/HS/HS_02_無言の隙__.png"
+   },
+   {
+    "no": 3,
+    "name": "盲信の代価",
+    "special": true,
+    "path": "画像/スキル画像/HS/HS_03_盲信の代価__.png"
+   },
+   {
+    "no": 3,
+    "name": "砂の試練",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_03_砂の試練.png"
+   },
+   {
+    "no": 4,
+    "name": "蛇斬",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_04_蛇斬.png"
+   },
+   {
+    "no": 4,
+    "name": "試練の証明",
+    "special": true,
+    "path": "画像/スキル画像/HS/HS_04_試練の証明__.png"
+   },
+   {
+    "no": 5,
+    "name": "砂鉄破砕",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_05_砂鉄破砕.png"
+   },
+   {
+    "no": 6,
+    "name": "砂歩",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_06_砂歩.png"
+   },
+   {
+    "no": 7,
+    "name": "召命の刃",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_07_召命の刃.png"
+   },
+   {
+    "no": 8,
+    "name": "捕獲の砂沼",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_08_捕獲の砂沼.png"
+   },
+   {
+    "no": 9,
+    "name": "砂鉄斬り",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_09_砂鉄斬り.png"
+   },
+   {
+    "no": 10,
+    "name": "蛇の罠",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_10_蛇の罠.png"
+   },
+   {
+    "no": 11,
+    "name": "砂陽炎",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_11_砂陽炎.png"
+   },
+   {
+    "no": 12,
+    "name": "大蛇の螺旋",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_12_大蛇の螺旋.png"
+   },
+   {
+    "no": 13,
+    "name": "砂漠の庇護",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_13_砂漠の庇護.png"
+   }
+  ],
+  "KN": [
+   {
+    "no": 1,
+    "name": "廻閃",
+    "special": true,
+    "path": "画像/スキル画像/KN/KN_01_廻閃__.png"
+   },
+   {
+    "no": 1,
+    "name": "黒い片時雨",
+    "special": false,
+    "path": "画像/スキル画像/KN/KN_01_黒い片時雨.png"
+   },
+   {
+    "no": 2,
+    "name": "光明錘",
+    "special": true,
+    "path": "画像/スキル画像/KN/KN_02_光明錘__.png"
+   },
+   {
+    "no": 2,
+    "name": "影縫い",
+    "special": false,
+    "path": "画像/スキル画像/KN/KN_02_影縫い.png"
+   },
+   {
+    "no": 3,
+    "name": "影昇り",
+    "special": true,
+    "path": "画像/スキル画像/KN/KN_03_影昇り__.png"
+   },
+   {
+    "no": 3,
+    "name": "腱断ち",
+    "special": false,
+    "path": "画像/スキル画像/KN/KN_03_腱断ち.png"
+   },
+   {
+    "no": 4,
+    "name": "月輪ノ矢",
+    "special": false,
+    "path": "画像/スキル画像/KN/KN_04_月輪ノ矢.png"
+   },
+   {
+    "no": 4,
+    "name": "溶け落ちる月",
+    "special": true,
+    "path": "画像/スキル画像/KN/KN_04_溶け落ちる月__.png"
+   },
+   {
+    "no": 5,
+    "name": "殺迅",
+    "special": false,
+    "path": "画像/スキル画像/KN/KN_05_殺迅.png"
+   },
+   {
+    "no": 6,
+    "name": "乱撃",
+    "special": false,
+    "path": "画像/スキル画像/KN/KN_06_乱撃.png"
+   },
+   {
+    "no": 7,
+    "name": "心臓突き",
+    "special": false,
+    "path": "画像/スキル画像/KN/KN_07_心臓突き.png"
+   },
+   {
+    "no": 8,
+    "name": "廻天連舞",
+    "special": false,
+    "path": "画像/スキル画像/KN/KN_08_廻天連舞.png"
+   },
+   {
+    "no": 9,
+    "name": "苦無投擲",
+    "special": false,
+    "path": "画像/スキル画像/KN/KN_09_苦無投擲.png"
+   },
+   {
+    "no": 10,
+    "name": "月下撃攘",
+    "special": false,
+    "path": "画像/スキル画像/KN/KN_10_月下撃攘.png"
+   },
+   {
+    "no": 11,
+    "name": "飯綱落とし",
+    "special": false,
+    "path": "画像/スキル画像/KN/KN_11_飯綱落とし.png"
+   },
+   {
+    "no": 12,
+    "name": "忍術：潜伏",
+    "special": false,
+    "path": "画像/スキル画像/KN/KN_12_忍術：潜伏.png"
+   },
+   {
+    "no": 13,
+    "name": "精神統一",
+    "special": false,
+    "path": "画像/スキル画像/KN/KN_13_精神統一.png"
+   }
+  ],
+  "KT": [
+   {
+    "no": 1,
+    "name": "極意",
+    "special": true,
+    "path": "画像/スキル画像/KT/KT_01_極意__.png"
+   },
+   {
+    "no": 1,
+    "name": "金剛衝",
+    "special": false,
+    "path": "画像/スキル画像/KT/KT_01_金剛衝.png"
+   },
+   {
+    "no": 2,
+    "name": "暴昇脚",
+    "special": true,
+    "path": "画像/スキル画像/KT/KT_02_暴昇脚__.png"
+   },
+   {
+    "no": 2,
+    "name": "猛進強撃",
+    "special": false,
+    "path": "画像/スキル画像/KT/KT_02_猛進強撃.png"
+   },
+   {
+    "no": 3,
+    "name": "奈落掌拳",
+    "special": false,
+    "path": "画像/スキル画像/KT/KT_03_奈落掌拳.png"
+   },
+   {
+    "no": 3,
+    "name": "瞬閃殺",
+    "special": true,
+    "path": "画像/スキル画像/KT/KT_03_瞬閃殺__.png"
+   },
+   {
+    "no": 4,
+    "name": "炎斧崩脚",
+    "special": false,
+    "path": "画像/スキル画像/KT/KT_04_炎斧崩脚.png"
+   },
+   {
+    "no": 4,
+    "name": "神狼牙",
+    "special": true,
+    "path": "画像/スキル画像/KT/KT_04_神狼牙__.png"
+   },
+   {
+    "no": 5,
+    "name": "旋風脚",
+    "special": false,
+    "path": "画像/スキル画像/KT/KT_05_旋風脚.png"
+   },
+   {
+    "no": 6,
+    "name": "奈落崩壊",
+    "special": false,
+    "path": "画像/スキル画像/KT/KT_06_奈落崩壊.png"
+   },
+   {
+    "no": 7,
+    "name": "弾丸暴脚",
+    "special": false,
+    "path": "画像/スキル画像/KT/KT_07_弾丸暴脚.png"
+   },
+   {
+    "no": 8,
+    "name": "金剛拳",
+    "special": false,
+    "path": "画像/スキル画像/KT/KT_08_金剛拳.png"
+   },
+   {
+    "no": 9,
+    "name": "憤氣",
+    "special": false,
+    "path": "画像/スキル画像/KT/KT_09_憤氣.png"
+   },
+   {
+    "no": 10,
+    "name": "気迫放出",
+    "special": false,
+    "path": "画像/スキル画像/KT/KT_10_気迫放出.png"
+   },
+   {
+    "no": 11,
+    "name": "螺旋弾",
+    "special": false,
+    "path": "画像/スキル画像/KT/KT_11_螺旋弾.png"
+   },
+   {
+    "no": 12,
+    "name": "地獄撃",
+    "special": false,
+    "path": "画像/スキル画像/KT/KT_12_地獄撃.png"
+   },
+   {
+    "no": 13,
+    "name": "闘神降臨",
+    "special": false,
+    "path": "画像/スキル画像/KT/KT_13_闘神降臨.png"
+   }
+  ],
+  "LN": [
+   {
+    "no": 1,
+    "name": "蘭踊刃",
+    "special": false,
+    "path": "画像/スキル画像/LN/LN_01_蘭踊刃.png"
+   },
+   {
+    "no": 1,
+    "name": "降神舞",
+    "special": true,
+    "path": "画像/スキル画像/LN/LN_01_降神舞__.png"
+   },
+   {
+    "no": 2,
+    "name": "終刃斬血",
+    "special": false,
+    "path": "画像/スキル画像/LN/LN_02_終刃斬血.png"
+   },
+   {
+    "no": 2,
+    "name": "魂縛",
+    "special": true,
+    "path": "画像/スキル画像/LN/LN_02_魂縛__.png"
+   },
+   {
+    "no": 3,
+    "name": "蘭鎖豪刃",
+    "special": false,
+    "path": "画像/スキル画像/LN/LN_03_蘭鎖豪刃.png"
+   },
+   {
+    "no": 3,
+    "name": "蘭鎖風刃",
+    "special": true,
+    "path": "画像/スキル画像/LN/LN_03_蘭鎖風刃__.png"
+   },
+   {
+    "no": 4,
+    "name": "狂血双刃",
+    "special": true,
+    "path": "画像/スキル画像/LN/LN_04_狂血双刃__.png"
+   },
+   {
+    "no": 4,
+    "name": "獄鎖怨刃",
+    "special": false,
+    "path": "画像/スキル画像/LN/LN_04_獄鎖怨刃.png"
+   },
+   {
+    "no": 5,
+    "name": "風蘭円刃",
+    "special": false,
+    "path": "画像/スキル画像/LN/LN_05_風蘭円刃.png"
+   },
+   {
+    "no": 6,
+    "name": "舞歩",
+    "special": false,
+    "path": "画像/スキル画像/LN/LN_06_舞歩.png"
+   },
+   {
+    "no": 7,
+    "name": "閃風",
+    "special": false,
+    "path": "画像/スキル画像/LN/LN_07_閃風.png"
+   },
+   {
+    "no": 8,
+    "name": "舞踊",
+    "special": false,
+    "path": "画像/スキル画像/LN/LN_08_舞踊.png"
+   },
+   {
+    "no": 9,
+    "name": "風蘭健脚",
+    "special": false,
+    "path": "画像/スキル画像/LN/LN_09_風蘭健脚.png"
+   },
+   {
+    "no": 10,
+    "name": "神月脚",
+    "special": false,
+    "path": "画像/スキル画像/LN/LN_10_神月脚.png"
+   },
+   {
+    "no": 11,
+    "name": "風華",
+    "special": false,
+    "path": "画像/スキル画像/LN/LN_11_風華.png"
+   },
+   {
+    "no": 12,
+    "name": "斬鬼",
+    "special": false,
+    "path": "画像/スキル画像/LN/LN_12_斬鬼.png"
+   },
+   {
+    "no": 13,
+    "name": "清純なる気品",
+    "special": false,
+    "path": "画像/スキル画像/LN/LN_13_清純なる気品.png"
+   }
+  ],
+  "DK": [
+   {
+    "no": 1,
+    "name": "ブルーミングローズ",
+    "special": true,
+    "path": "画像/スキル画像/DK/DK_01_ブルーミングローズ__.png"
+   },
+   {
+    "no": 1,
+    "name": "引き裂く狂気",
+    "special": false,
+    "path": "画像/スキル画像/DK/DK_01_引き裂く狂気.png"
+   },
+   {
+    "no": 2,
+    "name": "ラストブレス",
+    "special": false,
+    "path": "画像/スキル画像/DK/DK_02_ラストブレス.png"
+   },
+   {
+    "no": 2,
+    "name": "墜落する信念",
+    "special": true,
+    "path": "画像/スキル画像/DK/DK_02_墜落する信念__.png"
+   },
+   {
+    "no": 3,
+    "name": "インバランス",
+    "special": true,
+    "path": "画像/スキル画像/DK/DK_03_インバランス__.png"
+   },
+   {
+    "no": 3,
+    "name": "ギアーズオブフェイト",
+    "special": false,
+    "path": "画像/スキル画像/DK/DK_03_ギアーズオブフェイト.png"
+   },
+   {
+    "no": 4,
+    "name": "暗然たる雨雲",
+    "special": true,
+    "path": "画像/スキル画像/DK/DK_04_暗然たる雨雲__.png"
+   },
+   {
+    "no": 4,
+    "name": "血の宴",
+    "special": false,
+    "path": "画像/スキル画像/DK/DK_04_血の宴.png"
+   },
+   {
+    "no": 5,
+    "name": "急襲",
+    "special": false,
+    "path": "画像/スキル画像/DK/DK_05_急襲.png"
+   },
+   {
+    "no": 6,
+    "name": "スラッシュダークネス",
+    "special": false,
+    "path": "画像/スキル画像/DK/DK_06_スラッシュダークネス.png"
+   },
+   {
+    "no": 7,
+    "name": "カーマスリビアの魅了",
+    "special": false,
+    "path": "画像/スキル画像/DK/DK_07_カーマスリビアの魅了.png"
+   },
+   {
+    "no": 8,
+    "name": "ディスペアーアーツ",
+    "special": false,
+    "path": "画像/スキル画像/DK/DK_08_ディスペアーアーツ.png"
+   },
+   {
+    "no": 9,
+    "name": "漆黒の灰",
+    "special": false,
+    "path": "画像/スキル画像/DK/DK_09_漆黒の灰.png"
+   },
+   {
+    "no": 10,
+    "name": "憎悪の種",
+    "special": false,
+    "path": "画像/スキル画像/DK/DK_10_憎悪の種.png"
+   },
+   {
+    "no": 11,
+    "name": "ベディルの狂気",
+    "special": false,
+    "path": "画像/スキル画像/DK/DK_11_ベディルの狂気.png"
+   },
+   {
+    "no": 12,
+    "name": "ファントムチャージ",
+    "special": false,
+    "path": "画像/スキル画像/DK/DK_12_ファントムチャージ.png"
+   },
+   {
+    "no": 13,
+    "name": "精霊飽食",
+    "special": false,
+    "path": "画像/スキル画像/DK/DK_13_精霊飽食.png"
+   }
+  ],
+  "DR": [
+   {
+    "no": 1,
+    "name": "昇竜",
+    "special": true,
+    "path": "画像/スキル画像/DR/DR_01_昇竜__.png"
+   },
+   {
+    "no": 1,
+    "name": "迸る襲撃",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_01_迸る襲撃.png"
+   },
+   {
+    "no": 2,
+    "name": "生命の終焉1",
+    "special": true,
+    "path": "画像/スキル画像/DR/DR_02_生命の終焉1__.png"
+   },
+   {
+    "no": 2,
+    "name": "生命の終焉2",
+    "special": true,
+    "path": "画像/スキル画像/DR/DR_02_生命の終焉2__.png"
+   },
+   {
+    "no": 2,
+    "name": "鋭槍の宣告1",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_02_鋭槍の宣告1.png"
+   },
+   {
+    "no": 2,
+    "name": "鋭槍の宣告2",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_02_鋭槍の宣告2.png"
+   },
+   {
+    "no": 3,
+    "name": "雷火の地",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_03_雷火の地.png"
+   },
+   {
+    "no": 3,
+    "name": "雷火殲滅",
+    "special": true,
+    "path": "画像/スキル画像/DR/DR_03_雷火殲滅__.png"
+   },
+   {
+    "no": 4,
+    "name": "大地を引き裂く咆哮1",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_04_大地を引き裂く咆哮1.png"
+   },
+   {
+    "no": 4,
+    "name": "大地を引き裂く咆哮2",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_04_大地を引き裂く咆哮2.png"
+   },
+   {
+    "no": 4,
+    "name": "斬雲1",
+    "special": true,
+    "path": "画像/スキル画像/DR/DR_04_斬雲1__.png"
+   },
+   {
+    "no": 4,
+    "name": "斬雲2",
+    "special": true,
+    "path": "画像/スキル画像/DR/DR_04_斬雲2__.png"
+   },
+   {
+    "no": 5,
+    "name": "ドラゴンスラスト",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_05_ドラゴンスラスト.png"
+   },
+   {
+    "no": 6,
+    "name": "破滅の引導者1",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_06_破滅の引導者1.png"
+   },
+   {
+    "no": 6,
+    "name": "破滅の引導者2",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_06_破滅の引導者2.png"
+   },
+   {
+    "no": 7,
+    "name": "雷火爆砕",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_07_雷火爆砕.png"
+   },
+   {
+    "no": 8,
+    "name": "破滅の翼1",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_08_破滅の翼1.png"
+   },
+   {
+    "no": 8,
+    "name": "破滅の翼2",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_08_破滅の翼2.png"
+   },
+   {
+    "no": 9,
+    "name": "大いなる斬撃",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_09_大いなる斬撃.png"
+   },
+   {
+    "no": 10,
+    "name": "突き破る槍1",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_10_突き破る槍1.png"
+   },
+   {
+    "no": 10,
+    "name": "突き破る槍2",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_10_突き破る槍2.png"
+   },
+   {
+    "no": 11,
+    "name": "マクタナンの怒り",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_11_マクタナンの怒り.png"
+   },
+   {
+    "no": 12,
+    "name": "蘇った戒律1",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_12_蘇った戒律1.png"
+   },
+   {
+    "no": 12,
+    "name": "蘇った戒律2",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_12_蘇った戒律2.png"
+   },
+   {
+    "no": 13,
+    "name": "血の暴走",
+    "special": false,
+    "path": "画像/スキル画像/DR/DR_13_血の暴走.png"
+   }
+  ],
+  "DS": [
+   {
+    "no": 1,
+    "name": "刀舞",
+    "special": false,
+    "path": "画像/スキル画像/DS/DS_01_刀舞.png"
+   },
+   {
+    "no": 1,
+    "name": "四季",
+    "special": true,
+    "path": "画像/スキル画像/DS/DS_01_四季__.png"
+   },
+   {
+    "no": 2,
+    "name": "仙剣濃霧",
+    "special": false,
+    "path": "画像/スキル画像/DS/DS_02_仙剣濃霧.png"
+   },
+   {
+    "no": 2,
+    "name": "突き刺し",
+    "special": true,
+    "path": "画像/スキル画像/DS/DS_02_突き刺し__.png"
+   },
+   {
+    "no": 3,
+    "name": "冬驟雨",
+    "special": false,
+    "path": "画像/スキル画像/DS/DS_03_冬驟雨.png"
+   },
+   {
+    "no": 3,
+    "name": "隙間斬り",
+    "special": true,
+    "path": "画像/スキル画像/DS/DS_03_隙間斬り__.png"
+   },
+   {
+    "no": 4,
+    "name": "斧師",
+    "special": true,
+    "path": "画像/スキル画像/DS/DS_04_斧師__.png"
+   },
+   {
+    "no": 4,
+    "name": "火：昇",
+    "special": false,
+    "path": "画像/スキル画像/DS/DS_04_火：昇.png"
+   },
+   {
+    "no": 5,
+    "name": "巻雲",
+    "special": false,
+    "path": "画像/スキル画像/DS/DS_05_巻雲.png"
+   },
+   {
+    "no": 6,
+    "name": "木：曲",
+    "special": false,
+    "path": "画像/スキル画像/DS/DS_06_木：曲.png"
+   },
+   {
+    "no": 7,
+    "name": "秋雷",
+    "special": false,
+    "path": "画像/スキル画像/DS/DS_07_秋雷.png"
+   },
+   {
+    "no": 8,
+    "name": "水：編",
+    "special": false,
+    "path": "画像/スキル画像/DS/DS_08_水：編.png"
+   },
+   {
+    "no": 9,
+    "name": "夏風",
+    "special": false,
+    "path": "画像/スキル画像/DS/DS_09_夏風.png"
+   },
+   {
+    "no": 10,
+    "name": "金：従",
+    "special": false,
+    "path": "画像/スキル画像/DS/DS_10_金：従.png"
+   },
+   {
+    "no": 11,
+    "name": "太極",
+    "special": false,
+    "path": "画像/スキル画像/DS/DS_11_太極.png"
+   },
+   {
+    "no": 12,
+    "name": "土：植",
+    "special": false,
+    "path": "画像/スキル画像/DS/DS_12_土：植.png"
+   },
+   {
+    "no": 13,
+    "name": "静中動",
+    "special": false,
+    "path": "画像/スキル画像/DS/DS_13_静中動.png"
+   }
+  ],
+  "CO": [
+   {
+    "no": 1,
+    "name": "タイドスタンプ",
+    "special": true,
+    "path": "画像/スキル画像/CO/CO_01_タイドスタンプ__.png"
+   },
+   {
+    "no": 1,
+    "name": "フェロウシャスウェーブ",
+    "special": false,
+    "path": "画像/スキル画像/CO/CO_01_フェロウシャスウェーブ.png"
+   },
+   {
+    "no": 2,
+    "name": "海霧の誘惑",
+    "special": false,
+    "path": "画像/スキル画像/CO/CO_02_海霧の誘惑.png"
+   },
+   {
+    "no": 2,
+    "name": "陽破のパトラカ",
+    "special": true,
+    "path": "画像/スキル画像/CO/CO_02_陽破のパトラカ__.png"
+   },
+   {
+    "no": 3,
+    "name": "ウェーブスラッシュ",
+    "special": false,
+    "path": "画像/スキル画像/CO/CO_03_ウェーブスラッシュ.png"
+   },
+   {
+    "no": 3,
+    "name": "マレカ：クジラの夢",
+    "special": true,
+    "path": "画像/スキル画像/CO/CO_03_マレカ：クジラの夢__.png"
+   },
+   {
+    "no": 4,
+    "name": "白兵戦：制圧",
+    "special": true,
+    "path": "画像/スキル画像/CO/CO_04_白兵戦：制圧__.png"
+   },
+   {
+    "no": 4,
+    "name": "船長の命令：開始!",
+    "special": false,
+    "path": "画像/スキル画像/CO/CO_04_船長の命令：開始!.png"
+   },
+   {
+    "no": 5,
+    "name": "ライディングウェーブ",
+    "special": false,
+    "path": "画像/スキル画像/CO/CO_05_ライディングウェーブ.png"
+   },
+   {
+    "no": 6,
+    "name": "キャプテンアピアーズ",
+    "special": false,
+    "path": "画像/スキル画像/CO/CO_06_キャプテンアピアーズ.png"
+   },
+   {
+    "no": 7,
+    "name": "スマッシュタイド",
+    "special": false,
+    "path": "画像/スキル画像/CO/CO_07_スマッシュタイド.png"
+   },
+   {
+    "no": 8,
+    "name": "アクアシューティング",
+    "special": false,
+    "path": "画像/スキル画像/CO/CO_08_アクアシューティング.png"
+   },
+   {
+    "no": 9,
+    "name": "パイレーツトリック",
+    "special": false,
+    "path": "画像/スキル画像/CO/CO_09_パイレーツトリック.png"
+   },
+   {
+    "no": 10,
+    "name": "波壊のパトラカ",
+    "special": false,
+    "path": "画像/スキル画像/CO/CO_10_波壊のパトラカ.png"
+   },
+   {
+    "no": 11,
+    "name": "ソアリングウェーブ",
+    "special": false,
+    "path": "画像/スキル画像/CO/CO_11_ソアリングウェーブ.png"
+   },
+   {
+    "no": 12,
+    "name": "海を裂く一撃",
+    "special": false,
+    "path": "画像/スキル画像/CO/CO_12_海を裂く一撃.png"
+   },
+   {
+    "no": 13,
+    "name": "オーダーオブキャプテン",
+    "special": false,
+    "path": "画像/スキル画像/CO/CO_13_オーダーオブキャプテン.png"
+   }
+  ],
+  "DE": [
+   {
+    "no": 1,
+    "name": "早撃ち",
+    "special": false,
+    "path": "画像/スキル画像/DE/DE_01_早撃ち.png"
+   },
+   {
+    "no": 1,
+    "name": "星屑の祝砲",
+    "special": true,
+    "path": "画像/スキル画像/DE/DE_01_星屑の祝砲__.png"
+   },
+   {
+    "no": 2,
+    "name": "ヘヴンズサルボ",
+    "special": false,
+    "path": "画像/スキル画像/DE/DE_02_ヘヴンズサルボ.png"
+   },
+   {
+    "no": 2,
+    "name": "鉄槌",
+    "special": true,
+    "path": "画像/スキル画像/DE/DE_02_鉄槌__.png"
+   },
+   {
+    "no": 3,
+    "name": "エース・イン・ザ・ホール",
+    "special": true,
+    "path": "画像/スキル画像/DE/DE_03_エース・イン・ザ・ホール__.png"
+   },
+   {
+    "no": 3,
+    "name": "デッドリーショット",
+    "special": false,
+    "path": "画像/スキル画像/DE/DE_03_デッドリーショット.png"
+   },
+   {
+    "no": 4,
+    "name": "アート・オブ・デストラクション",
+    "special": true,
+    "path": "画像/スキル画像/DE/DE_04_アート・オブ・デストラクション__.png"
+   },
+   {
+    "no": 4,
+    "name": "シャープショット",
+    "special": false,
+    "path": "画像/スキル画像/DE/DE_04_シャープショット.png"
+   },
+   {
+    "no": 5,
+    "name": "トリガーハッピー",
+    "special": false,
+    "path": "画像/スキル画像/DE/DE_05_トリガーハッピー.png"
+   },
+   {
+    "no": 6,
+    "name": "ガンスリンガー参上！",
+    "special": false,
+    "path": "画像/スキル画像/DE/DE_06_ガンスリンガー参上！.png"
+   },
+   {
+    "no": 7,
+    "name": "エスケープショット",
+    "special": false,
+    "path": "画像/スキル画像/DE/DE_07_エスケープショット.png"
+   },
+   {
+    "no": 8,
+    "name": "ブラストジャンプ",
+    "special": false,
+    "path": "画像/スキル画像/DE/DE_08_ブラストジャンプ.png"
+   },
+   {
+    "no": 9,
+    "name": "デッドリーアサルト",
+    "special": false,
+    "path": "画像/スキル画像/DE/DE_09_デッドリーアサルト.png"
+   },
+   {
+    "no": 10,
+    "name": "エアリアルショット",
+    "special": false,
+    "path": "画像/スキル画像/DE/DE_10_エアリアルショット.png"
+   },
+   {
+    "no": 11,
+    "name": "開拓者",
+    "special": false,
+    "path": "画像/スキル画像/DE/DE_11_開拓者.png"
+   },
+   {
+    "no": 12,
+    "name": "バーストロケット",
+    "special": false,
+    "path": "画像/スキル画像/DE/DE_12_バーストロケット.png"
+   },
+   {
+    "no": 13,
+    "name": "勝利の祝砲",
+    "special": false,
+    "path": "画像/スキル画像/DE/DE_13_勝利の祝砲.png"
+   }
+  ],
+  "AC": [
+   {
+    "no": 1,
+    "name": "ウィングオブジャッジメント",
+    "special": true,
+    "path": "画像/スキル画像/AC/AC_01_ウィングオブジャッジメント__.png"
+   },
+   {
+    "no": 1,
+    "name": "速射",
+    "special": false,
+    "path": "画像/スキル画像/AC/AC_01_速射.png"
+   },
+   {
+    "no": 2,
+    "name": "フラッシュシュート",
+    "special": false,
+    "path": "画像/スキル画像/AC/AC_02_フラッシュシュート.png"
+   },
+   {
+    "no": 2,
+    "name": "消滅の光",
+    "special": true,
+    "path": "画像/スキル画像/AC/AC_02_消滅の光__.png"
+   },
+   {
+    "no": 3,
+    "name": "ブルーミングアロー",
+    "special": false,
+    "path": "画像/スキル画像/AC/AC_03_ブルーミングアロー.png"
+   },
+   {
+    "no": 3,
+    "name": "ルーツチェーン",
+    "special": true,
+    "path": "画像/スキル画像/AC/AC_03_ルーツチェーン__.png"
+   },
+   {
+    "no": 4,
+    "name": "ルミナスアロー",
+    "special": false,
+    "path": "画像/スキル画像/AC/AC_04_ルミナスアロー.png"
+   },
+   {
+    "no": 4,
+    "name": "突風",
+    "special": true,
+    "path": "画像/スキル画像/AC/AC_04_突風__.png"
+   },
+   {
+    "no": 5,
+    "name": "レイニングアロー",
+    "special": false,
+    "path": "画像/スキル画像/AC/AC_05_レイニングアロー.png"
+   },
+   {
+    "no": 6,
+    "name": "コールオブルトラゴン",
+    "special": false,
+    "path": "画像/スキル画像/AC/AC_06_コールオブルトラゴン.png"
+   },
+   {
+    "no": 7,
+    "name": "アースステップ",
+    "special": false,
+    "path": "画像/スキル画像/AC/AC_07_アースステップ.png"
+   },
+   {
+    "no": 8,
+    "name": "フラッシュアロー",
+    "special": false,
+    "path": "画像/スキル画像/AC/AC_08_フラッシュアロー.png"
+   },
+   {
+    "no": 9,
+    "name": "精霊の庇護",
+    "special": false,
+    "path": "画像/スキル画像/AC/AC_09_精霊の庇護.png"
+   },
+   {
+    "no": 10,
+    "name": "ルミナスブレイクアロー",
+    "special": false,
+    "path": "画像/スキル画像/AC/AC_10_ルミナスブレイクアロー.png"
+   },
+   {
+    "no": 11,
+    "name": "ストームアロー",
+    "special": false,
+    "path": "画像/スキル画像/AC/AC_11_ストームアロー.png"
+   },
+   {
+    "no": 12,
+    "name": "シルビアの槍",
+    "special": false,
+    "path": "画像/スキル画像/AC/AC_12_シルビアの槍.png"
+   },
+   {
+    "no": 13,
+    "name": "シルビアの恩寵",
+    "special": false,
+    "path": "画像/スキル画像/AC/AC_13_シルビアの恩寵.png"
+   }
+  ],
+  "BD": [
+   {
+    "no": 1,
+    "name": "大旋風",
+    "special": false,
+    "path": "画像/スキル画像/BD/BD_01_大旋風.png"
+   },
+   {
+    "no": 1,
+    "name": "月影斬",
+    "special": true,
+    "path": "画像/スキル画像/BD/BD_01_月影斬__.png"
+   },
+   {
+    "no": 2,
+    "name": "斥邪",
+    "special": true,
+    "path": "画像/スキル画像/BD/BD_02_斥邪__.png"
+   },
+   {
+    "no": 2,
+    "name": "獄炎斬",
+    "special": false,
+    "path": "画像/スキル画像/BD/BD_02_獄炎斬.png"
+   },
+   {
+    "no": 3,
+    "name": "天頂斬り",
+    "special": true,
+    "path": "画像/スキル画像/BD/BD_03_天頂斬り__.png"
+   },
+   {
+    "no": 3,
+    "name": "暴風陣",
+    "special": false,
+    "path": "画像/スキル画像/BD/BD_03_暴風陣.png"
+   },
+   {
+    "no": 4,
+    "name": "焔旋風",
+    "special": false,
+    "path": "画像/スキル画像/BD/BD_04_焔旋風.png"
+   },
+   {
+    "no": 4,
+    "name": "還炎斬",
+    "special": true,
+    "path": "画像/スキル画像/BD/BD_04_還炎斬__.png"
+   },
+   {
+    "no": 5,
+    "name": "狂飆",
+    "special": false,
+    "path": "画像/スキル画像/BD/BD_05_狂飆.png"
+   },
+   {
+    "no": 6,
+    "name": "斬払い",
+    "special": false,
+    "path": "画像/スキル画像/BD/BD_06_斬払い.png"
+   },
+   {
+    "no": 7,
+    "name": "看破斬り",
+    "special": false,
+    "path": "画像/スキル画像/BD/BD_07_看破斬り.png"
+   },
+   {
+    "no": 8,
+    "name": "気迫",
+    "special": false,
+    "path": "画像/スキル画像/BD/BD_08_気迫.png"
+   },
+   {
+    "no": 9,
+    "name": "月光斬",
+    "special": false,
+    "path": "画像/スキル画像/BD/BD_09_月光斬.png"
+   },
+   {
+    "no": 10,
+    "name": "飛撃斬",
+    "special": false,
+    "path": "画像/スキル画像/BD/BD_10_飛撃斬.png"
+   },
+   {
+    "no": 11,
+    "name": "後飛斬",
+    "special": false,
+    "path": "画像/スキル画像/BD/BD_11_後飛斬.png"
+   },
+   {
+    "no": 12,
+    "name": "龍炎陣",
+    "special": false,
+    "path": "画像/スキル画像/BD/BD_12_龍炎陣.png"
+   },
+   {
+    "no": 13,
+    "name": "武士道",
+    "special": false,
+    "path": "画像/スキル画像/BD/BD_13_武士道.png"
+   }
+  ]
+ },
+ "characters": [
+  {
+   "code": "AC",
+   "path": "画像/character/AC_1.png"
+  },
+  {
+   "code": "AC",
+   "path": "画像/character/AC_2.png"
+  },
+  {
+   "code": "AC",
+   "path": "画像/character/AC_3.png"
+  },
+  {
+   "code": "AC",
+   "path": "画像/character/AC_4.png"
+  },
+  {
+   "code": "BD",
+   "path": "画像/character/BD_1.png"
+  },
+  {
+   "code": "BD",
+   "path": "画像/character/BD_2.png"
+  },
+  {
+   "code": "BD",
+   "path": "画像/character/BD_3.png"
+  },
+  {
+   "code": "CO",
+   "path": "画像/character/CO_1.png"
+  },
+  {
+   "code": "CO",
+   "path": "画像/character/CO_2.png"
+  },
+  {
+   "code": "CO",
+   "path": "画像/character/CO_3.png"
+  },
+  {
+   "code": "DE",
+   "path": "画像/character/DE_1.png"
+  },
+  {
+   "code": "DE",
+   "path": "画像/character/DE_2.png"
+  },
+  {
+   "code": "DE",
+   "path": "画像/character/DE_3.png"
+  },
+  {
+   "code": "DK",
+   "path": "画像/character/DK_1.png"
+  },
+  {
+   "code": "DK",
+   "path": "画像/character/DK_2.png"
+  },
+  {
+   "code": "DK",
+   "path": "画像/character/DK_3.png"
+  },
+  {
+   "code": "DK",
+   "path": "画像/character/DK_4.png"
+  },
+  {
+   "code": "DK",
+   "path": "画像/character/DK_5.png"
+  },
+  {
+   "code": "DK",
+   "path": "画像/character/DK_6.png"
+  },
+  {
+   "code": "DK",
+   "path": "画像/character/DK_7.png"
+  },
+  {
+   "code": "DR",
+   "path": "画像/character/DR_1.png"
+  },
+  {
+   "code": "DR",
+   "path": "画像/character/DR_2.png"
+  },
+  {
+   "code": "DS",
+   "path": "画像/character/DS_1.png"
+  },
+  {
+   "code": "DS",
+   "path": "画像/character/DS_2.png"
+  },
+  {
+   "code": "DS",
+   "path": "画像/character/DS_3.png"
+  },
+  {
+   "code": "DS",
+   "path": "画像/character/DS_4.png"
+  },
+  {
+   "code": "GA",
+   "path": "画像/character/GA_1.png"
+  },
+  {
+   "code": "GA",
+   "path": "画像/character/GA_2.png"
+  },
+  {
+   "code": "GA",
+   "path": "画像/character/GA_3.png"
+  },
+  {
+   "code": "GA",
+   "path": "画像/character/GA_4.png"
+  },
+  {
+   "code": "GA",
+   "path": "画像/character/GA_5.png"
+  },
+  {
+   "code": "GD",
+   "path": "画像/character/GD_1.png"
+  },
+  {
+   "code": "GD",
+   "path": "画像/character/GD_2.png"
+  },
+  {
+   "code": "GD",
+   "path": "画像/character/GD_3.png"
+  },
+  {
+   "code": "HS",
+   "path": "画像/character/HS_1.png"
+  },
+  {
+   "code": "HS",
+   "path": "画像/character/HS_2.png"
+  },
+  {
+   "code": "HS",
+   "path": "画像/character/HS_3.png"
+  },
+  {
+   "code": "KN",
+   "path": "画像/character/KN_1.png"
+  },
+  {
+   "code": "KN",
+   "path": "画像/character/KN_2.png"
+  },
+  {
+   "code": "KN",
+   "path": "画像/character/KN_3.png"
+  },
+  {
+   "code": "KT",
+   "path": "画像/character/KT_1.png"
+  },
+  {
+   "code": "KT",
+   "path": "画像/character/KT_2.png"
+  },
+  {
+   "code": "KT",
+   "path": "画像/character/KT_3.png"
+  },
+  {
+   "code": "KT",
+   "path": "画像/character/KT_4.png"
+  },
+  {
+   "code": "KT",
+   "path": "画像/character/KT_5.png"
+  },
+  {
+   "code": "LN",
+   "path": "画像/character/LN_1.png"
+  },
+  {
+   "code": "LN",
+   "path": "画像/character/LN_2.png"
+  },
+  {
+   "code": "LN",
+   "path": "画像/character/LN_3.png"
+  },
+  {
+   "code": "LS",
+   "path": "画像/character/LS_1.png"
+  },
+  {
+   "code": "LS",
+   "path": "画像/character/LS_2.png"
+  },
+  {
+   "code": "LS",
+   "path": "画像/character/LS_3.png"
+  },
+  {
+   "code": "LS",
+   "path": "画像/character/LS_4.png"
+  },
+  {
+   "code": "MG",
+   "path": "画像/character/MG_1.png"
+  },
+  {
+   "code": "MG",
+   "path": "画像/character/MG_2.png"
+  },
+  {
+   "code": "MT",
+   "path": "画像/character/MT_1.png"
+  },
+  {
+   "code": "MT",
+   "path": "画像/character/MT_2.png"
+  },
+  {
+   "code": "MT",
+   "path": "画像/character/MT_3.png"
+  },
+  {
+   "code": "NJ",
+   "path": "画像/character/NJ_1.png"
+  },
+  {
+   "code": "NJ",
+   "path": "画像/character/NJ_2.png"
+  },
+  {
+   "code": "NJ",
+   "path": "画像/character/NJ_3.png"
+  },
+  {
+   "code": "NV",
+   "path": "画像/character/NV_1.png"
+  },
+  {
+   "code": "NV",
+   "path": "画像/character/NV_2.png"
+  },
+  {
+   "code": "NV",
+   "path": "画像/character/NV_3.png"
+  },
+  {
+   "code": "RG",
+   "path": "画像/character/RG_1.png"
+  },
+  {
+   "code": "RG",
+   "path": "画像/character/RG_2.png"
+  },
+  {
+   "code": "RG",
+   "path": "画像/character/RG_3.png"
+  },
+  {
+   "code": "RG",
+   "path": "画像/character/RG_4.png"
+  },
+  {
+   "code": "SC",
+   "path": "画像/character/SC_1.png"
+  },
+  {
+   "code": "SC",
+   "path": "画像/character/SC_2.png"
+  },
+  {
+   "code": "SC",
+   "path": "画像/character/SC_3.png"
+  },
+  {
+   "code": "SG",
+   "path": "画像/character/SG_1.png"
+  },
+  {
+   "code": "SG",
+   "path": "画像/character/SG_2.png"
+  },
+  {
+   "code": "SG",
+   "path": "画像/character/SG_3.png"
+  },
+  {
+   "code": "SH",
+   "path": "画像/character/SH_1.png"
+  },
+  {
+   "code": "SH",
+   "path": "画像/character/SH_2.png"
+  },
+  {
+   "code": "SP",
+   "path": "画像/character/SP_1.png"
+  },
+  {
+   "code": "SP",
+   "path": "画像/character/SP_2.png"
+  },
+  {
+   "code": "SP",
+   "path": "画像/character/SP_3.png"
+  },
+  {
+   "code": "SP",
+   "path": "画像/character/SP_4.png"
+  },
+  {
+   "code": "SR",
+   "path": "画像/character/SR_1.png"
+  },
+  {
+   "code": "SR",
+   "path": "画像/character/SR_2.png"
+  },
+  {
+   "code": "SR",
+   "path": "画像/character/SR_3.png"
+  },
+  {
+   "code": "TB",
+   "path": "画像/character/TB_1.png"
+  },
+  {
+   "code": "TB",
+   "path": "画像/character/TB_2.png"
+  },
+  {
+   "code": "TB",
+   "path": "画像/character/TB_3.png"
+  },
+  {
+   "code": "TB",
+   "path": "画像/character/TB_4.png"
+  },
+  {
+   "code": "UK",
+   "path": "画像/character/UK_1.png"
+  },
+  {
+   "code": "VK",
+   "path": "画像/character/VK_1.png"
+  },
+  {
+   "code": "VK",
+   "path": "画像/character/VK_2.png"
+  },
+  {
+   "code": "VK",
+   "path": "画像/character/VK_3.png"
+  },
+  {
+   "code": "VK",
+   "path": "画像/character/VK_4.png"
+  },
+  {
+   "code": "WR",
+   "path": "画像/character/WR_1.png"
+  },
+  {
+   "code": "WR",
+   "path": "画像/character/WR_2.png"
+  },
+  {
+   "code": "WR",
+   "path": "画像/character/WR_3.png"
+  },
+  {
+   "code": "WR",
+   "path": "画像/character/WR_4.png"
+  },
+  {
+   "code": "WR",
+   "path": "画像/character/WR_5.png"
+  },
+  {
+   "code": "WS",
+   "path": "画像/character/WS_1.png"
+  },
+  {
+   "code": "WS",
+   "path": "画像/character/WS_2.png"
+  },
+  {
+   "code": "WT",
+   "path": "画像/character/WT_1.png"
+  },
+  {
+   "code": "WT",
+   "path": "画像/character/WT_2.png"
+  },
+  {
+   "code": "WT",
+   "path": "画像/character/WT_3.png"
+  },
+  {
+   "code": "WT",
+   "path": "画像/character/WT_4.png"
+  },
+  {
+   "code": "WZ",
+   "path": "画像/character/WZ_1.png"
+  },
+  {
+   "code": "WZ",
+   "path": "画像/character/WZ_2.png"
+  },
+  {
+   "code": "WZ",
+   "path": "画像/character/WZ_3.png"
+  }
+ ],
+ "sigilIcons": {
+  "branch_ahib": "画像/スキル秘伝/(系列)アヒブのスキル秘伝.png",
+  "branch_arl": "画像/スキル秘伝/(系列)アールのスキル秘伝.png",
+  "branch_celt": "画像/スキル秘伝/(系列)セルトのスキル秘伝.png",
+  "branch_labreve": "画像/スキル秘伝/(系列)ラブリフのスキル秘伝.png",
+  "guardian": "画像/スキル秘伝/守護スキル秘伝.png",
+  "faint": "画像/スキル秘伝/微かなスキル秘伝.png",
+  "refined": "画像/スキル秘伝/整ったスキル秘伝.png",
+  "flawless": "画像/スキル秘伝/無欠のスキル秘伝.png",
+  "radiant": "画像/スキル秘伝/煌めくスキル秘伝.png",
+  "defined": "画像/スキル秘伝/鮮明なスキル秘伝.png",
+  "branch": "画像/スキル秘伝/(系列)アールのスキル秘伝.png"
+ }
+}
