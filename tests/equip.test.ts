@@ -139,19 +139,92 @@ describe("効果マスタ既定値 (11_効果マスタ数値.md)", () => {
 
 describe("Free装着判定 (v0.2 #3)", () => {
   it("タイプ一致なら所持0件でも装着できる (所持数・残数の制限なし)", () => {
-    const r = canEquipFree(master, "WR", "WR_sp_1", 2, "guardian_superarmor");
+    const r = canEquipFree(master, baseData(), "WR", "b1", "WR_sp_1", 2, "guardian_superarmor");
     expect(r.ok).toBe(true);
   });
   it("枠タイプ不一致は装着できない", () => {
-    const r = canEquipFree(master, "WR", "WR_sp_1", 1, "guardian_superarmor");
+    const r = canEquipFree(master, baseData(), "WR", "b1", "WR_sp_1", 1, "guardian_superarmor");
     expect(r.ok).toBe(false);
   });
   it("装着対象外スキル(下段13)は装着できない", () => {
-    const r = canEquipFree(master, "WR", "WR_n_13", 1, "guardian_superarmor");
+    const r = canEquipFree(master, baseData(), "WR", "b1", "WR_n_13", 1, "guardian_superarmor");
     expect(r.ok).toBe(false);
   });
   it("存在しない効果は装着できない", () => {
-    const r = canEquipFree(master, "WR", "WR_sp_1", 2, "no_such_effect");
+    const r = canEquipFree(master, baseData(), "WR", "b1", "WR_sp_1", 2, "no_such_effect");
+    expect(r.ok).toBe(false);
+  });
+});
+
+describe("系列4つ制限 (branch同一系列は1編成4つまで)", () => {
+  // WRの系列(branch)枠を持つスキルを列挙 (枠1が系列)
+  const branchSlots = skillsOf(master, "WR")
+    .filter((s) => s.sigil_eligible && s.slots)
+    .flatMap((s) =>
+      (s.slots ?? [])
+        .map((t, i) => ({ skillId: s.skill_id, slotNo: i + 1, type: t }))
+        .filter((x) => x.type === "branch")
+    );
+
+  it("同一系列(アール)はFreeで5つ目を装着できない", () => {
+    const d = baseData();
+    // 先に4つ同一系列を装着
+    for (let i = 0; i < 4; i++) {
+      const s = branchSlots[i];
+      d.freeEquips.push({
+        build_id: "b1",
+        skill_id: s.skillId,
+        slot_no: s.slotNo,
+        effect_id: "branch_arl",
+        rarity: "abyssal",
+        value_text: "10%",
+      });
+    }
+    const fifth = branchSlots[4];
+    const r = canEquipFree(master, d, "WR", "b1", fifth.skillId, fifth.slotNo, "branch_arl");
+    expect(r.ok).toBe(false);
+  });
+
+  it("4つ埋まっていても別の系列(セルト)は装着できる", () => {
+    const d = baseData();
+    for (let i = 0; i < 4; i++) {
+      const s = branchSlots[i];
+      d.freeEquips.push({
+        build_id: "b1",
+        skill_id: s.skillId,
+        slot_no: s.slotNo,
+        effect_id: "branch_arl",
+        rarity: "abyssal",
+        value_text: "10%",
+      });
+    }
+    const fifth = branchSlots[4];
+    const r = canEquipFree(master, d, "WR", "b1", fifth.skillId, fifth.slotNo, "branch_celt");
+    expect(r.ok).toBe(true);
+  });
+
+  it("Myモードでも同一系列は4つまで (5つ目は不可)", () => {
+    const d = baseData();
+    const inv = item({
+      inventory_id: "arl",
+      sigil_type_id: "branch",
+      effect_id: "branch_arl",
+      rarity: "abyssal",
+      value_text: "10%",
+      quantity: 10,
+    });
+    d.inventory.push(inv);
+    for (let i = 0; i < 4; i++) {
+      const s = branchSlots[i];
+      d.equips.push({
+        build_id: "b1",
+        skill_id: s.skillId,
+        slot_no: s.slotNo,
+        inventory_id: "arl",
+      });
+    }
+    const fifth = branchSlots[4];
+    const r = canEquip(master, d, "WR", "b1", fifth.skillId, fifth.slotNo, inv);
     expect(r.ok).toBe(false);
   });
 });
