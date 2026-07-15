@@ -136,6 +136,19 @@ export function canEquip(
   const current = equipAt(data.equips, buildId, skillId, slotNo);
   if (current?.inventory_id === item.inventory_id) return { ok: true };
 
+  // 系列(branch)は1編成に同一系列4つまで (この枠を除いて数える)
+  if (item.sigil_type_id === BRANCH_TYPE_ID) {
+    const cnt = effectCountInBuild(data, buildId, item.effect_id, false, {
+      skillId,
+      slotNo,
+    });
+    if (cnt >= SAME_SERIES_MAX)
+      return {
+        ok: false,
+        reason: `同じ系列（${effect.name_ja}）は1編成に${SAME_SERIES_MAX}つまでです`,
+      };
+  }
+
   const rem = remaining(item, data.equips, buildId);
   if (rem >= 1) return { ok: true };
 
@@ -154,7 +167,9 @@ export function canEquip(
  */
 export function canEquipFree(
   master: Master,
+  data: UserData,
   classId: string,
+  buildId: string,
   skillId: string,
   slotNo: number,
   effectId: string
@@ -177,6 +192,19 @@ export function canEquipFree(
       ok: false,
       reason: `この枠は「${typeName(master, slotType)}」タイプ固定です`,
     };
+
+  // 系列(branch)は1編成に同一系列4つまで (この枠を除いて数える)
+  if (effect.sigil_type_id === BRANCH_TYPE_ID) {
+    const cnt = effectCountInBuild(data, buildId, effectId, true, {
+      skillId,
+      slotNo,
+    });
+    if (cnt >= SAME_SERIES_MAX)
+      return {
+        ok: false,
+        reason: `同じ系列（${effect.name_ja}）は1編成に${SAME_SERIES_MAX}つまでです`,
+      };
+  }
 
   return { ok: true };
 }
@@ -203,6 +231,43 @@ export function freeEquipsForSkill(
   return freeEquips.filter(
     (e) => e.build_id === buildId && e.skill_id === skillId
   );
+}
+
+/** 系列(branch)タイプのID / 同一系列の1編成あたり装着上限 */
+export const BRANCH_TYPE_ID = "branch";
+export const SAME_SERIES_MAX = 4;
+
+/** その効果が系列(branch)タイプか */
+export function isBranchEffect(master: Master, effectId: string): boolean {
+  return effectOf(master, effectId)?.sigil_type_id === BRANCH_TYPE_ID;
+}
+
+/**
+ * 編成内で指定effectが装着されている数を数える (My=inventory経由 / Free=直接参照)。
+ * exclude を渡すとその枠を除外して数える (置き換え時の自己カウント回避)。
+ */
+export function effectCountInBuild(
+  data: UserData,
+  buildId: string,
+  effectId: string,
+  isFree: boolean,
+  exclude?: { skillId: string; slotNo: number }
+): number {
+  const isExcluded = (skillId: string, slotNo: number) =>
+    !!exclude && exclude.skillId === skillId && exclude.slotNo === slotNo;
+  if (isFree) {
+    return data.freeEquips.filter(
+      (e) =>
+        e.build_id === buildId &&
+        e.effect_id === effectId &&
+        !isExcluded(e.skill_id, e.slot_no)
+    ).length;
+  }
+  return data.equips.filter((e) => {
+    if (e.build_id !== buildId || isExcluded(e.skill_id, e.slot_no)) return false;
+    const inv = data.inventory.find((i) => i.inventory_id === e.inventory_id);
+    return inv?.effect_id === effectId;
+  }).length;
 }
 
 export function typeName(master: Master, typeId: string): string {

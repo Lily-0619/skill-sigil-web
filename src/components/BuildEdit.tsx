@@ -9,12 +9,15 @@ import {
   canEquip,
   canEquipFree,
   defaultValueText,
+  effectCountInBuild,
   equipAt,
   equipsForSkill,
   effectOf,
   freeEquipAt,
   freeEquipsForSkill,
+  isBranchEffect,
   remaining,
+  SAME_SERIES_MAX,
   skillsOf,
   typeName,
   usedCount,
@@ -148,6 +151,7 @@ export default function BuildEdit({
     ? selectedSkill?.slots?.[selectedSlot.slotNo - 1] ?? null
     : null;
   const trayListRef = useRef<HTMLDivElement>(null);
+  const slotPanelRef = useRef<HTMLDivElement>(null);
   // 装着可能な候補が上に来た状態で見えるよう、絞り込み条件が変わったら先頭へ戻す。
   // (jsdomにscrollToが無いため、より互換性の高いscrollTop代入を使う)
   useEffect(() => {
@@ -238,13 +242,15 @@ export default function BuildEdit({
   const equippedCatalog = useMemo(() => {
     const buildId = build?.build_id;
     if (!buildId) return [];
-    // 装着済みを {typeId, effectId, name, rarity, value} の配列に正規化
+    // 装着済みを {typeId, effectId, name, rarity, value, skillId, slotNo} の配列に正規化
     type Row = {
       typeId: string;
       effectId: string;
       name: string;
       rarity: Rarity;
       value: string;
+      skillId: string;
+      slotNo: number;
     };
     const rows: Row[] = isFree
       ? data.freeEquips
@@ -257,6 +263,8 @@ export default function BuildEdit({
               name: eff?.name_ja ?? e.effect_id,
               rarity: e.rarity as Rarity,
               value: e.value_text,
+              skillId: e.skill_id,
+              slotNo: e.slot_no,
             };
           })
       : data.equips
@@ -271,6 +279,8 @@ export default function BuildEdit({
               name: eff?.name_ja ?? inv.effect_id,
               rarity: inv.rarity as Rarity,
               value: inv.value_text,
+              skillId: e.skill_id,
+              slotNo: e.slot_no,
             };
           })
           .filter((r): r is NonNullable<typeof r> => r !== null);
@@ -297,12 +307,39 @@ export default function BuildEdit({
                 .filter((v) => v && v.length > 0)
             ),
           }));
-          return { effectId, name, rarities };
+          // #2: この効果を実際に装着しているスキル枠 (アイコン表示・編集ジャンプ用)
+          const locations = typeRows
+            .filter((r) => r.effectId === effectId)
+            .map((r) => ({ skillId: r.skillId, slotNo: r.slotNo }))
+            .sort((a, b) => a.skillId.localeCompare(b.skillId) || a.slotNo - b.slotNo);
+          return { effectId, name, rarities, locations };
         });
         return { type, effects };
       })
       .filter((g) => g.effects.length > 0);
   }, [build?.build_id, isFree, data.equips, data.freeEquips, data.inventory]);
+
+  // 系列(branch)は1編成に同一系列4つまで。上限に達した系列effect_idの集合。
+  // トレイ/カタログでこれらを選択不可(グレーアウト)にする。
+  const maxedBranchEffects = useMemo(() => {
+    const s = new Set<string>();
+    const buildId = build?.build_id;
+    if (!buildId) return s;
+    for (const eff of master.effects) {
+      if (eff.sigil_type_id !== "branch") continue;
+      if (effectCountInBuild(data, buildId, eff.effect_id, isFree) >= SAME_SERIES_MAX)
+        s.add(eff.effect_id);
+    }
+    return s;
+  }, [build?.build_id, isFree, data.equips, data.freeEquips, data.inventory]);
+
+  // 選択中の効果が系列4つ上限に達したら選択を解除する (装着直後にグレーアウトへ移行)
+  useEffect(() => {
+    if (selectedCatalog && maxedBranchEffects.has(selectedCatalog.effectId))
+      setSelectedCatalog(null);
+    if (selectedItem && maxedBranchEffects.has(selectedItem.effect_id))
+      setSelectedItemId(null);
+  }, [maxedBranchEffects, selectedCatalog, selectedItem]);
 
   if (!build) return null;
 
@@ -382,7 +419,15 @@ export default function BuildEdit({
 
   // ---- 装着処理 (Free / v0.2 #3) ----
   const tryEquipFree = (skill: SkillDef, slotNo: number, sel: CatalogSel) => {
-    const check = canEquipFree(master, classId, skill.skill_id, slotNo, sel.effectId);
+    const check = canEquipFree(
+      master,
+      data,
+      classId,
+      build.build_id,
+      skill.skill_id,
+      slotNo,
+      sel.effectId
+    );
     if (!check.ok) {
       toast("error", check.reason);
       return;
@@ -411,6 +456,18 @@ export default function BuildEdit({
 
   const skillName = (id: string) =>
     skills.find((s) => s.skill_id === id)?.name_ja ?? id;
+
+  // #2: つけている秘伝一覧のスキルアイコンから、その枠の編集へジャンプする。
+  // 対象スキルを選択し該当枠を先行選択、固定4枠パネルまでスクロールする。
+  const editLocation = (skillId: string, slotNo: number) => {
+    setSelectedSkillId(skillId);
+    setSelectedItemId(null);
+    setSelectedCatalog(null);
+    setSelectedSlot({ skillId, slotNo });
+    window.setTimeout(() => {
+      slotPanelRef.current?.scrollIntoView?.({ behavior: "smooth", block: "start" });
+    }, 60);
+  };
 
   // ---- スキルカード ----
   const SkillCard = ({ skill, index, rvCls }: { skill: SkillDef; index: number; rvCls: string }) => {
@@ -569,7 +626,11 @@ export default function BuildEdit({
 
           {/* 固定4枠 */}
           {selectedSkill && selectedSkill.slots && (
-            <div className="slot-panel panel rv rv-fade in" key={selectedSkill.skill_id}>
+            <div
+              ref={slotPanelRef}
+              className="slot-panel panel rv rv-fade in"
+              key={selectedSkill.skill_id}
+            >
               <div className="head">
                 <span className="icon-frame">
                   <SkillIcon urls={skillIconUrls(cls.code, selectedSkill)} noImageLabel="—" />
@@ -774,6 +835,32 @@ export default function BuildEdit({
                               ))
                             )}
                           </span>
+                          {/* #2: この効果を装着中のスキルアイコン。押すとその枠の編集へ切り替わる */}
+                          {e.locations.length > 0 && (
+                            <div className="ec-skill-icons">
+                              {e.locations.map((loc, i) => {
+                                const sk = skills.find(
+                                  (s) => s.skill_id === loc.skillId
+                                );
+                                if (!sk) return null;
+                                return (
+                                  <button
+                                    type="button"
+                                    key={`${loc.skillId}-${loc.slotNo}-${i}`}
+                                    className="ec-skill-icon"
+                                    title={`${sk.name_ja} 枠${loc.slotNo} を編集`}
+                                    aria-label={`${sk.name_ja} 枠${loc.slotNo} を編集`}
+                                    onClick={() => editLocation(loc.skillId, loc.slotNo)}
+                                  >
+                                    <SkillIcon
+                                      urls={skillIconUrls(cls.code, sk)}
+                                      noImageLabel="?"
+                                    />
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -867,15 +954,27 @@ export default function BuildEdit({
                 const icon = effectIconUrl(item.sigil_type_id, item.effect_id);
                 // v0.2 #5: スロット先行選択中は「枠タイプ一致かつ残数>0」を強調
                 const slotType = selectedSlotType;
-                const lit = !!slotType && item.sigil_type_id === slotType && rem > 0;
-                const dim = !!slotType && !lit;
+                // 系列4つ制限に達した系列は選択不可 (グレーアウト)
+                const seriesMaxed = maxedBranchEffects.has(item.effect_id);
+                const lit =
+                  !!slotType && item.sigil_type_id === slotType && rem > 0 && !seriesMaxed;
+                const dim = seriesMaxed || (!!slotType && !lit);
                 return (
                   <button
                     key={item.inventory_id}
                     className={`tray-item ${selected ? "selected" : ""} ${
                       rem <= 0 ? "depleted" : ""
-                    } ${lit ? "lit" : ""} ${dim ? "dim" : ""}`}
+                    } ${lit ? "lit" : ""} ${dim ? "dim" : ""} ${
+                      seriesMaxed ? "series-maxed" : ""
+                    }`}
                     onClick={() => {
+                      if (seriesMaxed) {
+                        toast(
+                          "error",
+                          `同じ系列（${eff?.name_ja ?? "系列"}）は1編成に${SAME_SERIES_MAX}つまでです`
+                        );
+                        return;
+                      }
                       // #5: 枠が先行選択されていれば、一致アイテムのクリックで即装着
                       if (selectedSlot && selectedSkill && lit) {
                         tryEquip(selectedSkill, selectedSlot.slotNo, item);
@@ -932,8 +1031,10 @@ export default function BuildEdit({
                 const icon = effectIconUrl(eff.sigil_type_id, eff.effect_id);
                 // #5: スロット先行選択中は枠タイプ一致を強調 (Freeは残数の概念なし)
                 const slotType = selectedSlotType;
-                const lit = !!slotType && eff.sigil_type_id === slotType;
-                const dim = !!slotType && !lit;
+                // 系列4つ制限に達した系列は選択不可 (グレーアウト)
+                const seriesMaxed = maxedBranchEffects.has(eff.effect_id);
+                const lit = !!slotType && eff.sigil_type_id === slotType && !seriesMaxed;
+                const dim = seriesMaxed || (!!slotType && !lit);
                 const rarity = selected
                   ? selectedCatalog!.rarity
                   : defaultRarityFor(eff);
@@ -951,9 +1052,26 @@ export default function BuildEdit({
                     key={eff.effect_id}
                     className={`tray-item cat-item ${selected ? "selected" : ""} ${
                       lit ? "lit" : ""
-                    } ${dim ? "dim" : ""}`}
+                    } ${dim ? "dim" : ""} ${seriesMaxed ? "series-maxed" : ""}`}
                     onClick={() => {
-                      // 効果をクリックしたら選択のみ (即装着しない)。
+                      if (seriesMaxed) {
+                        toast(
+                          "error",
+                          `同じ系列（${eff.name_ja}）は1編成に${SAME_SERIES_MAX}つまでです`
+                        );
+                        return;
+                      }
+                      // #5: 枠が先行選択されていれば、一致効果のクリックで即装着
+                      // (等級・数値は既定値。My編成トレイと同じ挙動)。
+                      if (selectedSlot && selectedSkill && lit) {
+                        tryEquipFree(selectedSkill, selectedSlot.slotNo, {
+                          effectId: eff.effect_id,
+                          rarity: defaultRarityFor(eff),
+                          pick: "a",
+                        });
+                        return;
+                      }
+                      // それ以外は選択のみ (即装着しない)。
                       // 等級・数値を選んでから「装着」ボタン or 枠クリックで確定する。
                       // 枠の先行選択(selectedSlot)は保持したまま。
                       setSelectedItemId(null);
