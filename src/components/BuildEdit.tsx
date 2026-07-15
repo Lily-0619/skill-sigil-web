@@ -1003,6 +1003,7 @@ export default function BuildEdit({
                             </button>
                           );
                         })}
+                        {twoVal && <span className="picker-break" aria-hidden="true" />}
                         {twoVal && (
                           <>
                             <span className="plabel">値</span>

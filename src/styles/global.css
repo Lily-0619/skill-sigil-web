@@ -1216,6 +1216,11 @@ img {
   letter-spacing: 0.18em;
   color: var(--muted);
 }
+.picker-break {
+  flex-basis: 100%;
+  width: 0;
+  height: 0;
+}
 .pchip {
   font-size: 10.5px;
   letter-spacing: 0.08em;
