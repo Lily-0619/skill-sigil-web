@@ -156,3 +156,43 @@ export const emptyUserData = (): UserData => ({
     last_character_image: null,
   },
 });
+
+// ---- スキル・パッシブ説明 (資料/説明(パッシブ・スキル) 由来。scripts/parse_descriptions.py 生成) ----
+
+export interface PassiveDesc {
+  /** 武器名。パッシブ枠右上の武器種タブのラベルになる */
+  name: string;
+  /** 説明行 (日本語(正))。改行・字下げ・「・」・順番は原文のまま */
+  lines: string[];
+}
+
+export interface RageDesc {
+  name: string; // 闇精霊の怒り
+  pve: boolean;
+  pvp: boolean;
+  /** 武器共通部 (フレーバー行を含む) */
+  common: string[];
+  /** 武器別セクション。[] = 武器分岐なし / [武器種1の行, 武器種2の行] */
+  weapon: string[][];
+}
+
+export interface SkillDesc {
+  name: string;
+  pve: boolean;
+  pvp: boolean;
+  rabam: boolean;
+  lines: string[];
+}
+
+export interface ClassDescriptions {
+  /** [武器種1, 武器種2] */
+  passives: PassiveDesc[];
+  rage: RageDesc | null;
+  /** キーは "n_1"〜"n_13" (通常) / "sp_1"〜"sp_4" (ラバム) */
+  skills: Record<string, SkillDesc>;
+}
+
+export interface DescriptionsData {
+  schema_version: number;
+  classes: Record<string, ClassDescriptions>;
+}

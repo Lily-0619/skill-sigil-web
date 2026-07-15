@@ -23,6 +23,7 @@ import {
   usedCount,
 } from "../logic/equip";
 import { skillIconUrls, effectIconUrl } from "../lib/assets";
+import { classDescriptions, skillDescOf } from "../lib/descriptions";
 import { Modal, RarityChip, TypeChip } from "./ui";
 import { useReveal, staggerDelay } from "../hooks/useReveal";
 
@@ -69,6 +70,25 @@ const collapseValues = (vals: string[]): string => {
 
 /** 等級の良い順 (混沌 > 太古 > 深淵)。デフォルト等級・並び順に使う。 */
 const RARITY_ORDER: Rarity[] = ["chaos", "primal", "abyssal"];
+
+/** PvE/PvP チップ。カラーはまな指定 (PvP=#eca6b7 / PvE=#a6d7ec、global.css) */
+const PvChips = ({ pve, pvp }: { pve: boolean; pvp: boolean }) => (
+  <>
+    {pve && <span className="pv-chip pve">PvE</span>}
+    {pvp && <span className="pv-chip pvp">PvP</span>}
+  </>
+);
+
+/** 説明本文。改行・字下げ・「・」・効果の順番は原文のまま 1行=1div で表示する */
+const DescLines = ({ lines }: { lines: string[] }) => (
+  <div className="desc-lines">
+    {lines.map((ln, i) => (
+      <div className="dline" key={i}>
+        {ln}
+      </div>
+    ))}
+  </div>
+);
 
 /** Freeモードのカタログ選択 (効果 + 等級 + 2値効果の下位/上位) */
 interface CatalogSel {
@@ -121,10 +141,10 @@ export default function BuildEdit({
   } | null>(null);
   const [pending, setPending] = useState<PendingEquip | null>(null);
   const [pulseKey, setPulseKey] = useState<string | null>(null);
-  // v0.2 #1/#2 (docs/14): スキル説明・パッシブ説明は枠のみ先行実装。中身は未実装(準備中)。
-  // パッシブは装着可能スキルに紐づく2種の武器で表示が切り替わる想定だが、
-  // 武器種データが未整備のため、ここでは仮のタブ("A"/"B")のみ用意する。
-  const [passiveWeaponTab, setPassiveWeaponTab] = useState<"a" | "b">("a");
+  // v0.3: スキル・パッシブ説明 (資料Excel 日本語(正) 由来)。
+  // パッシブは武器種1/2のタブで切り替え、闇精霊の怒りのCC(武器分岐)もこのタブに連動する。
+  const desc = classDescriptions(cls.code);
+  const [weaponIdx, setWeaponIdx] = useState(0);
 
   // クラス・モード変更時に選択をリセット
   useEffect(() => {
@@ -132,14 +152,11 @@ export default function BuildEdit({
     setSelectedItemId(null);
     setSelectedCatalog(null);
     setSelectedSlot(null);
+    setWeaponIdx(0);
   }, [classId, mode]);
 
-  // 選択スキルが変わったらパッシブのタブ選択もリセット
-  useEffect(() => {
-    setPassiveWeaponTab("a");
-  }, [selectedSkillId]);
-
   const selectedSkill = skills.find((s) => s.skill_id === selectedSkillId);
+  const selectedSkillDesc = selectedSkill ? skillDescOf(desc, selectedSkill) : null;
   const selectedItem =
     data.inventory.find((i) => i.inventory_id === selectedItemId) ?? null;
   const selectedCatalogEffect = selectedCatalog
@@ -570,34 +587,48 @@ export default function BuildEdit({
 
       <div className="build-layout">
         <div>
-          {/* v0.2 #2 (docs/14): パッシブ説明。編成ツールバーと特別スキルの間へ移動し常時表示。
-              スキル未選択のときは案内、選択中は武器種タブつきで表示 (中身は準備中)。 */}
+          {/* v0.3: パッシブ説明 (資料Excel 日本語(正))。枠右上の武器種タブで武器1/2を切替。
+              同じ枠内にスキル(闇精霊の怒り)を続けて表示し、武器分岐(CC)もタブに連動する。 */}
           <div className="panel skill-desc-panel rv rv-fade in">
             <div className="skill-desc-panel-head">
               <span className="overline">Passive</span>
               <span className="t">パッシブ</span>
-              {selectedSkill && (
+              {desc && (
                 <div className="weapon-tabs">
-                  <button
-                    type="button"
-                    className={`weapon-tab ${passiveWeaponTab === "a" ? "on" : ""}`}
-                    onClick={() => setPassiveWeaponTab("a")}
-                  >
-                    武器種A
-                  </button>
-                  <button
-                    type="button"
-                    className={`weapon-tab ${passiveWeaponTab === "b" ? "on" : ""}`}
-                    onClick={() => setPassiveWeaponTab("b")}
-                  >
-                    武器種B
-                  </button>
+                  {desc.passives.map((p, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      className={`weapon-tab ${weaponIdx === i ? "on" : ""}`}
+                      onClick={() => setWeaponIdx(i)}
+                    >
+                      {p.name || `武器種${i + 1}`}
+                    </button>
+                  ))}
                 </div>
               )}
             </div>
-            <p className="skill-desc-panel-body">
-              {selectedSkill ? "準備中" : "スキルを選択するとパッシブが表示されます"}
-            </p>
+            {desc ? (
+              <>
+                <DescLines lines={desc.passives[weaponIdx]?.lines ?? []} />
+                {desc.rage && (
+                  <div className="rage-block">
+                    <div className="rage-title">
+                      {desc.rage.name}
+                      <PvChips pve={desc.rage.pve} pvp={desc.rage.pvp} />
+                    </div>
+                    <DescLines
+                      lines={[
+                        ...desc.rage.common,
+                        ...(desc.rage.weapon[weaponIdx] ?? []),
+                      ]}
+                    />
+                  </div>
+                )}
+              </>
+            ) : (
+              <p className="skill-desc-panel-body">準備中</p>
+            )}
           </div>
 
           {/* 特別スキル */}
@@ -787,14 +818,27 @@ export default function BuildEdit({
             </div>
           )}
 
-          {/* v0.2 #1 (docs/14): スキル説明スペース。中身は未実装のため枠のみ先行用意。 */}
+          {/* v0.3: スキル説明 (資料Excel 日本語(正))。通常=スキル(1〜13) / 特別=ラバムスキル(1〜4)。
+              秘伝の種別タグは省き、PvE/PvPはチップで表示する。 */}
           {selectedSkill && (
-            <div className="panel skill-desc-panel rv rv-fade in">
+            <div className="panel skill-desc-panel rv rv-fade in" key={`desc-${selectedSkill.skill_id}`}>
               <div className="skill-desc-panel-head">
                 <span className="overline">Skill Description</span>
                 <span className="t">スキル説明</span>
+                {selectedSkillDesc && (
+                  <span className="desc-tags">
+                    {selectedSkillDesc.rabam && (
+                      <span className="pv-chip rabam">ラバム技術</span>
+                    )}
+                    <PvChips pve={selectedSkillDesc.pve} pvp={selectedSkillDesc.pvp} />
+                  </span>
+                )}
               </div>
-              <p className="skill-desc-panel-body">準備中</p>
+              {selectedSkillDesc ? (
+                <DescLines lines={selectedSkillDesc.lines} />
+              ) : (
+                <p className="skill-desc-panel-body">準備中</p>
+              )}
             </div>
           )}
 

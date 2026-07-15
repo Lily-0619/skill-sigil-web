@@ -1013,6 +1013,66 @@ img {
   background: rgba(233, 183, 199, 0.08);
 }
 
+/* v0.3: スキル・パッシブ説明の本文 (資料Excel 日本語(正))。
+   改行・字下げ(全角空白)・「・」・順番を原文どおり保持するため pre-wrap。 */
+.desc-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: var(--ivory-dim);
+  font-size: 12.5px;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* PvE / PvP チップ (カラーはまな指定: PvE=#a6d7ec / PvP=#eca6b7) */
+.pv-chip {
+  display: inline-block;
+  padding: 1px 9px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+  color: #232a36;
+}
+.pv-chip.pve {
+  background: #a6d7ec;
+}
+.pv-chip.pvp {
+  background: #eca6b7;
+}
+.pv-chip.rabam {
+  background: rgba(233, 183, 199, 0.1);
+  border: 1px solid var(--pink);
+  color: var(--pink);
+  font-weight: 600;
+}
+.desc-tags {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* パッシブ枠内の「闇精霊の怒り」ブロック */
+.rage-block {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-navy);
+}
+.rage-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mincho);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  color: var(--ivory);
+  margin-bottom: 8px;
+}
+
 /* v0.2 #11: 秘伝効果一覧 (リファレンス) */
 .effect-catalog {
   margin-top: 16px;
