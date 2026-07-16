@@ -1105,9 +1105,14 @@ export default function BuildEdit({
                         );
                         return;
                       }
-                      // #5: 枠が先行選択されていれば、一致効果のクリックで即装着
-                      // (等級・数値は既定値。My編成トレイと同じ挙動)。
-                      if (selectedSlot && selectedSkill && lit) {
+                      // Free編成で等級・数値の選択肢がある秘伝は、枠を先に選んでいても即装着しない。
+                      // 等級・数値を選んでから「装着」ボタン or 枠クリックで確定する。
+                      // 選択肢がない秘伝だけ、従来どおり枠先行クリックで即装着する。
+                      const hasRarityChoice = Object.keys(eff.values).length > 1;
+                      const hasValueChoice = Object.values(eff.values).some(
+                        (v) => !eff.two_effects && v.length === 2
+                      );
+                      if (selectedSlot && selectedSkill && lit && !hasRarityChoice && !hasValueChoice) {
                         tryEquipFree(selectedSkill, selectedSlot.slotNo, {
                           effectId: eff.effect_id,
                           rarity: defaultRarityFor(eff),
@@ -1115,8 +1120,6 @@ export default function BuildEdit({
                         });
                         return;
                       }
-                      // それ以外は選択のみ (即装着しない)。
-                      // 等級・数値を選んでから「装着」ボタン or 枠クリックで確定する。
                       // 枠の先行選択(selectedSlot)は保持したまま。
                       setSelectedItemId(null);
                       setSelectedCatalog(
