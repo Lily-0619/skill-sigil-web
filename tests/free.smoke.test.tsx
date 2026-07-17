@@ -60,7 +60,9 @@ describe("Freeモードと編成一括管理", () => {
   it("所持0件のままFree編成を組み、編成管理で横断表示できる", async () => {
     render(<App />);
 
-    // トップ右パネルからFreeで入る
+    // 仮TOPからスキル秘伝へ入り、右パネルからFreeで入る
+    expect(await screen.findByText("スキル秘伝")).toBeTruthy();
+    fireEvent.click(screen.getByRole("button", { name: /スキル秘伝/ }));
     expect(await screen.findByText("Freeスキル秘伝")).toBeTruthy();
     fireEvent.click(screen.getByRole("button", { name: "Freeスキル秘伝をひらく" }));
 
@@ -114,8 +116,9 @@ describe("Freeモードと編成一括管理", () => {
     const litItems = (catalog as HTMLElement).querySelectorAll(".cat-item.lit");
     expect(litItems.length).toBeGreaterThan(0);
     fireEvent.click(litItems[0] as HTMLElement);
+    fireEvent.click(screen.getByLabelText(/^枠3 /));
     await waitFor(() => {
-      expect(within(slot3).getByText(/解除/)).toBeTruthy();
+      expect(within(screen.getByLabelText(/^枠3 /)).getByText(/解除/)).toBeTruthy();
     });
 
     // 編成管理: Free編成がFREEバッジ+クラス略称つきで表示される

@@ -60,7 +60,9 @@ describe("アプリ一連の流れ", () => {
   it("トップ→クラス選択→編成編集→登録→装着", async () => {
     render(<App />);
 
-    // トップ(ヒーロー) — v0.2 #3: 左=My / 右=Free
+    // 仮TOP → スキル秘伝ヒーロー — v0.2 #3: 左=My / 右=Free
+    expect(await screen.findByText("スキル秘伝")).toBeTruthy();
+    fireEvent.click(screen.getByRole("button", { name: /スキル秘伝/ }));
     expect(await screen.findByText("Myスキル秘伝")).toBeTruthy();
     expect(screen.getByText("Freeスキル秘伝")).toBeTruthy();
     fireEvent.click(screen.getByRole("button", { name: "Myスキル秘伝をひらく" }));

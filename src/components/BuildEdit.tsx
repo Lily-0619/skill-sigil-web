@@ -24,33 +24,11 @@ import {
 } from "../logic/equip";
 import { skillIconUrls, effectIconUrl } from "../lib/assets";
 import { classDescriptions, skillDescOf } from "../lib/descriptions";
-import { Modal, RarityChip, TypeChip } from "./ui";
+import { RarityChip, TypeChip } from "./ui";
+import { SkillIcon } from "./build-edit/SkillIcon";
+import { EquipConfirmModal, type PendingEquip } from "./build-edit/EquipConfirmModal";
+import { PassiveSummary, SkillDescriptionPanel } from "./build-edit/DescriptionPanels";
 import { useReveal, staggerDelay } from "../hooks/useReveal";
-
-interface PendingEquip {
-  skillId: string;
-  slotNo: number;
-  item: InventoryItem;
-  kind: "move" | "replace";
-  moveFrom?: { skillId: string; slotNo: number };
-  replaceName?: string;
-}
-
-/**
- * スキルアイコン表示 (v0.2 #10: 2枚スキルの重ね表示)。
- * 画像が2枚ある場合(前面/背面)は同じ枠内で両方85%サイズに縮小し、少し重ねて表示する。
- * 枠自体のサイズは1枚スキルと同じ(.icon-frameのCSSはそのまま)。
- */
-const SkillIcon = ({ urls, noImageLabel }: { urls: string[]; noImageLabel: string }) => {
-  if (urls.length === 0) return <span className="noimg">{noImageLabel}</span>;
-  if (urls.length === 1) return <img src={urls[0]} alt="" loading="lazy" />;
-  return (
-    <>
-      <img className="icon-layer icon-layer-back" src={urls[1]} alt="" loading="lazy" />
-      <img className="icon-layer icon-layer-front" src={urls[0]} alt="" loading="lazy" />
-    </>
-  );
-};
 
 /**
  * 秘伝効果一覧の数値表示 (v0.2 #11): 同じ数値が重複する場合は「値 ×N個」にまとめ、
@@ -70,25 +48,6 @@ const collapseValues = (vals: string[]): string => {
 
 /** 等級の良い順 (混沌 > 太古 > 深淵)。デフォルト等級・並び順に使う。 */
 const RARITY_ORDER: Rarity[] = ["chaos", "primal", "abyssal"];
-
-/** PvE/PvP チップ。カラーはまな指定 (PvP=#eca6b7 / PvE=#a6d7ec、global.css) */
-const PvChips = ({ pve, pvp }: { pve: boolean; pvp: boolean }) => (
-  <>
-    {pve && <span className="pv-chip pve">PvE</span>}
-    {pvp && <span className="pv-chip pvp">PvP</span>}
-  </>
-);
-
-/** 説明本文。改行・字下げ・「・」・効果の順番は原文のまま 1行=1div で表示する */
-const DescLines = ({ lines }: { lines: string[] }) => (
-  <div className="desc-lines">
-    {lines.map((ln, i) => (
-      <div className="dline" key={i}>
-        {ln}
-      </div>
-    ))}
-  </div>
-);
 
 /** Freeモードのカタログ選択 (効果 + 等級 + 2値効果の下位/上位) */
 interface CatalogSel {
@@ -589,47 +548,11 @@ export default function BuildEdit({
         <div>
           {/* v0.3: パッシブ説明 (資料Excel 日本語(正))。枠右上の武器種タブで武器1/2を切替。
               同じ枠内にスキル(闇精霊の怒り)を続けて表示し、武器分岐(CC)もタブに連動する。 */}
-          <div className="panel skill-desc-panel rv rv-fade in">
-            <div className="skill-desc-panel-head">
-              <span className="overline">Passive</span>
-              <span className="t">パッシブ</span>
-              {desc && (
-                <div className="weapon-tabs">
-                  {desc.passives.map((p, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      className={`weapon-tab ${weaponIdx === i ? "on" : ""}`}
-                      onClick={() => setWeaponIdx(i)}
-                    >
-                      {p.name || `武器種${i + 1}`}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-            {desc ? (
-              <>
-                <DescLines lines={desc.passives[weaponIdx]?.lines ?? []} />
-                {desc.rage && (
-                  <div className="rage-block">
-                    <div className="rage-title">
-                      {desc.rage.name}
-                      <PvChips pve={desc.rage.pve} pvp={desc.rage.pvp} />
-                    </div>
-                    <DescLines
-                      lines={[
-                        ...desc.rage.common,
-                        ...(desc.rage.weapon[weaponIdx] ?? []),
-                      ]}
-                    />
-                  </div>
-                )}
-              </>
-            ) : (
-              <p className="skill-desc-panel-body">準備中</p>
-            )}
-          </div>
+          <PassiveSummary
+            desc={desc}
+            weaponIdx={weaponIdx}
+            onWeaponChange={setWeaponIdx}
+          />
 
           {/* 特別スキル */}
           <div className="skill-section-label">
@@ -821,25 +744,11 @@ export default function BuildEdit({
           {/* v0.3: スキル説明 (資料Excel 日本語(正))。通常=スキル(1〜13) / 特別=ラバムスキル(1〜4)。
               秘伝の種別タグは省き、PvE/PvPはチップで表示する。 */}
           {selectedSkill && (
-            <div className="panel skill-desc-panel rv rv-fade in" key={`desc-${selectedSkill.skill_id}`}>
-              <div className="skill-desc-panel-head">
-                <span className="overline">Skill Description</span>
-                <span className="t">スキル説明</span>
-                {selectedSkillDesc && (
-                  <span className="desc-tags">
-                    {selectedSkillDesc.rabam && (
-                      <span className="pv-chip rabam">ラバム技術</span>
-                    )}
-                    <PvChips pve={selectedSkillDesc.pve} pvp={selectedSkillDesc.pvp} />
-                  </span>
-                )}
-              </div>
-              {selectedSkillDesc ? (
-                <DescLines lines={selectedSkillDesc.lines} />
-              ) : (
-                <p className="skill-desc-panel-body">準備中</p>
-              )}
-            </div>
+            <SkillDescriptionPanel
+              key={`desc-${selectedSkill.skill_id}`}
+              skillName={selectedSkill.name_ja}
+              desc={selectedSkillDesc}
+            />
           )}
 
           {/* v0.2 #11 (改訂): 秘伝効果一覧 = この編成に今つけている秘伝だけ。
@@ -1224,42 +1133,15 @@ export default function BuildEdit({
 
       {/* 移動・置き換え確認 (docs/02 F-008 / Myのみ) */}
       {pending && (
-        <Modal
-          title={pending.kind === "move" ? "秘伝の移動" : "秘伝の置き換え"}
-          onClose={() => setPending(null)}
-          actions={
-            <>
-              <button className="btn ghost" onClick={() => setPending(null)}>
-                キャンセル
-              </button>
-              <button
-                className="btn primary"
-                onClick={() => {
-                  doEquip(pending.skillId, pending.slotNo, pending.item, pending.moveFrom);
-                  setPending(null);
-                }}
-              >
-                {pending.kind === "move" ? "移動して装着" : "置き換える"}
-              </button>
-            </>
-          }
-        >
-          {pending.kind === "move" && pending.moveFrom ? (
-            <p>
-              この秘伝は残数0で、現在
-              <strong>「{skillName(pending.moveFrom.skillId)}」枠{pending.moveFrom.slotNo}</strong>
-              に装着中です。
-              <br />
-              外して「{skillName(pending.skillId)}」枠{pending.slotNo}へ移動しますか？
-            </p>
-          ) : (
-            <p>
-              この枠には<strong>「{pending.replaceName}」</strong>が装着済みです。
-              <br />
-              選択中の秘伝に置き換えますか？(元の秘伝は残数へ戻ります)
-            </p>
-          )}
-        </Modal>
+        <EquipConfirmModal
+          pending={pending}
+          skillName={skillName}
+          onCancel={() => setPending(null)}
+          onConfirm={() => {
+            doEquip(pending.skillId, pending.slotNo, pending.item, pending.moveFrom);
+            setPending(null);
+          }}
+        />
       )}
     </div>
   );
