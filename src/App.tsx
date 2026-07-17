@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import type { BuildMode } from "./types";
 import { StoreProvider, useStore } from "./state/store";
+import TopPage from "./components/TopPage";
 import Hero from "./components/Hero";
 import Shell, { type Screen } from "./components/Shell";
 import ClassSelect from "./components/ClassSelect";
@@ -13,12 +14,16 @@ import { ToastHost } from "./components/ui";
 
 function AppInner() {
   const { data, dispatch, loaded } = useStore();
-  const [entered, setEntered] = useState(false);
+  const [topStage, setTopStage] = useState<"top" | "sigil" | "app">("top");
   const [screen, setScreen] = useState<Screen>("class");
   // v0.2 #3: トップで選んだ入口モード (My / Free)。編成が選択済みならそちらのmodeを優先。
   const [mode, setMode] = useState<BuildMode>("my");
 
-  if (!entered) {
+  if (topStage === "top") {
+    return <TopPage onOpenSkillSigil={() => setTopStage("sigil")} />;
+  }
+
+  if (topStage === "sigil") {
     return (
       <Hero
         onEnter={(m) => {
@@ -31,7 +36,7 @@ function AppInner() {
           }
           setMode(m);
           setScreen("class");
-          setEntered(true);
+          setTopStage("app");
         }}
       />
     );
@@ -46,7 +51,7 @@ function AppInner() {
       <Shell
         screen={screen}
         onNavigate={(s) => setScreen(s)}
-        onHome={() => setEntered(false)}
+        onHome={() => setTopStage("top")}
       >
         {screen === "class" && (
           <ClassSelect
