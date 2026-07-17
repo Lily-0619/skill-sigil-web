@@ -103,9 +103,9 @@ export default function Shell({
       <BgCharacter screen={screen} />
       <div className="app-shell">
         <header className="app-header">
-          <button className="wordmark" onClick={onHome} aria-label="トップへ戻る">
+          <button className="wordmark" onClick={onHome} aria-label="TOPへ">
             <span className="en">SKILL SIGIL</span>
-            <span className="ja">スキル秘伝編</span>
+            <span className="ja">TOPへ</span>
           </button>
           <div className="header-center">
             {cls ? (

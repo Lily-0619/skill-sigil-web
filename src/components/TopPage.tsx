@@ -6,8 +6,6 @@ type TopPageProps = {
   onOpenSkillSigil: () => void;
 };
 
-const LOCAL_PREVIEW_URL = "http://localhost:5173/#top";
-
 export default function TopPage({ onOpenSkillSigil }: TopPageProps) {
   const [mounted, setMounted] = useState(false);
   const charaPath = useMemo(() => pickCharacterImage(null, null), []);
@@ -39,9 +37,6 @@ export default function TopPage({ onOpenSkillSigil }: TopPageProps) {
             今回は総合情報サイト化に向けたTOPページの骨組みです。
             キャラクター図鑑やギャラリーは、後続回で中身を追加します。
           </p>
-          <div className="top-url-note">
-            仮のローカル確認URL: <code>{LOCAL_PREVIEW_URL}</code>
-          </div>
         </section>
 
         <section className="top-cards" aria-label="コンテンツ入口">

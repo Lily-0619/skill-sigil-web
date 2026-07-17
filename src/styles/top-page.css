@@ -95,21 +95,6 @@
   line-height: 2;
   letter-spacing: 0.08em;
 }
-.top-url-note {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 18px;
-  padding: 12px 14px;
-  border: 1px solid var(--line-navy);
-  background: rgba(7, 9, 15, 0.48);
-  color: var(--muted);
-  backdrop-filter: blur(10px);
-  font-size: 12px;
-}
-.top-url-note code {
-  color: var(--ivory);
-}
 .top-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

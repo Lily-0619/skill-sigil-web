@@ -62,6 +62,7 @@ describe("アプリ一連の流れ", () => {
 
     // 仮TOP → スキル秘伝ヒーロー — v0.2 #3: 左=My / 右=Free
     expect(await screen.findByText("スキル秘伝")).toBeTruthy();
+    expect(screen.queryByText(/仮のローカル確認URL/)).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: /スキル秘伝/ }));
     expect(await screen.findByText("Myスキル秘伝")).toBeTruthy();
     expect(screen.getByText("Freeスキル秘伝")).toBeTruthy();
@@ -78,6 +79,8 @@ describe("アプリ一連の流れ", () => {
     await waitFor(() =>
       expect(screen.getByText(/ウォーリア — 編成編集/)).toBeTruthy()
     );
+    expect(screen.getByRole("button", { name: "TOPへ" })).toBeTruthy();
+    expect(screen.getByText("TOPへ")).toBeTruthy();
     expect(screen.getByText("特別スキル")).toBeTruthy();
     // 下段13番は秘伝対象外表示
     expect(screen.getAllByText("秘伝対象外").length).toBeGreaterThan(0);
