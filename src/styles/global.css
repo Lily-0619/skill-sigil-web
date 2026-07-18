@@ -12,7 +12,7 @@
   --navy-800: #121a30;
   --navy-700: #1a2440;
   --navy-600: #24325a;
-  --panel: rgba(16, 22, 40, 0.78);
+  --panel: rgba(16, 22, 40, 0.75);
   --panel-solid: #10162a;
   --ivory: #f2eee6;
   --ivory-dim: #cfd3de;
@@ -134,10 +134,10 @@ img {
    ============================================================= */
 
 .overline {
-  font-family: var(--font-display);
-  font-size: 11px;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
+  font-family: var(--font-en-deco);
+  font-size: 15px;
+  letter-spacing: 0.16em;
+  text-transform: none;
   color: var(--pink);
   font-weight: 400;
 }
@@ -208,7 +208,7 @@ img {
 .input,
 .select,
 .textarea {
-  background: rgba(7, 9, 15, 0.6);
+  background: rgba(7, 9, 15, 0.75);
   border: 1px solid var(--line-navy);
   color: var(--ivory);
   padding: 9px 12px;
@@ -505,7 +505,7 @@ img {
   justify-content: space-between;
   padding: 14px 28px;
   border-bottom: 1px solid var(--line);
-  background: rgba(7, 9, 15, 0.55);
+  background: rgba(7, 9, 15, 0.75);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
@@ -582,7 +582,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  background: rgba(7, 9, 15, 0.35);
+  background: rgba(7, 9, 15, 0.75);
 }
 .nav-item {
   display: flex;
@@ -599,10 +599,10 @@ img {
     background var(--dur-short) var(--ease-out);
 }
 .nav-item .en {
-  font-family: var(--font-display);
-  font-size: 10px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  font-family: var(--font-en-deco);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: none;
 }
 .nav-item .ja {
   font-size: 13px;
@@ -644,7 +644,7 @@ img {
   font-size: 10.5px;
   letter-spacing: 0.1em;
   color: var(--muted);
-  background: rgba(7, 9, 15, 0.5);
+  background: rgba(7, 9, 15, 0.75);
 }
 .app-footer a {
   color: var(--pink-deep);
@@ -702,7 +702,7 @@ img {
   border-color: var(--pink-deep);
   transform: translateY(-3px);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5), 0 0 20px var(--pink-glow);
-  background: rgba(26, 36, 64, 0.85);
+  background: rgba(26, 36, 64, 0.75);
 }
 .class-card .icon-frame {
   width: 74px;
@@ -821,7 +821,7 @@ img {
   font-size: 11px;
   letter-spacing: 0.1em;
   color: var(--ivory);
-  background: rgba(7, 9, 15, 0.72);
+  background: rgba(7, 9, 15, 0.75);
   border: 1px solid var(--line-navy);
   padding: 0 6px;
   line-height: 1.7;
@@ -892,7 +892,7 @@ img {
   border: 1px solid var(--line-navy);
   border-radius: 2px;
   padding: 12px 13px;
-  background: rgba(7, 9, 15, 0.45);
+  background: rgba(7, 9, 15, 0.75);
   min-height: 118px;
   display: flex;
   flex-direction: column;
@@ -996,7 +996,7 @@ img {
 }
 .weapon-tab {
   appearance: none;
-  background: rgba(7, 9, 15, 0.5);
+  background: rgba(7, 9, 15, 0.75);
   border: 1px solid var(--line-navy);
   color: var(--ivory-dim);
   padding: 4px 12px;
@@ -1249,7 +1249,7 @@ img {
   align-items: center;
   text-align: left;
   padding: 8px 10px;
-  background: rgba(7, 9, 15, 0.5);
+  background: rgba(7, 9, 15, 0.75);
   border: 1px solid var(--line-navy);
   border-radius: 2px;
   color: var(--ivory);
@@ -1259,7 +1259,7 @@ img {
 }
 .tray-item:hover:not(:disabled) {
   border-color: var(--pink-deep);
-  background: rgba(26, 36, 64, 0.7);
+  background: rgba(26, 36, 64, 0.75);
 }
 .tray-item.selected {
   border-color: var(--pink);
@@ -1344,7 +1344,7 @@ img {
   padding: 3px 10px;
   border: 1px solid var(--line-navy);
   border-radius: 1px;
-  background: rgba(7, 9, 15, 0.5);
+  background: rgba(7, 9, 15, 0.75);
   color: var(--ivory-dim);
   cursor: pointer;
   transition: border-color var(--dur-short) var(--ease-out),
@@ -1371,7 +1371,7 @@ img {
   border-color: var(--pink-bright);
 }
 .pchip.cat-equip:disabled {
-  background: rgba(7, 9, 15, 0.5);
+  background: rgba(7, 9, 15, 0.75);
   border-color: var(--line-navy);
   color: var(--muted);
   cursor: not-allowed;
@@ -1468,7 +1468,7 @@ img {
   align-items: center;
   gap: 5px;
   padding: 9px 4px 7px;
-  background: rgba(7, 9, 15, 0.5);
+  background: rgba(7, 9, 15, 0.75);
   border: 1px solid var(--line-navy);
   border-radius: 2px;
   color: var(--ivory-dim);
@@ -1506,7 +1506,7 @@ img {
   padding: 8px 12px;
   font-size: 12px;
   line-height: 1.5;
-  background: rgba(7, 9, 15, 0.5);
+  background: rgba(7, 9, 15, 0.75);
   border: 1px solid var(--line-navy);
   border-radius: 2px;
   color: var(--ivory-dim);
@@ -1540,7 +1540,7 @@ img {
 }
 .rarity-btn {
   padding: 10px 4px;
-  background: rgba(7, 9, 15, 0.5);
+  background: rgba(7, 9, 15, 0.75);
   border: 1px solid var(--line-navy);
   border-radius: 2px;
   color: var(--ivory-dim);
@@ -1627,7 +1627,7 @@ img {
   padding: 8px 12px;
   border: 1px solid var(--line-navy);
   border-radius: 2px;
-  background: rgba(7, 9, 15, 0.5);
+  background: rgba(7, 9, 15, 0.75);
   color: var(--pink);
   font-family: var(--font-display);
   font-size: 14px;
@@ -1644,7 +1644,7 @@ img {
 }
 .stepper button {
   width: 40px;
-  background: rgba(7, 9, 15, 0.6);
+  background: rgba(7, 9, 15, 0.75);
   border: none;
   color: var(--pink);
   font-size: 16px;
@@ -1883,7 +1883,7 @@ img {
   font-size: 11.5px;
   padding: 6px 12px;
   border-left: 2px solid;
-  background: rgba(7, 9, 15, 0.5);
+  background: rgba(7, 9, 15, 0.75);
   line-height: 1.55;
 }
 .issue.error {
@@ -2066,4 +2066,42 @@ img {
   .help-steps {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* =============================================================
+   2026-07-19 装飾英字 (Lovely Valentine)
+   ※ クラス略称・SLOT番号・FREE/MYバッジ・本文説明は対象外(既定フォントのまま)
+   ============================================================= */
+h3 .en,
+.screen-head .en {
+  font-family: var(--font-en-deco);
+  letter-spacing: 0.08em;
+  text-transform: none;
+  font-size: 1.15em;
+}
+.wordmark .en {
+  font-family: var(--font-en-deco);
+  letter-spacing: 0.12em;
+  text-transform: none;
+}
+/* 作成者カード: 控えめなプレゼント表現 */
+.author-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  margin-bottom: 6px;
+}
+.author-line .gift {
+  width: 17px;
+  height: 17px;
+  opacity: 0.5;
+  flex: none;
+}
+.author-note {
+  font-size: 11.5px;
+  color: var(--ivory-dim);
+  opacity: 0.75;
+  letter-spacing: 0.06em;
 }

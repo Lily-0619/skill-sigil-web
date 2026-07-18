@@ -8,3 +8,6 @@ __pycache__/
 *.pyc
 .env
 .DS_Store
+
+# 2026-07-19 vite生成の一時ファイル
+vite.config.ts.timestamp-*.mjs

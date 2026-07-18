@@ -108,7 +108,7 @@ export default function Hero({
           <div className="rule" />
         </div>
       </div>
-      <div className="hero-unofficial">UNOFFICIAL FANSITE</div>
+      <div className="hero-unofficial">Unofficial Fansite</div>
 
       <div className={panelsCls}>
         {/* CHAPTER 01 — Myスキル秘伝 */}

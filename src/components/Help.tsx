@@ -81,8 +81,17 @@ export default function Help() {
 
       <div className="card panel">
         <h3>
-          困ったら <span className="en">Contact</span>
+          作成者 <span className="en">Author</span>
         </h3>
+        <p className="author-line">
+          <svg className="gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+            <rect x="3" y="9.5" width="18" height="11" rx="1.5" />
+            <path d="M2 6.5h20v3H2zM12 6.5v14" />
+            <path d="M12 6.5c-1.6-3.4-6.2-3-5.2.4M12 6.5c1.6-3.4 6.2-3 5.2.4" />
+          </svg>
+          作成者：PerceNeige
+        </p>
+        <p className="author-note">よろしければ、感想をひとこといただけると励みになります。</p>
         <p>
           <a
             href="https://discord.com/users/800342772590313484"

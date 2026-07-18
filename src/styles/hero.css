@@ -29,8 +29,10 @@
 .hero-brand .site {
   font-family: var(--font-display);
   font-size: 12px;
-  letter-spacing: 0.52em;
-  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-transform: none;
+  font-family: var(--font-en-deco);
+  font-size: 15px;
   color: var(--ivory-dim);
   text-indent: 0.52em;
 }
@@ -147,13 +149,13 @@
   inset: 0;
   background:
     radial-gradient(120% 90% at 50% 108%, rgba(233, 183, 199, 0.14), transparent 55%),
-    linear-gradient(180deg, rgba(7, 9, 15, 0.82) 0%, rgba(7, 9, 15, 0.25) 34%, rgba(7, 9, 15, 0.28) 62%, rgba(7, 9, 15, 0.9) 100%);
+    linear-gradient(180deg, rgba(7, 9, 15, 0.75) 0%, rgba(7, 9, 15, 0.75) 34%, rgba(7, 9, 15, 0.75) 62%, rgba(7, 9, 15, 0.75) 100%);
   transition: opacity 700ms var(--ease-out);
 }
 .hero-panel.right .hero-veil {
   background:
     radial-gradient(120% 90% at 50% 108%, rgba(36, 50, 90, 0.3), transparent 55%),
-    linear-gradient(180deg, rgba(7, 9, 15, 0.82) 0%, rgba(7, 9, 15, 0.35) 34%, rgba(7, 9, 15, 0.4) 62%, rgba(7, 9, 15, 0.92) 100%);
+    linear-gradient(180deg, rgba(7, 9, 15, 0.75) 0%, rgba(7, 9, 15, 0.75) 34%, rgba(7, 9, 15, 0.75) 62%, rgba(7, 9, 15, 0.75) 100%);
 }
 
 /* パネル文字 */
@@ -171,10 +173,12 @@
 .hero-content .chapter {
   font-family: var(--font-display);
   font-size: 10px;
-  letter-spacing: 0.5em;
-  text-indent: 0.5em;
+  letter-spacing: 0.16em;
+  text-indent: 0.16em;
   color: var(--pink);
-  text-transform: uppercase;
+  text-transform: none;
+  font-family: var(--font-en-deco);
+  font-size: 14px;
 }
 .hero-content .title {
   font-family: var(--font-mincho);
@@ -189,9 +193,10 @@
 .hero-content .title-en {
   font-family: var(--font-display);
   font-size: clamp(13px, 1.2vw, 16px);
-  letter-spacing: 0.56em;
-  text-indent: 0.56em;
-  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  text-indent: 0.14em;
+  text-transform: none;
+  font-family: var(--font-en-deco);
   color: var(--ivory-dim);
   font-weight: 400;
 }
@@ -213,7 +218,7 @@
   color: var(--ivory);
   padding: 12px 34px;
   border: 1px solid var(--line-strong);
-  background: rgba(7, 9, 15, 0.35);
+  background: rgba(7, 9, 15, 0.75);
   backdrop-filter: blur(6px);
   transition: background var(--dur-short) var(--ease-out),
     color var(--dur-short) var(--ease-out),

@@ -6,8 +6,17 @@ type TopPageProps = {
   onOpenSkillSigil: () => void;
 };
 
+// 2026-07-19: TOPのキャッチコピーを3種からランダム表示
+// script = RUS Love and Passion (半角英字のみ対応) / ja = 明朝
+const TOP_COPIES = [
+  { text: "さあ、冒険を始めよう。", script: false },
+  { text: "Welcome", script: true },
+  { text: "Thank you", script: true },
+] as const;
+
 export default function TopPage({ onOpenSkillSigil }: TopPageProps) {
   const [mounted, setMounted] = useState(false);
+  const copy = useMemo(() => TOP_COPIES[Math.floor(Math.random() * TOP_COPIES.length)], []);
   const charaPath = useMemo(() => pickCharacterImage(null, null), []);
 
   useEffect(() => {
@@ -23,7 +32,7 @@ export default function TopPage({ onOpenSkillSigil }: TopPageProps) {
       </div>
       <header className="top-header">
         <div>
-          <p className="top-kicker">UNOFFICIAL FAN PORTAL</p>
+          <p className="top-kicker">Unofficial Fan Portal</p>
           <h1>黒い砂漠MOBILE 情報まとめ</h1>
         </div>
         <div className="top-beta">β / 仮TOP</div>
@@ -31,12 +40,7 @@ export default function TopPage({ onOpenSkillSigil }: TopPageProps) {
 
       <main className="top-main">
         <section className="top-copy">
-          <p className="top-chapter">Portal Mock</p>
-          <h2>まずは、スキル秘伝へ。</h2>
-          <p>
-            今回は総合情報サイト化に向けたTOPページの骨組みです。
-            キャラクター図鑑やギャラリーは、後続回で中身を追加します。
-          </p>
+          <h2 className={copy.script ? "script" : undefined}>{copy.text}</h2>
         </section>
 
         <section className="top-cards" aria-label="コンテンツ入口">
@@ -46,12 +50,12 @@ export default function TopPage({ onOpenSkillSigil }: TopPageProps) {
             <span className="top-card-desc">所持秘伝・Free編成を作る現在のメイン機能。</span>
             <span className="top-card-cta">開く</span>
           </button>
-          <article className="top-card muted" aria-disabled="true">
+          <a className="top-card primary" href="キャラクター紹介_案B.html">
             <span className="top-card-no">02</span>
             <span className="top-card-title">キャラクター図鑑</span>
-            <span className="top-card-desc">公式情報やクラス名などをまとめる予定。</span>
-            <span className="top-card-cta">準備中</span>
-          </article>
+            <span className="top-card-desc">30クラスの立ち絵・武器・プロフィールを見る。</span>
+            <span className="top-card-cta">開く</span>
+          </a>
           <article className="top-card muted" aria-disabled="true">
             <span className="top-card-no">03</span>
             <span className="top-card-title">ギャラリー</span>
