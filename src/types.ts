@@ -184,18 +184,7 @@ export interface SkillDesc {
   lines: string[];
 }
 
-export interface ProfileDesc {
-  /** キャラクター名 (資料Excelの「プロフィール」シート A列:名前) */
-  name: string;
-  /** 出身地 (同 A列:出身地) */
-  birthplace: string;
-  /** その他 (同 A列:Other)。未入力なら空文字 → HPでは非表示 */
-  other: string;
-}
-
 export interface ClassDescriptions {
-  /** キャラクター名・出身地・その他 */
-  profile: ProfileDesc;
   /** [武器種1, 武器種2] */
   passives: PassiveDesc[];
   rage: RageDesc | null;

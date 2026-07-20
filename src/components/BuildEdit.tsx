@@ -27,11 +27,7 @@ import { classDescriptions, skillDescOf } from "../lib/descriptions";
 import { RarityChip, TypeChip } from "./ui";
 import { SkillIcon } from "./build-edit/SkillIcon";
 import { EquipConfirmModal, type PendingEquip } from "./build-edit/EquipConfirmModal";
-import {
-  PassiveSummary,
-  ProfileCard,
-  SkillDescriptionPanel,
-} from "./build-edit/DescriptionPanels";
+import { PassiveSummary, SkillDescriptionPanel } from "./build-edit/DescriptionPanels";
 import { useReveal, staggerDelay } from "../hooks/useReveal";
 
 /**
@@ -550,9 +546,6 @@ export default function BuildEdit({
 
       <div className="build-layout">
         <div>
-          {/* クラスのプロフィール (資料Excel「プロフィール」シート: 名前/出身地/Other) */}
-          <ProfileCard profile={desc?.profile ?? null} />
-
           {/* v0.3: パッシブ説明 (資料Excel 日本語(正))。枠右上の武器種タブで武器1/2を切替。
               同じ枠内にスキル(闇精霊の怒り)を続けて表示し、武器分岐(CC)もタブに連動する。 */}
           <PassiveSummary

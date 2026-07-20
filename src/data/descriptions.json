@@ -2,11 +2,6 @@
  "schema_version": 1,
  "classes": {
   "AC": {
-   "profile": {
-    "name": "ロゴン",
-    "birthplace": "アドウィル",
-    "other": ""
-   },
    "passives": [
     {
      "name": "クロスボウ",
@@ -310,11 +305,6 @@
    }
   },
   "BD": {
-   "profile": {
-    "name": "タムドク",
-    "birthplace": "朝の国・ハンジ村",
-    "other": ""
-   },
    "passives": [
     {
      "name": "刀剣",
@@ -639,11 +629,6 @@
    }
   },
   "CO": {
-   "profile": {
-    "name": "ビアンカ・デル・コルボ",
-    "birthplace": "カラスの島",
-    "other": ""
-   },
    "passives": [
     {
      "name": "セレナカ",
@@ -975,11 +960,6 @@
    }
   },
   "DE": {
-   "profile": {
-    "name": "リヴ",
-    "birthplace": "？？？",
-    "other": ""
-   },
    "passives": [
     {
      "name": "リボルバー",
@@ -1318,11 +1298,6 @@
    }
   },
   "DK": {
-   "profile": {
-    "name": "リンデロテ",
-    "birthplace": "森の外",
-    "other": ""
-   },
    "passives": [
     {
      "name": "太刀",
@@ -1629,11 +1604,6 @@
    }
   },
   "DR": {
-   "profile": {
-    "name": "アストリッド",
-    "birthplace": "冬の山？",
-    "other": ""
-   },
    "passives": [
     {
      "name": "スレイヤー",
@@ -1969,11 +1939,6 @@
    }
   },
   "DS": {
-   "profile": {
-    "name": "ソンウ・ギョン",
-    "birthplace": "朝の国・上道房",
-    "other": ""
-   },
    "passives": [
     {
      "name": "環刀",
@@ -2314,11 +2279,6 @@
    }
   },
   "GA": {
-   "profile": {
-    "name": "チャルガ",
-    "birthplace": "ゲハク平原",
-    "other": ""
-   },
    "passives": [
     {
      "name": "アックス",
@@ -2670,11 +2630,6 @@
    }
   },
   "GD": {
-   "profile": {
-    "name": "イングリッド",
-    "birthplace": "冬の山",
-    "other": ""
-   },
    "passives": [
     {
      "name": "バトルアックス",
@@ -2995,11 +2950,6 @@
    }
   },
   "HS": {
-   "profile": {
-    "name": "アヤワカ",
-    "birthplace": "？？？",
-    "other": ""
-   },
    "passives": [
     {
      "name": "砂曲刀",
@@ -3378,11 +3328,6 @@
    }
   },
   "KN": {
-   "profile": {
-    "name": "菫(すみれ)",
-    "birthplace": "鳥の国・ソナン",
-    "other": ""
-   },
    "passives": [
     {
      "name": "小剣",
@@ -3697,11 +3642,6 @@
    }
   },
   "KT": {
-   "profile": {
-    "name": "ブルーノ・キャルバート",
-    "birthplace": "朝の国・太白派",
-    "other": ""
-   },
    "passives": [
     {
      "name": "手甲",
@@ -4013,11 +3953,6 @@
    }
   },
   "LN": {
-   "profile": {
-    "name": "ラン",
-    "birthplace": "？？？",
-    "other": ""
-   },
    "passives": [
     {
      "name": "半月錘",
@@ -4382,11 +4317,6 @@
    }
   },
   "LS": {
-   "profile": {
-    "name": "フヨ・ミン",
-    "birthplace": "(今は亡き)雲の国",
-    "other": ""
-   },
    "passives": [
     {
      "name": "小剣",
@@ -4766,11 +4696,6 @@
    }
   },
   "MG": {
-   "profile": {
-    "name": "高銀(コ・ウン)",
-    "birthplace": "朝の国・左道房",
-    "other": ""
-   },
    "passives": [
     {
      "name": "狐霊符",
@@ -5102,11 +5027,6 @@
    }
   },
   "MT": {
-   "profile": {
-    "name": "リタ",
-    "birthplace": "朝の国・太白派",
-    "other": ""
-   },
    "passives": [
     {
      "name": "破拳甲",
@@ -5421,11 +5341,6 @@
    }
   },
   "NJ": {
-   "profile": {
-    "name": "龍助(りゅうすけ)",
-    "birthplace": "鳥の国・ナルサワ家門",
-    "other": ""
-   },
    "passives": [
     {
      "name": "小刀",
@@ -5768,11 +5683,6 @@
    }
   },
   "NV": {
-   "profile": {
-    "name": "フランチェスカ・ユリア・エロルディ・セリック",
-    "birthplace": "カルフェオン",
-    "other": ""
-   },
    "passives": [
     {
      "name": "モーニングスター",
@@ -6128,11 +6038,6 @@
    }
   },
   "RG": {
-   "profile": {
-    "name": "アナリエル",
-    "birthplace": "カーマスリビア",
-    "other": ""
-   },
    "passives": [
     {
      "name": "ロングボウ",
@@ -6459,11 +6364,6 @@
    }
   },
   "SC": {
-   "profile": {
-    "name": "エイブリン・オ・セルベリル",
-    "birthplace": "？？？",
-    "other": ""
-   },
    "passives": [
     {
      "name": "重力ハンマー",
@@ -6782,11 +6682,6 @@
    }
   },
   "SG": {
-   "profile": {
-    "name": "ロークス・マハ・デキア",
-    "birthplace": "アトラクシオン",
-    "other": ""
-   },
    "passives": [
     {
      "name": "カイヴ",
@@ -7120,11 +7015,6 @@
    }
   },
   "SH": {
-   "profile": {
-    "name": "セリーヌ",
-    "birthplace": "フローリン村",
-    "other": ""
-   },
    "passives": [
     {
      "name": "フローラン",
@@ -7485,11 +7375,6 @@
    }
   },
   "SP": {
-   "profile": {
-    "name": "マルガリーテ・ブラント",
-    "birthplace": "？？？",
-    "other": ""
-   },
    "passives": [
     {
      "name": "聖約",
@@ -7815,11 +7700,6 @@
    }
   },
   "SR": {
-   "profile": {
-    "name": "デルヤ",
-    "birthplace": "タリフ村",
-    "other": ""
-   },
    "passives": [
     {
      "name": "護符",
@@ -8128,11 +8008,6 @@
    }
   },
   "TB": {
-   "profile": {
-    "name": "ミョソン",
-    "birthplace": "朝の国・花仙谷",
-    "other": ""
-   },
    "passives": [
     {
      "name": "刀剣",
@@ -8465,11 +8340,6 @@
    }
   },
   "VK": {
-   "profile": {
-    "name": "ソフィア・エーデルヴァイス",
-    "birthplace": "カルフェオン神聖大学",
-    "other": ""
-   },
    "passives": [
     {
      "name": "ソード",
@@ -8769,11 +8639,6 @@
    }
   },
   "WR": {
-   "profile": {
-    "name": "エリック・アイゼンヘルツ",
-    "birthplace": "昔のダンデリオン",
-    "other": ""
-   },
    "passives": [
     {
      "name": "ソード",
@@ -9102,11 +8967,6 @@
    }
   },
   "WS": {
-   "profile": {
-    "name": "高玄(コ・ヒョン)",
-    "birthplace": "朝の国・右道房",
-    "other": ""
-   },
    "passives": [
     {
      "name": "蝶画扇",
@@ -9438,11 +9298,6 @@
    }
   },
   "WT": {
-   "profile": {
-    "name": "ローズ・ジン・グランフォード",
-    "birthplace": "ラブリフ",
-    "other": ""
-   },
    "passives": [
     {
      "name": "スタッフ",
@@ -9778,11 +9633,6 @@
    }
   },
   "WZ": {
-   "profile": {
-    "name": "ヒューゴ・ビリウス・ワイズマン",
-    "birthplace": "ゴッドアイド",
-    "other": ""
-   },
    "passives": [
     {
      "name": "ロッド",

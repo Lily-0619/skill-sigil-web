@@ -1027,38 +1027,6 @@ img {
   word-break: break-word;
 }
 
-/* プロフィール枠 (資料Excel「プロフィール」シート: 名前/出身地/Other) */
-.profile-card {
-  padding: 18px 22px 20px;
-}
-.profile-list {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.profile-row {
-  display: grid;
-  grid-template-columns: 84px 1fr;
-  gap: 12px;
-  align-items: baseline;
-}
-.profile-row dt {
-  margin: 0;
-  font-family: var(--font-mincho);
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  color: var(--pink);
-}
-.profile-row dd {
-  margin: 0;
-  color: var(--ivory);
-  font-size: 13.5px;
-  line-height: 1.6;
-  letter-spacing: 0.04em;
-  word-break: break-word;
-}
-
 /* PvE / PvP チップ (カラーはまな指定: PvE=#a6d7ec / PvP=#eca6b7) */
 .pv-chip {
   display: inline-block;

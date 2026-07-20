@@ -1,39 +1,4 @@
-import type { ClassDescriptions, ProfileDesc, SkillDesc } from "../../types";
-
-/** クラスのプロフィール(名前・出身地・その他)。Otherは未入力なら表示しない。 */
-export function ProfileCard({ profile }: { profile: ProfileDesc | null }) {
-  if (!profile || (!profile.name && !profile.birthplace && !profile.other)) {
-    return null;
-  }
-  return (
-    <div className="panel profile-card rv rv-fade in">
-      <div className="skill-desc-panel-head">
-        <span className="overline">Profile</span>
-        <span className="t">プロフィール</span>
-      </div>
-      <dl className="profile-list">
-        {profile.name && (
-          <div className="profile-row">
-            <dt>名前</dt>
-            <dd>{profile.name}</dd>
-          </div>
-        )}
-        {profile.birthplace && (
-          <div className="profile-row">
-            <dt>出身地</dt>
-            <dd>{profile.birthplace}</dd>
-          </div>
-        )}
-        {profile.other && (
-          <div className="profile-row">
-            <dt>Other</dt>
-            <dd>{profile.other}</dd>
-          </div>
-        )}
-      </dl>
-    </div>
-  );
-}
+import type { ClassDescriptions, SkillDesc } from "../../types";
 
 /** PvE/PvP チップ。カラーはまな指定 (PvP=#eca6b7 / PvE=#a6d7ec、global.css) */
 export function PvChips({ pve, pvp }: { pve: boolean; pvp: boolean }) {
