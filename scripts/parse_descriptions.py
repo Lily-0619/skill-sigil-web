@@ -4,6 +4,9 @@
 使い方:
     python scripts/parse_descriptions.py
 
+  - プロフィールシート = A列ラベル(名前/出身地/Other)・B列値。各クラスの profile に格納
+    (Otherは未入力可。空文字ならHP側で非表示)
+
 HPに表示するのは日本語(正)列(E列)のみ。抽出ルール(2026-07-15 まな指示):
   - 改行・字下げ・「・」・効果の順番は変えない (行をそのまま配列に入れる)
   - 秘伝の種別タグ(系列/無欠/鮮明/洗練された/かすかな/守護/燦爛)は省く
@@ -117,6 +120,26 @@ def parse_sheet(ws, where):
     return name, flags, kept
 
 
+# プロフィールシートのA列ラベル → profile辞書のキー
+PROFILE_LABELS = {"名前": "name", "出身地": "birthplace", "other": "other"}
+
+
+def parse_profile(ws):
+    """プロフィールシート(A列ラベル/B列値)から {name, birthplace, other} を返す。
+    未入力(空)の項目は空文字。"""
+    profile = {"name": "", "birthplace": "", "other": ""}
+    for row in ws.iter_rows(min_row=1, max_row=20, min_col=1, max_col=2):
+        label = row[0].value
+        if not isinstance(label, str):
+            continue
+        key = PROFILE_LABELS.get(label.strip().lower())
+        if not key:
+            continue
+        val = row[1].value
+        profile[key] = norm(val.strip()) if isinstance(val, str) else ""
+    return profile
+
+
 def split_rage(lines):
     """闇精霊の怒りの本文を 共通部 + 武器別セクション(0 or 2個) に分割。"""
     marks = [i for i, ln in enumerate(lines) if WEAPON_LINE.search(ln)]
@@ -140,6 +163,16 @@ def main():
         abbr = os.path.basename(path).replace("黒い砂漠M_説明_", "").replace(".xlsx", "")
         wb = openpyxl.load_workbook(path, read_only=True)
         sheet_by_name = {n.strip(): n for n in wb.sheetnames}
+
+        # プロフィール(名前・出身地・Other)
+        profile = {"name": "", "birthplace": "", "other": ""}
+        prof_key = sheet_by_name.get("プロフィール")
+        if prof_key:
+            profile = parse_profile(wb[prof_key])
+            if not profile["name"] or not profile["birthplace"]:
+                warnings.append(f"{abbr}: プロフィール未入力 {profile}")
+        else:
+            warnings.append(f"{abbr}: プロフィールシートなし")
 
         # パッシブ(①)(②)
         passives = []
@@ -203,7 +236,12 @@ def main():
                     f"{abbr}/{key}: 名称不一致 master={s['name_ja']!r} excel={d['name']!r}"
                 )
 
-        classes[abbr] = {"passives": passives, "rage": rage, "skills": skills}
+        classes[abbr] = {
+            "profile": profile,
+            "passives": passives,
+            "rage": rage,
+            "skills": skills,
+        }
 
     data = {"schema_version": 1, "classes": classes}
     with open(OUT, "w", encoding="utf-8") as f:
