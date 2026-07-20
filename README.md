@@ -43,17 +43,27 @@ npm run build      # dist/index.html (単一ファイル) を生成
 
 カーソルを載せた側だけ再生されます。
 
-## 公開 (docs/12 準拠, 2026-07-14更新)
+## 公開 (本番デプロイ)
 
-GitHub (Lily-0619 / private) へ push → Cloudflare Workers Static Assets でビルド公開。
-(Cloudflare Pagesではなく、新規プロジェクト向けにCloudflareが推奨する Workers Static Assets を採用)
+**本番の公開方法は「GitHub の main へ push」だけ。** この GitHub リポジトリ
+(Lily-0619/skill-sigil-web) は Cloudflare Workers Builds と連携済みで、
+main への push を契機に Cloudflare がソースから自動ビルド・自動公開する。
+手元で `wrangler deploy` を叩く必要はない (このPCは wrangler 未ログインでもよい)。
 
-- `npm run build` は自動で `scripts/sync_public_images.mjs` を実行し、
-  1つ上の `../画像/` フォルダを `public/画像/` へミラーコピーしてからビルドする
-  (ローカル単一HTML版は `../画像/` を直接参照するため、正本は引き続き `../画像/`)。
-- `wrangler.jsonc` に Workers Static Assets の設定を用意済み (`directory: "./dist"`)。
-- 公開には別途 Cloudflareアカウント登録と `wrangler login` (または GitHub連携によるWorkers Builds) が必要。
-- `npm run deploy` で `build` → `wrangler deploy` を実行する (要Cloudflareログイン)。
+```bash
+git add -A && git commit -m "..." && git push origin main   # ← これで本番反映 (数分)
+```
+
+- Cloudflare はリポジトリ単体をビルドするため、正本の `../画像/` フォルダ (repo外) は
+  存在せず、`sync_public_images.mjs` はスキップされる。よって **git にコミット済みの
+  `public/画像/` がそのまま配信される。** 手元で `npm run build` を回すと sync が走り、
+  正本から消えた画像を `public/画像/` から削除してしまうので、更新をコミットする前に
+  `git restore -- "public/画像"` して意図しない画像削除を巻き込まないこと。
+- ローカル閲覧用の単一HTMLは従来どおり `dist/index.html` を `../スキル秘伝HP.html` へコピー
+  (`../画像/` を直接参照)。
+- `wrangler.jsonc` に Workers Static Assets 設定あり (`directory: "./dist"`)。
+  手動デプロイする場合のみ `npx wrangler login` (ブラウザOAuth) → `npx wrangler deploy`。
+  設計方針の詳細は `docs/12_公開方式・技術構成_Workers版.md`。
 
 ## 既知の要確認事項
 
