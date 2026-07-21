@@ -32,8 +32,8 @@ export default function TopPage({ onOpenSkillSigil }: TopPageProps) {
       </div>
       <header className="top-header">
         <div>
-          <p className="top-kicker">Unofficial Fan Portal</p>
-          <h1>黒い砂漠MOBILE 情報まとめ</h1>
+          <p className="top-kicker">黒い砂漠モバイル 非公式Webページ</p>
+          <h1>黒い砂漠モバイル 非公式Webページ</h1>
         </div>
         <div className="top-beta">β / 仮TOP</div>
       </header>
