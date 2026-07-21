@@ -48,7 +48,7 @@
 .top-kicker,
 .top-chapter {
   margin: 0 0 8px;
-  font-family: var(--font-en-deco);
+  font-family: var(--font-display);
   letter-spacing: 0.14em;
   color: var(--pink);
   text-transform: none;
