@@ -104,7 +104,7 @@ export default function Shell({
       <div className="app-shell">
         <header className="app-header">
           <button className="wordmark" onClick={onHome} aria-label="TOPへ">
-            <span className="en">Skill Sigil</span>
+            <span className="en">スキル秘伝</span>
             <span className="ja">TOPへ</span>
           </button>
           <div className="header-center">
