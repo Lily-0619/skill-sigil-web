@@ -515,7 +515,7 @@ img {
   display: flex;
   align-items: baseline;
   gap: 14px;
-  cursor: pointer;
+  cursor: default;
   background: none;
   border: none;
   padding: 0;
@@ -526,6 +526,19 @@ img {
   font-size: 21px;
   letter-spacing: 0.34em;
   font-weight: 500;
+  color: var(--ivory);
+}
+.wordmark-home {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: var(--pink);
+  font-family: var(--font-mincho);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  cursor: pointer;
+}
+.wordmark-home:hover {
   color: var(--ivory);
 }
 .wordmark .ja {
@@ -599,7 +612,7 @@ img {
     background var(--dur-short) var(--ease-out);
 }
 .nav-item .en {
-  font-family: var(--font-en-deco);
+  font-family: var(--font-display);
   font-size: 13px;
   letter-spacing: 0.1em;
   text-transform: none;
@@ -2081,7 +2094,7 @@ h3 .en,
   font-size: 1.15em;
 }
 .wordmark .en {
-  font-family: var(--font-en-deco);
+  font-family: var(--font-mincho);
   letter-spacing: 0.12em;
   text-transform: none;
 }
