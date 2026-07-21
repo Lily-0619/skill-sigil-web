@@ -134,7 +134,7 @@ img {
    ============================================================= */
 
 .overline {
-  font-family: var(--font-en-deco);
+  font-family: var(--font-display);
   font-size: 15px;
   letter-spacing: 0.16em;
   text-transform: none;
