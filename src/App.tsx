@@ -38,6 +38,7 @@ function AppInner() {
           setScreen("class");
           setTopStage("app");
         }}
+        onBack={() => setTopStage("top")}
       />
     );
   }
