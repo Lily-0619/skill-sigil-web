@@ -32,8 +32,8 @@ export default function TopPage({ onOpenSkillSigil }: TopPageProps) {
       </div>
       <header className="top-header">
         <div>
-          <p className="top-kicker">黒い砂漠モバイル 非公式Webページ</p>
-          <h1>黒い砂漠モバイル 非公式Webページ</h1>
+          <p className="top-kicker">Black Desert Mobile</p>
+          <h1>黒い砂漠MOBILE 非公式Webページ</h1>
         </div>
         <div className="top-beta">β / 仮TOP</div>
       </header>

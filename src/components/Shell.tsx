@@ -144,7 +144,7 @@ export default function Shell({
 
         <footer className="app-footer">
           <span>
-            黒い砂漠モバイル 非公式Webページ「スキル秘伝」｜本サイトはPearl Abyssの著作物・知的財産を含む非公式ファンコンテンツであり、Pearl
+            黒い砂漠MOBILE 非公式Webページ「スキル秘伝」｜本サイトはPearl Abyssの著作物・知的財産を含む非公式ファンコンテンツであり、Pearl
             Abyss公式または公認のものではありません。
           </span>
           <span>
