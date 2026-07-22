@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import type { BuildMode } from "./types";
-import { StoreProvider, useStore } from "./state/store";
+import { StoreProvider, useStore, master } from "./state/store";
 import TopPage from "./components/TopPage";
 import Hero from "./components/Hero";
 import Shell, { type Screen } from "./components/Shell";
@@ -14,10 +14,33 @@ import { ToastHost } from "./components/ui";
 
 function AppInner() {
   const { data, dispatch, loaded } = useStore();
-  const [topStage, setTopStage] = useState<"top" | "sigil" | "app">("top");
-  const [screen, setScreen] = useState<Screen>("class");
+  // キャラクター図鑑の「このクラスで編成を作る」からの深いリンク (#class=CODE)。
+  // 有効なクラスコードのときだけ、TOPを経由せず直接そのクラスの編成編集へ入る。
+  const deepLinkClass = useMemo(() => {
+    const m = (window.location.hash || "").match(/class=([A-Za-z]{2,})/i);
+    if (!m) return null;
+    const code = m[1].toUpperCase();
+    return master.classes.some((c) => c.class_id === code && c.enabled)
+      ? code
+      : null;
+  }, []);
+  const [topStage, setTopStage] = useState<"top" | "sigil" | "app">(
+    deepLinkClass ? "app" : "top"
+  );
+  const [screen, setScreen] = useState<Screen>(
+    deepLinkClass ? "build" : "class"
+  );
   // v0.2 #3: トップで選んだ入口モード (My / Free)。編成が選択済みならそちらのmodeを優先。
   const [mode, setMode] = useState<BuildMode>("my");
+  const [deepLinkDone, setDeepLinkDone] = useState(false);
+
+  // ストア読込後にクラスを選択し、ハッシュを消す (再読込でTOPに戻れるように)
+  useEffect(() => {
+    if (deepLinkDone || !loaded || !deepLinkClass) return;
+    dispatch({ type: "SELECT_CLASS", classId: deepLinkClass });
+    setDeepLinkDone(true);
+    window.history.replaceState(null, "", window.location.pathname);
+  }, [loaded, deepLinkClass, deepLinkDone, dispatch]);
 
   if (topStage === "top") {
     return <TopPage onOpenSkillSigil={() => setTopStage("sigil")} />;
