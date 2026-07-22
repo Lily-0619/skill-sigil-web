@@ -35,7 +35,6 @@ export default function TopPage({ onOpenSkillSigil }: TopPageProps) {
           <p className="top-kicker">Black Desert Mobile</p>
           <h1>黒い砂漠MOBILE 非公式Webページ</h1>
         </div>
-        <div className="top-beta">β / 仮TOP</div>
       </header>
 
       <main className="top-main">
@@ -45,19 +44,16 @@ export default function TopPage({ onOpenSkillSigil }: TopPageProps) {
 
         <section className="top-cards" aria-label="コンテンツ入口">
           <button className="top-card primary" type="button" onClick={onOpenSkillSigil}>
-            <span className="top-card-no">01</span>
             <span className="top-card-title">スキル秘伝</span>
             <span className="top-card-desc">所持秘伝・Free編成を作る現在のメイン機能。</span>
             <span className="top-card-cta">開く</span>
           </button>
           <a className="top-card primary" href="キャラクター紹介_案B.html">
-            <span className="top-card-no">02</span>
             <span className="top-card-title">キャラクター図鑑</span>
             <span className="top-card-desc">30クラスの立ち絵・武器・プロフィールを見る。</span>
             <span className="top-card-cta">開く</span>
           </a>
           <article className="top-card muted" aria-disabled="true">
-            <span className="top-card-no">03</span>
             <span className="top-card-title">ギャラリー</span>
             <span className="top-card-desc">YouTube・スクリーンショットを置く予定。</span>
             <span className="top-card-cta">準備中</span>

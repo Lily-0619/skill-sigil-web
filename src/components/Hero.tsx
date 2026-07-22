@@ -102,7 +102,6 @@ export default function Hero({
     <div className="hero">
       <div className="hero-brand">
         <div {...rv("rv-blur", 150)}>
-          <div className="site">Black Desert Mobile</div>
         </div>
         <div {...rv("rv-blur", 300)}>
           <div className="site-ja">黒い砂漠MOBILE 情報まとめ</div>
@@ -189,7 +188,7 @@ export default function Hero({
               <div className="lede">
                 所持数にとらわれず、
                 <br />
-                目指す理想の編成を先に設計する。
+                目指す理想の編成を設計する。
               </div>
             </div>
             <div {...rv("rv-fade", 1350)}>

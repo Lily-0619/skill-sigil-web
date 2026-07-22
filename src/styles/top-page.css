@@ -109,7 +109,7 @@
   gap: 14px;
   padding: 22px;
   border: 1px solid var(--line);
-  background: rgba(11, 16, 28, 0.75);
+  background: rgba(11, 16, 28, 0.50);
   color: var(--ivory);
   backdrop-filter: blur(14px);
   transition: transform 420ms var(--ease-out), border-color 420ms var(--ease-out), background 420ms var(--ease-out);

@@ -208,7 +208,7 @@ img {
 .input,
 .select,
 .textarea {
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   border: 1px solid var(--line-navy);
   color: var(--ivory);
   padding: 9px 12px;
@@ -505,7 +505,7 @@ img {
   justify-content: space-between;
   padding: 14px 28px;
   border-bottom: 1px solid var(--line);
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
@@ -595,7 +595,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
 }
 .nav-item {
   display: flex;
@@ -657,7 +657,7 @@ img {
   font-size: 10.5px;
   letter-spacing: 0.1em;
   color: var(--muted);
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
 }
 .app-footer a {
   color: var(--pink-deep);
@@ -834,7 +834,7 @@ img {
   font-size: 11px;
   letter-spacing: 0.1em;
   color: var(--ivory);
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   border: 1px solid var(--line-navy);
   padding: 0 6px;
   line-height: 1.7;
@@ -905,7 +905,7 @@ img {
   border: 1px solid var(--line-navy);
   border-radius: 2px;
   padding: 12px 13px;
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   min-height: 118px;
   display: flex;
   flex-direction: column;
@@ -1009,7 +1009,7 @@ img {
 }
 .weapon-tab {
   appearance: none;
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   border: 1px solid var(--line-navy);
   color: var(--ivory-dim);
   padding: 4px 12px;
@@ -1262,7 +1262,7 @@ img {
   align-items: center;
   text-align: left;
   padding: 8px 10px;
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   border: 1px solid var(--line-navy);
   border-radius: 2px;
   color: var(--ivory);
@@ -1272,7 +1272,7 @@ img {
 }
 .tray-item:hover:not(:disabled) {
   border-color: var(--pink-deep);
-  background: rgba(26, 36, 64, 0.75);
+  background: rgba(26, 36, 64, 0.50);
 }
 .tray-item.selected {
   border-color: var(--pink);
@@ -1357,7 +1357,7 @@ img {
   padding: 3px 10px;
   border: 1px solid var(--line-navy);
   border-radius: 1px;
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   color: var(--ivory-dim);
   cursor: pointer;
   transition: border-color var(--dur-short) var(--ease-out),
@@ -1384,7 +1384,7 @@ img {
   border-color: var(--pink-bright);
 }
 .pchip.cat-equip:disabled {
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   border-color: var(--line-navy);
   color: var(--muted);
   cursor: not-allowed;
@@ -1481,7 +1481,7 @@ img {
   align-items: center;
   gap: 5px;
   padding: 9px 4px 7px;
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   border: 1px solid var(--line-navy);
   border-radius: 2px;
   color: var(--ivory-dim);
@@ -1519,7 +1519,7 @@ img {
   padding: 8px 12px;
   font-size: 12px;
   line-height: 1.5;
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   border: 1px solid var(--line-navy);
   border-radius: 2px;
   color: var(--ivory-dim);
@@ -1553,7 +1553,7 @@ img {
 }
 .rarity-btn {
   padding: 10px 4px;
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   border: 1px solid var(--line-navy);
   border-radius: 2px;
   color: var(--ivory-dim);
@@ -1640,7 +1640,7 @@ img {
   padding: 8px 12px;
   border: 1px solid var(--line-navy);
   border-radius: 2px;
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   color: var(--pink);
   font-family: var(--font-display);
   font-size: 14px;
@@ -1657,7 +1657,7 @@ img {
 }
 .stepper button {
   width: 40px;
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   border: none;
   color: var(--pink);
   font-size: 16px;
@@ -1896,7 +1896,7 @@ img {
   font-size: 11.5px;
   padding: 6px 12px;
   border-left: 2px solid;
-  background: rgba(7, 9, 15, 0.75);
+  background: rgba(7, 9, 15, 0.50);
   line-height: 1.55;
 }
 .issue.error {
@@ -2002,7 +2002,7 @@ img {
   letter-spacing: 0.1em;
   border-radius: 1px;
   border: 1px solid;
-  background: rgba(10, 15, 29, 0.92);
+  background: rgba(10, 15, 29, 0.50);
   backdrop-filter: blur(10px);
   animation: toastIn var(--dur-short) var(--ease-out) both;
   display: flex;
