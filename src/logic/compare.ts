@@ -18,6 +18,7 @@ import {
   effectOf,
   skillsOf,
 } from "./equip";
+import { skillIconUrls } from "../lib/assets";
 
 // 等級順・数値集約はスキル秘伝ルールの正本 (src/game-rules) を参照する。
 // 既存import (テスト含む) の後方互換で再export。
@@ -45,6 +46,7 @@ export interface CompareSkillRow {
   eligible: boolean;
   slots: CompareSlot[]; // 対象外スキルは []
   filled: number; // 装着済み枠数
+  iconUrl: string | null; // スキルアイコン (案Aの背景に薄く敷く)
 }
 
 /** 案B: 等級ごとの集約 */
@@ -181,6 +183,7 @@ function skillRowsOf(
       eligible,
       slots,
       filled: slots.filter((s) => s.effectId !== null).length,
+      iconUrl: skillIconUrls(build.class_id, skill)[0] ?? null,
     };
   });
 }
