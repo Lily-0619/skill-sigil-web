@@ -8,6 +8,7 @@ import ClassSelect from "./components/ClassSelect";
 import BuildEdit from "./components/BuildEdit";
 import Inventory from "./components/Inventory";
 import Builds from "./components/Builds";
+import Compare from "./components/Compare";
 import Backup from "./components/Backup";
 import Help from "./components/Help";
 import { ToastHost } from "./components/ui";
@@ -91,6 +92,7 @@ function AppInner() {
           }} />)}
         {screen === "inventory" && <Inventory />}
         {screen === "builds" && <Builds onOpen={() => setScreen("build")} />}
+        {screen === "compare" && <Compare />}
         {screen === "backup" && <Backup />}
         {screen === "help" && <Help />}
       </Shell>

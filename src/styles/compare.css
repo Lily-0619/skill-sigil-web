@@ -1,0 +1,322 @@
+/* 編成比較画面 (src/components/Compare.tsx / compare/*)
+   デザイン調整はこのファイルで完結できるよう、比較画面のスタイルはすべて cmp- 接頭辞で分離。
+   配色は既存の共通変数 (global.css の :root) を使う。 */
+
+.cmp-screen {
+  --cmp-col-min: 250px; /* カラム最小幅。狭めたい/広げたいときはここ */
+}
+
+/* ===== 編成選択バー ===== */
+.cmp-select-bar {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+.cmp-select-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.cmp-select-title {
+  font-size: 13px;
+  color: var(--pink);
+  letter-spacing: 0.06em;
+}
+.cmp-select-note {
+  font-size: 11px;
+  color: var(--muted);
+}
+.cmp-select-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.cmp-select-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--line-navy);
+  border-radius: 9px;
+  background: transparent;
+  color: var(--ivory);
+  font-size: 12px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.cmp-select-item:hover:not(.disabled) {
+  border-color: var(--pink-deep);
+}
+.cmp-select-item.on {
+  border-color: var(--pink);
+  background: var(--pink-glow);
+}
+.cmp-select-item.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.cmp-select-check {
+  width: 12px;
+  color: var(--pink);
+  font-size: 11px;
+}
+.cmp-select-class {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* ===== ツールバー (ビュー切替) ===== */
+.cmp-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.cmp-toolbar-label {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+.cmp-view-toggle {
+  display: inline-flex;
+  border: 1px solid var(--line-strong);
+  border-radius: 9px;
+  overflow: hidden;
+}
+.cmp-view-btn {
+  padding: 6px 14px;
+  border: none;
+  background: transparent;
+  color: var(--pink-deep);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.cmp-view-btn:not(:last-child) {
+  border-right: 1px solid var(--line);
+}
+.cmp-view-btn.on {
+  background: var(--pink);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ===== 空状態 ===== */
+.cmp-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 48px 16px;
+  color: var(--muted);
+  font-size: 13px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+}
+.cmp-empty .en {
+  font-family: var(--font-en-deco, inherit);
+  letter-spacing: 0.1em;
+  color: var(--pink-deep);
+  font-size: 13px;
+}
+
+/* ===== カラム共通 ===== */
+.cmp-columns {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.cmp-col {
+  flex: 1 1 var(--cmp-col-min);
+  min-width: var(--cmp-col-min);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cmp-col-head {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(233, 183, 199, 0.04);
+}
+.cmp-col-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.cmp-col-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ivory);
+}
+.cmp-col-sub {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.cmp-col-body {
+  padding: 10px 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cmp-col-empty {
+  padding: 16px 4px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11.5px;
+}
+
+/* ===== 案A: スキルごと ===== */
+.cmp-skill-name {
+  font-size: 12px;
+  color: var(--pink-deep);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cmp-skill-no {
+  color: var(--muted);
+  font-size: 11px;
+  min-width: 14px;
+}
+.cmp-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cmp-slot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--ivory);
+}
+.cmp-slot-no {
+  color: var(--muted);
+  font-size: 10.5px;
+  min-width: 12px;
+}
+.cmp-slot.empty {
+  color: var(--muted);
+}
+.cmp-empty-label {
+  color: var(--muted);
+  font-size: 10.5px;
+  opacity: 0.7;
+}
+.cmp-eff {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cmp-val {
+  margin-left: auto;
+  color: var(--pink);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* ===== 案B: タイプ別サマリー ===== */
+.cmp-sum-type + .cmp-sum-type {
+  margin-top: 4px;
+}
+.cmp-sum-type-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+.cmp-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  display: inline-block;
+}
+.cmp-sum-count {
+  margin-left: auto;
+  color: var(--pink-deep);
+  font-size: 11px;
+  min-width: 16px;
+  text-align: right;
+}
+.cmp-sum-eff {
+  padding: 4px 0 4px 14px;
+}
+.cmp-sum-eff-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cmp-sum-eff-name {
+  font-size: 11.5px;
+  color: var(--ivory);
+}
+.cmp-sum-rarities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px 8px;
+  margin-top: 3px;
+}
+.cmp-sum-rarity {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.cmp-noval {
+  color: var(--muted);
+  font-size: 10.5px;
+}
+
+/* ===== 案C: グラフ ===== */
+.cmp-chart-section + .cmp-chart-section {
+  margin-top: 6px;
+}
+.cmp-chart-title {
+  font-size: 11.5px;
+  color: var(--pink-deep);
+  margin-bottom: 6px;
+}
+.cmp-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+.cmp-bar-label {
+  font-size: 11px;
+  color: var(--muted);
+  min-width: 48px;
+  white-space: nowrap;
+}
+.cmp-bar-track {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.cmp-bar {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+  min-width: 2px;
+  transition: width 0.25s ease;
+}
+.cmp-bar-count {
+  font-size: 11px;
+  color: var(--ivory);
+  min-width: 18px;
+  text-align: right;
+}

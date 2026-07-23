@@ -3,13 +3,14 @@ import React, { useEffect, useState } from "react";
 import { master, useStore } from "../state/store";
 import { assetUrl, pickCharacterImage } from "../lib/assets";
 
-export type Screen = "class" | "build" | "inventory" | "builds" | "backup" | "help";
+export type Screen = "class" | "build" | "inventory" | "builds" | "compare" | "backup" | "help";
 
 const NAV: { id: Screen; ja: string; en: string; needsClass?: boolean }[] = [
   { id: "class", ja: "クラス選択", en: "Class" },
   { id: "build", ja: "編成編集", en: "Build", needsClass: true },
   { id: "inventory", ja: "所持秘伝", en: "Inventory" },
   { id: "builds", ja: "編成管理", en: "Manage" }, // v0.2 #7: クラス未選択でも開ける
+  { id: "compare", ja: "比較", en: "Compare" }, // docs/17: 編成同士の比較 (クラス未選択でも開ける)
   { id: "backup", ja: "バックアップ", en: "Backup" },
   { id: "help", ja: "ヘルプ・情報", en: "About" },
 ];
