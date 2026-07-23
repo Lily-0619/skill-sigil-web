@@ -233,9 +233,10 @@ export function freeEquipsForSkill(
   );
 }
 
-/** 系列(branch)タイプのID / 同一系列の1編成あたり装着上限 */
-export const BRANCH_TYPE_ID = "branch";
-export const SAME_SERIES_MAX = 4;
+// 系列(branch)タイプのID / 同一系列の1編成あたり装着上限 は
+// スキル秘伝ルールの正本 (src/game-rules) を参照する。既存importの後方互換で再export。
+export { BRANCH_TYPE_ID, SAME_SERIES_MAX } from "../game-rules/skill-sigil-rules";
+import { BRANCH_TYPE_ID, SAME_SERIES_MAX } from "../game-rules/skill-sigil-rules";
 
 /** その効果が系列(branch)タイプか */
 export function isBranchEffect(master: Master, effectId: string): boolean {

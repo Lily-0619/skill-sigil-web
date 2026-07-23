@@ -41,59 +41,7 @@ TYPE_BY_NAME = {
     "希微": "faint", "整頓": "refined", "燦爛": "radiant",
 }
 
-SIGIL_TYPES = [
-    {"id": "branch",   "name": "系列",   "alias": "系列",  "color": "#D9D9D9"},
-    {"id": "guardian", "name": "守護",   "alias": "守護",  "color": "#F4B183"},
-    {"id": "flawless", "name": "無欠",   "alias": "無欠",  "color": "#D9E2F3"},
-    {"id": "defined",  "name": "鮮明",   "alias": "鮮明",  "color": "#BDD7EE"},
-    {"id": "refined",  "name": "整った", "alias": "整頓",  "color": "#C6E0B4"},
-    {"id": "faint",    "name": "微か",   "alias": "希微",  "color": "#FFF2CC"},
-    {"id": "radiant",  "name": "煌めく", "alias": "燦爛",  "color": "#F4B6D2"},
-]
 
-# 効果マスタ (docs/11_効果マスタ数値.md 正本 + 系列効果名はExcel「リスト」「名称」シートで2026-07-13判明)
-# values: {rarity: [a, b] or [a] } / 存在しない等級はキーなし
-# two_effects: 無欠のカンマ区切り(2効果同時付与)のみ true
-EFFECTS = [
-    # 煌めく (混沌のみ)
-    {"effect_id": "radiant_cooltime", "sigil_type_id": "radiant", "name_ja": "スキル使用時全体のクールタイム減少", "values": {"chaos": ["0.2秒"]}},
-    {"effect_id": "radiant_maxcount", "sigil_type_id": "radiant", "name_ja": "スキルの最大回数増加", "values": {"chaos": ["1"]}},
-    {"effect_id": "radiant_instant", "sigil_type_id": "radiant", "name_ja": "スキルが即時発動に変更", "values": {"chaos": []}, "valueless": True},
-    # 守護
-    {"effect_id": "guardian_superarmor", "sigil_type_id": "guardian", "name_ja": "スキル使用時スーパーアーマー発動", "values": {"abyssal": ["0.1秒", "0.2秒"], "primal": ["0.3秒", "0.4秒"], "chaos": ["0.5秒", "0.6秒"]}},
-    {"effect_id": "guardian_frontguard", "sigil_type_id": "guardian", "name_ja": "スキル使用時前方ガード発動", "values": {"abyssal": ["0.1秒", "0.2秒"], "primal": ["0.3秒", "0.4秒"], "chaos": ["0.5秒", "0.6秒"]}},
-    {"effect_id": "guardian_ungrab", "sigil_type_id": "guardian", "name_ja": "スキル使用時掴み不可発動", "values": {"abyssal": ["0.1秒", "0.2秒"], "primal": ["0.3秒", "0.4秒"], "chaos": ["0.5秒", "0.6秒"]}},
-    {"effect_id": "guardian_dmgreduce", "sigil_type_id": "guardian", "name_ja": "スキル使用時ダメージ減少発動", "values": {"primal": ["0.1秒", "0.2秒"], "chaos": ["0.3秒", "0.4秒"]}},
-    # 無欠
-    {"effect_id": "flawless_finaldmgdown", "sigil_type_id": "flawless", "name_ja": "スキル使用時受ける最終ダメージ量減少", "values": {"abyssal": ["10%"], "primal": ["12.5%"], "chaos": ["15%"]}},
-    {"effect_id": "flawless_atkdefup", "sigil_type_id": "flawless", "name_ja": "スキル使用時3秒間攻撃力・防御力増加", "values": {"abyssal": ["20"], "primal": ["40"], "chaos": ["60"]}},
-    {"effect_id": "flawless_debuff", "sigil_type_id": "flawless", "name_ja": "スキルヒット時攻撃力・防御力減少および攻撃速度・移動速度減少", "values": {"abyssal": ["20", "3%"], "primal": ["40", "6%"], "chaos": ["40", "9%"]}, "two_effects": True},
-    {"effect_id": "flawless_seriesdmgdown", "sigil_type_id": "flawless", "name_ja": "スキルヒット時受ける系列ダメージ減少", "values": {"abyssal": ["4%"], "primal": ["8%"], "chaos": ["12%"]}},
-    # 鮮明
-    {"effect_id": "defined_range", "sigil_type_id": "defined", "name_ja": "スキル攻撃範囲増加", "values": {"abyssal": ["1%", "2%"], "primal": ["3%", "4%"], "chaos": ["5%", "6%"]}},
-    {"effect_id": "defined_dmgup", "sigil_type_id": "defined", "name_ja": "スキル使用時ダメージ量増加", "values": {"abyssal": ["1%", "2%"], "primal": ["3%", "4%"], "chaos": ["5%", "6%"]}},
-    {"effect_id": "defined_cooldown", "sigil_type_id": "defined", "name_ja": "スキル再使用時間減少", "values": {"abyssal": ["2%", "4%"], "primal": ["6%", "8%"], "chaos": ["10%", "12%"]}},
-    {"effect_id": "defined_targets", "sigil_type_id": "defined", "name_ja": "スキル使用時ヒット対象数増加", "values": {"chaos": ["1"]}},
-    # 整った
-    {"effect_id": "refined_heal", "sigil_type_id": "refined", "name_ja": "スキル使用時ヒットごとに生命力回復", "values": {"abyssal": ["20", "40"], "primal": ["60", "80"], "chaos": ["100", "120"]}},
-    {"effect_id": "refined_atkup", "sigil_type_id": "refined", "name_ja": "スキル使用時攻撃力増加", "values": {"abyssal": ["5", "10"], "primal": ["15", "20"], "chaos": ["25", "30"]}},
-    {"effect_id": "refined_defup", "sigil_type_id": "refined", "name_ja": "スキル使用時防御力増加", "values": {"abyssal": ["5", "10"], "primal": ["15", "20"], "chaos": ["25", "30"]}},
-    {"effect_id": "refined_critrate", "sigil_type_id": "refined", "name_ja": "スキル中クリティカル確率増加", "values": {"abyssal": ["1%", "2%"], "primal": ["3%", "4%"], "chaos": ["5%", "6%"]}},
-    {"effect_id": "refined_critdmg", "sigil_type_id": "refined", "name_ja": "スキル中クリティカルダメージ量増加", "values": {"abyssal": ["2%", "4%"], "primal": ["6%", "8%"], "chaos": ["10%", "12%"]}},
-    # 微か
-    {"effect_id": "faint_dot", "sigil_type_id": "faint", "name_ja": "スキル使用時3秒間毎秒ダメージ", "values": {"abyssal": ["20", "40"], "primal": ["60", "80"], "chaos": ["100", "120"]}},
-    {"effect_id": "faint_atkdown", "sigil_type_id": "faint", "name_ja": "スキルヒット時3秒間攻撃力減少", "values": {"abyssal": ["50"], "primal": ["100"], "chaos": ["150"]}},
-    {"effect_id": "faint_defdown", "sigil_type_id": "faint", "name_ja": "スキルヒット時3秒間防御力減少", "values": {"abyssal": ["50"], "primal": ["100"], "chaos": ["150"]}},
-    {"effect_id": "faint_aspdup", "sigil_type_id": "faint", "name_ja": "スキル使用時攻撃速度増加", "values": {"abyssal": ["3%"], "primal": ["6%"], "chaos": ["9%"]}},
-    {"effect_id": "faint_mspdup", "sigil_type_id": "faint", "name_ja": "スキル使用時移動速度増加", "values": {"abyssal": ["3%"], "primal": ["6%"], "chaos": ["9%"]}},
-    {"effect_id": "faint_aspddown", "sigil_type_id": "faint", "name_ja": "スキルヒット時3秒間攻撃速度減少", "values": {"abyssal": ["3%"], "primal": ["6%"], "chaos": ["9%"]}},
-    {"effect_id": "faint_mspddown", "sigil_type_id": "faint", "name_ja": "スキルヒット時3秒間移動速度減少", "values": {"abyssal": ["3%"], "primal": ["6%"], "chaos": ["9%"]}},
-    # 系列 (深淵のみ・10%統一 / 効果名は元Excel「リスト」シートで判明)
-    {"effect_id": "branch_arl", "sigil_type_id": "branch", "name_ja": "アールのスキル秘伝", "values": {"abyssal": ["10%"]}},
-    {"effect_id": "branch_celt", "sigil_type_id": "branch", "name_ja": "セルトのスキル秘伝", "values": {"abyssal": ["10%"]}},
-    {"effect_id": "branch_ahib", "sigil_type_id": "branch", "name_ja": "アヒブのスキル秘伝", "values": {"abyssal": ["10%"]}},
-    {"effect_id": "branch_labreve", "sigil_type_id": "branch", "name_ja": "ラブリフのスキル秘伝", "values": {"abyssal": ["10%"]}},
-]
 
 
 def norm(s):
@@ -194,13 +142,8 @@ def main():
     master = {
         "schema_version": 1,
         "master_version": "2026-07-13",
-        "sigil_types": SIGIL_TYPES,
-        "rarities": [
-            {"id": "abyssal", "name": "深淵", "color": "#D32F2F"},
-            {"id": "primal", "name": "太古", "color": "#C2185B"},
-            {"id": "chaos", "name": "混沌", "color": "#0D47A1"},
-        ],
-        "effects": [dict(e, sort_order=i, enabled=True) for i, e in enumerate(EFFECTS)],
+        # スキル秘伝の種類・等級・効果は src/game-rules/skill-sigil.json が正本。
+        # アプリは src/data/master.ts でそこと合成するため、ここでは出力しない。
         "classes": classes,
         "skills": skills_by_class,
     }

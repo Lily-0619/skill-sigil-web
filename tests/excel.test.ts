@@ -1,8 +1,8 @@
 // Excel入出力の往復テスト (docs/05_Excel入出力仕様書.md)
 import { describe, expect, it } from "vitest";
 import * as XLSX from "xlsx";
-import masterJson from "../src/data/master.json";
-import type { Master, UserData } from "../src/types";
+import { master } from "../src/data/master";
+import type { UserData } from "../src/types";
 import { emptyUserData } from "../src/types";
 import {
   applyImport,
@@ -10,8 +10,6 @@ import {
   exportIntegrityErrors,
   parseWorkbook,
 } from "../src/logic/excel";
-
-const master = masterJson as unknown as Master;
 
 const sample = (): UserData => {
   const d = emptyUserData();
