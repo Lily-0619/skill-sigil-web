@@ -17,6 +17,15 @@ export function CompareBySkill({ builds }: { builds: CompareBuild[] }) {
             <div className="cmp-col-body">
               {skills.map((s) => (
                 <div className="cmp-skill" key={s.skillId}>
+                  {s.iconUrl && (
+                    <img
+                      className="cmp-skill-bg"
+                      src={s.iconUrl}
+                      alt=""
+                      aria-hidden="true"
+                      loading="lazy"
+                    />
+                  )}
                   <div className="cmp-skill-name">
                     <span className="cmp-skill-no">
                       {s.group === "special" ? `特${s.displayNo}` : s.displayNo}

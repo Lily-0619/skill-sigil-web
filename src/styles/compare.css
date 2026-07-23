@@ -175,6 +175,31 @@
 }
 
 /* ===== 案A: スキルごと ===== */
+/* スキルブロック。背景にスキルアイコンを薄く敷く (スキル名だけだと分かりにくいため)。 */
+.cmp-skill {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.cmp-skill-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 60%; /* 右側にどれだけ出すか */
+  object-fit: cover;
+  opacity: 0.5; /* 透過50% (濃さの調整はここ) */
+  pointer-events: none;
+  /* 左側へフェードさせて秘伝名・数値の可読性を確保 */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 70%);
+  mask-image: linear-gradient(to right, transparent, #000 70%);
+}
+/* 文字・チップは背景アイコンより前面に */
+.cmp-skill-name,
+.cmp-slots {
+  position: relative;
+  z-index: 1;
+}
 .cmp-skill-name {
   font-size: 12px;
   color: var(--pink-deep);
