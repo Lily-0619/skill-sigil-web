@@ -9,13 +9,12 @@ import React, {
   useRef,
   useState,
 } from "react";
-import masterJson from "../data/master.json";
+import { master } from "../data/master";
 import type {
   Build,
   BuildMode,
   EquippedSigil,
   InventoryItem,
-  Master,
   Rarity,
   UserData,
 } from "../types";
@@ -23,7 +22,8 @@ import { emptyUserData } from "../types";
 import { idbGet, idbSet, KEY_USER_DATA } from "../lib/db";
 import { uid, nowIso } from "../lib/ids";
 
-export const master = masterJson as unknown as Master;
+// 秘伝の種類・効果は src/game-rules が正本。master は src/data/master.ts で組み立てる。
+export { master };
 
 // ---- Reducer ------------------------------------------------------------------
 

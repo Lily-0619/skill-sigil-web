@@ -41,8 +41,12 @@ git add -A && git commit -m "..." && git push origin main   # これで本番反
 
 コード側が読むのは `src/data/*.json`。正本は Excel で、スクリプトで変換する。
 
-- **マスタ:** `../スキル秘伝_v0.1_PN.xlsx` → `python scripts/parse_master.py <path>` →
-  `src/data/master.json`。効果マスタ数値は `parse_master.py` の `EFFECTS` 定数が正本。
+- **マスタ (クラス・スキル・固定枠):** `../スキル秘伝_v0.1_PN.xlsx` →
+  `python scripts/parse_master.py <path>` → `src/data/master.json`。
+- **スキル秘伝ルール (種類・等級・効果・装着ルール):** `src/game-rules/` が単一正本。
+  `skill-sigil.json` (種類/等級/効果・数値) と `skill-sigil-rules.ts` (装着ルール定数・
+  表示細則) を**手編集**する。アプリは `src/data/master.ts` が master.json と game-rules を
+  合成して読む。ゲーム改定時はまず game-rules を直す (docs は記録用で参照しない)。
 - **スキル/パッシブ説明・プロフィール:** `資料/説明(パッシブ・スキル)/黒い砂漠M_説明_*.xlsx`
   (30クラス) → `python scripts/parse_descriptions.py` → `src/data/descriptions.json`。
   各Excelの「プロフィール」シート (A列ラベル: 名前/出身地/Other、B列に値) から

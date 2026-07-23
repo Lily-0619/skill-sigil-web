@@ -2,11 +2,10 @@
 // (2026-07-15 まな指示: 用語統一 / 秘伝の種別タグ省略 / 武器分岐 / スキル(０)対象外)
 import { describe, expect, it } from "vitest";
 import descriptionsJson from "../src/data/descriptions.json";
-import masterJson from "../src/data/master.json";
-import type { DescriptionsData, Master } from "../src/types";
+import { master } from "../src/data/master";
+import type { DescriptionsData } from "../src/types";
 
 const D = descriptionsJson as unknown as DescriptionsData;
-const master = masterJson as unknown as Master;
 
 const allLines = (): string[] => {
   const out: string[] = [];

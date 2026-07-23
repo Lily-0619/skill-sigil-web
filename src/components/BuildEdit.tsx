@@ -22,6 +22,7 @@ import {
   typeName,
   usedCount,
 } from "../logic/equip";
+import { collapseValues, RARITY_ORDER } from "../game-rules/skill-sigil-rules";
 import { skillIconUrls, effectIconUrl } from "../lib/assets";
 import { classDescriptions, skillDescOf } from "../lib/descriptions";
 import { RarityChip, TypeChip } from "./ui";
@@ -30,24 +31,8 @@ import { EquipConfirmModal, type PendingEquip } from "./build-edit/EquipConfirmM
 import { PassiveSummary, SkillDescriptionPanel } from "./build-edit/DescriptionPanels";
 import { useReveal, staggerDelay } from "../hooks/useReveal";
 
-/**
- * 秘伝効果一覧の数値表示 (v0.2 #11): 同じ数値が重複する場合は「値 ×N個」にまとめ、
- * 出現順を保って " / " 区切りで返す。重複が無ければ数値をそのまま並べる。
- */
-const collapseValues = (vals: string[]): string => {
-  const order: string[] = [];
-  const counts = new Map<string, number>();
-  for (const v of vals) {
-    if (!counts.has(v)) order.push(v);
-    counts.set(v, (counts.get(v) ?? 0) + 1);
-  }
-  return order
-    .map((v) => (counts.get(v)! > 1 ? `${v} ×${counts.get(v)}個` : v))
-    .join(" / ");
-};
-
-/** 等級の良い順 (混沌 > 太古 > 深淵)。デフォルト等級・並び順に使う。 */
-const RARITY_ORDER: Rarity[] = ["chaos", "primal", "abyssal"];
+// 数値集約(collapseValues)・等級順(RARITY_ORDER)はスキル秘伝ルールの正本
+// (src/game-rules) を参照する。定義はこのファイルには持たない。
 
 /** Freeモードのカタログ選択 (効果 + 等級 + 2値効果の下位/上位) */
 interface CatalogSel {

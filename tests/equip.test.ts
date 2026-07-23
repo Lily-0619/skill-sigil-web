@@ -1,7 +1,7 @@
 // 装着ルールのテスト (docs/07_テスト・受け入れ基準.md 相当の中核ルール)
 import { describe, expect, it } from "vitest";
-import masterJson from "../src/data/master.json";
-import type { InventoryItem, Master, UserData } from "../src/types";
+import { master } from "../src/data/master";
+import type { InventoryItem, UserData } from "../src/types";
 import { emptyUserData } from "../src/types";
 import {
   canEquip,
@@ -12,8 +12,6 @@ import {
   remaining,
   skillsOf,
 } from "../src/logic/equip";
-
-const master = masterJson as unknown as Master;
 
 const item = (p: Partial<InventoryItem>): InventoryItem => ({
   inventory_id: "inv1",

@@ -19,24 +19,10 @@ import {
   skillsOf,
 } from "./equip";
 
-/** 等級の良い順 (混沌 > 太古 > 深淵)。BuildEdit と同じ並び。 */
-export const RARITY_ORDER: Rarity[] = ["chaos", "primal", "abyssal"];
-
-/**
- * 同じ数値が重複する場合は「値 ×N個」にまとめ、出現順を保って " / " 区切りで返す。
- * (BuildEdit.tsx の collapseValues と同じ挙動。合算はしない)
- */
-export function collapseValues(vals: string[]): string {
-  const order: string[] = [];
-  const counts = new Map<string, number>();
-  for (const v of vals) {
-    if (!counts.has(v)) order.push(v);
-    counts.set(v, (counts.get(v) ?? 0) + 1);
-  }
-  return order
-    .map((v) => (counts.get(v)! > 1 ? `${v} ×${counts.get(v)}個` : v))
-    .join(" / ");
-}
+// 等級順・数値集約はスキル秘伝ルールの正本 (src/game-rules) を参照する。
+// 既存import (テスト含む) の後方互換で再export。
+export { RARITY_ORDER, collapseValues } from "../game-rules/skill-sigil-rules";
+import { RARITY_ORDER, collapseValues } from "../game-rules/skill-sigil-rules";
 
 // ---- 表示用の型 ----------------------------------------------------------------
 

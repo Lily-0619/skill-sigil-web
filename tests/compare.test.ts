@@ -1,12 +1,10 @@
 // 編成比較の集計テスト (docs/17_編成比較機能_設計方針.md)
 // 重点: 数値は合算せず「値 ×N個」で個数集約されること。My/Free 両方で正しく集計されること。
 import { describe, expect, it } from "vitest";
-import masterJson from "../src/data/master.json";
-import type { InventoryItem, Master, UserData } from "../src/types";
+import { master } from "../src/data/master";
+import type { InventoryItem, UserData } from "../src/types";
 import { emptyUserData } from "../src/types";
 import { buildCompareData, collapseValues } from "../src/logic/compare";
-
-const master = masterJson as unknown as Master;
 
 const item = (p: Partial<InventoryItem>): InventoryItem => ({
   inventory_id: "inv1",
