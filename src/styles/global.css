@@ -690,6 +690,49 @@ img {
    S-01 クラス選択
    ============================================================= */
 
+/* v0.2 #3: My / Free 切り替え (セグメント) */
+.mode-seg {
+  display: inline-flex;
+  gap: 0;
+  border: 1px solid var(--line-navy);
+  border-radius: 2px;
+  background: rgba(7, 9, 15, 0.5);
+  padding: 3px;
+}
+.mode-seg-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 128px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 1px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color var(--dur-short) var(--ease-out),
+    background var(--dur-short) var(--ease-out),
+    border-color var(--dur-short) var(--ease-out);
+}
+.mode-seg-btn:hover {
+  color: var(--ivory-dim);
+}
+.mode-seg-btn.active {
+  color: var(--ivory);
+  background: var(--pink-glow);
+  border-color: var(--line-strong);
+}
+.mode-seg-btn .seg-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.16em;
+}
+.mode-seg-btn .seg-sub {
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+}
+
 .class-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
