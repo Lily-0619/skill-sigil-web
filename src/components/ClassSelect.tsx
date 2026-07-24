@@ -1,31 +1,29 @@
 // S-01 クラス選択 (docs/03 §3)
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
+import type { BuildMode } from "../types";
 import { master, useStore } from "../state/store";
 import { classButtonUrl } from "../lib/assets";
 import { useReveal, staggerDelay } from "../hooks/useReveal";
 
 export default function ClassSelect({
   onSelect,
+  mode,
+  onModeChange,
 }: {
   onSelect: (classId: string) => void;
+  // v0.2 #3: 入口モード (My / Free)。クラス選択画面でも切り替えられる。
+  mode: BuildMode;
+  onModeChange: (mode: BuildMode) => void;
 }) {
   const { data } = useStore();
-  const [q, setQ] = useState("");
   const head = useReveal<HTMLDivElement>();
   const grid = useReveal<HTMLDivElement>();
 
   const classes = useMemo(() => {
-    const list = master.classes
+    return master.classes
       .filter((c) => c.enabled)
       .sort((a, b) => a.sort_order - b.sort_order);
-    const query = q.trim().toLowerCase();
-    if (!query) return list;
-    return list.filter(
-      (c) =>
-        c.name_ja.toLowerCase().includes(query) ||
-        c.code.toLowerCase().includes(query)
-    );
-  }, [q]);
+  }, []);
 
   const fmtDate = (iso: string) => {
     const d = new Date(iso);
@@ -42,20 +40,41 @@ export default function ClassSelect({
         </p>
       </div>
 
-      <div style={{ maxWidth: 320, marginBottom: 22 }}>
-        <input
-          className="input"
-          placeholder="クラス名・略称で検索"
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          aria-label="クラス検索"
-        />
+      {/* v0.2 #3: My / Free 切り替え */}
+      <div
+        className="mode-seg"
+        role="radiogroup"
+        aria-label="編成モード"
+        style={{ marginBottom: 22 }}
+      >
+        <button
+          type="button"
+          role="radio"
+          aria-checked={mode === "my"}
+          className={`mode-seg-btn ${mode === "my" ? "active" : ""}`}
+          onClick={() => onModeChange("my")}
+        >
+          <span className="seg-title">My</span>
+          <span className="seg-sub">所持秘伝で組む</span>
+        </button>
+        <button
+          type="button"
+          role="radio"
+          aria-checked={mode === "free"}
+          className={`mode-seg-btn ${mode === "free" ? "active" : ""}`}
+          onClick={() => onModeChange("free")}
+        >
+          <span className="seg-title">Free</span>
+          <span className="seg-sub">所持数にとらわれず組む</span>
+        </button>
       </div>
 
       <div ref={grid.ref} className="class-grid">
         {classes.map((c, i) => {
           const iconUrl = classButtonUrl(c.code);
-          const builds = data.builds.filter((b) => b.class_id === c.class_id);
+          const builds = data.builds.filter(
+            (b) => b.class_id === c.class_id && b.mode === mode
+          );
           const latest = builds
             .map((b) => b.updated_at)
             .sort()
@@ -78,20 +97,13 @@ export default function ClassSelect({
               <span className="name">{c.name_ja}</span>
               <span className="meta">
                 {builds.length > 0
-                  ? `編成 ${builds.length}件 ・ ${latest ? fmtDate(latest) : ""}`
-                  : " "}
+                  ? `${mode === "free" ? "Free編成" : "編成"} ${builds.length}件 ・ ${latest ? fmtDate(latest) : ""}`
+                  : " "}
               </span>
             </button>
           );
         })}
       </div>
-
-      {classes.length === 0 && (
-        <div className="empty-state" style={{ marginTop: 20 }}>
-          <span className="en">No Result</span>
-          該当するクラスがありません
-        </div>
-      )}
     </div>
   );
 }

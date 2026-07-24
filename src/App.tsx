@@ -80,6 +80,8 @@ function AppInner() {
       >
         {screen === "class" && (
           <ClassSelect
+            mode={mode}
+            onModeChange={setMode}
             onSelect={(classId) => {
               dispatch({ type: "SELECT_CLASS", classId });
               setScreen("build");
@@ -87,7 +89,7 @@ function AppInner() {
           />
         )}
         {screen === "build" &&
-          (hasClass ? <BuildEdit defaultMode={mode} /> : <ClassSelect onSelect={(c) => {
+          (hasClass ? <BuildEdit defaultMode={mode} /> : <ClassSelect mode={mode} onModeChange={setMode} onSelect={(c) => {
             dispatch({ type: "SELECT_CLASS", classId: c });
           }} />)}
         {screen === "inventory" && <Inventory />}
