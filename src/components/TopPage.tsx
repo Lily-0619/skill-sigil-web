@@ -1,6 +1,10 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import "../styles/top-page.css";
 import { assetUrl, pickCharacterImage } from "../lib/assets";
+import LiquidGlassCards, {
+  GLASS_BGIMG_ATTR,
+  GLASS_CARD_ATTR,
+} from "./top-page/LiquidGlassCards";
 
 type TopPageProps = {
   onOpenSkillSigil: () => void;
@@ -16,6 +20,9 @@ const TOP_COPIES = [
 
 export default function TopPage({ onOpenSkillSigil }: TopPageProps) {
   const [mounted, setMounted] = useState(false);
+  // 水ガラス(WebGL2)が動き出したらカード自身の背景をやめ、ガラスに任せる
+  const [glassOn, setGlassOn] = useState(false);
+  const pageRef = useRef<HTMLDivElement | null>(null);
   const copy = useMemo(() => TOP_COPIES[Math.floor(Math.random() * TOP_COPIES.length)], []);
   const charaPath = useMemo(() => pickCharacterImage(null, null), []);
 
@@ -26,10 +33,14 @@ export default function TopPage({ onOpenSkillSigil }: TopPageProps) {
   }, []);
 
   return (
-    <div className={`top-page ${mounted ? "in" : ""}`}>
+    <div
+      ref={pageRef}
+      className={`top-page ${mounted ? "in" : ""} ${glassOn ? "glass-on" : ""}`}
+    >
       <div className="top-bg" aria-hidden>
-        {charaPath && <img src={assetUrl(charaPath)} alt="" />}
+        {charaPath && <img src={assetUrl(charaPath)} alt="" {...{ [GLASS_BGIMG_ATTR]: "" }} />}
       </div>
+      <LiquidGlassCards containerRef={pageRef} onReady={() => setGlassOn(true)} />
       <header className="top-header">
         <div>
           <p className="top-kicker">Black Desert Mobile</p>
@@ -43,17 +54,26 @@ export default function TopPage({ onOpenSkillSigil }: TopPageProps) {
         </section>
 
         <section className="top-cards" aria-label="コンテンツ入口">
-          <button className="top-card primary" type="button" onClick={onOpenSkillSigil}>
+          <button
+            className="top-card primary"
+            type="button"
+            onClick={onOpenSkillSigil}
+            {...{ [GLASS_CARD_ATTR]: "" }}
+          >
             <span className="top-card-title">スキル秘伝</span>
             <span className="top-card-desc">所持秘伝・Free編成を作る現在のメイン機能。</span>
             <span className="top-card-cta">開く</span>
           </button>
-          <a className="top-card primary" href="キャラクター紹介_案B.html">
+          <a
+            className="top-card primary"
+            href="キャラクター紹介_案B.html"
+            {...{ [GLASS_CARD_ATTR]: "" }}
+          >
             <span className="top-card-title">キャラクター図鑑</span>
             <span className="top-card-desc">30クラスの立ち絵・武器・プロフィールを見る。</span>
             <span className="top-card-cta">開く</span>
           </a>
-          <article className="top-card muted" aria-disabled="true">
+          <article className="top-card muted" aria-disabled="true" {...{ [GLASS_CARD_ATTR]: "" }}>
             <span className="top-card-title">ギャラリー</span>
             <span className="top-card-desc">YouTube・スクリーンショットを置く予定。</span>
             <span className="top-card-cta">準備中</span>

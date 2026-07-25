@@ -185,3 +185,43 @@ button.top-card {
 
 /* aタグ化した図鑑カードの見た目をbuttonと揃える */
 a.top-card { text-decoration: none; display: flex; }
+
+/* 2026-07-25 水ガラス(WebGL2)レイヤー。
+   背景(グラデ+立ち絵)とカード3枚のガラス板をこのcanvasが描く。
+   .top-bg はWebGL2が無い環境用のフォールバックとして残し、canvasで覆う。 */
+.top-glass {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 900ms var(--ease-out);
+}
+.top-glass.on {
+  opacity: 1;
+}
+
+/* ガラスが動いている間は、カード自身の背景・ぼかしをやめて文字だけ乗せる
+   (板の質感はシェーダー側が持つ)。枠線は水の縁として薄く残す。 */
+.top-page.glass-on .top-card {
+  background: transparent;
+  backdrop-filter: none;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.top-page.glass-on .top-card:hover,
+.top-page.glass-on .top-card:focus-visible {
+  background: transparent;
+  border-color: rgba(236, 166, 199, 0.5);
+}
+/* 屈折した背景の上でも文字が沈まないように */
+.top-page.glass-on .top-card-title,
+.top-page.glass-on .top-card-desc,
+.top-page.glass-on .top-card-cta {
+  text-shadow: 0 1px 12px rgba(7, 9, 15, 0.75);
+}
+.top-page.glass-on .top-card-desc {
+  color: var(--ivory-dim);
+}
