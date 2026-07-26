@@ -183,16 +183,21 @@
 }
 .cmp-skill-bg {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  /* アイコンは正方形(100x100)。ブロックの高さいっぱいの正方形に収め、
+     切り取らずに全体を見せる (以前は cover で上下が切れていた)。 */
   height: 100%;
-  width: 60%; /* 右側にどれだけ出すか */
-  object-fit: cover;
+  width: auto;
+  aspect-ratio: 1 / 1;
+  max-width: 52%; /* 極端に縦長なブロックでも文字を潰さない上限 */
+  object-fit: contain;
   opacity: 0.5; /* 透過50% (濃さの調整はここ) */
   pointer-events: none;
-  /* 左側へフェードさせて秘伝名・数値の可読性を確保 */
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 70%);
-  mask-image: linear-gradient(to right, transparent, #000 70%);
+  /* 左端だけ弱くフェードさせ、秘伝名・数値の可読性を確保する */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 55%);
+  mask-image: linear-gradient(to right, transparent, #000 55%);
 }
 /* 文字・チップは背景アイコンより前面に */
 .cmp-skill-name,
