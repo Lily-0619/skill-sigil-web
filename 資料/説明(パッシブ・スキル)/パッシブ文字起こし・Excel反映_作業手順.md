@@ -94,3 +94,41 @@
 ```
 
 スクリーンショットを添付すれば、文字起こしから再開する。
+
+
+##スキル説明反映済み
+WR
+RG
+WT　〇
+GA
+VK  〇
+BD
+SR　〇
+DK　〇
+LS
+TB
+KT　〇
+LN　〇
+MT  〇
+SH
+AC
+HS
+NJ
+NV
+GD
+KN
+CO　〇
+SG
+DR
+MG
+WS
+WZ　〇
+SC　〇
+DS　〇
+DE
+SP　⚪︎
+
+済
+WRGAHSNJKNLSSGNV
+まだ
+RGBDTBSHACGDDRMGWSDE

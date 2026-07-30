@@ -1,0 +1,621 @@
+<title>スキル秘伝HP — プロジェクト現況サマリー</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    /* 既存 status-overview.html / mana-ui-theme のピンク基調を踏襲 */
+    --ground: #0a1020;
+    --panel: #131b2f;
+    --panel-2: #0e1526;
+    --line: rgba(233, 183, 199, 0.16);
+    --line-strong: rgba(233, 183, 199, 0.42);
+    --text: #f2eee6;
+    --text-dim: #ccd1de;
+    --muted: #8b93a8;
+    --pink: #e9b7c7;
+    --pink-deep: #c07f96;
+    --done: #8fc7a8;
+    --wip: #e8c07d;
+    --hold: #8b93a8;
+    --hatch: rgba(233, 183, 199, 0.05);
+
+    --display: "Shippori Mincho", "Yu Mincho", YuMincho, "Hiragino Mincho ProN", serif;
+    --body: "Zen Kaku Gothic New", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", sans-serif;
+    --data: Consolas, "SFMono-Regular", "Courier New", monospace;
+
+    --col: 40rem;
+    --wide: 58rem;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --ground: #edeef3;
+      --panel: #fbfafc;
+      --panel-2: #f2f1f6;
+      --line: rgba(43, 52, 78, 0.14);
+      --line-strong: rgba(176, 110, 134, 0.55);
+      --text: #141b2c;
+      --text-dim: #3a4258;
+      --muted: #6c7285;
+      --pink: #a9647e;
+      --pink-deep: #8d4d66;
+      --done: #3d7c5d;
+      --wip: #94661a;
+      --hold: #6c7285;
+      --hatch: rgba(169, 100, 126, 0.06);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #0a1020;
+    --panel: #131b2f;
+    --panel-2: #0e1526;
+    --line: rgba(233, 183, 199, 0.16);
+    --line-strong: rgba(233, 183, 199, 0.42);
+    --text: #f2eee6;
+    --text-dim: #ccd1de;
+    --muted: #8b93a8;
+    --pink: #e9b7c7;
+    --pink-deep: #c07f96;
+    --done: #8fc7a8;
+    --wip: #e8c07d;
+    --hold: #8b93a8;
+    --hatch: rgba(233, 183, 199, 0.05);
+  }
+
+  :root[data-theme="light"] {
+    --ground: #edeef3;
+    --panel: #fbfafc;
+    --panel-2: #f2f1f6;
+    --line: rgba(43, 52, 78, 0.14);
+    --line-strong: rgba(176, 110, 134, 0.55);
+    --text: #141b2c;
+    --text-dim: #3a4258;
+    --muted: #6c7285;
+    --pink: #a9647e;
+    --pink-deep: #8d4d66;
+    --done: #3d7c5d;
+    --wip: #94661a;
+    --hold: #6c7285;
+    --hatch: rgba(169, 100, 126, 0.06);
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: var(--wide);
+    margin: 0 auto;
+    padding: 3rem 1.25rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.25rem;
+  }
+
+  .col { max-width: var(--col); }
+
+  /* ---- ヘッダー ---- */
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .eyebrow {
+    font-family: var(--data);
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pink);
+  }
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(1.9rem, 5vw, 2.9rem);
+    line-height: 1.25;
+    font-weight: 600;
+    text-wrap: balance;
+    letter-spacing: 0.02em;
+  }
+  h1 small {
+    display: block;
+    font-family: var(--body);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+    margin-top: 0.6rem;
+    line-height: 1.7;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.5rem;
+    font-family: var(--data);
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .meta span {
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 0.15rem 0.55rem;
+    background: var(--panel-2);
+  }
+
+  /* ---- 見出し ---- */
+  h2 {
+    font-family: var(--display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+  }
+  h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+  h2 .en {
+    font-family: var(--data);
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--pink-deep);
+  }
+  h3 {
+    font-family: var(--body);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--text);
+  }
+  section { display: flex; flex-direction: column; gap: 1.25rem; }
+  p { color: var(--text-dim); }
+  code {
+    font-family: var(--data);
+    font-size: 0.85em;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 0.05em 0.35em;
+    color: var(--text);
+    word-break: break-all;
+  }
+
+  /* ---- ダイジェスト数値 ---- */
+  .figures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .fig {
+    background: var(--panel);
+    padding: 1rem 1.1rem 1.1rem;
+    background-image: repeating-linear-gradient(135deg, var(--hatch) 0 1px, transparent 1px 7px);
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .fig b {
+    font-family: var(--display);
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+    color: var(--pink);
+  }
+  .fig b i {
+    font-style: normal;
+    font-family: var(--body);
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-dim);
+    margin-left: 0.25rem;
+  }
+  .fig span {
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+  }
+
+  /* ---- Before / After ---- */
+  .ba {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .ba > div {
+    background: var(--panel);
+    padding: 0.85rem 1rem;
+    font-size: 0.86rem;
+    line-height: 1.7;
+  }
+  .ba .head {
+    font-family: var(--data);
+    font-size: 0.66rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: var(--panel-2);
+    color: var(--muted);
+    padding: 0.5rem 1rem;
+  }
+  .ba .before { color: var(--muted); }
+  .ba .after { color: var(--text); }
+  .ba .after strong { color: var(--pink); font-weight: 700; }
+  @media (max-width: 34rem) {
+    .ba { grid-template-columns: 1fr; }
+    .ba .head { display: none; }
+    .ba .before::before,
+    .ba .after::before {
+      content: attr(data-k);
+      display: block;
+      font-family: var(--data);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--pink-deep);
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  /* ---- 画面フロー ---- */
+  .flowbox {
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--panel);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+  }
+  .step {
+    flex: 0 0 auto;
+    min-width: 8.5rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 2px;
+    background: var(--panel-2);
+    padding: 0.7rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .step em {
+    font-style: normal;
+    font-family: var(--data);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    color: var(--pink-deep);
+  }
+  .step b { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em; }
+  .step span { font-size: 0.72rem; color: var(--muted); line-height: 1.6; }
+  .arrow {
+    flex: 0 0 auto;
+    align-self: center;
+    color: var(--pink-deep);
+    font-family: var(--data);
+    font-size: 0.9rem;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .chip {
+    font-size: 0.74rem;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 0.2rem 0.6rem;
+    background: var(--panel-2);
+    color: var(--text-dim);
+  }
+  .chip.new { border-color: var(--line-strong); color: var(--pink); }
+  .caption { font-size: 0.76rem; color: var(--muted); }
+
+  /* ---- パイプライン ---- */
+  .pipe {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .pipe > div {
+    background: var(--panel);
+    padding: 0.9rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .pipe h3 { font-size: 0.82rem; letter-spacing: 0.08em; }
+  .pipe ul { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+  .pipe li { font-size: 0.76rem; color: var(--text-dim); line-height: 1.6; }
+  .pipe li code { font-size: 0.72rem; }
+
+  /* ---- 変更ログ ---- */
+  .log { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+  .log > div {
+    background: var(--panel);
+    padding: 0.7rem 1rem;
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0.2rem 0.9rem;
+    align-items: baseline;
+  }
+  .log .sha { font-family: var(--data); font-size: 0.7rem; color: var(--pink-deep); }
+  .log .what { font-size: 0.85rem; }
+  .log .why { grid-column: 2; font-size: 0.75rem; color: var(--muted); }
+  @media (max-width: 30rem) {
+    .log > div { grid-template-columns: 1fr; }
+    .log .why { grid-column: 1; }
+  }
+
+  /* ---- 注意書き ---- */
+  .note {
+    border: 1px solid var(--line-strong);
+    border-left-width: 3px;
+    border-radius: 2px;
+    background: var(--panel);
+    padding: 0.9rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .note h3 { color: var(--wip); font-size: 0.85rem; letter-spacing: 0.08em; }
+  .note p { font-size: 0.83rem; }
+
+  /* ---- この先 ---- */
+  .next { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+  .next > div {
+    background: var(--panel);
+    padding: 0.8rem 1rem;
+    display: grid;
+    grid-template-columns: 4.6rem 1fr;
+    gap: 0.15rem 0.9rem;
+    align-items: baseline;
+  }
+  .state {
+    font-family: var(--data);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-align: center;
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    padding: 0.1rem 0;
+  }
+  .state.now { color: var(--wip); }
+  .state.soon { color: var(--pink); }
+  .state.hold { color: var(--hold); }
+  .next .t { font-size: 0.87rem; font-weight: 700; letter-spacing: 0.03em; }
+  .next .d { grid-column: 2; font-size: 0.78rem; color: var(--text-dim); }
+  @media (max-width: 30rem) {
+    .next > div { grid-template-columns: 1fr; gap: 0.3rem; }
+    .next .state { justify-self: start; padding: 0.1rem 0.6rem; }
+    .next .d { grid-column: 1; }
+  }
+
+  /* ---- 締め ---- */
+  .closer {
+    border-top: 1px solid var(--line-strong);
+    padding-top: 1.6rem;
+    font-family: var(--display);
+    font-size: clamp(1.05rem, 3vw, 1.35rem);
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+    text-wrap: balance;
+  }
+  .closer b { color: var(--pink); font-weight: 600; }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">Project Status / 2026-07-30</div>
+    <h1>スキル秘伝HP 現況サマリー
+      <small>黒い砂漠MOBILE 非公式ファンサイト。設計書だけだった企画が、30クラス・510スキルを扱う稼働中のWebアプリになった。</small>
+    </h1>
+    <div class="meta">
+      <span>Lily-0619/skill-sigil-web</span>
+      <span>React 18 + TypeScript + Vite</span>
+      <span>Cloudflare Workers Builds</span>
+      <span>master v0.1 / app v0.2</span>
+      <span>HEAD 6f7ad99</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>ダイジェスト <span class="en">at a glance</span></h2>
+    <div class="figures">
+      <div class="fig"><b>30<i>クラス</i></b><span>マスタ登録・全て有効</span></div>
+      <div class="fig"><b>510<i>スキル</i></b><span>特別／通常あわせて</span></div>
+      <div class="fig"><b>7<i>種 × 3等級</i></b><span>秘伝の種類と等級</span></div>
+      <div class="fig"><b>31<i>効果</i></b><span>数値つき効果マスタ</span></div>
+      <div class="fig"><b>7<i>画面</i></b><span>クラス選択〜ヘルプ</span></div>
+      <div class="fig"><b>105<i>枚</i></b><span>キャラクター画像</span></div>
+      <div class="fig"><b>30<i>クラス分</i></b><span>スキル／パッシブ説明</span></div>
+      <div class="fig"><b>21<i>本</i></b><span>設計ドキュメント</span></div>
+    </div>
+    <p class="col">バックエンドは無い。編成データはブラウザ内 IndexedDB に持ち、Excelでバックアップする。正本のExcelとスクリプトで <code>src/data/*.json</code> を作り、アプリはそれを読むだけ、という構造で固まっている。</p>
+  </section>
+
+  <section>
+    <h2>変化 <span class="en">before / after</span></h2>
+    <div class="ba">
+      <div class="head">企画・設計フェーズ</div>
+      <div class="head">いま</div>
+
+      <div class="before" data-k="BEFORE">仕様書21本、実装は未着手</div>
+      <div class="after" data-k="AFTER"><strong>7画面のWebアプリが本番稼働</strong>。TOPから編成の作成・保存・比較まで通る</div>
+
+      <div class="before" data-k="BEFORE">秘伝ルールがdocsとコードに二重管理</div>
+      <div class="after" data-k="AFTER"><code>src/game-rules/</code> を<strong>単一正本</strong>に一本化。docsは記録用に降格</div>
+
+      <div class="before" data-k="BEFORE">編成は1つずつ開いて見るだけ</div>
+      <div class="after" data-k="AFTER"><strong>比較画面</strong>を追加（案A スキルごと／案B タイプ別集計／案C グラフ）</div>
+
+      <div class="before" data-k="BEFORE">スキル説明・パッシブは空きスペース</div>
+      <div class="after" data-k="AFTER">30クラス分の説明文を <code>descriptions.json</code> に取り込み済み</div>
+
+      <div class="before" data-k="BEFORE">所持数を入れないと何も試せない</div>
+      <div class="after" data-k="AFTER">TOPで <strong>My / Free</strong> を選べる。所持0件でも理想編成を組める</div>
+
+      <div class="before" data-k="BEFORE">公開手順が手作業</div>
+      <div class="after" data-k="AFTER"><code>git push origin main</code> だけで Cloudflare が自動ビルド・公開</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>実物 <span class="en">the app</span></h2>
+
+    <div class="flowbox">
+      <h3>画面の並び</h3>
+      <div class="flow">
+        <div class="step"><em>TOP</em><b>入口3カード</b><span>スキル秘伝／キャラクター図鑑／ギャラリー。水ガラス表現</span></div>
+        <div class="arrow">▶</div>
+        <div class="step"><em>HERO</em><b>My / Free</b><span>所持ベースか、自由編成かを選ぶ</span></div>
+        <div class="arrow">▶</div>
+        <div class="step"><em>CLASS</em><b>クラス選択</b><span>30クラスをMy/Freeトグルで絞る</span></div>
+        <div class="arrow">▶</div>
+        <div class="step"><em>BUILD</em><b>編成編集</b><span>16スキルに秘伝を装着。装着ルールで弾く</span></div>
+        <div class="arrow">▶</div>
+        <div class="step"><em>SAVE</em><b>登録・保存</b><span>IndexedDBへ。Excelで持ち出せる</span></div>
+      </div>
+      <p class="caption">上の主導線に加えて、いつでも横に抜けられる画面：</p>
+      <div class="chips">
+        <span class="chip">所持秘伝</span>
+        <span class="chip">編成管理</span>
+        <span class="chip new">比較</span>
+        <span class="chip">バックアップ</span>
+        <span class="chip">ヘルプ・情報</span>
+        <span class="chip">キャラクター図鑑（<code>#class=CODE</code> で編成編集へ直行）</span>
+      </div>
+    </div>
+
+    <h3>直近で手を入れたところ</h3>
+    <div class="log">
+      <div>
+        <span class="sha">6f7ad99</span>
+        <span class="what">比較・案Aの背景スキルアイコンを全体表示に</span>
+        <span class="why">切り取られて何のスキルか分からなくなっていた</span>
+      </div>
+      <div>
+        <span class="sha">bf49c1f</span>
+        <span class="what">比較・案A にスキルアイコンを50%透過で敷く</span>
+        <span class="why">行が文字だけで、どのスキルの列か追いにくかった</span>
+      </div>
+      <div>
+        <span class="sha">f552682</span>
+        <span class="what">TOPの3カードを水ガラス化（WebGL2の屈折シェーダー）</span>
+        <span class="why">TOPが静的で寂しいという課題への最初の一手</span>
+      </div>
+      <div>
+        <span class="sha">7553036</span>
+        <span class="what">クラス選択にMy/Freeトグル追加、検索ボックスを削除</span>
+        <span class="why">30クラスなら検索より絞り込みのほうが速い</span>
+      </div>
+      <div>
+        <span class="sha">66a9c04</span>
+        <span class="what">秘伝ルールを <code>src/game-rules</code> に一本化</span>
+        <span class="why">ゲーム改定時に直す場所を1か所にした</span>
+      </div>
+    </div>
+
+    <h3>データの入り口と出口</h3>
+    <div class="pipe">
+      <div>
+        <h3>正本</h3>
+        <ul>
+          <li><code>スキル秘伝_v0.1_PN.xlsx</code>（クラス・スキル・固定枠）</li>
+          <li><code>資料/説明(パッシブ・スキル)/</code> 30クラス分のExcel</li>
+          <li><code>src/game-rules/</code> は手編集（種類・等級・効果・装着ルール）</li>
+          <li><code>画像/</code>（repo外の正本フォルダ）</li>
+        </ul>
+      </div>
+      <div>
+        <h3>変換スクリプト</h3>
+        <ul>
+          <li><code>scripts/parse_master.py</code></li>
+          <li><code>scripts/parse_descriptions.py</code></li>
+          <li><code>scripts/gen_image_manifest.mjs</code></li>
+          <li><code>scripts/sync_public_images.mjs</code></li>
+        </ul>
+      </div>
+      <div>
+        <h3>アプリが読むもの</h3>
+        <ul>
+          <li><code>src/data/master.json</code></li>
+          <li><code>src/data/descriptions.json</code></li>
+          <li><code>src/data/imageManifest.json</code></li>
+          <li><code>src/data/master.ts</code> が master + game-rules を合成</li>
+        </ul>
+      </div>
+      <div>
+        <h3>検証</h3>
+        <ul>
+          <li><code>npm test</code>：装着ルール／Excel往復／比較／説明／スモーク2件</li>
+          <li><code>npm run build</code>：<code>tsc --noEmit</code> + vite build</li>
+          <li>ローカル配布用に <code>dist/index.html</code> を単一HTMLへ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note">
+      <h3>コミット前の落とし穴</h3>
+      <p>手元で <code>npm run build</code> を回すと画像同期が走り、repo外の正本から消えた画像を <code>public/画像/</code> からも削除する。Cloudflare側は <code>public/画像/</code> をそのまま配信するので、意図しない画像削除がそのまま本番に出る。コミット前に <code>git restore -- "public/画像"</code> を通すこと。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>この先 <span class="en">what's next</span></h2>
+    <div class="next">
+      <div>
+        <span class="state now">NOW</span>
+        <span class="t">未整備スキル画像の差し替え</span>
+        <span class="d">SC（スカラー）通常2「エールアット」と LN（ラン）通常13。画像が届いたら <code>画像/スキル画像/{クラス}/</code> に置いて <code>gen_image_manifest.mjs</code> を再生成。</span>
+      </div>
+      <div>
+        <span class="state now">NOW</span>
+        <span class="t">説明Excelの更新をコミット</span>
+        <span class="d">資料側の説明Excel22ファイルに未コミットの差分がある。<code>parse_descriptions.py</code> を通して <code>descriptions.json</code> と揃えてから入れる。</span>
+      </div>
+      <div>
+        <span class="state soon">v0.3</span>
+        <span class="t">訳とゲーム内表記の突き合わせ</span>
+        <span class="d">スキル説明の日本語訳が、実際のゲーム内表記とリンクしているかを確認・修正する。</span>
+      </div>
+      <div>
+        <span class="state hold">検討中</span>
+        <span class="t">TOPの動的演出</span>
+        <span class="d">水ガラス化で一歩進んだ。キャラクター画像を組み合わせた演出まで踏み込むかは未定。</span>
+      </div>
+      <div>
+        <span class="state hold">v0.4</span>
+        <span class="t">英語表記</span>
+        <span class="d">スキル名・説明・パッシブの英語化。優先度は低く、実施するかどうかも未定。</span>
+      </div>
+    </div>
+  </section>
+
+  <p class="closer">次の一手は、<b>未整備の2枚のスキル画像を埋めて、説明の表記確認に入ること。</b></p>
+
+</div>

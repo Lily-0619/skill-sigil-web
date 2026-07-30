@@ -11,3 +11,10 @@ __pycache__/
 
 # 2026-07-19 vite生成の一時ファイル
 vite.config.ts.timestamp-*.mjs
+
+# 2026-07-23 スキル秘伝マスタExcel(正本・約29MB)。手元編集用に置くがgit管理はしない。
+スキル秘伝_v0.1_PN.xlsx
+# Excelを開くとできる一時ロックファイル
+~$*.xlsx
+# iCloud/macOS経由でできる付随ファイル
+._*
