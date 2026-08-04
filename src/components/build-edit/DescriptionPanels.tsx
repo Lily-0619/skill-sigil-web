@@ -10,6 +10,21 @@ export function PvChips({ pve, pvp }: { pve: boolean; pvp: boolean }) {
   );
 }
 
+/**
+ * 最大使用回数 / 再使用待機時間 / 最大打撃数のステータス行。
+ * まな指定の表記: STACK:〇　CT:〇　HIT×〇 (値のある項目だけ並べる)
+ */
+export function SkillStatLine({ desc }: { desc: SkillDesc }) {
+  if (desc.stack == null && desc.ct == null && desc.hit == null) return null;
+  return (
+    <div className="skill-stat-line">
+      {desc.stack != null && <span className="stat">STACK:{desc.stack}</span>}
+      {desc.ct != null && <span className="stat">CT:{desc.ct}</span>}
+      {desc.hit != null && <span className="stat">HIT×{desc.hit}</span>}
+    </div>
+  );
+}
+
 /** 説明本文。改行・字下げ・「・」・効果の順番は原文のまま 1行=1div で表示する */
 export function DescLines({ lines }: { lines: string[] }) {
   return (
@@ -97,7 +112,10 @@ export function SkillDescriptionPanel({
         )}
       </div>
       {desc ? (
-        <DescLines lines={desc.lines} />
+        <>
+          <SkillStatLine desc={desc} />
+          <DescLines lines={desc.lines} />
+        </>
       ) : (
         <p className="skill-desc-panel-body">準備中</p>
       )}

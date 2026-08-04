@@ -1083,6 +1083,21 @@ img {
   word-break: break-word;
 }
 
+/* v0.4: STACK / CT / HIT のステータス行 (説明本文の直前)。
+   表記はまな指定「STACK:〇　CT:〇　HIT×〇」。値のある項目だけ並ぶ。 */
+.skill-stat-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 8px;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  color: var(--pink);
+}
+.skill-stat-line .stat {
+  font-variant-numeric: tabular-nums;
+}
+
 /* PvE / PvP チップ (カラーはまな指定: PvE=#a6d7ec / PvP=#eca6b7) */
 .pv-chip {
   display: inline-block;

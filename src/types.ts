@@ -181,7 +181,23 @@ export interface SkillDesc {
   pve: boolean;
   pvp: boolean;
   rabam: boolean;
+  /** 最大使用回数。HPでは「STACK:〇」と表示。記載のないスキルは null */
+  stack: number | null;
+  /** 再使用待機時間(秒)。HPでは「CT:〇」と表示。"0.2" のような小数があるので文字列 */
+  ct: string | null;
+  /** 最大打撃数。HPでは「HIT×〇」と表示。記載のないスキルは null */
+  hit: number | null;
   lines: string[];
+}
+
+/** クラスのプロフィール (資料/クラスデータ/黒い砂漠M_プロフィール.xlsx 由来) */
+export interface ClassProfile {
+  name: string;
+  hometown: string;
+  /** 未入力なら null (HP側では非表示) */
+  other: string | null;
+  /** 未入力なら null (HP側では非表示) */
+  episode: string | null;
 }
 
 export interface ClassDescriptions {
@@ -190,9 +206,11 @@ export interface ClassDescriptions {
   rage: RageDesc | null;
   /** キーは "n_1"〜"n_13" (通常) / "sp_1"〜"sp_4" (ラバム) */
   skills: Record<string, SkillDesc>;
+  profile: ClassProfile;
 }
 
 export interface DescriptionsData {
+  /** v2: STACK/CT/HIT の構造化 + profile を追加 (2026-08-03) */
   schema_version: number;
   classes: Record<string, ClassDescriptions>;
 }

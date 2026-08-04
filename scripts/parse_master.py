@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
-"""マスタExcel → src/data/master.json 変換スクリプト。
+"""統合Excel → src/data/master.json 変換スクリプト。
 
 使い方:
-    python scripts/parse_master.py <マスタExcelのパス>
+    python scripts/parse_master.py [統合Excelのパス]
 
-Excel構造(各クラスシート):
-  行3-6   : 特別スキル(ラバム) 1-4  … 列グループ B/G/L/Q (番号,名前,枠タイプ×4行)
-  行7-10  : 通常スキル 1-4
-  行11-14 : 通常スキル 5-8
-  行15-18 : 通常スキル 9-12
-  行19    : 通常スキル 13 (秘伝装着不可・枠なし)
+入力 (正本): 資料/クラスデータ/黒い砂漠M_スキル・パッシブ.xlsx
+  - 「クラス一覧」シート … コード / クラス名 / 表示順 / 有効
+  - 「スキル_{CODE}」シート … 1行=1スキル。ここから skill_id / 種別 / 表示番号 /
+    名前(日本語) / 装着可能秘伝 を読む (種別=闇精霊の怒りの行は master 対象外)
+
+秘伝の種類・等級・効果は src/game-rules/skill-sigil.json が正本。
+アプリは src/data/master.ts でそれと合成するため、ここでは出力しない。
 """
 import json
 import sys
@@ -19,29 +20,23 @@ from pathlib import Path
 import openpyxl
 
 ROOT = Path(__file__).resolve().parent.parent  # skill-sigil-web/
+DEFAULT_SRC = ROOT / "資料" / "クラスデータ" / "黒い砂漠M_スキル・パッシブ.xlsx"
+GAME_RULES = ROOT / "src" / "game-rules" / "skill-sigil.json"
 OUT = ROOT / "src" / "data" / "master.json"
 
-# クラスコード → 日本語名 (docs/04_データ設計書.md D-003正本 + コード対応は2026-07-13にまな承認スコープで確定)
-CLASS_NAMES = {
-    "WR": "ウォーリア", "RG": "レンジャー", "WT": "ウィッチ", "GA": "ジャイアント",
-    "VK": "ヴァルキリー", "BD": "ブレイダー", "SR": "ソーサレス", "DK": "ダークナイト",
-    "LS": "リトルサマナー", "TB": "ツバキ", "KT": "格闘家", "LN": "ラン",
-    "MT": "ミスティック", "SH": "シャイ", "AC": "アーチャー", "HS": "ハサシン",
-    "NJ": "忍者", "NV": "ノヴァ", "GD": "ガーディアン", "KN": "くノ一",
-    "CO": "コルセア", "SG": "セージ", "DR": "ドラカニア", "MG": "メグ",
-    "WS": "ウサ", "WZ": "ウィザード", "SC": "スカラー", "DS": "ドーサ",
-    "DE": "デッドアイ", "SP": "セラフィム",
-    "UC": "(未実装クラス)",
-}
+# マスタの中身(クラス・スキル・固定枠)が変わったときだけ上げる。入力Excelを
+# 統合版に移行しただけでは中身は変わらないため据え置く (上げるとユーザーの
+# バックアップ復元時に「マスタ版が異なります」の警告が出る。src/logic/excel.ts)
+MASTER_VERSION = "2026-07-13"
 
-TYPE_BY_NAME = {
-    "微か": "faint", "整った": "refined", "鮮明": "defined", "無欠": "flawless",
-    "煌めく": "radiant", "守護": "guardian", "系列": "branch",
-    # 画像側エイリアス
-    "希微": "faint", "整頓": "refined", "燦爛": "radiant",
-}
+# 「スキル_{CODE}」シートの列 (1始まり)
+COL_SKILL_ID = 1
+COL_KIND = 2
+COL_DISPLAY_NO = 3
+COL_NAME_JA = 4
+COL_SLOTS = 11
 
-
+KIND_TO_GROUP = {"スキル": "normal", "ラバム": "special"}
 
 
 def norm(s):
@@ -50,106 +45,127 @@ def norm(s):
     return unicodedata.normalize("NFKC", str(s)).strip()
 
 
-def parse_class_sheet(ws, code, warnings):
-    """1クラスシートから17スキルを抽出する。"""
-    skills = []
-    col_groups = [2, 7, 12, 17]  # B, G, L, Q
+def load_slot_ids():
+    """秘伝タイプの日本語表記 → id の逆引き辞書 (name と alias の両方を受ける)。"""
+    rules = json.loads(GAME_RULES.read_text(encoding="utf-8"))
+    table = {}
+    for t in rules["sigil_types"]:
+        table[t["name"]] = t["id"]
+        if t.get("alias"):
+            table[t["alias"]] = t["id"]
+    return table
 
-    def read_block(row, group, start_no):
-        for gi, col in enumerate(col_groups):
-            no_cell = norm(ws.cell(row=row, column=col).value)
-            name = norm(ws.cell(row=row, column=col + 1).value)
-            if not no_cell and not name:
-                continue
-            try:
-                no = int(float(no_cell)) if no_cell else start_no + gi
-            except ValueError:
-                no = start_no + gi
-            slots = []
-            for r in range(row, row + 4):
-                t = norm(ws.cell(row=r, column=col + 2).value)
-                if t:
-                    tid = TYPE_BY_NAME.get(t)
-                    if tid is None:
-                        warnings.append(f"{code}: 不明な秘伝タイプ '{t}' (row {r})")
-                    else:
-                        slots.append(tid)
-            skills.append({
-                "skill_id": f"{code}_{'sp' if group == 'special' else 'n'}_{no}",
-                "group": group,
-                "display_no": no,
-                "name_ja": name or f"(名称未設定 {no})",
-                "sigil_eligible": len(slots) == 4,
-                "slots": slots if len(slots) == 4 else None,
-            })
 
-    read_block(3, "special", 1)
-    read_block(7, "normal", 1)
-    read_block(11, "normal", 5)
-    read_block(15, "normal", 9)
-    # 通常13 (枠なし)
-    no13 = norm(ws.cell(row=19, column=2).value)
-    name13 = norm(ws.cell(row=19, column=3).value)
-    if name13:
-        skills.append({
-            "skill_id": f"{code}_n_13", "group": "normal", "display_no": 13,
-            "name_ja": name13, "sigil_eligible": False, "slots": None,
+def parse_classes(ws, warnings):
+    classes = []
+    for r in range(2, ws.max_row + 1):
+        code = norm(ws.cell(row=r, column=1).value)
+        if not code:
+            continue
+        name = norm(ws.cell(row=r, column=2).value)
+        order_raw = ws.cell(row=r, column=3).value
+        enabled = ws.cell(row=r, column=4).value
+        try:
+            sort_order = int(order_raw)
+        except (TypeError, ValueError):
+            sort_order = len(classes)
+            warnings.append(f"{code}: 表示順が数値でないため {sort_order} を補完")
+        if not name:
+            warnings.append(f"{code}: クラス名が空欄")
+        classes.append({
+            "class_id": code,
+            "code": code,
+            "name_ja": name or code,
+            "sort_order": sort_order,
+            "enabled": bool(enabled),
         })
-    else:
-        warnings.append(f"{code}: 下段13番が空欄")
-    return skills
+    classes.sort(key=lambda c: c["sort_order"])
+    return classes
+
+
+def parse_skill_sheet(ws, code, slot_ids, warnings):
+    """1クラスのスキルシートから通常13 + ラバム4を抽出する。"""
+    skills = []
+    for r in range(2, ws.max_row + 1):
+        skill_id = norm(ws.cell(row=r, column=COL_SKILL_ID).value)
+        kind = norm(ws.cell(row=r, column=COL_KIND).value)
+        if not skill_id or kind not in KIND_TO_GROUP:
+            continue  # 空行 / 闇精霊の怒り
+
+        try:
+            display_no = int(float(norm(ws.cell(row=r, column=COL_DISPLAY_NO).value)))
+        except ValueError:
+            warnings.append(f"{code}: {skill_id} の表示番号が読めません (row {r})")
+            continue
+
+        name = norm(ws.cell(row=r, column=COL_NAME_JA).value)
+        if not name:
+            warnings.append(f"{code}: {skill_id} の名前が空欄")
+
+        slots = []
+        raw_slots = norm(ws.cell(row=r, column=COL_SLOTS).value)
+        if raw_slots:
+            for label in raw_slots.split("・"):
+                label = label.strip()
+                if not label:
+                    continue
+                sid = slot_ids.get(label)
+                if sid is None:
+                    warnings.append(f"{code}: 不明な秘伝タイプ '{label}' ({skill_id})")
+                else:
+                    slots.append(sid)
+            if len(slots) not in (0, 4):
+                warnings.append(f"{code}: {skill_id} の枠数が4でない ({len(slots)})")
+
+        skills.append({
+            "skill_id": skill_id,
+            "group": KIND_TO_GROUP[kind],
+            "display_no": display_no,
+            "name_ja": name or f"(名称未設定 {display_no})",
+            "sigil_eligible": len(slots) == 4,
+            "slots": slots if len(slots) == 4 else None,
+        })
+
+    return sorted(skills, key=lambda s: (0 if s["group"] == "special" else 1, s["display_no"]))
 
 
 def main():
-    src = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT.parent / "スキル秘伝_v0.1_PN_修復済み_20260713.xlsx"
+    src = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_SRC
     wb = openpyxl.load_workbook(src, read_only=True, data_only=True)
-
-    skip = {"表紙", "テンプレ", "名称", "リスト", "アイコン素材"}
-    class_sheets = [n for n in wb.sheetnames if n not in skip]
+    sheet_by_name = {n.strip(): n for n in wb.sheetnames}
 
     warnings = []
-    classes = []
+    slot_ids = load_slot_ids()
+
+    if "クラス一覧" not in sheet_by_name:
+        raise SystemExit(f"「クラス一覧」シートがありません: {src}")
+    classes = parse_classes(wb[sheet_by_name["クラス一覧"]], warnings)
+
     skills_by_class = {}
-    for i, code in enumerate(class_sheets):
-        name = CLASS_NAMES.get(code)
-        if name is None:
-            warnings.append(f"未知のクラスコード: {code}")
-            name = code
-        skills = parse_class_sheet(wb[code], code, warnings)
-        # LS 下段13「神獣の加護」入力漏れ対応 (docs/20260712_要件整理ログ.md)
-        if not any(s["group"] == "normal" and s["display_no"] == 13 for s in skills):
-            skills.append({
-                "skill_id": f"{code}_n_13", "group": "normal", "display_no": 13,
-                "name_ja": "神獣の加護" if code == "LS" else "(未登録)",
-                "sigil_eligible": False, "slots": None,
-            })
-            warnings.append(f"{code}: 下段13番を補完 ({'神獣の加護' if code == 'LS' else '未登録'})")
+    for cls in classes:
+        code = cls["code"]
+        label = f"スキル_{code}"
+        if label not in sheet_by_name:
+            warnings.append(f"{code}: {label} シートなし")
+            continue
+        skills = parse_skill_sheet(wb[sheet_by_name[label]], code, slot_ids, warnings)
         n_special = sum(1 for s in skills if s["group"] == "special")
         n_normal = sum(1 for s in skills if s["group"] == "normal")
         if n_special != 4 or n_normal != 13:
             warnings.append(f"{code}: スキル数異常 special={n_special} normal={n_normal}")
-        classes.append({
-            "class_id": code, "code": code, "name_ja": name,
-            "sort_order": i, "enabled": True,
-        })
-        skills_by_class[code] = sorted(
-            skills, key=lambda s: (0 if s["group"] == "special" else 1, s["display_no"])
-        )
+        skills_by_class[code] = skills
 
-    # UC等: シートが無いがボタン画像があるクラスは enabled=false で登録しない
-    # (クラス一覧はシート基準。画像マニフェスト側で未使用ボタンを検出)
+    wb.close()
 
     master = {
         "schema_version": 1,
-        "master_version": "2026-07-13",
-        # スキル秘伝の種類・等級・効果は src/game-rules/skill-sigil.json が正本。
-        # アプリは src/data/master.ts でそこと合成するため、ここでは出力しない。
+        "master_version": MASTER_VERSION,
         "classes": classes,
         "skills": skills_by_class,
     }
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(master, ensure_ascii=False, indent=1), encoding="utf-8")
+    OUT.write_text(json.dumps(master, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
     total = sum(len(v) for v in skills_by_class.values())
     print(f"classes={len(classes)} skills={total} -> {OUT}")

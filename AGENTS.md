@@ -33,13 +33,20 @@ git add -A && git commit -m "..." && git push origin main
 
 ## データ生成 (Excel → JSON、コード側は JSON を読む)
 
-- マスタ: `../スキル秘伝_v0.1_PN.xlsx` → `python scripts/parse_master.py <path>` →
-  `src/data/master.json` (効果数値は `EFFECTS` 定数が正本)。
-- 説明・プロフィール: `資料/説明(パッシブ・スキル)/黒い砂漠M_説明_*.xlsx` (30クラス) →
-  `python scripts/parse_descriptions.py` → `src/data/descriptions.json`。
-  「プロフィール」シート (A列: 名前/出身地/Other、B列: 値) から各クラス `profile` を取込む。
-  Other は未入力なら HP 非表示。
+**正本は `資料/クラスデータ/` の統合Excel 2本** (2026-08-03 移行)。スクリプトは読むだけで、
+生成側からExcelを上書きしないこと。
+
+- 統合Excel: `黒い砂漠M_スキル・パッシブ.xlsx` (シート: `クラス一覧` / `パッシブ一覧` /
+  `スキル_{CODE}`×30) と `黒い砂漠M_プロフィール.xlsx` (`プロフィール_{CODE}`×30)。
+- マスタ: 統合Excel → `python scripts/parse_master.py` → `src/data/master.json`
+  (秘伝の種類・等級・効果は `src/game-rules/` が正本)。
+- 説明・プロフィール: 統合Excel 2本 → `python scripts/parse_descriptions.py` →
+  `src/data/descriptions.json`。
 - 画像: `node scripts/gen_image_manifest.mjs`。
+- STACK/CT/HIT: 説明の「最大使用回数 → 再使用待機時間 → 最大〇打撃」の並びの**直後の1行だけ**
+  を数値化する。説明の後ろに出てくる「最大〇打撃」は本文に残す。条件付き行
+  (「・スキルボタン長押しで最大2打撃」) は本文に残したままHIT値も入れる。詳細は `CLAUDE.md`。
+- 旧データ (説明Excel 30本・旧マスタ) は `資料/_archive/` に退避済み。参照しない。
 
 ## 規約
 

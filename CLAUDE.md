@@ -32,26 +32,53 @@ git add -A && git commit -m "..." && git push origin main   # これで本番反
 
 ## この環境の前提
 
-- **Node.js は PATH に無い。** ポータブル版が `E:\AI\` にある (node.exe / npm.cmd /
-  npx.cmd)。Bash では先頭に `export PATH="/e/AI:$PATH"` を付けてから npm/npx を実行。
+- **Node.js はポータブル版が `D:\AI\` にある** (node.exe / npm.cmd / npx.cmd)。
+  PATH に入っていない場合は Bash で `export PATH="/d/AI:$PATH"` を付けてから npm/npx を実行。
 - dev サーバーは `.claude/launch.json` の "dev" 設定 (vite)。
   **`npm run build` の前に dev サーバーを止める** (public/画像 の削除で ENOTEMPTY 失敗を防ぐ)。
 
 ## データ生成パイプライン (Excel → JSON)
 
-コード側が読むのは `src/data/*.json`。正本は Excel で、スクリプトで変換する。
+コード側が読むのは `src/data/*.json`。**正本は `資料/クラスデータ/` の統合Excel 2本**で、
+スクリプトで変換する。**スクリプトはExcelを読むだけ。生成側からExcelを上書きしないこと。**
 
-- **マスタ (クラス・スキル・固定枠):** `../スキル秘伝_v0.1_PN.xlsx` →
-  `python scripts/parse_master.py <path>` → `src/data/master.json`。
+- **統合Excel (正本):** `資料/クラスデータ/黒い砂漠M_スキル・パッシブ.xlsx`
+  - `クラス一覧` … コード / クラス名 / 表示順 / 有効
+  - `パッシブ一覧` … 横=クラス、縦=パッシブ①②。セルは `[日本語 / 韓国語 / 英語]` の
+    ヘッダー行 + 本文
+  - `スキル_{CODE}` ×30 … 1行=1スキル (通常13 + ラバム4 + 闇精霊の怒り1)。列は
+    `skill_id / 種別 / 表示番号 / 名前(日本語) / 区分 / STACK / CT / HIT / 説明(日本語) /
+    元の説明(検証用) / 装着可能秘伝 / 秘伝装着可否 / 画像パス / 名前(韓国語) / 名前(英語)`
+    (「元の説明」は移行前の文章。説明の隣に置いて目視で突き合わせるための参考列)
+  - `資料/クラスデータ/黒い砂漠M_プロフィール.xlsx` … `プロフィール_{CODE}` ×30
+    (A列ラベル: 名前/出身地/Other/エピソード、B列に値)
+- **マスタ (クラス・スキル・固定枠):** 統合Excel → `python scripts/parse_master.py` →
+  `src/data/master.json`。「装着可能秘伝」の日本語表記は game-rules の逆引きでidに戻す。
 - **スキル秘伝ルール (種類・等級・効果・装着ルール):** `src/game-rules/` が単一正本。
   `skill-sigil.json` (種類/等級/効果・数値) と `skill-sigil-rules.ts` (装着ルール定数・
   表示細則) を**手編集**する。アプリは `src/data/master.ts` が master.json と game-rules を
   合成して読む。ゲーム改定時はまず game-rules を直す (docs は記録用で参照しない)。
-- **スキル/パッシブ説明・プロフィール:** `資料/説明(パッシブ・スキル)/黒い砂漠M_説明_*.xlsx`
-  (30クラス) → `python scripts/parse_descriptions.py` → `src/data/descriptions.json`。
-  各Excelの「プロフィール」シート (A列ラベル: 名前/出身地/Other、B列に値) から
-  各クラスの `profile` を取り込む。Other は未入力なら HP 側で非表示。
+- **スキル/パッシブ説明・プロフィール:** 統合Excel 2本 →
+  `python scripts/parse_descriptions.py` → `src/data/descriptions.json`。
 - **画像マニフェスト:** 画像追加時 `node scripts/gen_image_manifest.mjs`。
+
+### STACK / CT / HIT の扱い (まな指定)
+
+説明本文から数値を切り出して列に持つ。HPでは `STACK:〇　CT:〇　HIT×〇` と表示し、
+値の無い項目は出さない。
+
+- **抽出は「最大使用回数 → 再使用待機時間 → 最大〇打撃」と並ぶ、その直後の1行だけ。**
+  説明の後ろの方に出てくる「最大〇打撃」は対象外 (本文にそのまま残す)。
+- 単独行 (「・最大2打撃」) は数値化して本文から除く。条件付き行
+  (「・スキルボタン長押しで最大2打撃」) は**本文に残したままHIT値も入れる** (条件が
+  情報として必要なため)。
+- 「最大〇ヒット」も「最大〇打撃」と同じ扱い (古い言い回しのクラスが残っているため)。
+
+### 旧データ (2026-08-03 にアーカイブ済み)
+
+`資料/_archive/` に退避してある。**参照しないこと。** 復元が必要なときだけ見る。
+- `資料/_archive/説明(パッシブ・スキル)/黒い砂漠M_説明_*.xlsx` (30本)
+- `資料/_archive/スキル秘伝_v0.1_PN.xlsx` (旧マスタ・約29MB・.gitignore対象)
 
 ## コマンド
 
