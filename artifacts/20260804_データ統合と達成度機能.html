@@ -1,0 +1,277 @@
+<title>スキル秘伝HP — データ統合と達成度機能</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    /* mana-ui-theme のピンク基調 (20260730_プロジェクト現況サマリー.html を踏襲) */
+    --ground: #0a1020;
+    --panel: #131b2f;
+    --panel-2: #0e1526;
+    --line: rgba(233, 183, 199, 0.16);
+    --line-strong: rgba(233, 183, 199, 0.42);
+    --text: #f2eee6;
+    --text-dim: #ccd1de;
+    --muted: #8b93a8;
+    --pink: #e9b7c7;
+    --pink-deep: #c07f96;
+    --done: #8fc7a8;
+    --wip: #e8c07d;
+    --swap: #e8a355;
+    --hold: #8b93a8;
+    --hatch: rgba(233, 183, 199, 0.05);
+
+    --display: "Shippori Mincho", "Yu Mincho", YuMincho, "Hiragino Mincho ProN", serif;
+    --body: "Zen Kaku Gothic New", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", sans-serif;
+    --data: Consolas, "SFMono-Regular", "Courier New", monospace;
+
+    --col: 40rem;
+    --wide: 58rem;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --ground: #edeef3;
+      --panel: #fbfafc;
+      --panel-2: #f2f1f6;
+      --line: rgba(43, 52, 78, 0.14);
+      --line-strong: rgba(176, 110, 134, 0.55);
+      --text: #141b2c;
+      --text-dim: #3a4258;
+      --muted: #6c7285;
+      --pink: #a9647e;
+      --pink-deep: #8d4d66;
+      --done: #3d7c5d;
+      --wip: #94661a;
+      --swap: #b3651c;
+      --hold: #6c7285;
+      --hatch: rgba(169, 100, 126, 0.06);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0a1020; --panel: #131b2f; --panel-2: #0e1526;
+    --line: rgba(233, 183, 199, 0.16); --line-strong: rgba(233, 183, 199, 0.42);
+    --text: #f2eee6; --text-dim: #ccd1de; --muted: #8b93a8;
+    --pink: #e9b7c7; --pink-deep: #c07f96; --done: #8fc7a8; --wip: #e8c07d;
+    --swap: #e8a355; --hold: #8b93a8; --hatch: rgba(233, 183, 199, 0.05);
+  }
+  :root[data-theme="light"] {
+    --ground: #edeef3; --panel: #fbfafc; --panel-2: #f2f1f6;
+    --line: rgba(43, 52, 78, 0.14); --line-strong: rgba(176, 110, 134, 0.55);
+    --text: #141b2c; --text-dim: #3a4258; --muted: #6c7285;
+    --pink: #a9647e; --pink-deep: #8d4d66; --done: #3d7c5d; --wip: #94661a;
+    --swap: #b3651c; --hold: #6c7285; --hatch: rgba(169, 100, 126, 0.06);
+  }
+
+  body { margin: 0; background: var(--ground); color: var(--text); font-family: var(--body); line-height: 1.75; }
+  .wrap { max-width: var(--wide); margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+
+  header { border-bottom: 1px solid var(--line-strong); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+  .kicker { font-size: .72rem; letter-spacing: .34em; color: var(--pink-deep); text-transform: uppercase; }
+  h1 { font-family: var(--display); font-size: clamp(1.6rem, 4vw, 2.3rem); margin: .4rem 0 .6rem; font-weight: 500; }
+  .meta { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; font-family: var(--data); font-size: .74rem; color: var(--muted); }
+
+  section { margin: 0 0 3rem; }
+  h2 { font-family: var(--display); font-size: 1.15rem; font-weight: 500; letter-spacing: .1em;
+       border-left: 3px solid var(--pink); padding-left: .7rem; margin: 0 0 1.1rem; }
+  h3 { font-size: .92rem; letter-spacing: .06em; color: var(--pink-deep); margin: 1.6rem 0 .6rem; }
+  p { margin: 0 0 .9rem; color: var(--text-dim); }
+
+  /* ダイジェスト */
+  .digest { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(11rem, 100%), 1fr)); gap: .8rem; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.1rem; }
+  .stat .n { font-family: var(--display); font-size: 1.9rem; line-height: 1.1; color: var(--pink); }
+  .stat .n small { font-size: .9rem; }
+  .stat .l { font-size: .76rem; color: var(--muted); letter-spacing: .06em; margin-top: .3rem; }
+
+  /* Before / After */
+  .ba { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(17rem, 100%), 1fr)); gap: 1rem; }
+  .ba > div { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.1rem; }
+  .ba .tag { font-family: var(--data); font-size: .7rem; letter-spacing: .18em; color: var(--muted); }
+  .ba.after > div, .ba > div.after { border-color: var(--line-strong); }
+  .ba ul { margin: .6rem 0 0; padding-left: 1.1rem; }
+  .ba li { margin: .3rem 0; color: var(--text-dim); font-size: .88rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+  th, td { border: 1px solid var(--line); padding: .45rem .7rem; text-align: left; }
+  thead th { color: var(--pink-deep); font-weight: 500; background: var(--hatch); }
+  td.num { font-family: var(--data); text-align: right; }
+  .scroll { overflow-x: auto; }
+
+  code { font-family: var(--data); font-size: .85em; background: var(--hatch); padding: .1em .4em; border-radius: 3px; }
+
+  /* 枠の色分けデモ */
+  .slots { display: flex; flex-direction: column; gap: .35rem; background: var(--panel); border: 1px solid var(--line);
+           border-radius: 10px; padding: 1rem 1.1rem; }
+  .slot { display: flex; align-items: center; gap: .6rem; padding: .35rem .6rem; border-radius: 4px;
+          border-left: 3px solid transparent; background: var(--hatch); font-size: .84rem; }
+  .slot .sc { margin-left: auto; font-family: var(--data); color: var(--pink); }
+  .slot.exact { border-left-color: var(--pink); }
+  .slot.vdiff { border-left-color: rgba(233,183,199,.45); }
+  .slot.swap { border-left-color: var(--swap); background: rgba(232,163,85,.12); }
+  .slot.short { border-left-color: #7fa6c9; }
+  .slot.miss { border-left-color: rgba(255,255,255,.14); color: var(--muted); }
+
+  .next { display: grid; gap: .6rem; }
+  .next > div { display: grid; grid-template-columns: 5.5rem 1fr; gap: .8rem; align-items: start;
+                background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: .7rem .9rem; }
+  .state { font-family: var(--data); font-size: .68rem; letter-spacing: .1em; padding: .15rem .45rem;
+           border-radius: 3px; text-align: center; }
+  .state.now { background: rgba(232,192,125,.16); color: var(--wip); }
+  .state.next { background: rgba(233,183,199,.14); color: var(--pink); }
+  .state.hold { background: rgba(139,147,168,.16); color: var(--hold); }
+  .next .t { font-size: .88rem; }
+  .next .d { font-size: .8rem; color: var(--muted); grid-column: 2; }
+
+  .closer { margin-top: 2.5rem; padding: 1.1rem 1.3rem; background: var(--panel-2);
+            border: 1px solid var(--line-strong); border-radius: 10px; font-size: .95rem; }
+  .fine { font-size: .78rem; color: var(--muted); }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Work Summary</div>
+    <h1>データ管理の一本化と、達成度機能</h1>
+    <div class="meta">
+      <span>2026-08-04</span>
+      <span>skill-sigil-web</span>
+      <span>React 18 + TypeScript + Vite</span>
+      <span>テスト 64件 通過</span>
+    </div>
+  </header>
+
+  <!-- 1. ダイジェスト -->
+  <section>
+    <h2>ダイジェスト</h2>
+    <div class="digest">
+      <div class="stat"><div class="n">31 <small>→</small> 2</div><div class="l">データファイル数</div></div>
+      <div class="stat"><div class="n">510</div><div class="l">スキルを移行</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">移行による欠損</div></div>
+      <div class="stat"><div class="n">64</div><div class="l">テスト（+21）</div></div>
+    </div>
+    <p style="margin-top:1rem">
+      バラバラだった30本のExcelを<strong>統合Excel 2本</strong>にまとめ、そこからJSONを作る形に切り替えました。
+      あわせて説明文から <code>STACK / CT / HIT</code> を切り出して表示し、
+      「理想にどれだけ近づけたか」を見る<strong>達成度</strong>を新設しました。
+    </p>
+  </section>
+
+  <!-- 2. 変化 -->
+  <section>
+    <h2>変化</h2>
+    <div class="ba">
+      <div>
+        <div class="tag">BEFORE</div>
+        <ul>
+          <li>クラス別Excel 30本 + 旧マスタExcel 1本</li>
+          <li>1クラス23シートに分散（スキルごとにシート）</li>
+          <li>装着ルールは別ファイル</li>
+          <li>使用回数・待機時間・打撃数は説明文に混在</li>
+          <li>プロフィールは各Excelの中</li>
+        </ul>
+      </div>
+      <div class="after">
+        <div class="tag">AFTER</div>
+        <ul>
+          <li><code>黒い砂漠M_スキル・パッシブ.xlsx</code>（32シート）</li>
+          <li><code>黒い砂漠M_プロフィール.xlsx</code>（30シート）</li>
+          <li>1クラス1シート・1行1スキルで横に全項目</li>
+          <li>STACK / CT / HIT を専用列に構造化</li>
+          <li>旧データは <code>資料/_archive/</code> へ退避</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>移行が正しいことの確認</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>確認したこと</th><th>結果</th></tr></thead>
+        <tbody>
+          <tr><td><code>master.json</code> が移行前と一致するか</td><td>バイト単位で完全一致</td></tr>
+          <tr><td>パッシブ・闇精霊の怒り（30クラス）</td><td>全文一致</td></tr>
+          <tr><td>HITの抽出ルール（459スキル）</td><td>不一致 0件</td></tr>
+          <tr><td>説明行の欠損</td><td>0件</td></tr>
+          <tr><td>画面表示とJSONの突き合わせ（376件）</td><td>不一致 0件</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">
+      移行中に見つけた不具合も直しました。旧処理は「スタン→気絶」の一括置換をスキル名にも当てており、
+      <b>「タイドスタンプ」が「タイド気絶プ」に壊れていました</b>。画像ファイル名が正なので、そちらに合わせています。
+    </p>
+  </section>
+
+  <!-- 3. 実物 -->
+  <section>
+    <h2>実物</h2>
+
+    <h3>スキル説明に STACK / CT / HIT</h3>
+    <p>
+      説明文に埋もれていた数値を切り出して、上部に <code>STACK:2　CT:4　HIT×2</code> の形で出します。
+      記載の無い項目は出しません。
+    </p>
+    <p class="fine">
+      抽出は「最大使用回数 → 再使用待機時間 → 最大〇打撃」と並ぶ<b>直後の1行だけ</b>。
+      説明の途中に出てくる打撃数はそのまま本文に残します。
+      「スキルボタン長押しで最大2打撃」のような条件付きの行は、本文に残したままHITにも入れます。
+    </p>
+
+    <h3>達成度（比較画面の新タブ）</h3>
+    <p>
+      Freeで組んだ<strong>理想</strong>に対して、所持秘伝でどこまで組めるか／実際にどこまで着けているかを点数で出します。
+      同じクラスのFree編成とMy編成を選んだときだけ開けます。
+    </p>
+    <div class="slots">
+      <div class="slot exact">理想どおり<span class="sc">1.00</span></div>
+      <div class="slot vdiff">効果は一致（格下）<span class="sc">0.70</span></div>
+      <div class="slot swap">入れ替えるだけ ← 今すぐ直せる<span class="sc">+0.55</span></div>
+      <div class="slot short">別効果で代用<span class="sc">0.80</span></div>
+      <div class="slot miss">未所持<span class="sc">0.00</span></div>
+    </div>
+    <p class="fine" style="margin-top:.7rem">
+      オレンジが「持っているのに着けていない／理想と違うものを着けている」枠です。入れ替えるだけで点が伸びます。
+    </p>
+
+    <h3>点数の付け方</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>持っている等級</th><th>理想と同じ効果</th><th>違う効果</th></tr></thead>
+        <tbody>
+          <tr><th>混沌</th><td class="num">1.0 ／ 数値が下位なら 0.95</td><td class="num">0.8</td></tr>
+          <tr><th>太古</th><td class="num">0.7 ／ 数値は問わない</td><td class="num">0.6</td></tr>
+          <tr><th>深淵</th><td class="num">0.4</td><td class="num">0.3</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">
+      1枠の満点は1.0点。同じ効果を複数枠で使う理想でも、所持数を消費しながら割り当てるので、
+      手持ち1個で複数枠を満たしたことにはなりません。
+    </p>
+  </section>
+
+  <!-- 4. この先 -->
+  <section>
+    <h2>この先</h2>
+    <div class="next">
+      <div>
+        <span class="state now">NOW</span>
+        <span class="t">統合Excelの中身を埋める</span>
+        <span class="d">説明文の推敲は合間に進める。直したら <code>parse_master.py</code> → <code>parse_descriptions.py</code> を回してpushすれば本番に出る。</span>
+      </div>
+      <div>
+        <span class="state next">次</span>
+        <span class="t">「元の説明」列を消す</span>
+        <span class="d">移行前の文章を並べた検証用の列。突き合わせが済んだら削除する。</span>
+      </div>
+      <div>
+        <span class="state hold">据え置き</span>
+        <span class="t">エピソード欄</span>
+        <span class="d">プロフィールExcelに枠だけ用意済み。中身が決まったら画面に出す。</span>
+      </div>
+    </div>
+  </section>
+
+  <p class="closer">
+    次の一手は、<b>統合Excelの説明文を埋めながら、達成度を実際の編成で回してみること。</b>
+  </p>
+
+</div>

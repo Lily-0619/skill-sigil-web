@@ -439,7 +439,7 @@
       <span>React 18 + TypeScript + Vite</span>
       <span>Cloudflare Workers Builds</span>
       <span>master v0.1 / app v0.2</span>
-      <span>HEAD 6f7ad99</span>
+      <span>HEAD c6cb9fe</span>
     </div>
   </header>
 
@@ -513,6 +513,11 @@
 
     <h3>直近で手を入れたところ</h3>
     <div class="log">
+      <div>
+        <span class="sha">c6cb9fe</span>
+        <span class="what">スキル・パッシブ説明の更新を反映（30クラス中24クラスが変化）</span>
+        <span class="why">くノ一・メグ・ウサ・ノヴァ・セラフィムなどが打撃ダメージ込みの正式表記に</span>
+      </div>
       <div>
         <span class="sha">6f7ad99</span>
         <span class="what">比較・案Aの背景スキルアイコンを全体表示に</span>
@@ -595,8 +600,18 @@
       </div>
       <div>
         <span class="state now">NOW</span>
-        <span class="t">説明Excelの更新をコミット</span>
-        <span class="d">資料側の説明Excel22ファイルに未コミットの差分がある。<code>parse_descriptions.py</code> を通して <code>descriptions.json</code> と揃えてから入れる。</span>
+        <span class="t">ラン(LN)の打撃ダメージ行を確認</span>
+        <span class="d">説明Excelの日本語(正)列から打撃ダメージ／PVP打撃ダメージが42行→10行に減っている。整理したのか上書きで消えたのかを見て、必要なら書き戻して再変換。</span>
+      </div>
+      <div>
+        <span class="state now">NOW</span>
+        <span class="t">開いたままのExcelを保存して再変換</span>
+        <span class="d">DE・GA・SP の3ファイルにロックが残っている。未保存の編集は今回の反映に入っていない。</span>
+      </div>
+      <div>
+        <span class="state hold">据え置き</span>
+        <span class="t">スキル名の正本ずれ</span>
+        <span class="d">編成編集は説明Excelの新名、比較画面は <code>master.json</code> の旧名を表示する。マスタExcel→JSONを回すときにまとめて揃える方針。</span>
       </div>
       <div>
         <span class="state soon">v0.3</span>
@@ -616,6 +631,6 @@
     </div>
   </section>
 
-  <p class="closer">次の一手は、<b>未整備の2枚のスキル画像を埋めて、説明の表記確認に入ること。</b></p>
+  <p class="closer">次の一手は、<b>ラン(LN)の打撃ダメージ行を見て、開いたままのExcel3件を保存してから再変換すること。</b></p>
 
 </div>
