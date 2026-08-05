@@ -142,7 +142,7 @@
     {
       "effect_id": "guardian_ungrab",
       "sigil_type_id": "guardian",
-      "name_ja": "スキル使用時掴み不可発動",
+      "name_ja": "スキル使用時キャッチ不可発動",
       "values": {
         "abyssal": [
           "0.1秒",
@@ -256,7 +256,7 @@
     {
       "effect_id": "defined_range",
       "sigil_type_id": "defined",
-      "name_ja": "スキル攻撃範囲増加",
+      "name_ja": "スキル使用時攻撃範囲増加",
       "values": {
         "abyssal": [
           "1%",
