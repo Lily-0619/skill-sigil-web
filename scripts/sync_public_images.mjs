@@ -16,6 +16,21 @@ if (!fs.existsSync(SRC)) {
   process.exit(0);
 }
 
+// 正本フォルダ(画像/)自体は存在するが、中の主要サブフォルダが欠けている場合がある
+// (例: このPCの正本には「スキル画像」が無い)。気づかずビルドすると、次のrmSyncで
+// public/画像 を全消去したあと空のコピー元で上書きし、全クラスのスキル画像が
+// 消えてしまう。既存の複製より明らかに乏しい内容で同期しようとしていないか確認する。
+const REQUIRED_SUBDIRS = ["スキル画像", "character", "class_button"];
+const missing = REQUIRED_SUBDIRS.filter((d) => !fs.existsSync(path.join(SRC, d)));
+if (missing.length > 0) {
+  console.error(
+    `ERROR: 正本フォルダ ${SRC} に想定サブフォルダが無い: ${missing.join(", ")}\n` +
+    `  このまま同期すると public/画像 から該当分がまるごと消えます。同期を中止しました。\n` +
+    `  正本フォルダの中身を確認してから再実行してください。`
+  );
+  process.exit(1);
+}
+
 // .zip等の作業用アーカイブは配信対象外 (元データ置き場に紛れていても複製しない)
 const SKIP_EXT = /\.(zip|xlsx?|pdf|psd|ai)$/i;
 

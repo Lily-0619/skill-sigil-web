@@ -495,7 +495,7 @@
      "branch",
      "flawless",
      "refined",
-     "faint"
+     "defined"
     ]
    },
    {
@@ -599,7 +599,7 @@
      "branch",
      "flawless",
      "refined",
-     "faint"
+     "defined"
     ]
    },
    {
@@ -2041,13 +2041,13 @@
     "skill_id": "HS_n_3",
     "group": "normal",
     "display_no": 3,
-    "name_ja": "砂の試練",
+    "name_ja": "枯渇の襲撃",
     "sigil_eligible": true,
     "slots": [
      "branch",
-     "guardian",
      "flawless",
-     "defined"
+     "refined",
+     "faint"
     ]
    },
    {
@@ -2058,7 +2058,7 @@
     "sigil_eligible": true,
     "slots": [
      "branch",
-     "flawless",
+     "guardian",
      "defined",
      "faint"
     ]

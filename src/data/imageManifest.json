@@ -1271,6 +1271,12 @@
     "name": "粒子加速",
     "special": false,
     "path": "画像/スキル画像/SC/SC_13_粒子加速.png"
+   },
+   {
+    "no": 2,
+    "name": "引力生成",
+    "special": false,
+    "path": "画像/スキル画像/SC/SC_02_引力生成.png"
    }
   ],
   "SG": [
@@ -2137,12 +2143,6 @@
     "path": "画像/スキル画像/HS/HS_03_盲信の代価__.png"
    },
    {
-    "no": 3,
-    "name": "砂の試練",
-    "special": false,
-    "path": "画像/スキル画像/HS/HS_03_砂の試練.png"
-   },
-   {
     "no": 4,
     "name": "蛇斬",
     "special": false,
@@ -2207,6 +2207,12 @@
     "name": "砂漠の庇護",
     "special": false,
     "path": "画像/スキル画像/HS/HS_13_砂漠の庇護.png"
+   },
+   {
+    "no": 3,
+    "name": "枯渇の襲撃",
+    "special": false,
+    "path": "画像/スキル画像/HS/HS_03_枯渇の襲撃.png"
    }
   ],
   "KN": [

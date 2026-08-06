@@ -13,6 +13,7 @@
 アプリは src/data/master.ts でそれと合成するため、ここでは出力しない。
 """
 import json
+import re
 import sys
 import unicodedata
 from pathlib import Path
@@ -109,7 +110,7 @@ def parse_skill_sheet(ws, code, slot_ids, warnings):
                 label = label.strip()
                 if not label:
                     continue
-                sid = slot_ids.get(label)
+                sid = slot_ids.get(label) or slot_ids.get(re.sub(r"[のな]$", "", label))
                 if sid is None:
                     warnings.append(f"{code}: 不明な秘伝タイプ '{label}' ({skill_id})")
                 else:
