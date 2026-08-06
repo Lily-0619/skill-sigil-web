@@ -2,25 +2,33 @@
 // 編成管理にある編成同士を並べて、どのスキルにどの秘伝のどの効果がついているかを比較する。
 // 読み取り専用。ビューは 案A スキルごと / 案B タイプ別サマリー / 案C グラフ を切替。
 // 既存システムは変更せず、集計は src/logic/compare.ts に自己完結して持つ。
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { master, useStore } from "../state/store";
 import { buildCompareData } from "../logic/compare";
+import { buildProgressData } from "../logic/progress";
 import { BuildSelectBar } from "./compare/BuildSelectBar";
 import { CompareBySkill } from "./compare/CompareBySkill";
 import { CompareBySummary } from "./compare/CompareBySummary";
 import { CompareChart } from "./compare/CompareChart";
+import { CompareProgress } from "./compare/CompareProgress";
 import "../styles/compare.css";
 
 /** 横並びの最大編成数 (docs/17 既定=4)。増減はここを変えるだけ。 */
 const MAX_COMPARE = 4;
 
-type CompareView = "skill" | "summary" | "chart";
+type CompareView = "skill" | "summary" | "chart" | "progress";
 
 const VIEWS: { id: CompareView; label: string }[] = [
   { id: "skill", label: "スキルごと" },
   { id: "summary", label: "タイプ別サマリー" },
   { id: "chart", label: "グラフ" },
+  { id: "progress", label: "達成度" },
 ];
+
+/** 達成度タブが選べないときの説明 (ホバーで出す) */
+const PROGRESS_HINT =
+  "達成度は「同じクラスのFree編成とMy編成」を選んだときだけ表示できます。\n" +
+  "例: FreeのWR + MyのWR は可 / Free同士や別クラスの組み合わせは不可";
 
 export default function Compare() {
   const { data } = useStore();
@@ -53,6 +61,26 @@ export default function Compare() {
     [selectedIds, data]
   );
 
+  // 達成度は「同じクラスの Free(理想) と My(現在)」の組でしか成立しない。
+  // Free同士や別クラスの組み合わせでは出せないので、タブ自体を無効にする。
+  const progressData = useMemo(() => {
+    const picked = selectedIds
+      .map((id) => data.builds.find((b) => b.build_id === id))
+      .filter((b): b is NonNullable<typeof b> => !!b);
+    for (const ideal of picked.filter((b) => b.mode === "free")) {
+      const actual = picked.find(
+        (b) => b.mode === "my" && b.class_id === ideal.class_id
+      );
+      if (actual) return buildProgressData(master, data, ideal, actual);
+    }
+    return null;
+  }, [selectedIds, data]);
+
+  // 選択が変わって達成度が出せなくなったら、別のビューへ戻す
+  useEffect(() => {
+    if (view === "progress" && !progressData) setView("skill");
+  }, [view, progressData]);
+
   return (
     <div className="cmp-screen">
       <div className="screen-head">
@@ -81,24 +109,39 @@ export default function Compare() {
           <div className="cmp-toolbar">
             <span className="cmp-toolbar-label">表示</span>
             <div className="cmp-view-toggle" role="tablist" aria-label="表示切替">
-              {VIEWS.map((v) => (
-                <button
-                  key={v.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={view === v.id}
-                  className={`cmp-view-btn ${view === v.id ? "on" : ""}`}
-                  onClick={() => setView(v.id)}
-                >
-                  {v.label}
-                </button>
-              ))}
+              {VIEWS.map((v) => {
+                // 達成度は「同じクラスのFree + My」が揃っていないと選べない
+                const disabled = v.id === "progress" && !progressData;
+                return (
+                  <button
+                    key={v.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={view === v.id}
+                    // disabled 属性を付けるとブラウザが title を出さないため、
+                    // 見た目と操作だけ無効にして、ホバーで理由を出せるようにする
+                    aria-disabled={disabled}
+                    title={disabled ? PROGRESS_HINT : undefined}
+                    className={`cmp-view-btn ${view === v.id ? "on" : ""} ${
+                      disabled ? "disabled" : ""
+                    }`}
+                    onClick={() => {
+                      if (!disabled) setView(v.id);
+                    }}
+                  >
+                    {v.label}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
           {view === "skill" && <CompareBySkill builds={compareData} />}
           {view === "summary" && <CompareBySummary builds={compareData} />}
           {view === "chart" && <CompareChart builds={compareData} />}
+          {view === "progress" && progressData && (
+            <CompareProgress data={progressData} />
+          )}
         </>
       )}
     </div>

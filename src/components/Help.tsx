@@ -72,6 +72,26 @@ export default function Help() {
 
       <div className="card panel">
         <h3>
+          達成度の見かた <span className="en">Progress</span>
+        </h3>
+        <p>
+          「比較」画面の<strong>達成度</strong>タブで、Freeで組んだ理想編成にどれだけ近づけたかを見られます。
+          <strong>同じクラスのFree編成とMy編成を両方えらぶ</strong>と使えます。
+        </p>
+        <p className="fine">
+          <strong>所持ベース</strong>は持っている秘伝で組めるところまで、
+          <strong>装着ベース</strong>は実際にMy編成へ着けているぶんの点数です。
+          差があるときは、着けかえるだけで伸びる枠が残っています(オレンジの枠)。
+        </p>
+        <p className="fine">
+          点数は1枠1.0点が満点。持っている秘伝の等級で決まります ——
+          混沌: 理想と同じ効果なら1.0(数値が下位なら0.95)・違う効果なら0.8 ／
+          太古: 0.7・0.6 ／ 深淵: 0.4・0.3。何も無い枠は0点です。
+        </p>
+      </div>
+
+      <div className="card panel">
+        <h3>
           バージョン <span className="en">Version</span>
         </h3>
         <p className="fine">

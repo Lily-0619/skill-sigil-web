@@ -103,6 +103,14 @@
   color: var(--ink);
   font-weight: 500;
 }
+/* 条件を満たさず選べないタブ (例: 達成度は同クラスのFree+Myが必要) */
+.cmp-view-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.cmp-view-btn.disabled:hover {
+  background: transparent;
+}
 
 /* ===== 空状態 ===== */
 .cmp-empty {
@@ -349,4 +357,345 @@
   color: var(--ivory);
   min-width: 18px;
   text-align: right;
+}
+
+/* ===== 達成度 (収集進捗) =====
+   枠の状態を色で示す。「入れ替えるだけ」= 今すぐ直せる枠なので最も目立たせる。 */
+.prg-wrap {
+  --prg-exact: var(--pink);
+  --prg-value-diff: rgba(233, 183, 199, 0.45);
+  --prg-swap: #e8a355; /* オレンジ: 持っているのに着けていない */
+  --prg-rarity-short: #7fa6c9;
+  --prg-missing: rgba(255, 255, 255, 0.14);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ---- 達成率 ---- */
+.prg-summary {
+  display: grid;
+  /* min(…, 100%) で、画面が狭いときに列幅がビューポートを超えないようにする */
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 12px;
+}
+.prg-rate {
+  display: grid;
+  grid-template-columns: auto auto auto 1fr;
+  align-items: baseline;
+  gap: 6px 8px;
+  padding: 14px 16px;
+  background: rgba(7, 9, 15, 0.4);
+  border: 1px solid var(--line-navy);
+  border-radius: 8px;
+}
+.prg-rate-label {
+  grid-column: 1 / -1;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.prg-rate-main {
+  font-family: var(--font-mincho);
+  font-size: 30px;
+  line-height: 1;
+  color: var(--pink);
+}
+.prg-rate-unit {
+  font-size: 14px;
+  margin-left: 1px;
+}
+.prg-rate-score {
+  font-size: 13px;
+  color: var(--pink-deep);
+  white-space: nowrap;
+}
+.prg-rate-count {
+  justify-self: end;
+  font-size: 11px;
+  color: var(--ivory-dim);
+}
+.prg-bar {
+  grid-column: 1 / -1;
+  position: relative;
+  height: 8px;
+  margin-top: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.prg-bar-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 4px;
+  transition: width 0.25s ease;
+}
+.prg-bar-fill.owned {
+  background: rgba(233, 183, 199, 0.4);
+}
+.prg-bar-fill.exact {
+  background: var(--pink);
+}
+.prg-note {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.prg-note > summary {
+  cursor: pointer;
+  color: var(--pink-deep);
+}
+.prg-note p {
+  margin: 6px 0 0;
+}
+.prg-score-table {
+  margin-top: 8px;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+.prg-score-table th,
+.prg-score-table td {
+  border: 1px solid var(--line-navy);
+  padding: 4px 10px;
+  text-align: left;
+  font-weight: 400;
+  color: var(--ivory-dim);
+}
+.prg-score-table thead th {
+  color: var(--pink-deep);
+}
+
+/* ---- 入れ替えるだけ の案内 ---- */
+.prg-callout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--ivory);
+  background: rgba(232, 163, 85, 0.1);
+  border: 1px solid rgba(232, 163, 85, 0.5);
+  border-radius: 6px;
+}
+.prg-callout.muted {
+  color: var(--ivory-dim);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--line-navy);
+}
+.prg-callout-num {
+  font-family: var(--font-mincho);
+  font-size: 20px;
+  line-height: 1;
+  color: var(--prg-swap);
+}
+
+/* ---- 凡例 ---- */
+.prg-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-size: 11px;
+  color: var(--ivory-dim);
+}
+.prg-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.prg-chip {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.prg-chip.exact { background: var(--prg-exact); }
+.prg-chip.value-diff { background: var(--prg-value-diff); }
+.prg-chip.swap { background: var(--prg-swap); }
+.prg-chip.rarity-short { background: var(--prg-rarity-short); }
+.prg-chip.missing { background: var(--prg-missing); }
+
+/* ---- スキル別 ---- */
+.prg-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 10px;
+}
+.prg-skill {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 12px;
+  background: rgba(7, 9, 15, 0.4);
+  border: 1px solid var(--line-navy);
+  border-radius: 8px;
+}
+.prg-skill-bg {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  height: 100%;
+  width: auto;
+  aspect-ratio: 1 / 1;
+  max-width: 46%;
+  object-fit: contain;
+  opacity: 0.28;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 55%);
+  mask-image: linear-gradient(to right, transparent, #000 55%);
+}
+.prg-skill-head,
+.prg-slots {
+  position: relative;
+  z-index: 1;
+}
+.prg-skill-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: var(--pink-deep);
+}
+.prg-skill-no {
+  color: var(--muted);
+  font-size: 11px;
+  min-width: 14px;
+}
+.prg-skill-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.prg-skill-count {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--ivory-dim);
+  white-space: nowrap;
+}
+.prg-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.prg-slot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  font-size: 11.5px;
+  color: var(--ivory);
+  border-radius: 4px;
+  border-left: 3px solid transparent;
+  background: rgba(255, 255, 255, 0.03);
+}
+.prg-slot.exact { border-left-color: var(--prg-exact); }
+.prg-slot.value-diff { border-left-color: var(--prg-value-diff); }
+.prg-slot.swap {
+  border-left-color: var(--prg-swap);
+  background: rgba(232, 163, 85, 0.12);
+}
+.prg-slot.rarity-short { border-left-color: var(--prg-rarity-short); }
+.prg-slot.missing {
+  border-left-color: var(--prg-missing);
+  color: var(--muted);
+}
+.prg-slot-no {
+  color: var(--muted);
+  font-size: 10.5px;
+  min-width: 12px;
+}
+.prg-slot-eff {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* flex の子は既定で min-width:auto のため、長い効果名が枠を押し広げてしまう */
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.prg-slot-val {
+  margin-left: auto;
+  color: var(--pink);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* ---- 不足リスト ---- */
+.prg-shortage {
+  padding: 14px 16px;
+  background: rgba(7, 9, 15, 0.4);
+  border: 1px solid var(--line-navy);
+  border-radius: 8px;
+}
+.prg-shortage-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.prg-shortage-head .t {
+  font-family: var(--font-mincho);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  color: var(--ivory);
+}
+.prg-shortage-done {
+  margin: 0;
+  font-size: 12px;
+  color: var(--ivory-dim);
+}
+.prg-shortage-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+  gap: 4px 14px;
+}
+.prg-shortage-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ivory);
+  padding: 3px 0;
+}
+.prg-shortage-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.prg-shortage-need {
+  margin-left: auto;
+  color: var(--prg-swap);
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+
+/* 狭い画面では1枠を2行にして、効果名が潰れないようにする */
+@media (max-width: 560px) {
+  .prg-slot {
+    flex-wrap: wrap;
+    row-gap: 2px;
+  }
+  .prg-slot-eff {
+    flex: 1 1 100%;
+    order: 1;
+  }
+  .prg-slot-no {
+    order: 0;
+  }
+  .prg-slot .chip {
+    order: 2;
+  }
+  .prg-slot-val {
+    order: 3;
+  }
+  .prg-rate {
+    grid-template-columns: auto auto 1fr;
+  }
+  .prg-rate-main {
+    font-size: 26px;
+  }
 }
