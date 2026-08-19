@@ -1823,7 +1823,7 @@
     "skill_id": "KT_n_3",
     "group": "normal",
     "display_no": 3,
-    "name_ja": "奈落掌拳",
+    "name_ja": "蛇鉈蹴",
     "sigil_eligible": true,
     "slots": [
      "branch",
@@ -1866,7 +1866,7 @@
     "sigil_eligible": true,
     "slots": [
      "branch",
-     "defined",
+     "guardian",
      "refined",
      "faint"
     ]
