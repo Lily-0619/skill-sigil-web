@@ -26,8 +26,8 @@ const sample = (): UserData => {
   });
   d.inventory.push({
     inventory_id: "inv_b",
-    sigil_type_id: "branch",
-    effect_id: "branch_arl",
+    sigil_type_id: "flawless",
+    effect_id: "flawless_finaldmgdown",
     rarity: "abyssal",
     value_text: "10%",
     quantity: 1,
@@ -43,9 +43,9 @@ const sample = (): UserData => {
     created_at: "2026-07-13T00:00:00.000Z",
     updated_at: "2026-07-13T00:00:00.000Z",
   });
-  d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 1, inventory_id: "inv_b" });
-  d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 2, inventory_id: "inv_a" });
-  d.equips.push({ build_id: "b1", skill_id: "WR_sp_2", slot_no: 2, inventory_id: "inv_a" });
+  d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 2, inventory_id: "inv_b" });
+  d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 1, inventory_id: "inv_a" });
+  d.equips.push({ build_id: "b1", skill_id: "WR_sp_2", slot_no: 1, inventory_id: "inv_a" });
   return d;
 };
 
@@ -63,7 +63,7 @@ const sampleWithFree = (): UserData => {
   d.freeEquips.push({
     build_id: "fb1",
     skill_id: "WR_sp_1",
-    slot_no: 2,
+    slot_no: 1,
     effect_id: "guardian_superarmor",
     rarity: "abyssal",
     value_text: "0.1秒",
@@ -176,8 +176,8 @@ describe("Excel v2 (v0.2 #3 Free対応)", () => {
 
   it("Free装着の枠タイプ不一致はエラー", () => {
     const d = sampleWithFree();
-    // WR_sp_1 の枠1は系列(branch)タイプ — 守護効果は不一致
-    d.freeEquips[0] = { ...d.freeEquips[0], slot_no: 1 };
+    // 系列廃止後、WR_sp_1 の枠2は無欠タイプ — 守護効果は不一致
+    d.freeEquips[0] = { ...d.freeEquips[0], slot_no: 2 };
     const wb = buildWorkbook(master, d);
     const buf = XLSX.write(wb, { type: "array", bookType: "xlsx" });
     const r = parseWorkbook(master, XLSX.read(buf, { type: "array" }));

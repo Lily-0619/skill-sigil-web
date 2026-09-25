@@ -40,7 +40,7 @@ const build = (p: Partial<Build>): Build => ({
   ...p,
 });
 
-/** WRの守護枠 (WR_sp_1 枠2 / WR_sp_2 枠2) に同じ守護効果を理想として置く */
+/** WRの守護枠 (WR_sp_1 枠1 / WR_sp_2 枠1) に同じ守護効果を理想として置く */
 const idealData = (): UserData => {
   const d = emptyUserData();
   d.builds.push(build({}));
@@ -48,7 +48,7 @@ const idealData = (): UserData => {
     d.freeEquips.push({
       build_id: "free1",
       skill_id: skillId,
-      slot_no: 2,
+      slot_no: 1,
       effect_id: "guardian_superarmor",
       rarity: "abyssal",
       value_text: "0.1秒",
@@ -250,7 +250,7 @@ describe("buildProgressData — 枠の状態", () => {
       d.equips.push({
         build_id: "my1",
         skill_id: skillId,
-        slot_no: 2,
+        slot_no: 1,
         inventory_id: "inv1",
       });
     }
@@ -279,7 +279,7 @@ describe("buildProgressData — 枠の状態", () => {
     d.equips.push({
       build_id: "my1",
       skill_id: "WR_sp_1",
-      slot_no: 2,
+      slot_no: 1,
       inventory_id: "inv2",
     });
 
@@ -287,7 +287,7 @@ describe("buildProgressData — 枠の状態", () => {
 
     expect(p.equipped).toBe(0);
     expect(p.swappable).toBe(2);
-    const slot = p.skills.flatMap((s) => s.slots).find((s) => s.slotNo === 2)!;
+    const slot = p.skills.flatMap((s) => s.slots).find((s) => s.slotNo === 1)!;
     expect(slot.state).toBe("swap");
     expect(slot.actualEffectName).not.toBeNull();
   });

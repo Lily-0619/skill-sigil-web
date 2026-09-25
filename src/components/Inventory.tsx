@@ -190,7 +190,8 @@ export default function Inventory() {
   const buildId = data.meta.selected_build_id;
 
   const rows = useMemo(() => {
-    let list = data.inventory.slice();
+    // 仕様廃止済みの系列秘伝は、旧ローカルデータに残っていても表示しない。
+    let list = data.inventory.filter((item) => item.sigil_type_id !== "branch");
     if (fType) list = list.filter((i) => i.sigil_type_id === fType);
     if (fRarity) list = list.filter((i) => i.rarity === fRarity);
     const usedOf = (i: InventoryItem) =>
@@ -292,9 +293,6 @@ export default function Inventory() {
                     {e.name_ja}
                     {e.sigil_type_id === "radiant" && (
                       <span className="note">混沌等級のみ存在します</span>
-                    )}
-                    {e.sigil_type_id === "branch" && (
-                      <span className="note">深淵等級のみ・10%固定</span>
                     )}
                   </button>
                 ))}

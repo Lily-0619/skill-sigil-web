@@ -19,6 +19,22 @@ const writeJson = (file, value) => {
   fs.renameSync(temp, file);
 };
 
+// Windowsでは .cmd をexecFileで直接起動するとspawn EINVALになる環境がある。
+// 固定したnpmコマンドだけをcmd.exe経由で実行する。
+async function runNpm(command, label) {
+  try {
+    return await execFileAsync(process.env.ComSpec || "C:\\Windows\\System32\\cmd.exe", [
+      "/d",
+      "/s",
+      "/c",
+      command,
+    ], { cwd: repoRoot, windowsHide: true });
+  } catch (error) {
+    const detail = error?.stderr?.trim() || error?.stdout?.trim() || error?.message || String(error);
+    throw new Error(`${label}に失敗しました: ${detail}`);
+  }
+}
+
 function assertText(value, label, max = 20000) {
   if (typeof value !== "string" || value.length > max) throw new Error(`${label}が不正です`);
 }
@@ -61,7 +77,6 @@ ipcMain.handle("editor:save", async (_event, payload) => {
     return {
       name: passive.weapon.trim(),
       lines: [
-        passive.uniqueName.trim(),
         ...passive.uniqueBody.split(/\r?\n/).filter((line) => line.trim() !== ""),
         ...(common ? [common.name, ...common.body.split(/\r?\n/).filter((line) => line.trim() !== "")] : []),
       ],
@@ -95,9 +110,25 @@ ipcMain.handle("editor:publish", async () => {
     message: "保存済みの変更をGitHubへ送信し、公開サイトを更新します。",
   });
   if (result.response !== 1) return { ok: false, cancelled: true };
-  await execFileAsync("npm.cmd", ["test"], { cwd: repoRoot, windowsHide: true });
-  await execFileAsync("npm.cmd", ["run", "build"], { cwd: repoRoot, windowsHide: true });
-  await execFileAsync("git", ["add", "src/data/master.json", "src/data/descriptions.json"], { cwd: repoRoot, windowsHide: true });
+  // .claude/worktrees配下の古い作業コピーは対象外にし、現在のサイト本体だけ検証する。
+  await runNpm("npx vitest run tests --exclude .claude/**", "サイトデータのテスト");
+  // public/画像を既存正本として扱い、画像同期処理は実行しない。
+  await runNpm("npx tsc --noEmit && npx vite build", "サイトのビルド");
+  await execFileAsync("git", [
+    "add",
+    "src/data/master.json",
+    "src/data/descriptions.json",
+    "src/data/imageManifest.json",
+    "src/game-rules/skill-sigil.json",
+    "src/game-rules/skill-sigil-rules.ts",
+    "src/components/BuildEdit.tsx",
+    "src/components/Inventory.tsx",
+    "tests",
+    "scripts/remove_branch_sigils.mjs",
+    "editor-app/desktop/main.cjs",
+    "editor-app/src/DataEditorPrototype.tsx",
+    "editor-app/src/data-editor.css",
+  ], { cwd: repoRoot, windowsHide: true });
   await execFileAsync("git", ["commit", "-m", "Update skill data from desktop editor"], { cwd: repoRoot, windowsHide: true });
   await execFileAsync("git", ["push", "origin", "main"], { cwd: repoRoot, windowsHide: true });
   return { ok: true, message: "GitHubへ送信しました。数分後にサイトへ反映されます" };

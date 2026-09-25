@@ -26,8 +26,8 @@ export const effects = sigil.effects as EffectDef[];
 export const BRANCH_TYPE_ID = "branch";
 /** 同一系列は1編成に4つまで */
 export const SAME_SERIES_MAX = 4;
-/** 各スキルの固定秘伝枠数 */
-export const SLOT_COUNT = 4;
+/** 系列枠廃止後の各スキルの固定秘伝枠数 */
+export const SLOT_COUNT = 3;
 /** 等級の良い順 (混沌 > 太古 > 深淵)。既定等級・並び順に使う。 */
 export const RARITY_ORDER: Rarity[] = ["chaos", "primal", "abyssal"];
 

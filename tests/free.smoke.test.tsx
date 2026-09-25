@@ -101,7 +101,7 @@ describe("Freeモードと編成一括管理", () => {
     // 等級ピッカーが出る (深淵のみの効果)
     expect(within(catalog as HTMLElement).getByText("等級")).toBeTruthy();
 
-    const slot2 = screen.getByLabelText("枠2 守護");
+    const slot2 = screen.getByLabelText("枠1 守護");
     fireEvent.click(slot2);
     await waitFor(() => {
       expect(within(slot2).getByText(/解除/)).toBeTruthy();
@@ -132,7 +132,7 @@ describe("Freeモードと編成一括管理", () => {
     expect(cards.length).toBe(1);
     expect(within(cards[0] as HTMLElement).getByText("FREE")).toBeTruthy();
     expect(within(cards[0] as HTMLElement).getByText("WR")).toBeTruthy();
-    expect(within(cards[0] as HTMLElement).getByText(/装着 2 \/ 64 枠/)).toBeTruthy();
+    expect(within(cards[0] as HTMLElement).getByText(/装着 2 \/ 48 枠/)).toBeTruthy();
 
     // ひらく → S-02 Freeモードへ戻る
     fireEvent.click(within(cards[0] as HTMLElement).getByRole("button", { name: "ひらく" }));

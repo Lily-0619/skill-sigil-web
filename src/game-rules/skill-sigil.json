@@ -2,12 +2,6 @@
   "_note": "スキル秘伝の単一正本 (種類/等級/効果)。ゲーム改定時はこのファイルを直接編集する。docs/11 は記録用のミラー。プログラムは src/data/master.ts 経由で参照する。",
   "sigil_types": [
     {
-      "id": "branch",
-      "name": "系列",
-      "alias": "系列",
-      "color": "#D9D9D9"
-    },
-    {
       "id": "guardian",
       "name": "守護",
       "alias": "守護",
@@ -560,54 +554,6 @@
         ]
       },
       "sort_order": 26,
-      "enabled": true
-    },
-    {
-      "effect_id": "branch_arl",
-      "sigil_type_id": "branch",
-      "name_ja": "アールのスキル秘伝",
-      "values": {
-        "abyssal": [
-          "10%"
-        ]
-      },
-      "sort_order": 27,
-      "enabled": true
-    },
-    {
-      "effect_id": "branch_celt",
-      "sigil_type_id": "branch",
-      "name_ja": "セルトのスキル秘伝",
-      "values": {
-        "abyssal": [
-          "10%"
-        ]
-      },
-      "sort_order": 28,
-      "enabled": true
-    },
-    {
-      "effect_id": "branch_ahib",
-      "sigil_type_id": "branch",
-      "name_ja": "アヒブのスキル秘伝",
-      "values": {
-        "abyssal": [
-          "10%"
-        ]
-      },
-      "sort_order": 29,
-      "enabled": true
-    },
-    {
-      "effect_id": "branch_labreve",
-      "sigil_type_id": "branch",
-      "name_ja": "ラブリフのスキル秘伝",
-      "values": {
-        "abyssal": [
-          "10%"
-        ]
-      },
-      "sort_order": 30,
       "enabled": true
     }
   ]

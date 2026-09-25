@@ -131,7 +131,8 @@ export default function BuildEdit({
 
   const trayItems = useMemo(() => {
     if (!build || isFree) return [];
-    let list = data.inventory.slice();
+    // 仕様廃止済みの系列秘伝は、旧ローカルデータに残っていても表示しない。
+    let list = data.inventory.filter((item) => item.sigil_type_id !== "branch");
     if (fType) list = list.filter((i) => i.sigil_type_id === fType);
     if (fRarity) list = list.filter((i) => i.rarity === fRarity);
     if (fText.trim()) {

@@ -222,7 +222,6 @@
     "name_ja": "反転斬り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -235,7 +234,6 @@
     "name_ja": "マッドネススマッシュ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -248,7 +246,6 @@
     "name_ja": "グラウンドスライス",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -261,7 +258,6 @@
     "name_ja": "デッドスマッシュ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -274,7 +270,6 @@
     "name_ja": "回転斬り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "defined"
@@ -287,7 +282,6 @@
     "name_ja": "エクスプロード",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -300,7 +294,6 @@
     "name_ja": "剣気飛ばし",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "refined",
      "faint"
@@ -313,7 +306,6 @@
     "name_ja": "ショルダーアタック",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "refined",
      "faint"
@@ -326,7 +318,6 @@
     "name_ja": "グラウンドスマッシュ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "faint"
@@ -339,7 +330,6 @@
     "name_ja": "デッドリーインパクト",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "refined"
@@ -352,7 +342,6 @@
     "name_ja": "ボイドシールド",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -365,7 +354,6 @@
     "name_ja": "ヘルムブレイク",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -378,7 +366,6 @@
     "name_ja": "キャッチ&スロー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "refined",
      "faint",
      "refined"
@@ -391,7 +378,6 @@
     "name_ja": "ハートレスブロウ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "refined"
@@ -404,7 +390,6 @@
     "name_ja": "スラストバトルスピア",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -439,7 +424,6 @@
     "name_ja": "風の通り道",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -452,7 +436,6 @@
     "name_ja": "精霊の銀河",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -465,7 +448,6 @@
     "name_ja": "カーマスリブの雨",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -478,7 +460,6 @@
     "name_ja": "精霊の風",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -491,7 +472,6 @@
     "name_ja": "ブルームショット",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "refined",
      "defined"
@@ -504,7 +484,6 @@
     "name_ja": "風の便り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -517,7 +496,6 @@
     "name_ja": "死神の疾風",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "refined"
@@ -530,7 +508,6 @@
     "name_ja": "大自然の摂理",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -543,7 +520,6 @@
     "name_ja": "パワーブレイドスイング",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -556,7 +532,6 @@
     "name_ja": "エアスラッシュ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -569,7 +544,6 @@
     "name_ja": "マルチアロー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -582,7 +556,6 @@
     "name_ja": "精霊の怒り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -595,7 +568,6 @@
     "name_ja": "回避ブラストショット",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "defined"
@@ -608,7 +580,6 @@
     "name_ja": "風錐",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "faint"
@@ -621,7 +592,6 @@
     "name_ja": "風に乗る羽根",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -634,7 +604,6 @@
     "name_ja": "精霊の縛め",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "refined",
      "refined",
      "faint"
@@ -657,7 +626,6 @@
     "name_ja": "フレイムバースト",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -670,7 +638,6 @@
     "name_ja": "アースバラージ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -683,7 +650,6 @@
     "name_ja": "氷の棘",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -696,7 +662,6 @@
     "name_ja": "稲妻の洗礼",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -709,7 +674,6 @@
     "name_ja": "アイスストーム",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -722,7 +686,6 @@
     "name_ja": "クエイクバースト",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "refined",
      "faint"
@@ -735,7 +698,6 @@
     "name_ja": "ファイアボール",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -748,7 +710,6 @@
     "name_ja": "クラックウェーブ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "refined"
@@ -761,7 +722,6 @@
     "name_ja": "霜柱",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -774,7 +734,6 @@
     "name_ja": "エレクトリックウェーブ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "radiant",
      "flawless"
@@ -787,7 +746,6 @@
     "name_ja": "フロストストーム",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -800,7 +758,6 @@
     "name_ja": "エレクトロニックライト",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -813,7 +770,6 @@
     "name_ja": "マジカルスパイク",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -826,7 +782,6 @@
     "name_ja": "ライデンストーム",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -839,7 +794,6 @@
     "name_ja": "メテオストライク",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "refined"
@@ -852,7 +806,6 @@
     "name_ja": "サンダーボルト",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "refined"
@@ -875,7 +828,6 @@
     "name_ja": "飽満のプレデター",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -888,7 +840,6 @@
     "name_ja": "拡散砲火",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -901,7 +852,6 @@
     "name_ja": "飢餓の野獣",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -914,7 +864,6 @@
     "name_ja": "大地鳴動",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -927,7 +876,6 @@
     "name_ja": "ブラストライトニング",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -940,7 +888,6 @@
     "name_ja": "乱打",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -953,7 +900,6 @@
     "name_ja": "残酷な風斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -966,7 +912,6 @@
     "name_ja": "卓袱台返し",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "refined"
@@ -979,7 +924,6 @@
     "name_ja": "フォーリングボルダー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -992,7 +936,6 @@
     "name_ja": "起動砲撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1005,7 +948,6 @@
     "name_ja": "キャッチ&スラム",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -1018,7 +960,6 @@
     "name_ja": "爆裂",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1031,7 +972,6 @@
     "name_ja": "溶岩貫通",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "refined"
@@ -1044,7 +984,6 @@
     "name_ja": "バーストフレア",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -1057,7 +996,6 @@
     "name_ja": "テラーロード",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "refined",
      "faint"
@@ -1070,7 +1008,6 @@
     "name_ja": "瞬間砲撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "refined",
      "faint"
@@ -1093,7 +1030,6 @@
     "name_ja": "栄光の剣",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1106,7 +1042,6 @@
     "name_ja": "光の波動",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1119,7 +1054,6 @@
     "name_ja": "ジャスティスカウンター",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1132,7 +1066,6 @@
     "name_ja": "神聖突撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1145,7 +1078,6 @@
     "name_ja": "シールドスロー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1158,7 +1090,6 @@
     "name_ja": "ガーディアンシールド",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "radiant",
      "defined"
@@ -1171,7 +1102,6 @@
     "name_ja": "天罰",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -1184,7 +1114,6 @@
     "name_ja": "ライトニングスラスト",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -1197,7 +1126,6 @@
     "name_ja": "ブリリアントダッシュ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1210,7 +1138,6 @@
     "name_ja": "勅裁",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "faint"
@@ -1223,7 +1150,6 @@
     "name_ja": "パニッシュメント",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "refined",
      "refined",
      "faint"
@@ -1236,7 +1162,6 @@
     "name_ja": "デスペレーションラッシュ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1249,7 +1174,6 @@
     "name_ja": "シールドチェイス",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1262,7 +1186,6 @@
     "name_ja": "ジャッジメントランス",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1275,7 +1198,6 @@
     "name_ja": "断罪の剣",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -1288,7 +1210,6 @@
     "name_ja": "セイクリッドエンスラー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1311,7 +1232,6 @@
     "name_ja": "滅亡の足跡",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1324,7 +1244,6 @@
     "name_ja": "死神の羽ばたき",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1337,7 +1256,6 @@
     "name_ja": "滅亡の夜",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1350,7 +1268,6 @@
     "name_ja": "迫りくる夜",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1363,7 +1280,6 @@
     "name_ja": "ダークウェーブ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1376,7 +1292,6 @@
     "name_ja": "ブラッディゲイル",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "faint"
@@ -1389,7 +1304,6 @@
     "name_ja": "レイブンフレア",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -1402,7 +1316,6 @@
     "name_ja": "デスジャッジメント",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1415,7 +1328,6 @@
     "name_ja": "血のオーラ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -1428,7 +1340,6 @@
     "name_ja": "ダークリープ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1441,7 +1352,6 @@
     "name_ja": "ドリームデストラクション",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1454,7 +1364,6 @@
     "name_ja": "夢魘の前奏曲",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -1467,7 +1376,6 @@
     "name_ja": "ダークシャドウ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1480,7 +1388,6 @@
     "name_ja": "カルティアンの怒り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "flawless",
      "faint"
@@ -1493,7 +1400,6 @@
     "name_ja": "レイブン",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "defined"
@@ -1506,7 +1412,6 @@
     "name_ja": "ナイトメア",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1529,7 +1434,6 @@
     "name_ja": "ブルーミングローズ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1542,7 +1446,6 @@
     "name_ja": "墜落する信念",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1555,7 +1458,6 @@
     "name_ja": "インバランス",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1568,7 +1470,6 @@
     "name_ja": "暗然たる雨雲",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1581,7 +1482,6 @@
     "name_ja": "引き裂く狂気",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1594,7 +1494,6 @@
     "name_ja": "ラストブレス",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "refined"
@@ -1607,7 +1506,6 @@
     "name_ja": "ギアーズオブフェイト",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1620,7 +1518,6 @@
     "name_ja": "血の宴",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "defined"
@@ -1633,7 +1530,6 @@
     "name_ja": "急襲",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1646,7 +1542,6 @@
     "name_ja": "スラッシュダークネス",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "refined",
      "faint"
@@ -1659,7 +1554,6 @@
     "name_ja": "カーマスリビアの魅了",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1672,7 +1566,6 @@
     "name_ja": "ディスペアーアーツ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "refined"
@@ -1685,7 +1578,6 @@
     "name_ja": "漆黒の灰",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1698,7 +1590,6 @@
     "name_ja": "憎悪の種",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1711,7 +1602,6 @@
     "name_ja": "ベディルの狂気",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "refined",
      "faint"
@@ -1724,7 +1614,6 @@
     "name_ja": "ファントムチャージ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1747,7 +1636,6 @@
     "name_ja": "極意",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1760,7 +1648,6 @@
     "name_ja": "暴昇脚",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1773,7 +1660,6 @@
     "name_ja": "瞬閃殺",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1786,7 +1672,6 @@
     "name_ja": "神狼牙",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1799,7 +1684,6 @@
     "name_ja": "金剛衝",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1812,7 +1696,6 @@
     "name_ja": "猛進強撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1825,7 +1708,6 @@
     "name_ja": "蛇鉈蹴",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -1838,7 +1720,6 @@
     "name_ja": "炎斧崩脚",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -1851,7 +1732,6 @@
     "name_ja": "旋風脚",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1864,7 +1744,6 @@
     "name_ja": "奈落崩壊",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "refined",
      "faint"
@@ -1877,7 +1756,6 @@
     "name_ja": "弾丸暴脚",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -1890,7 +1768,6 @@
     "name_ja": "金剛拳",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1903,7 +1780,6 @@
     "name_ja": "憤氣",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "defined"
@@ -1916,7 +1792,6 @@
     "name_ja": "気迫放出",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "refined"
@@ -1929,7 +1804,6 @@
     "name_ja": "螺旋弾",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1942,7 +1816,6 @@
     "name_ja": "地獄撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -1965,7 +1838,6 @@
     "name_ja": "影削斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -1978,7 +1850,6 @@
     "name_ja": "無言の隙",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -1991,7 +1862,6 @@
     "name_ja": "盲信の代価",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2004,7 +1874,6 @@
     "name_ja": "試練の証明",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2017,7 +1886,6 @@
     "name_ja": "熱砂爆風",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "defined",
      "refined"
@@ -2030,7 +1898,6 @@
     "name_ja": "教化",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2043,7 +1910,6 @@
     "name_ja": "枯渇の襲撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "refined",
      "faint"
@@ -2056,7 +1922,6 @@
     "name_ja": "蛇斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "faint"
@@ -2069,7 +1934,6 @@
     "name_ja": "砂鉄破砕",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "flawless",
      "faint"
@@ -2082,7 +1946,6 @@
     "name_ja": "砂歩",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2095,7 +1958,6 @@
     "name_ja": "召命の刃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2108,7 +1970,6 @@
     "name_ja": "捕獲の砂沼",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -2121,7 +1982,6 @@
     "name_ja": "砂鉄斬り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2134,7 +1994,6 @@
     "name_ja": "蛇の罠",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -2147,7 +2006,6 @@
     "name_ja": "砂陽炎",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "refined",
      "faint"
@@ -2160,7 +2018,6 @@
     "name_ja": "大蛇の螺旋",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -2183,7 +2040,6 @@
     "name_ja": "サンダースコーチ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2196,7 +2052,6 @@
     "name_ja": "満月",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2209,7 +2064,6 @@
     "name_ja": "黒鎖",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2222,7 +2076,6 @@
     "name_ja": "空鳴衝",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2235,7 +2088,6 @@
     "name_ja": "サンダーブロック",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "defined"
@@ -2248,7 +2100,6 @@
     "name_ja": "四聖神舞:白虎",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2261,7 +2112,6 @@
     "name_ja": "グラウンドストライク",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2274,7 +2124,6 @@
     "name_ja": "四聖神舞:玄武",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "refined"
@@ -2287,7 +2136,6 @@
     "name_ja": "ビーストステップ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -2300,7 +2148,6 @@
     "name_ja": "四聖神舞:朱雀",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2313,7 +2160,6 @@
     "name_ja": "獅子吼",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "refined"
@@ -2326,7 +2172,6 @@
     "name_ja": "四聖神舞:青竜",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -2339,7 +2184,6 @@
     "name_ja": "押し寄せる波",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2352,7 +2196,6 @@
     "name_ja": "八卦連環衛",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "faint"
@@ -2365,7 +2208,6 @@
     "name_ja": "爪攻撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -2378,7 +2220,6 @@
     "name_ja": "天雲",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "refined"
@@ -2401,7 +2242,6 @@
     "name_ja": "落花刃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2414,7 +2254,6 @@
     "name_ja": "凍りついた月",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2427,7 +2266,6 @@
     "name_ja": "蒼旋刃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2440,7 +2278,6 @@
     "name_ja": "霙風巻",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2453,7 +2290,6 @@
     "name_ja": "虚空翔斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "refined"
@@ -2466,7 +2302,6 @@
     "name_ja": "雹嵐",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "refined",
      "faint"
@@ -2479,7 +2314,6 @@
     "name_ja": "紅月",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "refined",
      "faint"
@@ -2492,7 +2326,6 @@
     "name_ja": "満月斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2505,7 +2338,6 @@
     "name_ja": "刃風",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -2518,7 +2350,6 @@
     "name_ja": "雪華",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -2531,7 +2362,6 @@
     "name_ja": "月影斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2544,7 +2374,6 @@
     "name_ja": "冰柱霜華",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "refined",
      "faint"
@@ -2557,7 +2386,6 @@
     "name_ja": "雪花万里香",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2570,7 +2398,6 @@
     "name_ja": "満月冰境",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2583,7 +2410,6 @@
     "name_ja": "後飛斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2596,7 +2422,6 @@
     "name_ja": "蒼霜",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -2619,7 +2444,6 @@
     "name_ja": "月影斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2632,7 +2456,6 @@
     "name_ja": "斥邪",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2645,7 +2468,6 @@
     "name_ja": "天頂斬り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2658,7 +2480,6 @@
     "name_ja": "還炎斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2671,7 +2492,6 @@
     "name_ja": "大旋風",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "refined"
@@ -2684,7 +2504,6 @@
     "name_ja": "獄炎斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -2697,7 +2516,6 @@
     "name_ja": "暴風陣",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2710,7 +2528,6 @@
     "name_ja": "焔旋風",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -2723,7 +2540,6 @@
     "name_ja": "狂飆",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2736,7 +2552,6 @@
     "name_ja": "斬払い",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "refined"
@@ -2749,7 +2564,6 @@
     "name_ja": "看破斬り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "defined"
@@ -2762,7 +2576,6 @@
     "name_ja": "気迫",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -2775,7 +2588,6 @@
     "name_ja": "月光斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2788,7 +2600,6 @@
     "name_ja": "飛撃斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "refined"
@@ -2801,7 +2612,6 @@
     "name_ja": "後飛斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2814,7 +2624,6 @@
     "name_ja": "龍炎陣",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2837,7 +2646,6 @@
     "name_ja": "襲い掛かる環",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2850,7 +2658,6 @@
     "name_ja": "王室剣術:返",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2863,7 +2670,6 @@
     "name_ja": "死者たちの王",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2876,7 +2682,6 @@
     "name_ja": "星の環",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2889,7 +2694,6 @@
     "name_ja": "命令:湧き起こる氷の棘",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -2902,7 +2706,6 @@
     "name_ja": "王室剣術:速",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -2915,7 +2718,6 @@
     "name_ja": "酷寒の戒め",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -2928,7 +2730,6 @@
     "name_ja": "王室剣術:連",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -2941,7 +2742,6 @@
     "name_ja": "命令:激突する騎兵",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "refined",
      "faint"
@@ -2954,7 +2754,6 @@
     "name_ja": "すれ違う軌道",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "refined",
      "faint"
@@ -2967,7 +2766,6 @@
     "name_ja": "クラトゥムの突撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "refined"
@@ -2980,7 +2778,6 @@
     "name_ja": "軌道進入",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -2993,7 +2790,6 @@
     "name_ja": "命令:酷寒の進軍",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3006,7 +2802,6 @@
     "name_ja": "王室剣術:決",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -3019,7 +2814,6 @@
     "name_ja": "戒めの投げ縄",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -3032,7 +2826,6 @@
     "name_ja": "王室剣術:斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3055,7 +2848,6 @@
     "name_ja": "ウィングオブジャッジメント",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3068,7 +2860,6 @@
     "name_ja": "消滅の光",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3081,7 +2872,6 @@
     "name_ja": "ルーツチェーン",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3094,7 +2884,6 @@
     "name_ja": "突風",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3107,7 +2896,6 @@
     "name_ja": "速射",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -3120,7 +2908,6 @@
     "name_ja": "フラッシュシュート",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "defined",
      "refined"
@@ -3133,7 +2920,6 @@
     "name_ja": "ブルーミングアロー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3146,7 +2932,6 @@
     "name_ja": "ルミナスアロー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3159,7 +2944,6 @@
     "name_ja": "レイニングアロー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -3172,7 +2956,6 @@
     "name_ja": "コールオブルトラゴン",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3185,7 +2968,6 @@
     "name_ja": "アースステップ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -3198,7 +2980,6 @@
     "name_ja": "フラッシュアロー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3211,7 +2992,6 @@
     "name_ja": "精霊の庇護",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "defined",
      "refined"
@@ -3224,7 +3004,6 @@
     "name_ja": "ルミナスブレイクアロー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3237,7 +3016,6 @@
     "name_ja": "ストームアロー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "defined",
      "refined"
@@ -3250,7 +3028,6 @@
     "name_ja": "シルビアの槍",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3273,7 +3050,6 @@
     "name_ja": "カン!カン!カン!",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3286,7 +3062,6 @@
     "name_ja": "太陽の怒り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3299,7 +3074,6 @@
     "name_ja": "空からプレゼントが!",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3312,7 +3086,6 @@
     "name_ja": "ここに集まれ!",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3325,7 +3098,6 @@
     "name_ja": "あっちいって!",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3338,7 +3110,6 @@
     "name_ja": "すくすく育て、えいっ!",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -3351,7 +3122,6 @@
     "name_ja": "せーのっ!",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -3364,7 +3134,6 @@
     "name_ja": "ドッカン!",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "refined"
@@ -3377,7 +3146,6 @@
     "name_ja": "ぴょんと",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3390,7 +3158,6 @@
     "name_ja": "土のエコー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "faint"
@@ -3403,7 +3170,6 @@
     "name_ja": "ごろん",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "defined"
@@ -3416,7 +3182,6 @@
     "name_ja": "ピョロロン",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3429,7 +3194,6 @@
     "name_ja": "ポイッ!",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -3442,7 +3206,6 @@
     "name_ja": "サマーレイン",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "guardian"
@@ -3455,7 +3218,6 @@
     "name_ja": "ぱぱっと",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "refined",
      "flawless",
      "defined"
@@ -3468,7 +3230,6 @@
     "name_ja": "大地の脈動",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3491,7 +3252,6 @@
     "name_ja": "廻閃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3504,7 +3264,6 @@
     "name_ja": "光明錘",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3517,7 +3276,6 @@
     "name_ja": "影昇り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3530,7 +3288,6 @@
     "name_ja": "溶け落ちる月",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3543,7 +3300,6 @@
     "name_ja": "黒い片時雨",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3556,7 +3312,6 @@
     "name_ja": "影縫い",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "defined"
@@ -3569,7 +3324,6 @@
     "name_ja": "腱断ち",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "defined"
@@ -3582,7 +3336,6 @@
     "name_ja": "月輪ノ矢",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "defined",
      "refined"
@@ -3595,7 +3348,6 @@
     "name_ja": "殺迅",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -3608,7 +3360,6 @@
     "name_ja": "乱撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3621,7 +3372,6 @@
     "name_ja": "心臓突き",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "flawless",
      "faint"
@@ -3634,7 +3384,6 @@
     "name_ja": "廻天連舞",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "faint"
@@ -3647,7 +3396,6 @@
     "name_ja": "苦無投擲",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "faint",
      "faint"
@@ -3660,7 +3408,6 @@
     "name_ja": "月下撃攘",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "faint",
      "faint"
@@ -3673,7 +3420,6 @@
     "name_ja": "飯綱落とし",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "defined",
      "refined"
@@ -3686,7 +3432,6 @@
     "name_ja": "忍術:潜伏",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3709,7 +3454,6 @@
     "name_ja": "監視態勢",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3722,7 +3466,6 @@
     "name_ja": "修羅一剣",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3735,7 +3478,6 @@
     "name_ja": "強:乱舞",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3748,7 +3490,6 @@
     "name_ja": "閃光が弄う境界",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3761,7 +3502,6 @@
     "name_ja": "心衝",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3774,7 +3514,6 @@
     "name_ja": "殺意の一閃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "radiant",
      "flawless"
@@ -3787,7 +3526,6 @@
     "name_ja": "忍術:廻転念破",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "flawless",
      "faint"
@@ -3800,7 +3538,6 @@
     "name_ja": "影の斬撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -3813,7 +3550,6 @@
     "name_ja": "幻影蓮角の如し",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3826,7 +3562,6 @@
     "name_ja": "狭霧隠れ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3839,7 +3574,6 @@
     "name_ja": "忍術:黒い片時雨",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "faint",
      "flawless",
      "refined"
@@ -3852,7 +3586,6 @@
     "name_ja": "騰空白刃閃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3865,7 +3598,6 @@
     "name_ja": "廻天降下蹴り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3878,7 +3610,6 @@
     "name_ja": "一刀両断",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -3891,7 +3622,6 @@
     "name_ja": "必衰の理",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3904,7 +3634,6 @@
     "name_ja": "閃光捕縛",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "defined",
      "refined"
@@ -3927,7 +3656,6 @@
     "name_ja": "タイドスタンプ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3940,7 +3668,6 @@
     "name_ja": "陽破のパトラカ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3953,7 +3680,6 @@
     "name_ja": "マレカ:クジラの夢",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3966,7 +3692,6 @@
     "name_ja": "白兵戦:制圧",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -3979,7 +3704,6 @@
     "name_ja": "フェロウシャスウェーブ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -3992,7 +3716,6 @@
     "name_ja": "海霧の誘惑",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4005,7 +3728,6 @@
     "name_ja": "ウェーブスラッシュ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4018,7 +3740,6 @@
     "name_ja": "船長の命令:開始!",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4031,7 +3752,6 @@
     "name_ja": "ライディングウェーブ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "defined",
      "refined"
@@ -4044,7 +3764,6 @@
     "name_ja": "キャプテンアピアーズ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4057,7 +3776,6 @@
     "name_ja": "スマッシュタイド",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4070,7 +3788,6 @@
     "name_ja": "アクアシューティング",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "refined"
@@ -4083,7 +3800,6 @@
     "name_ja": "パイレーツトリック",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4096,7 +3812,6 @@
     "name_ja": "波壊のパトラカ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4109,7 +3824,6 @@
     "name_ja": "ソアリングウェーブ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -4122,7 +3836,6 @@
     "name_ja": "海を裂く一撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4145,7 +3858,6 @@
     "name_ja": "降神舞",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4158,7 +3870,6 @@
     "name_ja": "魂縛",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4171,7 +3882,6 @@
     "name_ja": "蘭鎖風刃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4184,7 +3894,6 @@
     "name_ja": "狂血双刃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4197,7 +3906,6 @@
     "name_ja": "蘭踊刃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4210,7 +3918,6 @@
     "name_ja": "終刃斬血",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "defined",
      "faint"
@@ -4223,7 +3930,6 @@
     "name_ja": "蘭鎖豪刃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4236,7 +3942,6 @@
     "name_ja": "獄鎖怨刃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "refined"
@@ -4249,7 +3954,6 @@
     "name_ja": "風蘭円刃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "refined"
@@ -4262,7 +3966,6 @@
     "name_ja": "舞歩",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4275,7 +3978,6 @@
     "name_ja": "閃風",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4288,7 +3990,6 @@
     "name_ja": "舞踊",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4301,7 +4002,6 @@
     "name_ja": "風蘭健脚",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "defined",
      "refined"
@@ -4314,7 +4014,6 @@
     "name_ja": "神月脚",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4327,7 +4026,6 @@
     "name_ja": "風華",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4340,7 +4038,6 @@
     "name_ja": "斬鬼",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "flawless"
@@ -4363,7 +4060,6 @@
     "name_ja": "疾風雷",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4376,7 +4072,6 @@
     "name_ja": "蒼龍の竜巻",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4389,7 +4084,6 @@
     "name_ja": "ひざまずけ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4402,7 +4096,6 @@
     "name_ja": "蒼龍爆発",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4415,7 +4108,6 @@
     "name_ja": "白牙",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4428,7 +4120,6 @@
     "name_ja": "凌駕",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -4441,7 +4132,6 @@
     "name_ja": "双極拳",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "refined"
@@ -4454,7 +4144,6 @@
     "name_ja": "登龍脚",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4467,7 +4156,6 @@
     "name_ja": "天上拳",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "defined",
      "refined"
@@ -4480,7 +4168,6 @@
     "name_ja": "弾丸暴脚",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4493,7 +4180,6 @@
     "name_ja": "狼牙瞬閃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "faint"
@@ -4506,7 +4192,6 @@
     "name_ja": "龍沼波",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "refined"
@@ -4519,7 +4204,6 @@
     "name_ja": "強:膝縛",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "refined",
      "faint"
@@ -4532,7 +4216,6 @@
     "name_ja": "蒼龍槍",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4545,7 +4228,6 @@
     "name_ja": "狂嵐蹴",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4558,7 +4240,6 @@
     "name_ja": "廻輪脚",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4581,7 +4262,6 @@
     "name_ja": "アトマギア",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4594,7 +4274,6 @@
     "name_ja": "疾走する稲妻",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4607,7 +4286,6 @@
     "name_ja": "次元圧縮",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4620,7 +4298,6 @@
     "name_ja": "アトルの懐剣",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4633,7 +4310,6 @@
     "name_ja": "空間破砕",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "refined"
@@ -4646,7 +4322,6 @@
     "name_ja": "絶滅の雷槍",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4659,7 +4334,6 @@
     "name_ja": "アトルの審判",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4672,7 +4346,6 @@
     "name_ja": "迅雷魔槍",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4685,7 +4358,6 @@
     "name_ja": "形象駛走",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4698,7 +4370,6 @@
     "name_ja": "雷光追跡",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "defined"
@@ -4711,7 +4382,6 @@
     "name_ja": "空間崩壊",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4724,7 +4394,6 @@
     "name_ja": "大罪審判",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4737,7 +4406,6 @@
     "name_ja": "亀裂の環",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "refined"
@@ -4750,7 +4418,6 @@
     "name_ja": "万雷",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4763,7 +4430,6 @@
     "name_ja": "大崩壊",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4776,7 +4442,6 @@
     "name_ja": "神罰の代人",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4799,7 +4464,6 @@
     "name_ja": "ビーストハント",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4812,7 +4476,6 @@
     "name_ja": "絶叫する光",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4825,7 +4488,6 @@
     "name_ja": "泰山鳴り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4838,7 +4500,6 @@
     "name_ja": "雪風",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4851,7 +4512,6 @@
     "name_ja": "大地の波動",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "faint"
@@ -4864,7 +4524,6 @@
     "name_ja": "浄化の炎",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4877,7 +4536,6 @@
     "name_ja": "剥かれる牙",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "defined"
@@ -4890,7 +4548,6 @@
     "name_ja": "ラーヴァライズ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4903,7 +4560,6 @@
     "name_ja": "雪崩斬り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -4916,7 +4572,6 @@
     "name_ja": "竜の顎",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "faint"
@@ -4929,7 +4584,6 @@
     "name_ja": "進撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4942,7 +4596,6 @@
     "name_ja": "滅神の怒り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4955,7 +4608,6 @@
     "name_ja": "組み打ち",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "defined",
      "refined"
@@ -4968,7 +4620,6 @@
     "name_ja": "化身の飛躍",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -4981,7 +4632,6 @@
     "name_ja": "黒き血の領域",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -4994,7 +4644,6 @@
     "name_ja": "化身降臨",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "defined",
      "refined"
@@ -5017,7 +4666,6 @@
     "name_ja": "昇竜",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5030,7 +4678,6 @@
     "name_ja": "生命の終焉",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5043,7 +4690,6 @@
     "name_ja": "雷火殲滅",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5056,7 +4702,6 @@
     "name_ja": "斬雲",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5069,7 +4714,6 @@
     "name_ja": "迸る襲撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -5082,7 +4726,6 @@
     "name_ja": "鋭槍の宣告",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5095,7 +4738,6 @@
     "name_ja": "雷火の地",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -5108,7 +4750,6 @@
     "name_ja": "大地を引き裂く咆哮",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5121,7 +4762,6 @@
     "name_ja": "ドラゴンスラスト",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "refined",
      "faint"
@@ -5134,7 +4774,6 @@
     "name_ja": "破滅の引導者",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -5147,7 +4786,6 @@
     "name_ja": "雷火爆砕",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "refined"
@@ -5160,7 +4798,6 @@
     "name_ja": "破滅の翼",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "refined"
@@ -5173,7 +4810,6 @@
     "name_ja": "大いなる斬撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "defined"
@@ -5186,7 +4822,6 @@
     "name_ja": "突き破る槍",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -5199,7 +4834,6 @@
     "name_ja": "マクタナンの怒り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "flawless",
      "defined"
@@ -5212,7 +4846,6 @@
     "name_ja": "蘇った戒律",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5235,7 +4868,6 @@
     "name_ja": "霊符:兌",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5248,7 +4880,6 @@
     "name_ja": "裏風の舞",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5261,7 +4892,6 @@
     "name_ja": "霊符:報仇",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5274,7 +4904,6 @@
     "name_ja": "爆翻の舞",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5287,7 +4916,6 @@
     "name_ja": "霊符:離",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -5300,7 +4928,6 @@
     "name_ja": "人中突き",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -5313,7 +4940,6 @@
     "name_ja": "呪術:妖花蘭",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5326,7 +4952,6 @@
     "name_ja": "周舞",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "defined",
      "refined"
@@ -5339,7 +4964,6 @@
     "name_ja": "霊符:坤",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5352,7 +4976,6 @@
     "name_ja": "掬い斬り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "refined"
@@ -5365,7 +4988,6 @@
     "name_ja": "霊符:乾",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -5378,7 +5000,6 @@
     "name_ja": "狐駆け",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -5391,7 +5012,6 @@
     "name_ja": "霊符:出",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -5404,7 +5024,6 @@
     "name_ja": "火熾",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5417,7 +5036,6 @@
     "name_ja": "呪術:狐炎蒼波",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5430,7 +5048,6 @@
     "name_ja": "唐棹軟風",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5453,7 +5070,6 @@
     "name_ja": "静かなる襲撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5466,7 +5082,6 @@
     "name_ja": "疾走する影",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5479,7 +5094,6 @@
     "name_ja": "黒南風",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5492,7 +5106,6 @@
     "name_ja": "巨冥花",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5505,7 +5118,6 @@
     "name_ja": "蝶烈風",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5518,7 +5130,6 @@
     "name_ja": "散種",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -5531,7 +5142,6 @@
     "name_ja": "村雨",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5544,7 +5154,6 @@
     "name_ja": "星月散花",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5557,7 +5166,6 @@
     "name_ja": "蛇蝶",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -5570,7 +5178,6 @@
     "name_ja": "月の吟詠",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -5583,7 +5190,6 @@
     "name_ja": "四君子:梅",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5596,7 +5202,6 @@
     "name_ja": "花の誘い",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5609,7 +5214,6 @@
     "name_ja": "心身の壁",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5622,7 +5226,6 @@
     "name_ja": "真:蝶颯雲",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "faint",
      "faint"
@@ -5635,7 +5238,6 @@
     "name_ja": "四君子:竹",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "defined",
      "faint"
@@ -5648,7 +5250,6 @@
     "name_ja": "華遊花",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5671,7 +5272,6 @@
     "name_ja": "マナアブゾーブ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5684,7 +5284,6 @@
     "name_ja": "水の守護",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5697,7 +5296,6 @@
     "name_ja": "雷放出",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5710,7 +5308,6 @@
     "name_ja": "火炎の呼び声",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5723,7 +5320,6 @@
     "name_ja": "ワイズマンズタイム",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5736,7 +5332,6 @@
     "name_ja": "ウォーターエクスプロージョン",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5751,8 +5346,7 @@
     "slots": [
      "flawless",
      "defined",
-     "defined",
-     "faint"
+     "defined"
     ]
    },
    {
@@ -5762,7 +5356,6 @@
     "name_ja": "ヘルブレイズ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5775,7 +5368,6 @@
     "name_ja": "エレクトリックウェーブ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5788,7 +5380,6 @@
     "name_ja": "ブレイジングディザスター",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -5801,7 +5392,6 @@
     "name_ja": "トランジション",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -5814,7 +5404,6 @@
     "name_ja": "元素衝突",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "flawless",
      "defined"
@@ -5827,7 +5416,6 @@
     "name_ja": "アースクエイク",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "faint"
@@ -5840,7 +5428,6 @@
     "name_ja": "デストラクションフレイム",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5853,7 +5440,6 @@
     "name_ja": "雷電の槍",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5866,7 +5452,6 @@
     "name_ja": "ヘルファイア",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -5889,7 +5474,6 @@
     "name_ja": "ヘルムブレイク",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5902,7 +5486,6 @@
     "name_ja": "パーシャルブラックホール",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5915,7 +5498,6 @@
     "name_ja": "スウィープアウェイ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5928,7 +5510,6 @@
     "name_ja": "グラビティプレス",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -5941,7 +5522,6 @@
     "name_ja": "引力生成",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -5954,7 +5534,6 @@
     "name_ja": "抑えきれない力",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -5967,7 +5546,6 @@
     "name_ja": "ハンマーステップ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -5980,7 +5558,6 @@
     "name_ja": "戦慄の錬成陣",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -5993,7 +5570,6 @@
     "name_ja": "グラビティコア設置",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "faint",
      "faint"
@@ -6006,7 +5582,6 @@
     "name_ja": "融合するグラビティコア",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "defined",
      "refined"
@@ -6019,7 +5594,6 @@
     "name_ja": "リコイル",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -6032,7 +5606,6 @@
     "name_ja": "エールアット",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6045,7 +5618,6 @@
     "name_ja": "ホームラン",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "faint",
      "refined"
@@ -6058,7 +5630,6 @@
     "name_ja": "加速突進",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -6071,7 +5642,6 @@
     "name_ja": "グラビティフィールド",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -6084,7 +5654,6 @@
     "name_ja": "限界突破",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "flawless"
@@ -6107,7 +5676,6 @@
     "name_ja": "四季",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -6120,7 +5688,6 @@
     "name_ja": "突き刺し",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6133,7 +5700,6 @@
     "name_ja": "隙間斬り",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6146,7 +5712,6 @@
     "name_ja": "斧師",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -6159,7 +5724,6 @@
     "name_ja": "刀舞",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -6172,7 +5736,6 @@
     "name_ja": "仙剣濃霧",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6185,7 +5748,6 @@
     "name_ja": "冬驟雨",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6198,7 +5760,6 @@
     "name_ja": "火:昇",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -6211,7 +5772,6 @@
     "name_ja": "巻雲",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "refined"
@@ -6224,7 +5784,6 @@
     "name_ja": "木:曲",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -6237,7 +5796,6 @@
     "name_ja": "秋雷",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -6250,7 +5808,6 @@
     "name_ja": "水:編",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "refined"
@@ -6263,7 +5820,6 @@
     "name_ja": "夏風",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6276,7 +5832,6 @@
     "name_ja": "金:従",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "radiant",
      "flawless"
@@ -6289,7 +5844,6 @@
     "name_ja": "太極",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -6302,7 +5856,6 @@
     "name_ja": "土:植",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6325,7 +5878,6 @@
     "name_ja": "星屑の祝砲",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -6338,7 +5890,6 @@
     "name_ja": "鉄槌",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6351,7 +5902,6 @@
     "name_ja": "エース・イン・ザ・ホール",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6364,7 +5914,6 @@
     "name_ja": "アート・オブ・デストラクション",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -6377,7 +5926,6 @@
     "name_ja": "早撃ち",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -6390,7 +5938,6 @@
     "name_ja": "ヘヴンズサルボ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -6403,7 +5950,6 @@
     "name_ja": "デッドリーショット",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -6416,7 +5962,6 @@
     "name_ja": "シャープショット",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -6429,7 +5974,6 @@
     "name_ja": "トリガーハッピー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -6442,7 +5986,6 @@
     "name_ja": "ガンスリンガー参上!",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6455,7 +5998,6 @@
     "name_ja": "エスケープショット",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -6468,7 +6010,6 @@
     "name_ja": "ブラストジャンプ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "radiant",
      "defined",
      "refined"
@@ -6481,7 +6022,6 @@
     "name_ja": "デッドリーアサルト",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -6494,7 +6034,6 @@
     "name_ja": "エアリアルショット",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "defined"
@@ -6507,7 +6046,6 @@
     "name_ja": "開拓者",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6520,7 +6058,6 @@
     "name_ja": "バーストロケット",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6543,7 +6080,6 @@
     "name_ja": "ホライズンスラッシュ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "guardian"
@@ -6556,7 +6092,6 @@
     "name_ja": "ヘブンスライス",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -6569,7 +6104,6 @@
     "name_ja": "斬上",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6582,7 +6116,6 @@
     "name_ja": "ホーリーストライク",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "flawless"
@@ -6595,7 +6128,6 @@
     "name_ja": "スピリットスラッシュ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "radiant",
      "defined"
@@ -6608,7 +6140,6 @@
     "name_ja": "神罰跳躍",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -6621,7 +6152,6 @@
     "name_ja": "突進突き",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -6634,7 +6164,6 @@
     "name_ja": "刻印斬",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6647,7 +6176,6 @@
     "name_ja": "スラントスラッシュ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "defined",
      "refined"
@@ -6660,7 +6188,6 @@
     "name_ja": "ファントムスラッシュ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -6673,7 +6200,6 @@
     "name_ja": "斬撃",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "guardian",
      "flawless",
      "defined"
@@ -6686,7 +6212,6 @@
     "name_ja": "クロススラッシュ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6699,7 +6224,6 @@
     "name_ja": "フロントランナー",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"
@@ -6712,7 +6236,6 @@
     "name_ja": "湧き上がる正義",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "refined"
@@ -6725,7 +6248,6 @@
     "name_ja": "ヘブンスラッシュ",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "flawless",
      "defined",
      "faint"
@@ -6738,7 +6260,6 @@
     "name_ja": "不意打ち",
     "sigil_eligible": true,
     "slots": [
-     "branch",
      "defined",
      "refined",
      "faint"

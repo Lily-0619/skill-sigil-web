@@ -46,14 +46,14 @@ describe("buildCompareData — My編成", () => {
     const d = myData();
     d.inventory.push(item({ quantity: 2 }));
     // 守護枠 (WR_sp_1 枠2 / WR_sp_2 枠2) に同じ守護秘伝を2本
-    d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 2, inventory_id: "inv1" });
-    d.equips.push({ build_id: "b1", skill_id: "WR_sp_2", slot_no: 2, inventory_id: "inv1" });
+    d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 1, inventory_id: "inv1" });
+    d.equips.push({ build_id: "b1", skill_id: "WR_sp_2", slot_no: 1, inventory_id: "inv1" });
 
     const c = buildCompareData(master, d, d.builds[0]);
 
     // 枠数カウント (合算ではなく枠の数)
     expect(c.used).toBe(2);
-    expect(c.total).toBe(64); // 16対象スキル × 4枠
+    expect(c.total).toBe(48); // 16対象スキル × 3枠
 
     // 案B: 守護タイプ → guardian_superarmor が count=2、値は ×2個
     const guardian = c.summary.find((g) => g.type.id === "guardian");
@@ -73,14 +73,13 @@ describe("buildCompareData — My編成", () => {
   it("案A: スキルの枠に装着効果が入り、空き枠は null", () => {
     const d = myData();
     d.inventory.push(item({ quantity: 1 }));
-    d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 2, inventory_id: "inv1" });
+    d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 1, inventory_id: "inv1" });
 
     const c = buildCompareData(master, d, d.builds[0]);
     const sp1 = c.skills.find((s) => s.skillId === "WR_sp_1")!;
     expect(sp1.eligible).toBe(true);
-    expect(sp1.slots).toHaveLength(4);
-    expect(sp1.slots[1].effectId).toBe("guardian_superarmor"); // 枠2=守護
-    expect(sp1.slots[0].effectId).toBeNull(); // 枠1=系列は未装着
+    expect(sp1.slots).toHaveLength(3);
+    expect(sp1.slots[0].effectId).toBe("guardian_superarmor"); // 系列廃止後は枠1=守護
     expect(sp1.filled).toBe(1);
   });
 });
@@ -97,11 +96,11 @@ describe("buildCompareData — Free編成", () => {
       updated_at: "2026-01-02",
     });
     d.freeEquips.push({
-      build_id: "f1", skill_id: "WR_sp_1", slot_no: 2,
+      build_id: "f1", skill_id: "WR_sp_1", slot_no: 1,
       effect_id: "guardian_superarmor", rarity: "primal", value_text: "0.2秒",
     });
     d.freeEquips.push({
-      build_id: "f1", skill_id: "WR_sp_2", slot_no: 2,
+      build_id: "f1", skill_id: "WR_sp_2", slot_no: 1,
       effect_id: "guardian_superarmor", rarity: "primal", value_text: "0.2秒",
     });
 

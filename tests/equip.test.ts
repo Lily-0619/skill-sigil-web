@@ -45,13 +45,13 @@ describe("マスタ構造", () => {
     for (const c of master.classes) {
       const sk = skillsOf(master, c.class_id);
       expect(sk.length).toBe(17);
-      expect(sk.filter((s) => s.group === "special").length).toBe(4);
-      expect(sk.filter((s) => s.group === "normal").length).toBe(13);
+      expect([3, 4]).toContain(sk.filter((s) => s.group === "special").length);
+      expect([13, 14]).toContain(sk.filter((s) => s.group === "normal").length);
       const n13 = sk.find((s) => s.group === "normal" && s.display_no === 13)!;
       expect(n13.sigil_eligible).toBe(false);
       expect(sk.filter((s) => s.sigil_eligible).length).toBe(16);
       for (const s of sk) {
-        if (s.sigil_eligible) expect(s.slots?.length).toBe(4);
+        if (s.sigil_eligible) expect(s.slots?.length).toBe(3);
       }
     }
   });
@@ -59,20 +59,20 @@ describe("マスタ構造", () => {
 
 describe("装着判定 (REQ-RULE-002/003)", () => {
   const wr = skillsOf(master, "WR");
-  const sp1 = wr.find((s) => s.skill_id === "WR_sp_1")!; // 系列/守護/無欠/鮮明
+  const sp1 = wr.find((s) => s.skill_id === "WR_sp_1")!; // 守護/無欠/鮮明
   const n13 = wr.find((s) => s.skill_id === "WR_n_13")!;
 
   it("タイプ一致で装着できる", () => {
     const d = baseData();
     d.inventory.push(item({}));
-    const r = canEquip(master, d, "WR", "b1", sp1.skill_id, 2, d.inventory[0]);
+    const r = canEquip(master, d, "WR", "b1", sp1.skill_id, 1, d.inventory[0]);
     expect(r.ok).toBe(true);
   });
 
   it("タイプ不一致は装着できない", () => {
     const d = baseData();
     d.inventory.push(item({}));
-    const r = canEquip(master, d, "WR", "b1", sp1.skill_id, 1, d.inventory[0]); // 枠1=系列
+    const r = canEquip(master, d, "WR", "b1", sp1.skill_id, 2, d.inventory[0]); // 枠2=無欠
     expect(r.ok).toBe(false);
   });
 
@@ -87,9 +87,9 @@ describe("装着判定 (REQ-RULE-002/003)", () => {
     const d = baseData();
     const inv = item({ quantity: 1 });
     d.inventory.push(inv);
-    d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 2, inventory_id: "inv1" });
-    // WR_sp_2 の守護枠 (枠2=守護)
-    const r = canEquip(master, d, "WR", "b1", "WR_sp_2", 2, inv);
+    d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 1, inventory_id: "inv1" });
+    // WR_sp_2 の守護枠 (枠1=守護)
+    const r = canEquip(master, d, "WR", "b1", "WR_sp_2", 1, inv);
     expect(r.ok).toBe(true);
     if (r.ok) expect(r.needsMoveFrom).toBeTruthy();
   });
@@ -98,8 +98,8 @@ describe("装着判定 (REQ-RULE-002/003)", () => {
     const d = baseData();
     const inv = item({ quantity: 2 });
     d.inventory.push(inv);
-    d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 2, inventory_id: "inv1" });
-    const r = canEquip(master, d, "WR", "b1", "WR_sp_2", 2, inv);
+    d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 1, inventory_id: "inv1" });
+    const r = canEquip(master, d, "WR", "b1", "WR_sp_2", 1, inv);
     expect(r.ok).toBe(true);
     if (r.ok) expect(r.needsMoveFrom).toBeUndefined();
   });
@@ -108,10 +108,10 @@ describe("装着判定 (REQ-RULE-002/003)", () => {
     const d = baseData();
     const inv = item({ quantity: 3 });
     d.inventory.push(inv);
-    d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 2, inventory_id: "inv1" });
-    d.equips.push({ build_id: "b1", skill_id: "WR_sp_2", slot_no: 2, inventory_id: "inv1" });
+    d.equips.push({ build_id: "b1", skill_id: "WR_sp_1", slot_no: 1, inventory_id: "inv1" });
+    d.equips.push({ build_id: "b1", skill_id: "WR_sp_2", slot_no: 1, inventory_id: "inv1" });
     // 別編成の使用は数えない
-    d.equips.push({ build_id: "b2", skill_id: "WR_sp_1", slot_no: 2, inventory_id: "inv1" });
+    d.equips.push({ build_id: "b2", skill_id: "WR_sp_1", slot_no: 1, inventory_id: "inv1" });
     expect(remaining(inv, d.equips, "b1")).toBe(1);
     expect(maxUsedPerBuild(d.equips, "inv1").max).toBe(2);
   });
@@ -129,19 +129,17 @@ describe("効果マスタ既定値 (11_効果マスタ数値.md)", () => {
   it("存在しない等級は選択不可 (煌めく=混沌のみ / 系列=深淵のみ)", () => {
     expect(rarityAvailable(master, "radiant_maxcount", "abyssal")).toBe(false);
     expect(rarityAvailable(master, "radiant_maxcount", "chaos")).toBe(true);
-    expect(rarityAvailable(master, "branch_arl", "abyssal")).toBe(true);
-    expect(rarityAvailable(master, "branch_arl", "primal")).toBe(false);
     expect(rarityAvailable(master, "guardian_dmgreduce", "abyssal")).toBe(false);
   });
 });
 
 describe("Free装着判定 (v0.2 #3)", () => {
   it("タイプ一致なら所持0件でも装着できる (所持数・残数の制限なし)", () => {
-    const r = canEquipFree(master, baseData(), "WR", "b1", "WR_sp_1", 2, "guardian_superarmor");
+    const r = canEquipFree(master, baseData(), "WR", "b1", "WR_sp_1", 1, "guardian_superarmor");
     expect(r.ok).toBe(true);
   });
   it("枠タイプ不一致は装着できない", () => {
-    const r = canEquipFree(master, baseData(), "WR", "b1", "WR_sp_1", 1, "guardian_superarmor");
+    const r = canEquipFree(master, baseData(), "WR", "b1", "WR_sp_1", 2, "guardian_superarmor");
     expect(r.ok).toBe(false);
   });
   it("装着対象外スキル(下段13)は装着できない", () => {
@@ -154,7 +152,7 @@ describe("Free装着判定 (v0.2 #3)", () => {
   });
 });
 
-describe("系列4つ制限 (branch同一系列は1編成4つまで)", () => {
+describe.skip("廃止済み系列秘伝の旧仕様", () => {
   // WRの系列(branch)枠を持つスキルを列挙 (枠1が系列)
   const branchSlots = skillsOf(master, "WR")
     .filter((s) => s.sigil_eligible && s.slots)

@@ -43,7 +43,6 @@ type EditableSkill = {
 
 type PassiveDraft = {
   weapon: string;
-  uniqueName: string;
   uniqueBody: string;
   commonPassive: string;
 };
@@ -121,7 +120,6 @@ function PassiveCard({
         <span className="de-status">編集中</span>
       </div>
       <label className="de-field"><span>武器名</span><input className="de-input de-passive-name" value={value.weapon} onChange={(event) => onChange({ ...value, weapon: event.target.value })} /></label>
-      <label className="de-field"><span>固有パッシブ名</span><input className="de-input" value={value.uniqueName} onChange={(event) => onChange({ ...value, uniqueName: event.target.value })} /></label>
       <label className="de-field de-grow">
         <span>固有パッシブ説明</span>
         <textarea className="de-textarea" value={value.uniqueBody} onChange={(event) => onChange({ ...value, uniqueBody: event.target.value })} />
@@ -155,12 +153,14 @@ export default function DataEditorPrototype() {
   const [passiveDrafts, setPassiveDrafts] = useState<PassiveDraft[]>(() =>
     descriptions.classes.WR.passives.map((passive, index) => ({
       weapon: passive.name,
-      uniqueName: index === 0 ? "固有パッシブ①" : "固有パッシブ②",
       uniqueBody: passive.lines.join("\n"),
       commonPassive: index === 0 ? "守護者の決意" : "バトルセンス",
     }))
   );
   const [actionNotice, setActionNotice] = useState("");
+  const [updateHistory, setUpdateHistory] = useState(() =>
+    localStorage.getItem("skill-sigil-editor:update-history") ?? ""
+  );
 
   const selectedClass = master.classes.find((item) => item.code === classCode);
   const classData = descriptions.classes[classCode];
@@ -196,10 +196,13 @@ export default function DataEditorPrototype() {
   }, [classCode]);
 
   useEffect(() => {
+    localStorage.setItem("skill-sigil-editor:update-history", updateHistory);
+  }, [updateHistory]);
+
+  useEffect(() => {
     const next = descriptions.classes[classCode]?.passives ?? [];
     setPassiveDrafts([0, 1].map((index) => ({
       weapon: next[index]?.name ?? `武器 ${index + 1}`,
-      uniqueName: `固有パッシブ${index === 0 ? "①" : "②"}`,
       uniqueBody: next[index]?.lines.join("\n") ?? "",
       commonPassive: commonPassives[index]?.name ?? "",
     })));
@@ -227,23 +230,6 @@ export default function DataEditorPrototype() {
         itemIndex === index ? { ...item, [field]: value } : item
       )
     );
-  };
-
-  const startNew = () => {
-    setDraft({
-      name: "",
-      ct: "",
-      hit: "",
-      pve: false,
-      pvp: false,
-      sa: false,
-      fg: false,
-      enhancement: false,
-      slots: ["", "", ""],
-      description: "",
-    });
-    setIconPreview(null);
-    setActionNotice("新規スキルの入力欄を用意しました");
   };
 
   const existingIcon = selectedSkill ? skillIconUrl(classCode, selectedSkill) : null;
@@ -360,6 +346,22 @@ export default function DataEditorPrototype() {
         </section>
       </div>
 
+      <section className="de-update-history panel">
+        <div className="de-pane-heading"><span>05</span><div><strong>更新履歴</strong><small>LOCAL UPDATE LOG</small></div></div>
+        <div className="de-update-history-body">
+          <label className="de-field">
+            <span>アプデ実績 <small>この端末の編集アプリ内だけに保存・サイトへは送信しません</small></span>
+            <textarea
+              className="de-textarea"
+              value={updateHistory}
+              onChange={(event) => setUpdateHistory(event.target.value)}
+              placeholder={"例：2026/09/25　系列秘伝の廃止対応\n2026/10/01　WRスキル説明を更新"}
+            />
+          </label>
+          <span className="de-local-only">LOCAL ONLY / 自動保存</span>
+        </div>
+      </section>
+
       <div className={`de-drawer-shade ${drawerOpen ? "open" : ""}`} onClick={() => setDrawerOpen(false)} />
       <aside className={`de-drawer ${drawerOpen ? "open" : ""}`} aria-hidden={!drawerOpen}>
         <div className="de-drawer-header"><div><span>COMMON PASSIVE LIBRARY</span><h2>共通パッシブ編集</h2></div><button type="button" onClick={() => setDrawerOpen(false)}>×</button></div>
@@ -387,7 +389,6 @@ export default function DataEditorPrototype() {
       </aside>
 
       <nav className="de-bottom-actions" aria-label="データ操作">
-        <button type="button" className="de-bottom-new" onClick={startNew}><span>＋</span><div><small>CREATE</small><strong>新規作成</strong></div></button>
         <button type="button" className="de-bottom-save" onClick={saveToSiteData}><span>✓</span><div><small>SAVE DATA</small><strong>保存</strong></div></button>
       </nav>
       {actionNotice && <button type="button" className="de-action-notice" onClick={() => setActionNotice("")}>{actionNotice}<span>×</span></button>}

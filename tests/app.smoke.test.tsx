@@ -107,7 +107,7 @@ describe("アプリ一連の流れ", () => {
     fireEvent.click(screen.getByRole("button", { name: /編成編集$/ }));
     await waitFor(() => expect(screen.getByText(/ウォーリア — 編成編集/)).toBeTruthy());
 
-    // 特1スキルを選択 (WR_sp_1: 反転斬り / 枠2=守護)
+    // 特1スキルを選択 (WR_sp_1: 反転斬り / 系列廃止後は枠1=守護)
     fireEvent.click(screen.getByRole("button", { name: /特1/ }));
     await waitFor(() => expect(screen.getByText(/固定4枠/)).toBeTruthy());
 
@@ -116,7 +116,7 @@ describe("アプリ一連の流れ", () => {
     fireEvent.click(
       within(tray as HTMLElement).getByText(/スキル使用時スーパーアーマー発動/)
     );
-    const slot2 = screen.getByLabelText("枠2 守護");
+    const slot2 = screen.getByLabelText("枠1 守護");
     fireEvent.click(slot2);
 
     // 装着済み表示 & 残数0
@@ -126,13 +126,13 @@ describe("アプリ一連の流れ", () => {
     expect(within(tray as HTMLElement).getByText("使用 1")).toBeTruthy();
 
     // #5: スロット先行選択フロー (枠クリック→トレイ強調→アイテムクリックで装着)
-    fireEvent.click(within(screen.getByLabelText("枠2 守護")).getByText(/解除/));
+    fireEvent.click(within(screen.getByLabelText("枠1 守護")).getByText(/解除/));
     await waitFor(() =>
-      expect(within(screen.getByLabelText("枠2 守護")).queryByText(/解除/)).toBeNull()
+      expect(within(screen.getByLabelText("枠1 守護")).queryByText(/解除/)).toBeNull()
     );
-    fireEvent.click(screen.getByLabelText("枠2 守護")); // 枠を先行選択
+    fireEvent.click(screen.getByLabelText("枠1 守護")); // 枠を先行選択
     await waitFor(() =>
-      expect(screen.getByLabelText("枠2 守護").className).toContain("selected")
+      expect(screen.getByLabelText("枠1 守護").className).toContain("selected")
     );
     const litItem = within(tray as HTMLElement)
       .getByText(/スキル使用時スーパーアーマー発動/)
@@ -140,7 +140,7 @@ describe("アプリ一連の流れ", () => {
     await waitFor(() => expect(litItem.className).toContain("lit"));
     fireEvent.click(litItem);
     await waitFor(() =>
-      expect(within(screen.getByLabelText("枠2 守護")).getByText(/解除/)).toBeTruthy()
+      expect(within(screen.getByLabelText("枠1 守護")).getByText(/解除/)).toBeTruthy()
     );
 
     cleanup();
