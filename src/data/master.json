@@ -5923,19 +5923,6 @@
     ]
    },
    {
-    "skill_id": "SC_n_8",
-    "group": "special",
-    "display_no": 8,
-    "name_ja": "エールアット",
-    "sigil_eligible": true,
-    "slots": [
-     "branch",
-     "flawless",
-     "defined",
-     "refined"
-    ]
-   },
-   {
     "skill_id": "SC_n_1",
     "group": "normal",
     "display_no": 1,
@@ -6037,6 +6024,19 @@
      "flawless",
      "defined",
      "faint"
+    ]
+   },
+   {
+    "skill_id": "SC_n_8",
+    "group": "normal",
+    "display_no": 8,
+    "name_ja": "エールアット",
+    "sigil_eligible": true,
+    "slots": [
+     "branch",
+     "flawless",
+     "defined",
+     "refined"
     ]
    },
    {
