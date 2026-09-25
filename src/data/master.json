@@ -598,7 +598,7 @@
     "slots": [
      "branch",
      "flawless",
-     "refined",
+     "defined",
      "defined"
     ]
    },
@@ -3446,7 +3446,7 @@
      "branch",
      "flawless",
      "defined",
-     "refined"
+     "guardian"
     ]
    },
    {
@@ -3457,7 +3457,7 @@
     "sigil_eligible": true,
     "slots": [
      "branch",
-     "guardian",
+     "refined",
      "flawless",
      "defined"
     ]
@@ -3841,7 +3841,7 @@
     "sigil_eligible": true,
     "slots": [
      "branch",
-     "guardian",
+     "faint",
      "flawless",
      "refined"
     ]
@@ -3854,9 +3854,9 @@
     "sigil_eligible": true,
     "slots": [
      "branch",
+     "guardian",
      "flawless",
-     "defined",
-     "refined"
+     "defined"
     ]
    },
    {
@@ -5897,19 +5897,6 @@
     ]
    },
    {
-    "skill_id": "SC_sp_2",
-    "group": "special",
-    "display_no": 2,
-    "name_ja": "エールアット",
-    "sigil_eligible": true,
-    "slots": [
-     "branch",
-     "flawless",
-     "defined",
-     "refined"
-    ]
-   },
-   {
     "skill_id": "SC_sp_3",
     "group": "special",
     "display_no": 3,
@@ -5927,6 +5914,19 @@
     "group": "special",
     "display_no": 4,
     "name_ja": "スウィープアウェイ",
+    "sigil_eligible": true,
+    "slots": [
+     "branch",
+     "flawless",
+     "defined",
+     "refined"
+    ]
+   },
+   {
+    "skill_id": "SC_n_8",
+    "group": "special",
+    "display_no": 8,
+    "name_ja": "エールアット",
     "sigil_eligible": true,
     "slots": [
      "branch",
@@ -5959,6 +5959,19 @@
      "flawless",
      "defined",
      "faint"
+    ]
+   },
+   {
+    "skill_id": "SC_sp_2",
+    "group": "normal",
+    "display_no": 2,
+    "name_ja": "抑えきれない力",
+    "sigil_eligible": true,
+    "slots": [
+     "branch",
+     "guardian",
+     "flawless",
+     "defined"
     ]
    },
    {
@@ -6008,7 +6021,7 @@
     "sigil_eligible": true,
     "slots": [
      "branch",
-     "flawless",
+     "radiant",
      "defined",
      "refined"
     ]
@@ -6024,19 +6037,6 @@
      "flawless",
      "defined",
      "faint"
-    ]
-   },
-   {
-    "skill_id": "SC_n_8",
-    "group": "normal",
-    "display_no": 8,
-    "name_ja": "抑えきれない力",
-    "sigil_eligible": true,
-    "slots": [
-     "branch",
-     "guardian",
-     "flawless",
-     "defined"
     ]
    },
    {
@@ -6087,7 +6087,7 @@
     "slots": [
      "branch",
      "guardian",
-     "radiant",
+     "defined",
      "flawless"
     ]
    },
@@ -6547,7 +6547,7 @@
      "branch",
      "flawless",
      "defined",
-     "refined"
+     "guardian"
     ]
    },
    {
@@ -6586,7 +6586,7 @@
      "branch",
      "guardian",
      "defined",
-     "refined"
+     "flawless"
     ]
    },
    {
@@ -6649,7 +6649,7 @@
     "sigil_eligible": true,
     "slots": [
      "branch",
-     "flawless",
+     "guardian",
      "defined",
      "refined"
     ]
