@@ -1,5 +1,4 @@
 // 比較カラムの共通ヘッダー (編成名・クラス・MY/FREE・装着枠数)
-import React from "react";
 import type { CompareBuild } from "../../logic/compare";
 
 export function CompareColumnHead({ b }: { b: CompareBuild }) {

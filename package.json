@@ -8,7 +8,7 @@
     "sync:public-images": "node scripts/sync_public_images.mjs",
     "build": "npm run sync:public-images && tsc --noEmit && vite build",
     "preview": "vite preview",
-    "test": "vitest run",
+    "test": "vitest run --dir tests",
     "gen:manifest": "node scripts/gen_image_manifest.mjs",
     "deploy": "npm run build && wrangler deploy"
   },

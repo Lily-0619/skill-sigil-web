@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { BuildMode } from "./types";
 import { StoreProvider, useStore, master } from "./state/store";
 import TopPage from "./components/TopPage";

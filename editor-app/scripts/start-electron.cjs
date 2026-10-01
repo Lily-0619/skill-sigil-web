@@ -4,8 +4,8 @@ const { spawn } = require("node:child_process");
 
 const editorRoot = path.resolve(__dirname, "..");
 const candidates = [
-  path.join(editorRoot, "node_modules", "electron", "dist", "electron.exe"),
-  path.join(editorRoot, "..", "node_modules", "electron", "dist", "electron.exe"),
+  path.join(editorRoot, "node_modules", "electron", "dist", process.platform === "win32" ? "electron.exe" : "Electron.app/Contents/MacOS/Electron"),
+  path.join(editorRoot, "..", "node_modules", "electron", "dist", process.platform === "win32" ? "electron.exe" : "Electron.app/Contents/MacOS/Electron"),
 ];
 const executable = candidates.find((candidate) => fs.existsSync(candidate));
 

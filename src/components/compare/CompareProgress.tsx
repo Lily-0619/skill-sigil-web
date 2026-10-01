@@ -1,6 +1,5 @@
 // 達成度: Freeで組んだ理想編成に対して、どれだけ集まったか / 着けられているか。
 // 枠を色ブロックで並べ、「入れ替えるだけ」の枠を最も目立たせる。
-import React from "react";
 import { master } from "../../state/store";
 import type { ProgressData, ProgressSlot, SlotState } from "../../logic/progress";
 import { pct } from "../../logic/progress";

@@ -315,12 +315,12 @@
     "skill_id": "WR_n_5",
     "group": "normal",
     "display_no": 5,
-    "name_ja": "グラウンドスマッシュ",
+    "name_ja": "トワイライトスカー",
     "sigil_eligible": true,
     "slots": [
-     "radiant",
      "flawless",
-     "faint"
+     "defined",
+     "refined"
     ]
    },
    {
@@ -331,8 +331,8 @@
     "sigil_eligible": true,
     "slots": [
      "guardian",
-     "defined",
-     "refined"
+     "radiant",
+     "defined"
     ]
    },
    {
@@ -1138,7 +1138,7 @@
     "name_ja": "勅裁",
     "sigil_eligible": true,
     "slots": [
-     "guardian",
+     "refined",
      "defined",
      "faint"
     ]
@@ -1898,7 +1898,7 @@
     "name_ja": "教化",
     "sigil_eligible": true,
     "slots": [
-     "guardian",
+     "faint",
      "flawless",
      "defined"
     ]
@@ -1982,7 +1982,7 @@
     "name_ja": "砂鉄斬り",
     "sigil_eligible": true,
     "slots": [
-     "flawless",
+     "guardian",
      "defined",
      "refined"
     ]
@@ -2020,7 +2020,7 @@
     "slots": [
      "flawless",
      "defined",
-     "faint"
+     "refined"
     ]
    },
    {
@@ -4940,7 +4940,7 @@
     "name_ja": "呪術:妖花蘭",
     "sigil_eligible": true,
     "slots": [
-     "flawless",
+     "guardian",
      "defined",
      "refined"
     ]
@@ -5480,6 +5480,18 @@
     ]
    },
    {
+    "skill_id": "SC_sp_2",
+    "group": "special",
+    "display_no": 2,
+    "name_ja": "抑えきれない力",
+    "sigil_eligible": true,
+    "slots": [
+     "guardian",
+     "flawless",
+     "defined"
+    ]
+   },
+   {
     "skill_id": "SC_sp_3",
     "group": "special",
     "display_no": 3,
@@ -5525,18 +5537,6 @@
      "flawless",
      "defined",
      "faint"
-    ]
-   },
-   {
-    "skill_id": "SC_sp_2",
-    "group": "normal",
-    "display_no": 2,
-    "name_ja": "抑えきれない力",
-    "sigil_eligible": true,
-    "slots": [
-     "guardian",
-     "flawless",
-     "defined"
     ]
    },
    {

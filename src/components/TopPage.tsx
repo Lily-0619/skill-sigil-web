@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import "../styles/top-page.css";
 import { assetUrl, pickCharacterImage } from "../lib/assets";
 import LiquidGlassCards, {

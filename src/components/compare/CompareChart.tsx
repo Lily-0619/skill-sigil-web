@@ -1,6 +1,5 @@
 // 案C: グラフ。案Bの集計 (タイプ別・等級別の本数) を自前バーで可視化する。
 // 外部ライブラリは使わず div 幅バーで描く。バー長は全編成の最大値で正規化して比較しやすくする。
-import React from "react";
 import type { CompareBuild, CountBar } from "../../logic/compare";
 import { CompareColumnHead } from "./CompareColumnHead";
 

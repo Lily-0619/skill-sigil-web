@@ -1,5 +1,4 @@
 // S-06 ヘルプ・情報 (docs/03 §8)
-import React from "react";
 import { master, useStore } from "../state/store";
 import { useReveal, staggerDelay } from "../hooks/useReveal";
 

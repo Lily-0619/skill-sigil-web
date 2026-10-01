@@ -2,7 +2,7 @@
 // 編成管理にある編成同士を並べて、どのスキルにどの秘伝のどの効果がついているかを比較する。
 // 読み取り専用。ビューは 案A スキルごと / 案B タイプ別サマリー / 案C グラフ を切替。
 // 既存システムは変更せず、集計は src/logic/compare.ts に自己完結して持つ。
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { master, useStore } from "../state/store";
 import { buildCompareData } from "../logic/compare";
 import { buildProgressData } from "../logic/progress";

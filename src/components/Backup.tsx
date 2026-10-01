@@ -1,5 +1,5 @@
 // S-05 バックアップ (docs/03 §7, 05_Excel入出力仕様書.md)
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import * as XLSX from "xlsx";
 import { master, useStore } from "../state/store";
 import {

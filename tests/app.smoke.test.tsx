@@ -2,7 +2,6 @@
 // トップ→クラス選択→編成編集→所持登録→装着の一連が動くことを確認する。
 // @vitest-environment jsdom
 import "fake-indexeddb/auto";
-import React from "react";
 import { beforeAll, describe, expect, it } from "vitest";
 import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import App from "../src/App";

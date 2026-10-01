@@ -1,5 +1,5 @@
 // S-03 所持秘伝管理 (docs/03 §5): タイプ→効果→等級の絞り込み登録フォーム + 一覧
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { master, newItem, useStore } from "../state/store";
 import type { InventoryItem, Rarity } from "../types";
 import {

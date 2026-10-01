@@ -3,7 +3,6 @@
 // 編成管理: クラス未選択でも開け、クラス横断で一覧できること。
 // @vitest-environment jsdom
 import "fake-indexeddb/auto";
-import React from "react";
 import { beforeAll, describe, expect, it } from "vitest";
 import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import App from "../src/App";

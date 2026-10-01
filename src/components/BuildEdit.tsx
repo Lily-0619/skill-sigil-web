@@ -2,7 +2,7 @@
 // v0.2 #3: Freeモード対応 — 所持秘伝トレイの代わりに秘伝カタログを表示し、
 //          所持数・残数・重複の制限なしで理想編成を組める。
 // v0.2 #5: スロット先行選択フロー (枠クリック→トレイ/カタログ強調→クリックで装着)
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { master, newBuild, useStore } from "../state/store";
 import type { BuildMode, EffectDef, InventoryItem, Rarity, SkillDef } from "../types";
 import {
@@ -15,7 +15,6 @@ import {
   effectOf,
   freeEquipAt,
   freeEquipsForSkill,
-  isBranchEffect,
   remaining,
   SAME_SERIES_MAX,
   skillsOf,

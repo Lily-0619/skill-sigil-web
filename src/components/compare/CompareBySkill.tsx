@@ -1,5 +1,4 @@
 // 案A: スキルごと。スキル → 固定4枠 → 装着秘伝 (効果名・等級・数値) を縦に並べる。
-import React from "react";
 import { master } from "../../state/store";
 import type { CompareBuild } from "../../logic/compare";
 import { RarityChip } from "../ui";

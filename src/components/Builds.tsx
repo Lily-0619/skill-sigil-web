@@ -1,5 +1,5 @@
 // S-04 編成管理 (docs/03 §6 / v0.2 #7): 全クラス一括管理・作成 / 複製 / 名前変更 / 削除
-import React, { useState } from "react";
+import { useState } from "react";
 import { master, newBuild, useStore } from "../state/store";
 import type { Build, BuildMode } from "../types";
 import { buildEquipStats } from "../logic/equip";

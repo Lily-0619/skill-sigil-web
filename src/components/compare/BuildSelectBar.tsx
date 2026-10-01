@@ -1,5 +1,4 @@
 // 比較する編成を選ぶバー (編成管理にある全編成をチェックで選択、2〜max件)
-import React from "react";
 import { master } from "../../state/store";
 import type { Build } from "../../types";
 

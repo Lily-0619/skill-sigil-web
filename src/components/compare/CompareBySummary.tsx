@@ -1,6 +1,5 @@
 // 案B: タイプ別サマリー。秘伝タイプ → 効果 → 等級で「何がどれだけ付いているか」を集計。
 // 数値は合算せず「値 ×N個」で個数集約 (既存の「つけている秘伝一覧」と同じ)。
-import React from "react";
 import { master } from "../../state/store";
 import type { CompareBuild } from "../../logic/compare";
 import { RarityChip } from "../ui";

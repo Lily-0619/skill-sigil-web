@@ -1,5 +1,5 @@
 // S-01 クラス選択 (docs/03 §3)
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import type { BuildMode } from "../types";
 import { master, useStore } from "../state/store";
 import { classButtonUrl } from "../lib/assets";
