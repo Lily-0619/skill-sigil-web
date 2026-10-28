@@ -1732,7 +1732,7 @@
     "name_ja": "旋風脚",
     "sigil_eligible": true,
     "slots": [
-     "flawless",
+     "guardian",
      "defined",
      "refined"
     ]
@@ -1792,7 +1792,7 @@
     "name_ja": "気迫放出",
     "sigil_eligible": true,
     "slots": [
-     "guardian",
+     "flawless",
      "defined",
      "refined"
     ]
@@ -4156,7 +4156,7 @@
     "name_ja": "天上拳",
     "sigil_eligible": true,
     "slots": [
-     "radiant",
+     "faint",
      "defined",
      "refined"
     ]
@@ -4182,7 +4182,7 @@
     "slots": [
      "guardian",
      "flawless",
-     "faint"
+     "radiant"
     ]
    },
    {
@@ -5762,7 +5762,7 @@
     "slots": [
      "flawless",
      "defined",
-     "faint"
+     "radiant"
     ]
    },
    {
@@ -5833,7 +5833,7 @@
     "sigil_eligible": true,
     "slots": [
      "guardian",
-     "radiant",
+     "defined",
      "flawless"
     ]
    },

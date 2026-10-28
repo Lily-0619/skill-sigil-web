@@ -5,6 +5,7 @@
 ## 起動（Windows）
 
 初回だけこのフォルダで `npm install` を実行し、その後は `start-editor.bat` を開きます。
+依存ファイルが揃っている場合はNode.jsだけで起動でき、npmは不要です。起動時はPATH、ポータブル版、標準インストール先、Codex同梱のNode.jsを順に探します。
 
 ## 起動（Mac）
 

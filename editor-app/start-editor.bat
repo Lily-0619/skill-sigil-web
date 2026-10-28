@@ -2,30 +2,15 @@
 setlocal
 cd /d "%~dp0"
 
-set "NPM_CMD="
-where npm.cmd >nul 2>&1
-if not errorlevel 1 set "NPM_CMD=npm.cmd"
-if defined NPM_CMD goto npm_found
-
-if exist "%~d0\AI\npm.cmd" set "PATH=%~d0\AI;%PATH%"
-if exist "%~d0\AI\npm.cmd" set "NPM_CMD=%~d0\AI\npm.cmd"
-if defined NPM_CMD goto npm_found
-
-if exist "E:\AI\npm.cmd" set "PATH=E:\AI;%PATH%"
-if exist "E:\AI\npm.cmd" set "NPM_CMD=E:\AI\npm.cmd"
-if defined NPM_CMD goto npm_found
-
-echo Node.js and npm were not found.
-echo Install Node.js or place the portable runtime in E:\AI.
-pause
-exit /b 1
-
-:npm_found
 set "NODE_EXE="
 for /f "delims=" %%I in ('where node.exe 2^>nul') do if not defined NODE_EXE set "NODE_EXE=%%I"
 if not defined NODE_EXE if exist "%~d0\AI\node.exe" set "NODE_EXE=%~d0\AI\node.exe"
 if not defined NODE_EXE if exist "E:\AI\node.exe" set "NODE_EXE=E:\AI\node.exe"
+if not defined NODE_EXE if exist "%ProgramFiles%\nodejs\node.exe" set "NODE_EXE=%ProgramFiles%\nodejs\node.exe"
+if not defined NODE_EXE if exist "%LOCALAPPDATA%\Programs\nodejs\node.exe" set "NODE_EXE=%LOCALAPPDATA%\Programs\nodejs\node.exe"
+if not defined NODE_EXE if exist "%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe" set "NODE_EXE=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe"
 if not defined NODE_EXE goto node_missing
+for %%I in ("%NODE_EXE%") do set "PATH=%%~dpI;%PATH%"
 
 if /i "%~1"=="--check" goto check
 if not exist "node_modules\electron\dist\electron.exe" goto install
@@ -33,6 +18,9 @@ if not exist "node_modules\vite\bin\vite.js" goto install
 goto start
 
 :install
+set "NPM_CMD="
+for /f "delims=" %%I in ('where npm.cmd 2^>nul') do if not defined NPM_CMD set "NPM_CMD=%%I"
+if not defined NPM_CMD goto npm_missing
 echo Preparing the Windows runtime. This may take a few minutes...
 call "%NPM_CMD%" install
 if errorlevel 1 goto install_failed
@@ -50,7 +38,6 @@ if errorlevel 1 goto launch_failed
 exit /b 0
 
 :check
-echo NPM_CMD=%NPM_CMD%
 if not exist "node_modules\electron\dist\electron.exe" goto runtime_missing
 if not exist "node_modules\vite\bin\vite.js" goto runtime_missing
 echo Runtime check passed.
@@ -75,5 +62,11 @@ exit /b 1
 
 :launch_failed
 echo The editor could not be started.
+pause
+exit /b 1
+
+:npm_missing
+echo npm is required to prepare missing dependencies.
+echo Install Node.js with npm, then run this file again.
 pause
 exit /b 1
