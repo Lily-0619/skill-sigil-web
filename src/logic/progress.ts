@@ -137,6 +137,7 @@ export const SCORE: Record<
   Rarity,
   { matchTop: number; matchLow: number; miss: number }
 > = {
+  void: { matchTop: 1.0, matchLow: 1.0, miss: 0.8 },
   chaos: { matchTop: 1.0, matchLow: 0.95, miss: 0.8 },
   primal: { matchTop: 0.7, matchLow: 0.7, miss: 0.6 },
   abyssal: { matchTop: 0.4, matchLow: 0.4, miss: 0.3 },

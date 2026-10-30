@@ -48,6 +48,13 @@ git add -A && git commit -m "..." && git push origin main
   (「・スキルボタン長押しで最大2打撃」) は本文に残したままHIT値も入れる。詳細は `CLAUDE.md`。
 - 旧データ (説明Excel 30本・旧マスタ) は `資料/_archive/` に退避済み。参照しない。
 
+## 空虚候補の編集
+
+空虚は `docs/20_空虚スキル秘伝_確認用.md` の候補表を人間が確認し、
+`node scripts/apply_void_sigil.mjs` で `src/game-rules/skill-sigil.json` へ反映できる。
+全行が「確認」または「確認済」の場合のみ実行可能。アプリが読む正本は引き続き
+`src/game-rules/`。空虚の複合効果・デメリットは候補単位の別IDとして保持する。
+
 ## 規約
 
 パスはプロジェクトルート相対のみ (repo-conventions Skill 準拠)。ローカル閲覧用の

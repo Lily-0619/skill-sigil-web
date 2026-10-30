@@ -29,7 +29,7 @@ export const SAME_SERIES_MAX = 4;
 /** 系列枠廃止後の各スキルの固定秘伝枠数 */
 export const SLOT_COUNT = 3;
 /** 等級の良い順 (混沌 > 太古 > 深淵)。既定等級・並び順に使う。 */
-export const RARITY_ORDER: Rarity[] = ["chaos", "primal", "abyssal"];
+export const RARITY_ORDER: Rarity[] = ["void", "chaos", "primal", "abyssal"];
 
 // ---- 表示細則 -----------------------------------------------------------------
 

@@ -1,5 +1,6 @@
 // 画像パス解決。マニフェスト(自動生成)を参照し、欠落時はフォールバック。
 import manifest from "../data/imageManifest.json";
+import voidSigilIcon from "../assets/void-sigil.png";
 import type { ImageManifest, SkillDef } from "../types";
 
 const M = manifest as unknown as ImageManifest;
@@ -45,6 +46,7 @@ export function skillIconUrls(classCode: string, skill: SkillDef): string[] {
 }
 
 export function sigilIconUrl(key: string): string | null {
+  if (key === "void" || key.startsWith("void_")) return voidSigilIcon;
   const p = M.sigilIcons[key];
   return p ? assetUrl(p) : null;
 }

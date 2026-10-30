@@ -1,0 +1,643 @@
+{
+  "schema_version": 1,
+  "status": "review_only",
+  "source_markdown": "docs/20_空虚スキル秘伝_確認用.md",
+  "rarity": {
+    "id": "void",
+    "name_ja": "空虚",
+    "id_status": "proposed",
+    "icon": "docs/data/void-sigil-icon.png"
+  },
+  "probability_scope": "未確認の空虚スキル秘伝・全候補（韓国公式、国内未確定）",
+  "sources": [
+    "ユーザー提供日本語一覧画像2枚",
+    "https://www.blackdesertm.com/Ocean/Wiki?wikiNo=10011002",
+    "https://www.world.blackdesertm.com/Ocean/News/Detail?boardNo=4819"
+  ],
+  "integration_note": "候補単位の中間データ。本番skill-sigil.jsonへの直接上書き不可。複合効果・デメリット対応が必要。",
+  "unresolved": [],
+  "candidate_count": 62,
+  "probability_total_percent": 100,
+  "candidates": [
+    {
+      "id": "V01",
+      "rarity_id": "void",
+      "type_id": "faint",
+      "effect_text_ja": "命中時、敵に3秒間、毎秒160ダメージ",
+      "penalty_text_ja": null,
+      "probability_percent": 2.5,
+      "probability_display": "2.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "V02",
+      "rarity_id": "void",
+      "type_id": "faint",
+      "effect_text_ja": "命中時、3秒間、敵の攻撃力−200",
+      "penalty_text_ja": null,
+      "probability_percent": 2.5,
+      "probability_display": "2.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "V03",
+      "rarity_id": "void",
+      "type_id": "faint",
+      "effect_text_ja": "命中時、3秒間、敵の防御力−200",
+      "penalty_text_ja": null,
+      "probability_percent": 2.5,
+      "probability_display": "2.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "V04",
+      "rarity_id": "void",
+      "type_id": "faint",
+      "effect_text_ja": "使用時、3秒間、自身の攻撃速度+12%",
+      "penalty_text_ja": null,
+      "probability_percent": 2.5,
+      "probability_display": "2.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "V05",
+      "rarity_id": "void",
+      "type_id": "faint",
+      "effect_text_ja": "使用時、3秒間、自身の移動速度+12%",
+      "penalty_text_ja": null,
+      "probability_percent": 2.5,
+      "probability_display": "2.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "V06",
+      "rarity_id": "void",
+      "type_id": "faint",
+      "effect_text_ja": "命中時、3秒間、敵冒険者の攻撃速度−11%",
+      "penalty_text_ja": null,
+      "probability_percent": 2.5,
+      "probability_display": "2.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "V07",
+      "rarity_id": "void",
+      "type_id": "faint",
+      "effect_text_ja": "命中時、3秒間、敵冒険者の移動速度−11%",
+      "penalty_text_ja": null,
+      "probability_percent": 2.5,
+      "probability_display": "2.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "V08",
+      "rarity_id": "void",
+      "type_id": "faint",
+      "effect_text_ja": "命中時、敵に3秒間、毎秒180ダメージ",
+      "penalty_text_ja": "装着スキルの攻撃範囲−8%",
+      "probability_percent": 2.5,
+      "probability_display": "2.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "V09",
+      "rarity_id": "void",
+      "type_id": "faint",
+      "effect_text_ja": "命中時、3秒間、敵冒険者の攻撃速度−13%",
+      "penalty_text_ja": "スキル使用時、3秒間、スキル使用中に冒険者から受ける最終ダメージ量+6%",
+      "probability_percent": 1.25,
+      "probability_display": "1.2500%",
+      "review_status": "確認"
+    },
+    {
+      "id": "V10",
+      "rarity_id": "void",
+      "type_id": "faint",
+      "effect_text_ja": "命中時、3秒間、敵冒険者の攻撃速度−13%",
+      "penalty_text_ja": "スキル再使用待機時間+5%",
+      "probability_percent": 1.25,
+      "probability_display": "1.2500%",
+      "review_status": "確認"
+    },
+    {
+      "id": "V11",
+      "rarity_id": "void",
+      "type_id": "faint",
+      "effect_text_ja": "命中時、3秒間、敵冒険者の移動速度−13%",
+      "penalty_text_ja": "スキル使用時、3秒間、スキル使用中に冒険者から受ける最終ダメージ量+6%",
+      "probability_percent": 1.25,
+      "probability_display": "1.2500%",
+      "review_status": "確認"
+    },
+    {
+      "id": "V12",
+      "rarity_id": "void",
+      "type_id": "faint",
+      "effect_text_ja": "命中時、3秒間、敵冒険者の移動速度−13%",
+      "penalty_text_ja": "スキル再使用待機時間+5%",
+      "probability_percent": 1.25,
+      "probability_display": "1.2500%",
+      "review_status": "確認"
+    },
+    {
+      "id": "R01",
+      "rarity_id": "void",
+      "type_id": "refined",
+      "effect_text_ja": "装着スキルの1打撃ごとにHP160回復",
+      "penalty_text_ja": null,
+      "probability_percent": 2.875,
+      "probability_display": "2.8750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "R02",
+      "rarity_id": "void",
+      "type_id": "refined",
+      "effect_text_ja": "使用時、3秒間、自身の攻撃力+40",
+      "penalty_text_ja": null,
+      "probability_percent": 2.875,
+      "probability_display": "2.8750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "R03",
+      "rarity_id": "void",
+      "type_id": "refined",
+      "effect_text_ja": "使用時、3秒間、自身の防御力+40",
+      "penalty_text_ja": null,
+      "probability_percent": 2.875,
+      "probability_display": "2.8750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "R04",
+      "rarity_id": "void",
+      "type_id": "refined",
+      "effect_text_ja": "装着スキルのクリティカル確率+7%（上限超過）",
+      "penalty_text_ja": null,
+      "probability_percent": 2.875,
+      "probability_display": "2.8750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "R05",
+      "rarity_id": "void",
+      "type_id": "refined",
+      "effect_text_ja": "装着スキルのクリティカルダメージ量+14%（上限超過）",
+      "penalty_text_ja": null,
+      "probability_percent": 2.875,
+      "probability_display": "2.8750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "R06",
+      "rarity_id": "void",
+      "type_id": "refined",
+      "effect_text_ja": "装着スキルの1打撃ごとにHP180回復",
+      "penalty_text_ja": "装着スキルのダメージ量−8%",
+      "probability_percent": 2.875,
+      "probability_display": "2.8750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "R07",
+      "rarity_id": "void",
+      "type_id": "refined",
+      "effect_text_ja": "装着スキルのクリティカル確率+9%（上限超過）",
+      "penalty_text_ja": "スキル使用時、3秒間、スキル使用中に冒険者から受ける最終ダメージ量+6%",
+      "probability_percent": 1.4375,
+      "probability_display": "1.4375%",
+      "review_status": "確認"
+    },
+    {
+      "id": "R08",
+      "rarity_id": "void",
+      "type_id": "refined",
+      "effect_text_ja": "装着スキルのクリティカル確率+9%（上限超過）",
+      "penalty_text_ja": "装着スキルの攻撃範囲−8%",
+      "probability_percent": 1.4375,
+      "probability_display": "1.4375%",
+      "review_status": "確認"
+    },
+    {
+      "id": "R09",
+      "rarity_id": "void",
+      "type_id": "refined",
+      "effect_text_ja": "装着スキルのクリティカルダメージ量+16%（上限超過）",
+      "penalty_text_ja": "スキル使用時、3秒間、スキル使用中に冒険者から受ける最終ダメージ量+6%",
+      "probability_percent": 1.4375,
+      "probability_display": "1.4375%",
+      "review_status": "確認"
+    },
+    {
+      "id": "R10",
+      "rarity_id": "void",
+      "type_id": "refined",
+      "effect_text_ja": "装着スキルのクリティカルダメージ量+16%（上限超過）",
+      "penalty_text_ja": "装着スキルの攻撃範囲−8%",
+      "probability_percent": 1.4375,
+      "probability_display": "1.4375%",
+      "review_status": "確認"
+    },
+    {
+      "id": "D01",
+      "rarity_id": "void",
+      "type_id": "defined",
+      "effect_text_ja": "装着スキルの攻撃範囲+8%",
+      "penalty_text_ja": null,
+      "probability_percent": 5.0834,
+      "probability_display": "5.0834%",
+      "review_status": "確認"
+    },
+    {
+      "id": "D02",
+      "rarity_id": "void",
+      "type_id": "defined",
+      "effect_text_ja": "装着スキルのダメージ量+8%",
+      "penalty_text_ja": null,
+      "probability_percent": 5.0834,
+      "probability_display": "5.0834%",
+      "review_status": "確認"
+    },
+    {
+      "id": "D03",
+      "rarity_id": "void",
+      "type_id": "defined",
+      "effect_text_ja": "装着スキルの再使用待機時間−14%",
+      "penalty_text_ja": null,
+      "probability_percent": 5.0834,
+      "probability_display": "5.0834%",
+      "review_status": "確認"
+    },
+    {
+      "id": "D04",
+      "rarity_id": "void",
+      "type_id": "defined",
+      "effect_text_ja": "装着スキルのダメージ量+10%",
+      "penalty_text_ja": "装着スキルの攻撃範囲−8%",
+      "probability_percent": 1.6945,
+      "probability_display": "1.6945%",
+      "review_status": "確認"
+    },
+    {
+      "id": "D05",
+      "rarity_id": "void",
+      "type_id": "defined",
+      "effect_text_ja": "装着スキルのダメージ量+10%",
+      "penalty_text_ja": "装着スキルの再使用待機時間+8%",
+      "probability_percent": 1.6944,
+      "probability_display": "1.6944%",
+      "review_status": "確認"
+    },
+    {
+      "id": "D06",
+      "rarity_id": "void",
+      "type_id": "defined",
+      "effect_text_ja": "装着スキルのダメージ量+10%",
+      "penalty_text_ja": "スキル使用時、3秒間、スキル使用中に冒険者から受ける最終ダメージ量+6%",
+      "probability_percent": 1.6944,
+      "probability_display": "1.6944%",
+      "review_status": "確認"
+    },
+    {
+      "id": "D07",
+      "rarity_id": "void",
+      "type_id": "defined",
+      "effect_text_ja": "装着スキルの攻撃範囲+10%",
+      "penalty_text_ja": "装着スキルのダメージ量−8%",
+      "probability_percent": 1.6944,
+      "probability_display": "1.6944%",
+      "review_status": "確認"
+    },
+    {
+      "id": "D08",
+      "rarity_id": "void",
+      "type_id": "defined",
+      "effect_text_ja": "装着スキルの攻撃範囲+10%",
+      "penalty_text_ja": "装着スキルの再使用待機時間+8%",
+      "probability_percent": 1.6944,
+      "probability_display": "1.6944%",
+      "review_status": "確認"
+    },
+    {
+      "id": "D09",
+      "rarity_id": "void",
+      "type_id": "defined",
+      "effect_text_ja": "装着スキルの攻撃範囲+10%",
+      "penalty_text_ja": "スキル使用時、3秒間、スキル使用中に冒険者から受ける最終ダメージ量+6%",
+      "probability_percent": 1.6944,
+      "probability_display": "1.6944%",
+      "review_status": "確認"
+    },
+    {
+      "id": "D10",
+      "rarity_id": "void",
+      "type_id": "defined",
+      "effect_text_ja": "装着スキルの打撃個体数+1／装着スキルのダメージ量+2%",
+      "penalty_text_ja": null,
+      "probability_percent": 1.6945,
+      "probability_display": "1.6945%",
+      "review_status": "確認"
+    },
+    {
+      "id": "D11",
+      "rarity_id": "void",
+      "type_id": "defined",
+      "effect_text_ja": "装着スキルの打撃個体数+1／スキル再使用待機時間−4%",
+      "penalty_text_ja": null,
+      "probability_percent": 1.6945,
+      "probability_display": "1.6945%",
+      "review_status": "確認"
+    },
+    {
+      "id": "D12",
+      "rarity_id": "void",
+      "type_id": "defined",
+      "effect_text_ja": "装着スキルの打撃個体数+1／装着スキルの攻撃範囲+2%",
+      "penalty_text_ja": null,
+      "probability_percent": 1.6945,
+      "probability_display": "1.6945%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F01",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "使用時、1秒間、自身の最終被ダメージ−17.5%",
+      "penalty_text_ja": null,
+      "probability_percent": 1.5,
+      "probability_display": "1.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F02",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "使用時、3秒間、自身の攻撃力・防御力+80",
+      "penalty_text_ja": null,
+      "probability_percent": 1.5,
+      "probability_display": "1.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F03",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、対象の攻撃力・防御力−50／対象の攻撃速度・移動速度−12%",
+      "penalty_text_ja": null,
+      "probability_percent": 1.5,
+      "probability_display": "1.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F04",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、自身の受ける系列ダメージ量−16%",
+      "penalty_text_ja": null,
+      "probability_percent": 1.5,
+      "probability_display": "1.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F05",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、敵冒険者のアール系列ダメージ減少効果−10%",
+      "penalty_text_ja": null,
+      "probability_percent": 0.375,
+      "probability_display": "0.3750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F06",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、敵冒険者のセルト系列ダメージ減少効果−10%",
+      "penalty_text_ja": null,
+      "probability_percent": 0.375,
+      "probability_display": "0.3750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F07",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、敵冒険者のアヒブ系列ダメージ減少効果−10%",
+      "penalty_text_ja": null,
+      "probability_percent": 0.375,
+      "probability_display": "0.3750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F08",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、敵冒険者のラブリフ系列ダメージ減少効果−10%",
+      "penalty_text_ja": null,
+      "probability_percent": 0.375,
+      "probability_display": "0.3750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F09",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、対象のアール系列スキルダメージ量−16%",
+      "penalty_text_ja": null,
+      "probability_percent": 0.375,
+      "probability_display": "0.3750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F10",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、対象のセルト系列スキルダメージ量−16%",
+      "penalty_text_ja": null,
+      "probability_percent": 0.375,
+      "probability_display": "0.3750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F11",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、対象のアヒブ系列スキルダメージ量−16%",
+      "penalty_text_ja": null,
+      "probability_percent": 0.375,
+      "probability_display": "0.3750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F12",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、対象のラブリフ系列スキルダメージ量−16%",
+      "penalty_text_ja": null,
+      "probability_percent": 0.375,
+      "probability_display": "0.3750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F17",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、対象に3秒間「冒険者から受けるダメージ量−10%」を付与",
+      "penalty_text_ja": null,
+      "probability_percent": 1.5,
+      "probability_display": "1.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F18",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "装着スキルが6%の確率で1打撃の追加ダメージ",
+      "penalty_text_ja": null,
+      "probability_percent": 1.5,
+      "probability_display": "1.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F13",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、敵冒険者のアール系列ダメージ減少効果−12%",
+      "penalty_text_ja": "再使用待機時間+8%",
+      "probability_percent": 0.375,
+      "probability_display": "0.3750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F14",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、敵冒険者のセルト系列ダメージ減少効果−12%",
+      "penalty_text_ja": "再使用待機時間+8%",
+      "probability_percent": 0.375,
+      "probability_display": "0.3750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F15",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、敵冒険者のアヒブ系列ダメージ減少効果−12%",
+      "penalty_text_ja": "再使用待機時間+8%",
+      "probability_percent": 0.375,
+      "probability_display": "0.3750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F16",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "命中時、3秒間、敵冒険者のラブリフ系列ダメージ減少効果−12%",
+      "penalty_text_ja": "再使用待機時間+8%",
+      "probability_percent": 0.375,
+      "probability_display": "0.3750%",
+      "review_status": "確認"
+    },
+    {
+      "id": "F19",
+      "rarity_id": "void",
+      "type_id": "flawless",
+      "effect_text_ja": "使用時、1秒間、自身の最終被ダメージ−20%",
+      "penalty_text_ja": "攻撃範囲−8%",
+      "probability_percent": 1.5,
+      "probability_display": "1.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "L01",
+      "rarity_id": "void",
+      "type_id": "radiant",
+      "effect_text_ja": "使用時、すべてのスキルの再使用待機時間−0.25秒",
+      "penalty_text_ja": null,
+      "probability_percent": 0.1666,
+      "probability_display": "0.1666%",
+      "review_status": "確認"
+    },
+    {
+      "id": "L02",
+      "rarity_id": "void",
+      "type_id": "radiant",
+      "effect_text_ja": "装着スキルが即時発動スキルに変更／使用後3秒以内に使う次のスキルのダメージ量+5%",
+      "penalty_text_ja": null,
+      "probability_percent": 0.0833,
+      "probability_display": "0.0833%",
+      "review_status": "確認"
+    },
+    {
+      "id": "L03",
+      "rarity_id": "void",
+      "type_id": "radiant",
+      "effect_text_ja": "装着スキルが即時発動スキルに変更／使用時、次の回避の再使用待機時間−20%（5秒以内に1回）",
+      "penalty_text_ja": null,
+      "probability_percent": 0.0833,
+      "probability_display": "0.0833%",
+      "review_status": "確認"
+    },
+    {
+      "id": "L04",
+      "rarity_id": "void",
+      "type_id": "radiant",
+      "effect_text_ja": "装着スキルの最大使用回数+1／使用後3秒以内に使う次のスキルのダメージ量+2%",
+      "penalty_text_ja": null,
+      "probability_percent": 0.0833,
+      "probability_display": "0.0833%",
+      "review_status": "確認"
+    },
+    {
+      "id": "L05",
+      "rarity_id": "void",
+      "type_id": "radiant",
+      "effect_text_ja": "装着スキルの最大使用回数+1／使用時、次の回避の再使用待機時間−10%（5秒以内に1回）",
+      "penalty_text_ja": null,
+      "probability_percent": 0.0833,
+      "probability_display": "0.0833%",
+      "review_status": "確認"
+    },
+    {
+      "id": "G01",
+      "rarity_id": "void",
+      "type_id": "guardian",
+      "effect_text_ja": "使用時、スーパーアーマーを0.7秒即時発動",
+      "penalty_text_ja": null,
+      "probability_percent": 1.5,
+      "probability_display": "1.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "G02",
+      "rarity_id": "void",
+      "type_id": "guardian",
+      "effect_text_ja": "使用時、前方ガードを0.7秒即時発動",
+      "penalty_text_ja": null,
+      "probability_percent": 1.5,
+      "probability_display": "1.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "G03",
+      "rarity_id": "void",
+      "type_id": "guardian",
+      "effect_text_ja": "使用時、キャッチ不可を0.7秒即時発動",
+      "penalty_text_ja": null,
+      "probability_percent": 1.5,
+      "probability_display": "1.5000%",
+      "review_status": "確認"
+    },
+    {
+      "id": "G04",
+      "rarity_id": "void",
+      "type_id": "guardian",
+      "effect_text_ja": "使用時、ダメージ減少を0.45秒即時発動",
+      "penalty_text_ja": null,
+      "probability_percent": 1.5,
+      "probability_display": "1.5000%",
+      "review_status": "確認"
+    }
+  ]
+}

@@ -93,6 +93,13 @@ git add -A && git commit -m "..." && git push origin main   # これで本番反
 
 ## コマンド
 
+### 空虚候補の編集
+
+空虚は `docs/20_空虚スキル秘伝_確認用.md` の候補表を人間が確認し、
+`node scripts/apply_void_sigil.mjs` で `src/game-rules/skill-sigil.json` へ反映できる。
+全行が「確認」または「確認済」の場合のみ実行可能。アプリが読む正本は引き続き
+`src/game-rules/`。空虚の複合効果・デメリットは候補単位の別IDとして保持する。
+
 ```bash
 npm run dev     # 開発サーバー
 npm test        # vitest (装着ルール・Excel往復・スモーク)

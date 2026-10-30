@@ -1,6 +1,6 @@
 // ---- マスタデータ (docs/04_データ設計書.md 準拠) ----------------------------
 
-export type Rarity = "abyssal" | "primal" | "chaos";
+export type Rarity = "abyssal" | "primal" | "chaos" | "void";
 export type SkillGroup = "special" | "normal";
 
 export interface SigilTypeDef {
@@ -24,6 +24,11 @@ export interface EffectDef {
   values: Partial<Record<Rarity, string[]>>;
   two_effects?: boolean;
   valueless?: boolean;
+  /** 空虚の固定候補。複合効果とデメリットを1候補として保持する。 */
+  candidate_id?: string;
+  effect_text_ja?: string;
+  penalty_text_ja?: string | null;
+  probability_percent?: number;
   sort_order: number;
   enabled: boolean;
 }

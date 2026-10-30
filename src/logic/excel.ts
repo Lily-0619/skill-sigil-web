@@ -20,11 +20,13 @@ const RARITY_JA: Record<Rarity, string> = {
   abyssal: "深淵",
   primal: "太古",
   chaos: "混沌",
+  void: "空虚",
 };
 const RARITY_FROM_JA: Record<string, Rarity> = {
   深淵: "abyssal",
   太古: "primal",
   混沌: "chaos",
+  空虚: "void",
 };
 
 export function backupFilename(d = new Date()): string {
@@ -287,7 +289,7 @@ export function parseWorkbook(master: Master, wb: XLSX.WorkBook): ImportResult {
       return issues.errors.push(`所持秘伝 ${rowNo}行目: 不明な秘伝タイプID (${typeId})`), undefined;
     const rarity = RARITY_FROM_JA[rarityJa];
     if (!rarity)
-      return issues.errors.push(`所持秘伝 ${rowNo}行目: 等級は深淵/太古/混沌のいずれかです (${rarityJa})`), undefined;
+      return issues.errors.push(`所持秘伝 ${rowNo}行目: 等級は深淵/太古/混沌/空虚のいずれかです (${rarityJa})`), undefined;
     if (!Number.isInteger(qty) || qty < 1)
       return issues.errors.push(`所持秘伝 ${rowNo}行目: 所持数は1以上の整数です (${r["所持数"]})`), undefined;
     const effect = master.effects.find((e) => e.effect_id === effectId);
@@ -431,7 +433,7 @@ export function parseWorkbook(master: Master, wb: XLSX.WorkBook): ImportResult {
         return issues.errors.push(`Free装着状況 ${rowNo}行目: slot_noは1〜4です (${r["slot_no"]})`), undefined;
       const rarity = RARITY_FROM_JA[rarityJa];
       if (!rarity)
-        return issues.errors.push(`Free装着状況 ${rowNo}行目: 等級は深淵/太古/混沌のいずれかです (${rarityJa})`), undefined;
+        return issues.errors.push(`Free装着状況 ${rowNo}行目: 等級は深淵/太古/混沌/空虚のいずれかです (${rarityJa})`), undefined;
       const key = `${buildId}|${skillId}|${slotNo}`;
       if (freeKeys.has(key))
         return issues.errors.push(`Free装着状況 ${rowNo}行目: 同じ枠への重複装着 (${key})`), undefined;

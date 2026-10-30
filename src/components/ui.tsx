@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import type { Master, Rarity } from "../types";
 import { useStore } from "../state/store";
+import { sigilIconUrl } from "../lib/assets";
 
 // ---- モーダル -------------------------------------------------------------------
 
@@ -71,7 +72,10 @@ export function RarityChip({
 }) {
   const def = master.rarities.find((r) => r.id === rarity);
   return (
-    <span className={`chip rarity-${rarity}`}>{def?.name ?? rarity}</span>
+    <span className={`chip rarity-${rarity}`}>
+      {rarity === "void" && <img src={sigilIconUrl("void")!} alt="" style={{ width: 18, height: 18, verticalAlign: "middle", marginRight: 4 }} />}
+      {def?.name ?? rarity}
+    </span>
   );
 }
 

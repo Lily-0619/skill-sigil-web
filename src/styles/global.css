@@ -259,6 +259,16 @@ img {
   border-color: rgba(60, 100, 190, 0.6);
   background: rgba(13, 71, 161, 0.18);
 }
+.chip.rarity-void {
+  color: #d9baff;
+  border-color: rgba(148, 101, 200, 0.7);
+  background: rgba(148, 101, 200, 0.18);
+}
+.rarity-btn.selected.void {
+  color: #d9baff;
+  border-color: #9465c8;
+  background: rgba(148, 101, 200, 0.18);
+}
 
 .chip.type {
   background: rgba(255, 255, 255, 0.04);

@@ -41,6 +41,7 @@ const initialForm: FormState = {
 export default function Inventory() {
   const { data, dispatch, toast } = useStore();
   const [form, setForm] = useState<FormState>(initialForm);
+  const [effectGrade, setEffectGrade] = useState("");
   const [mergeTarget, setMergeTarget] = useState<InventoryItem | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<InventoryItem | null>(null);
   const formRv = useReveal<HTMLDivElement>();
@@ -48,7 +49,8 @@ export default function Inventory() {
 
   const effect = form.effectId ? effectOf(master, form.effectId) : undefined;
   const typeEffects = master.effects.filter(
-    (e) => e.sigil_type_id === form.typeId && e.enabled
+    (e) => e.sigil_type_id === form.typeId && e.enabled &&
+      (!effectGrade || effectGrade in e.values)
   );
   const isTwoValue =
     !!effect &&
@@ -280,6 +282,11 @@ export default function Inventory() {
               <div className="form-label">
                 <span className="n">2</span> 効果 <span className="req">必須</span>
               </div>
+              <select className="select" aria-label="効果の等級で絞り込み" value={effectGrade}
+                onChange={(e) => setEffectGrade(e.target.value)}>
+                <option value="">全等級の効果</option>
+                {master.rarities.map((r) => <option key={r.id} value={r.id}>{r.name}</option>)}
+              </select>
               <div className="effect-list">
                 {typeEffects.map((e) => (
                   <button
@@ -291,8 +298,8 @@ export default function Inventory() {
                     onClick={() => pickEffect(e.effect_id)}
                   >
                     {e.name_ja}
-                    {e.sigil_type_id === "radiant" && (
-                      <span className="note">混沌等級のみ存在します</span>
+                    {(e.candidate_id || e.sigil_type_id === "radiant") && (
+                      <span className="note">{e.candidate_id ? "空虚等級・固定効果" : "混沌等級のみ存在します"}</span>
                     )}
                   </button>
                 ))}
@@ -344,7 +351,9 @@ export default function Inventory() {
               </div>
               {isValueless ? (
                 <div className="form-hint">
-                  この効果は数値を持ちません(効果の有無のみ)。
+                  {effect?.candidate_id
+                    ? "空虚の効果・数値・デメリットは選択した候補の内容で固定です。"
+                    : "この効果は数値を持ちません(効果の有無のみ)。"}
                 </div>
               ) : isTwoEffects ? (
                 <>
